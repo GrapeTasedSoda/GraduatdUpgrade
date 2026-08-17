@@ -1,0 +1,25 @@
+ 
+****************************************
+Report : clock_gating
+        -verbose
+Design : mac16
+Version: O-2018.06-SP1
+Date   : Sun Jun  7 16:36:05 2026
+****************************************
+
+
+
+                             Clock Gating Summary
+          ------------------------------------------------------------
+          |    Number of Clock gating elements    |       30         |
+          |                                       |                  |
+          |    Number of Gated registers          |   688 (89.70%)   |
+          |                                       |                  |
+          |    Number of Ungated registers        |    79 (10.30%)   |
+          |                                       |                  |
+          |    Total number of registers          |      767         |
+          ------------------------------------------------------------
+
+
+
+1

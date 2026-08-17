@@ -1,0 +1,39 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: The derived static probability value (0.500000) for the clock net 'clk' conflicts with the annotated value (0.020000). Using the annotated value. (PWR-12)
+Warning: The derived toggle rate value (2.000000) for the clock net 'clk' conflicts with the annotated value (0.500000). Using the annotated value. (PWR-12)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : mac16
+Version: O-2018.06-SP1
+Date   : Sun Jun  7 16:36:05 2026
+****************************************
+
+
+Library(s) Used:
+
+    ics55_LLSC_H9CR_ss_rcworst_1p08_125 (File: /home/ICer/work_mac16/lib/ics55_LLSC_H9CR_ss_rcworst_1p08_125_nldm.db)
+
+
+Operating Conditions: ETSCA_N55_H9BR_ss_mos_RCworst_1.08_125   Library: ics55_LLSC_H9CR_ss_rcworst_1p08_125
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.08 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+mac16                                  3.40e-02    0.220 1.18e+04    0.266 100.0
+1

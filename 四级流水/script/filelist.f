@@ -1,0 +1,9 @@
+../design/fulladder/fulladder.v
+../design/csa32/csa32.v
+../design/mul_wallace_u16_pipe1/mul_wallace_u16_pipe1.v
+../design/mac_core/mac_core.v
+../design/serial_to_parallel/serial_to_parallel.v
+../design/parallel_to_serial/parallel_to_serial.v
+../design/mac16_top/mac16_top.v
+../design/mac16/mac16.v
+../testbench/tb_mac16_contest/tb_mac16_contest.v

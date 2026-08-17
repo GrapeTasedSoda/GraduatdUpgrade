@@ -1,0 +1,14 @@
+# EDA 工具缓存与可再生成产物
+FM_WORK*/
+DVEfiles/
+*.lck
+ucli.key
+formality1_svf/
+default.svf
+csrc/
+simv
+simv.daidir/
+out/sim/
+
+# 授权 PDK 库（许可受限，未入库）
+lib/

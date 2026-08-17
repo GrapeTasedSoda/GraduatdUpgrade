@@ -1,0 +1,56 @@
+// =====================================================================
+// MAC16 模块层次图 (Module Hierarchy)
+// 基于 design/ 下 RTL 实例化关系核对生成
+// 渲染: dot -Tpng -Gdpi=160 module_hierarchy.dot -o images/module_hierarchy.png
+// =====================================================================
+
+digraph mac16_hierarchy {
+    rankdir = TB;
+    bgcolor = "white";
+    fontname = "Noto Sans CJK SC";
+    node [fontname = "Noto Sans CJK SC", shape = box, style = "rounded,filled", fontsize = 11, margin = "0.15,0.10"];
+    edge [fontname = "Noto Sans CJK SC", fontsize = 9, color = "#666666"];
+
+    // ---------- 顶层 ----------
+    mac16 [label = "mac16\n赛题顶层封装（对外引脚）\nmode / inA / inB / in_ready / clk / rst_n\nsum_out / carry / out_ready",
+           fillcolor = "#D6E8F7", penwidth = 1.5];
+
+    top [label = "mac16_top\n全局控制器 + 数据通路调度\n(操作数FIFO×4 / 结果FIFO×4 / 调度状态机)",
+         fillcolor = "#D6E8F7"];
+    mac16 -> top [label = "u_mac16_top", fontsize = 9];
+
+    // ---------- 第三层：三个功能单元 ----------
+    s2pA [label = "serial_to_parallel\nu_inA\n16b 串→并 (MSB先入)", fillcolor = "#FDE9D9"];
+    s2pB [label = "serial_to_parallel\nu_inB\n16b 串→并 (MSB先入)", fillcolor = "#FDE9D9"];
+    core [label = "mac_core\nu_mac\n乘加核心\n(mode 0 / mode 1)", fillcolor = "#D6E8F7"];
+    p2s [label = "parallel_to_serial\nu_out\n24b 并→串 (MSB先出)", fillcolor = "#FDE9D9"];
+
+    top -> s2pA [label = "inA 通路"];
+    top -> s2pB [label = "inB 通路"];
+    top -> core [label = "calc_en + 16b×2"];
+    top -> p2s [label = "p2s_load + 24b"];
+
+    // ---------- 乘法器 ----------
+    mul [label = "mul_wallace_u16_pipe1\nu_mul\n16×16 Wallace 树乘法器\n4 级流水（输入→输出 4 拍）", fillcolor = "#E2EFDA"];
+    core -> mul [label = "a[15:0] / b[15:0] / en"];
+
+    // ---------- Wallace 压缩树分级 (同一层横向排列) ----------
+    { rank = same;
+      st1  [label = "Stage 1\ncsa32 ×5\nst1_0 ~ st1_4\n(pp0~pp14 压缩)", fillcolor = "#F2F2F2"];
+      st2  [label = "Stage 2\ncsa32 ×4\nst2_0 ~ st2_3", fillcolor = "#F2F2F2"];
+      st3  [label = "Stage 3\ncsa32 ×2\nst3_0 ~ st3_1", fillcolor = "#F2F2F2"];
+      st4  [label = "Stage 4\ncsa32 ×2\nst4_0 ~ st4_1", fillcolor = "#F2F2F2"];
+      st56 [label = "Stage 5/6\ncsa32 ×2\nst5_0 + st6_0\n+ 末级加法器", fillcolor = "#F2F2F2"];
+    }
+
+    mul -> st1 [label = "16 个部分积"];
+    st1 -> st2 -> st3 -> st4 -> st56 [label = "S/C", fontsize = 8];
+
+    fa [label = "fulladder ×32\n(csa32 内部 1bit 全加器)", fillcolor = "#F2F2F2"];
+    st56 -> fa [style = "invis"];
+
+    // ---------- 统计图例 ----------
+    legend [label = "实例统计（RTL 核对）\n  fulladder              = 32 × 15 = 480\n  csa32                 = 15（st1:5 / st2:4 / st3:2 / st4:2 / st5+st6:2）\n  serial_to_parallel    = 2\n  parallel_to_serial     = 1\n  mul_wallace_u16_pipe1  = 1\n  mac_core / mac16_top   = 1 / 1",
+            shape = note, fillcolor = "#FFF9C4", fontsize = 10];
+    fa -> legend [style = "invis"];
+}

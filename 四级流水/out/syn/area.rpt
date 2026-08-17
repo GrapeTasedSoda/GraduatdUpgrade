@@ -1,0 +1,102 @@
+ 
+****************************************
+Report : area
+Design : mac16
+Version: O-2018.06-SP1
+Date   : Sun Jun  7 16:36:05 2026
+****************************************
+
+Library(s) Used:
+
+    ics55_LLSC_H9CR_ss_rcworst_1p08_125 (File: /home/ICer/work_mac16/lib/ics55_LLSC_H9CR_ss_rcworst_1p08_125_nldm.db)
+
+Number of ports:                          129
+Number of nets:                          2819
+Number of cells:                         2595
+Number of combinational cells:           1768
+Number of sequential cells:               797
+Number of macros/black boxes:               0
+Number of buf/inv:                        275
+Number of references:                     159
+
+Combinational area:               4684.680048
+Buf/Inv area:                      342.720013
+Noncombinational area:            6816.960235
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 11501.640282
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area           Local cell area
+                                  -------------------  ---------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-     Noncombi-  Black-
+                                  Total       Total    national   national   boxes   Design
+--------------------------------  ----------  -------  ---------  ---------  ------  ---------------------------------------------
+mac16                             11501.6403    100.0  4576.6801  6687.3602  0.0000  mac16
+u_mac16_top/clk_gate_fifo_count_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac16_top_13
+u_mac16_top/clk_gate_mac_result_shadow_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac16_top_8
+u_mac16_top/clk_gate_opA_fifo_reg[0]
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac16_top_9
+u_mac16_top/clk_gate_opA_fifo_reg[1]
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac16_top_10
+u_mac16_top/clk_gate_opA_fifo_reg[2]
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac16_top_11
+u_mac16_top/clk_gate_opA_fifo_reg[3]
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac16_top_12
+u_mac16_top/clk_gate_opB_reg_reg      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac16_top_0
+u_mac16_top/clk_gate_op_fifo_count_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac16_top_7
+u_mac16_top/clk_gate_op_fifo_rd_ptr_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac16_top_1
+u_mac16_top/clk_gate_result_fifo_reg[0]
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac16_top_3
+u_mac16_top/clk_gate_result_fifo_reg[1]
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac16_top_4
+u_mac16_top/clk_gate_result_fifo_reg[2]
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac16_top_5
+u_mac16_top/clk_gate_result_fifo_reg[3]
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac16_top_6
+u_mac16_top/clk_gate_sched_cnt_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac16_top_2
+u_mac16_top/u_inA/clk_gate_data_out_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_serial_to_parallel_0_1
+u_mac16_top/u_inB/clk_gate_data_out_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_serial_to_parallel_0_0
+u_mac16_top/u_mac/clk_gate_accum_reg_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac_core_0
+u_mac16_top/u_mac/clk_gate_last_prod_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac_core_2
+u_mac16_top/u_mac/clk_gate_sum_out_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mac_core_1
+u_mac16_top/u_mac/u_mul/clk_gate_r_c21_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mul_wallace_u16_pipe1_5
+u_mac16_top/u_mac/u_mul/clk_gate_r_c31_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mul_wallace_u16_pipe1_9
+u_mac16_top/u_mac/u_mul/clk_gate_r_c40_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mul_wallace_u16_pipe1_15
+u_mac16_top/u_mac/u_mul/clk_gate_r_s20_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mul_wallace_u16_pipe1_2
+u_mac16_top/u_mac/u_mul/clk_gate_r_s21_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mul_wallace_u16_pipe1_4
+u_mac16_top/u_mac/u_mul/clk_gate_r_s22_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mul_wallace_u16_pipe1_6
+u_mac16_top/u_mac/u_mul/clk_gate_r_s30_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mul_wallace_u16_pipe1_10
+u_mac16_top/u_mac/u_mul/clk_gate_r_s31_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mul_wallace_u16_pipe1_8
+u_mac16_top/u_mac/u_mul/clk_gate_r_s40_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mul_wallace_u16_pipe1_14
+u_mac16_top/u_mac/u_mul/clk_gate_r_s41_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_mul_wallace_u16_pipe1_12
+u_mac16_top/u_out/clk_gate_bits_left_reg
+                                      7.9200      0.1     3.6000     4.3200  0.0000  SNPS_CLOCK_GATE_HIGH_parallel_to_serial
+--------------------------------  ----------  -------  ---------  ---------  ------  ---------------------------------------------
+Total                                                  4684.6800  6816.9602  0.0000
+
+1

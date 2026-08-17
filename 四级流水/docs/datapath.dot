@@ -1,0 +1,59 @@
+// =====================================================================
+// MAC16 数据通路图 (Datapath / Architecture)
+// 依据 mac16_top.v / mac_core.v / mul_wallace_u16_pipe1.v 绘制
+// 采用 neato 固定坐标（英寸×72 = 点），15in × 10in 画布
+// 渲染: neato -n2 -Tpng -Gdpi=160 datapath.dot -o images/datapath.png
+// =====================================================================
+
+graph mac16_datapath {
+    layout = neato;
+    size = "15,10";
+    bgcolor = "white";
+    fontname = "Noto Sans CJK SC";
+    nodesep = 0.4;
+    ranksep = 0.7;
+    node [fontname = "Noto Sans CJK SC", shape = box, style = "rounded,filled", fontsize = 11, fixedsize = true];
+    edge [fontname = "Noto Sans CJK SC", fontsize = 9, color = "#444444"];
+
+    // ---------------- 背景分区框 ----------------
+    box_in   [pos = "137,274", width = 3.2, height = 7.4, label = "", fillcolor = "#F7F5FB", color = "#7A6FA0", style = "rounded,filled", penwidth = 1.5];
+    box_core [pos = "475,281", width = 3.6, height = 4.4, label = "", fillcolor = "#F4FAF2", color = "#5A8A5A", style = "rounded,filled", penwidth = 1.5];
+    box_out  [pos = "821,302", width = 3.0, height = 4.6, label = "", fillcolor = "#FBF5F2", color = "#A0685A", style = "rounded,filled", penwidth = 1.5];
+
+    // ---------------- 分区标题 ----------------
+    t_in   [pos = "137,32",  width = 2.5, height = 0.3, label = "输入段（mac16_top）", shape = plaintext, fixedsize = false, fontsize = 13];
+    t_core [pos = "475,148", width = 2.8, height = 0.3, label = "运算段（mac_core）", shape = plaintext, fixedsize = false, fontsize = 13];
+    t_out  [pos = "821,155", width = 2.4, height = 0.3, label = "输出段（mac16_top）", shape = plaintext, fixedsize = false, fontsize = 13];
+
+    // ---------------- 输入段节点 ----------------
+    pins_in [pos = "137,90",  width = 2.7, height = 1.0, label = "输入引脚\nclk(1GHz) / rst_n\nmode / inA / inB / in_ready", fillcolor = "#ECE7F6", shape = note];
+    s2pA    [pos = "137,191", width = 2.0, height = 0.9, label = "serial_to_parallel\nu_inA\n16b 串→并 (MSB先入)", fillcolor = "#FDE9D9"];
+    s2pB    [pos = "137,284", width = 2.0, height = 0.9, label = "serial_to_parallel\nu_inB\n16b 串→并 (MSB先入)", fillcolor = "#FDE9D9"];
+    opfifo  [pos = "137,382", width = 1.9, height = 0.85, label = "操作数 FIFO ×4\n16b A + 16b B\n(op_push / op_pop)", fillcolor = "#FFF9C4"];
+    ctrl    [pos = "137,472", width = 2.3, height = 0.9, label = "全局调度控制器（状态机）\ncalc_start / p2s_load\nmode 切换清空全部状态", fillcolor = "#D6E8F7"];
+
+    // ---------------- 运算段节点 ----------------
+    mul [pos = "475,216", width = 2.3, height = 0.8, label = "mul_wallace_u16_pipe1\n16×16 Wallace 乘法器\n4级流水 / 4拍延迟", fillcolor = "#E2EFDA"];
+    acc [pos = "475,346", width = 2.7, height = 1.15, label = "加法 / 累加器（组合逻辑）\n\nmode=0: product + last_prod\nmode=1: accum + product\n[24:0] 含溢出进位", fillcolor = "#FDE9D9"];
+
+    // ---------------- 输出段节点 ----------------
+    resfifo  [pos = "821,202", width = 1.8, height = 0.8, label = "结果 FIFO ×4\n24b\n(cal_done 写入)", fillcolor = "#FFF9C4"];
+    p2s      [pos = "821,288", width = 2.0, height = 0.9, label = "parallel_to_serial\nu_out\n24b 并→串 (MSB先出)", fillcolor = "#FDE9D9"];
+    pins_out [pos = "821,389", width = 2.3, height = 0.9, label = "输出引脚\nsum_out / out_ready\ncarry（溢出粘滞）", fillcolor = "#ECE7F6", shape = note];
+
+    // ---------------- 流水线说明注记 ----------------
+    pipe [pos = "475,626", width = 4.6, height = 2.3, label = "乘法器流水节拍（输入→输出 4 拍）\n  T0  en 有效：部分积生成 + Stage1 压缩\n  T1  流水级1（st2 压缩）\n  T2  流水级2（st3 压缩）\n  T3  流水级3（st4 压缩）\n  T4  流水级4（st5/st6 压缩 + 末级加法器）\n  T4  mult_valid=1 → mac_core 采样累加\n\nmac16_top 调度：sched_cnt 0~7，共 8 拍/组", shape = note, fillcolor = "#E8F0FE", fontsize = 10];
+
+    // ---------------- 数据流连线 ----------------
+    pins_in -- s2pA [label = "inA", headport = "n", tailport = "s"];
+    pins_in -- s2pB [label = "inB", headport = "n", tailport = "s"];
+    s2pA -- opfifo [label = "inA_par / inA_done", headport = "n", tailport = "s"];
+    s2pB -- opfifo [label = "inB_par / inB_done", headport = "n", tailport = "s"];
+    opfifo -- ctrl [label = "非空且空闲 → 取数", headport = "n", tailport = "s"];
+    ctrl -- mul [label = "calc_en + a[15:0] b[15:0]", headport = "w", tailport = "e"];
+    mul -- acc [label = "product[31:0] / mult_valid", headport = "n", tailport = "s"];
+    acc -- resfifo [label = "mac_result[23:0] / cal_done", headport = "w", tailport = "e"];
+    resfifo -- p2s [label = "p2s_load / in_ready", headport = "n", tailport = "s"];
+    p2s -- pins_out [label = "24b 串行输出", headport = "n", tailport = "s"];
+    acc -- pins_out [label = "carry（置1后由 rst_n / mode 清除）", headport = "nw", tailport = "se"];
+}
