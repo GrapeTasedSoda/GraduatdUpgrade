@@ -9,6 +9,3 @@ csrc/
 simv
 simv.daidir/
 out/sim/
-
-# 授权 PDK 库（许可受限，未入库）
-lib/

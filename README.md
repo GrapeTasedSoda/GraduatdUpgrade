@@ -12,6 +12,7 @@ GraduatdUpgrade/
 ├── 四级流水/
 │   ├── design/                # 最终 4 级流水核心 RTL（8 个模块）
 │   ├── testbench/             # 赛题验收 testbench（3 种 mode 组合自动比对）
+│   ├── lib/                   # 浙江创芯 ics55 标准单元库（7 个 PVT corner）
 │   ├── script/                # VCS 仿真 / DC 综合 / Formality 脚本与日志
 │   ├── out/syn/               # DC 综合结果（网表/SDF/SDC/时序/功耗/面积报告）
 │   ├── wave/                  # 前仿真波形（mac16.vpd）
@@ -42,4 +43,4 @@ cd 四级流水/script && dc_shell -f dc_syn.tcl | tee syn.log
 cd 四级流水/script && fm_shell -f fm_mac16.tcl | tee fm.log
 ```
 
-> 注意：`lib/`（浙江创芯 ics55 标准单元库 .db）为授权 PDK，未纳入本仓库。运行综合 / 形式验证前，请将库文件放置到 `四级流水/lib/` 下（脚本已使用 `../lib` 相对路径）。
+> 说明：`lib/` 为标准单元库文件（浙江创芯 ics55，7 个 PVT corner 的 .db），位于 `四级流水/lib/`，综合 / 形式验证脚本通过 `../lib` 相对路径直接引用，克隆后即可运行。
