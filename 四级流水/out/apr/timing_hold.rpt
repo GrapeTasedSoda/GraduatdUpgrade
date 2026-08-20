@@ -1,0 +1,1830 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type min
+        -max_paths 50
+        -report_by design
+Design : mac16
+Version: V-2023.12
+Date   : Tue Aug 18 14:58:23 2026
+****************************************
+
+  Startpoint: u_mac16_top/u_inA/shift_reg_reg[0] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[1] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inA/shift_reg_reg[0]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inA/shift_reg_reg[0]/Q (DFFRPQX0P5H9R)
+                                                   0.14      0.15 f
+  copt_h_inst_1266/ECK (FREEICGX0P5H9R)            0.05      0.19 f
+  u_mac16_top/u_inA/data_out_reg[1]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.19 f
+  data arrival time                                          0.19
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[1]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.19
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.00
+
+
+
+  Startpoint: u_mac16_top/u_inA/shift_reg_reg[3] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[4] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.01      0.01
+
+  u_mac16_top/u_inA/shift_reg_reg[3]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.01 r
+  u_mac16_top/u_inA/shift_reg_reg[3]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.15 f
+  copt_h_inst_1270/ECK (FREEICGX0P5H9R)            0.05      0.20 f
+  u_mac16_top/u_inA/data_out_reg[4]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.20 f
+  data arrival time                                          0.20
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[4]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.20
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.00
+
+
+
+  Startpoint: u_mac16_top/u_inA/shift_reg_reg[4] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[5] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inA/shift_reg_reg[4]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inA/shift_reg_reg[4]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.15 f
+  copt_h_inst_1269/ECK (FREEICGX0P5H9R)            0.05      0.20 f
+  u_mac16_top/u_inA/data_out_reg[5]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.20 f
+  data arrival time                                          0.20
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[5]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.20
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.01
+
+
+
+  Startpoint: u_mac16_top/u_inB/shift_reg_reg[0] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[1] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inB/shift_reg_reg[0]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inB/shift_reg_reg[0]/Q (DFFRPQX0P5H9R)
+                                                   0.14      0.15 f
+  copt_h_inst_1275/ECK (FREEICGX0P5H9R)            0.05      0.19 f
+  u_mac16_top/u_inB/data_out_reg[1]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.19 f
+  data arrival time                                          0.19
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[1]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.19
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.01
+
+
+
+  Startpoint: mode (input port clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/mode_d_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  input external delay                             0.07      0.20 f
+  mode (in)                                        0.00      0.20 f
+  u_mac16_top/u_mac/mode_d_reg/D (DFFRX1H9R)       0.00      0.20 f
+  data arrival time                                          0.20
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_mac/mode_d_reg/CK (DFFRX1H9R)      0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.20
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.01
+
+
+
+  Startpoint: u_mac16_top/u_inB/shift_reg_reg[14] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[15] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inB/shift_reg_reg[14]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inB/shift_reg_reg[14]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.15 f
+  copt_h_inst_1281/ECK (FREEICGX0P5H9R)            0.05      0.20 f
+  u_mac16_top/u_inB/data_out_reg[15]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.20 f
+  data arrival time                                          0.20
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[15]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.20
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.01
+
+
+
+  Startpoint: u_mac16_top/u_inB/shift_reg_reg[1] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[2] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inB/shift_reg_reg[1]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inB/shift_reg_reg[1]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.15 f
+  copt_h_inst_1271/ECK (FREEICGX0P5H9R)            0.05      0.20 f
+  u_mac16_top/u_inB/data_out_reg[2]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.20 f
+  data arrival time                                          0.20
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[2]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.20
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.02
+
+
+
+  Startpoint: inA (input port clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[0] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  input external delay                             0.07      0.20 f
+  inA (in)                                         0.00      0.20 f
+  u_mac16_top/u_inA/data_out_reg[0]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.20 f
+  data arrival time                                          0.20
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[0]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.03      0.18
+  data required time                                         0.18
+  ------------------------------------------------------------------------
+  data required time                                         0.18
+  data arrival time                                         -0.20
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.02
+
+
+
+  Startpoint: u_mac16_top/u_inA/shift_reg_reg[1] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[2] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inA/shift_reg_reg[1]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inA/shift_reg_reg[1]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.15 f
+  copt_h_inst_1278/ECK (FREEICGX0P5H9R)            0.05      0.21 f
+  u_mac16_top/u_inA/data_out_reg[2]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.21 f
+  data arrival time                                          0.21
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[2]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.21
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.02
+
+
+
+  Startpoint: u_mac16_top/u_inA/shift_reg_reg[2] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[3] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inA/shift_reg_reg[2]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inA/shift_reg_reg[2]/Q (DFFRPQX0P5H9R)
+                                                   0.16      0.16 f
+  copt_h_inst_1279/ECK (FREEICGX0P5H9R)            0.05      0.21 f
+  u_mac16_top/u_inA/data_out_reg[3]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.21 f
+  data arrival time                                          0.21
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[3]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.21
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.02
+
+
+
+  Startpoint: u_mac16_top/u_inB/shift_reg_reg[9] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[10] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inB/shift_reg_reg[9]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inB/shift_reg_reg[9]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.16 f
+  copt_h_inst_1285/ECK (FREEICGX0P5H9R)            0.05      0.20 f
+  u_mac16_top/u_inB/data_out_reg[10]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.20 f
+  data arrival time                                          0.20
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[10]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.20
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.02
+
+
+
+  Startpoint: u_mac16_top/u_inA/shift_reg_reg[12] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[13] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inA/shift_reg_reg[12]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inA/shift_reg_reg[12]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.15 f
+  copt_h_inst_1284/ECK (FREEICGX0P5H9R)            0.06      0.21 f
+  u_mac16_top/u_inA/data_out_reg[13]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.21 f
+  data arrival time                                          0.21
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[13]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.21
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.02
+
+
+
+  Startpoint: u_mac16_top/u_inB/shift_reg_reg[4] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[5] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inB/shift_reg_reg[4]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inB/shift_reg_reg[4]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.15 f
+  copt_h_inst_1287/ECK (FREEICGX0P5H9R)            0.05      0.21 f
+  u_mac16_top/u_inB/data_out_reg[5]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.21 f
+  data arrival time                                          0.21
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[5]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.18
+  data required time                                         0.18
+  ------------------------------------------------------------------------
+  data required time                                         0.18
+  data arrival time                                         -0.21
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.02
+
+
+
+  Startpoint: u_mac16_top/u_mac/u_mul/product_reg_reg[12] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/last_prod_reg[12] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_mac/u_mul/product_reg_reg[12]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_mac/u_mul/product_reg_reg[12]/Q (DFFRPQX0P5H9R)
+                                                   0.18      0.19 f
+  u_mac16_top/u_mac/last_prod_reg[12]/D (DFFRQX1H9R)
+                                                   0.00      0.19 f
+  data arrival time                                          0.19
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.11      0.11
+  u_mac16_top/u_mac/last_prod_reg[12]/CK (DFFRQX1H9R)
+                                                   0.00      0.11 r
+  clock uncertainty                                0.03      0.14
+  library hold time                                0.03      0.16
+  data required time                                         0.16
+  ------------------------------------------------------------------------
+  data required time                                         0.16
+  data arrival time                                         -0.19
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.02
+
+
+
+  Startpoint: inB (input port clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[0] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  input external delay                             0.07      0.20 f
+  inB (in)                                         0.00      0.20 f
+  u_mac16_top/u_inB/data_out_reg[0]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.20 f
+  data arrival time                                          0.20
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[0]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.03      0.18
+  data required time                                         0.18
+  ------------------------------------------------------------------------
+  data required time                                         0.18
+  data arrival time                                         -0.20
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.02
+
+
+
+  Startpoint: u_mac16_top/u_inB/shift_reg_reg[2] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[3] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inB/shift_reg_reg[2]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inB/shift_reg_reg[2]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.15 f
+  copt_h_inst_1286/ECK (FREEICGX0P5H9R)            0.05      0.21 f
+  u_mac16_top/u_inB/data_out_reg[3]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.21 f
+  data arrival time                                          0.21
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[3]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.18
+  data required time                                         0.18
+  ------------------------------------------------------------------------
+  data required time                                         0.18
+  data arrival time                                         -0.21
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.02
+
+
+
+  Startpoint: u_mac16_top/u_inB/shift_reg_reg[3] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[4] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inB/shift_reg_reg[3]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inB/shift_reg_reg[3]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.16 f
+  copt_h_inst_1290/ECK (FREEICGX0P5H9R)            0.05      0.21 f
+  u_mac16_top/u_inB/data_out_reg[4]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.21 f
+  data arrival time                                          0.21
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[4]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.18
+  data required time                                         0.18
+  ------------------------------------------------------------------------
+  data required time                                         0.18
+  data arrival time                                         -0.21
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.02
+
+
+
+  Startpoint: u_mac16_top/u_inB/shift_reg_reg[8] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[9] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inB/shift_reg_reg[8]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inB/shift_reg_reg[8]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.16 f
+  copt_h_inst_1288/ECK (FREEICGX0P5H9R)            0.05      0.21 f
+  u_mac16_top/u_inB/data_out_reg[9]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.21 f
+  data arrival time                                          0.21
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[9]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.21
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.03
+
+
+
+  Startpoint: u_mac16_top/u_inB/shift_reg_reg[11] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[12] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inB/shift_reg_reg[11]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inB/shift_reg_reg[11]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.16 f
+  copt_h_inst_1291/ECK (FREEICGX0P5H9R)            0.05      0.21 f
+  u_mac16_top/u_inB/data_out_reg[12]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.21 f
+  data arrival time                                          0.21
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[12]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.18
+  data required time                                         0.18
+  ------------------------------------------------------------------------
+  data required time                                         0.18
+  data arrival time                                         -0.21
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.03
+
+
+
+  Startpoint: u_mac16_top/u_inB/shift_reg_reg[10] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[11] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inB/shift_reg_reg[10]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inB/shift_reg_reg[10]/Q (DFFRPQX0P5H9R)
+                                                   0.14      0.15 f
+  copt_h_inst_1283/ECK (FREEICGX0P5H9R)            0.06      0.21 f
+  u_mac16_top/u_inB/data_out_reg[11]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.21 f
+  data arrival time                                          0.21
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[11]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.03      0.18
+  data required time                                         0.18
+  ------------------------------------------------------------------------
+  data required time                                         0.18
+  data arrival time                                         -0.21
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.03
+
+
+
+  Startpoint: u_mac16_top/u_inB/shift_reg_reg[13] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[14] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inB/shift_reg_reg[13]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inB/shift_reg_reg[13]/Q (DFFRPQX0P5H9R)
+                                                   0.16      0.16 f
+  copt_h_inst_1293/ECK (FREEICGX0P5H9R)            0.05      0.21 f
+  u_mac16_top/u_inB/data_out_reg[14]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.21 f
+  data arrival time                                          0.21
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[14]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.21
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.03
+
+
+
+  Startpoint: u_mac16_top/u_inB/shift_reg_reg[12] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[13] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inB/shift_reg_reg[12]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inB/shift_reg_reg[12]/Q (DFFRPQX0P5H9R)
+                                                   0.16      0.16 f
+  copt_h_inst_1292/ECK (FREEICGX0P5H9R)            0.05      0.22 f
+  u_mac16_top/u_inB/data_out_reg[13]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.22 f
+  data arrival time                                          0.22
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[13]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.22
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.03
+
+
+
+  Startpoint: u_mac16_top/u_mac/u_mul/product_reg_reg[20] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/last_prod_reg[20] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_mac/u_mul/product_reg_reg[20]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_mac/u_mul/product_reg_reg[20]/Q (DFFRPQX0P5H9R)
+                                                   0.18      0.18 f
+  u_mac16_top/u_mac/last_prod_reg[20]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.18 f
+  data arrival time                                          0.18
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.11      0.11
+  u_mac16_top/u_mac/last_prod_reg[20]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.11 r
+  clock uncertainty                                0.03      0.14
+  library hold time                                0.01      0.15
+  data required time                                         0.15
+  ------------------------------------------------------------------------
+  data required time                                         0.15
+  data arrival time                                         -0.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_mac16_top/u_inB/shift_reg_reg[7] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[8] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inB/shift_reg_reg[7]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inB/shift_reg_reg[7]/Q (DFFRPQX0P5H9R)
+                                                   0.16      0.17 f
+  copt_h_inst_1295/ECK (FREEICGX0P5H9R)            0.06      0.22 f
+  u_mac16_top/u_inB/data_out_reg[8]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.22 f
+  data arrival time                                          0.22
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[8]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.22
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_mac16_top/u_inA/shift_reg_reg[11] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[12] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inA/shift_reg_reg[11]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inA/shift_reg_reg[11]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.15 f
+  copt_h_inst_1282/ECK (FREEICGX0P5H9R)            0.07      0.22 f
+  u_mac16_top/u_inA/data_out_reg[12]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.22 f
+  data arrival time                                          0.22
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[12]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.03      0.18
+  data required time                                         0.18
+  ------------------------------------------------------------------------
+  data required time                                         0.18
+  data arrival time                                         -0.22
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_mac16_top/u_inA/shift_reg_reg[6] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[7] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inA/shift_reg_reg[6]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inA/shift_reg_reg[6]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.15 f
+  copt_h_inst_1277/Y (DLY2X0P5H9R)                 0.08      0.23 f
+  u_mac16_top/u_inA/data_out_reg[7]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.23 f
+  data arrival time                                          0.23
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[7]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.23
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_mac16_top/u_inB/shift_reg_reg[5] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[6] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inB/shift_reg_reg[5]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inB/shift_reg_reg[5]/Q (DFFRPQX0P5H9R)
+                                                   0.16      0.16 f
+  copt_h_inst_1289/ECK (FREEICGX0P5H9R)            0.06      0.22 f
+  u_mac16_top/u_inB/data_out_reg[6]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.22 f
+  data arrival time                                          0.22
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[6]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.03      0.18
+  data required time                                         0.18
+  ------------------------------------------------------------------------
+  data required time                                         0.18
+  data arrival time                                         -0.22
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_mac16_top/u_inB/shift_reg_reg[6] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[7] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inB/shift_reg_reg[6]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inB/shift_reg_reg[6]/Q (DFFRPQX0P5H9R)
+                                                   0.16      0.16 f
+  copt_h_inst_1294/ECK (FREEICGX0P5H9R)            0.06      0.22 f
+  u_mac16_top/u_inB/data_out_reg[7]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.22 f
+  data arrival time                                          0.22
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.12      0.12
+  u_mac16_top/u_inB/data_out_reg[7]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.12 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.03      0.18
+  data required time                                         0.18
+  ------------------------------------------------------------------------
+  data required time                                         0.18
+  data arrival time                                         -0.22
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_mac16_top/u_inA/shift_reg_reg[14] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[15] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inA/shift_reg_reg[14]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inA/shift_reg_reg[14]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.15 f
+  copt_h_inst_1267/Y (DLY2X0P5H9R)                 0.08      0.23 f
+  u_mac16_top/u_inA/data_out_reg[15]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.23 f
+  data arrival time                                          0.23
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[15]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.23
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_mac16_top/u_inA/shift_reg_reg[5] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[6] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inA/shift_reg_reg[5]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inA/shift_reg_reg[5]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.15 f
+  copt_h_inst_1273/Y (DLY2X0P5H9R)                 0.08      0.23 f
+  u_mac16_top/u_inA/data_out_reg[6]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.23 f
+  data arrival time                                          0.23
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[6]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.23
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_mac16_top/clk_gate_op_fifo_count_reg/latch (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_op_fifo_count_reg/main_gate (falling clock gating-check end-point clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (fall edge)                       0.50      0.50
+  clock network delay (propagated)                 0.00      0.50
+
+  u_mac16_top/clk_gate_op_fifo_count_reg/latch/GN (LATLQX0P5H9R)
+                                                   0.00      0.50 f
+  u_mac16_top/clk_gate_op_fifo_count_reg/latch/Q (LATLQX0P5H9R)
+                                                   0.07      0.58 r
+  u_mac16_top/clk_gate_op_fifo_count_reg/main_gate/A (AND2X0P5H9R)
+                                                   0.00      0.58 r
+  data arrival time                                          0.58
+
+  clock core_clk (fall edge)                       0.50      0.50
+  clock network delay (propagated)                 0.01      0.51
+  u_mac16_top/clk_gate_op_fifo_count_reg/main_gate/B (AND2X0P5H9R)
+                                                   0.00      0.51 f
+  clock uncertainty                                0.03      0.53
+  library hold time                                0.00      0.53
+  data required time                                         0.53
+  ------------------------------------------------------------------------
+  data required time                                         0.53
+  data arrival time                                         -0.58
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_mac16_top/u_mac/u_mul/product_reg_reg[17] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/last_prod_reg[17] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_mac/u_mul/product_reg_reg[17]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_mac/u_mul/product_reg_reg[17]/Q (DFFRPQX0P5H9R)
+                                                   0.19      0.19 f
+  u_mac16_top/u_mac/last_prod_reg[17]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.19 f
+  data arrival time                                          0.19
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.11      0.11
+  u_mac16_top/u_mac/last_prod_reg[17]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.11 r
+  clock uncertainty                                0.03      0.14
+  library hold time                                0.01      0.15
+  data required time                                         0.15
+  ------------------------------------------------------------------------
+  data required time                                         0.15
+  data arrival time                                         -0.19
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: u_mac16_top/u_inA/shift_reg_reg[13] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[14] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inA/shift_reg_reg[13]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inA/shift_reg_reg[13]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.15 f
+  copt_h_inst_1268/Y (DLY2X0P5H9R)                 0.08      0.24 f
+  u_mac16_top/u_inA/data_out_reg[14]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.24 f
+  data arrival time                                          0.24
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[14]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.24
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: u_mac16_top/u_mac/u_mul/product_reg_reg[19] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/last_prod_reg[19] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_mac/u_mul/product_reg_reg[19]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_mac/u_mul/product_reg_reg[19]/Q (DFFRPQX0P5H9R)
+                                                   0.19      0.19 f
+  u_mac16_top/u_mac/last_prod_reg[19]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.19 f
+  data arrival time                                          0.19
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.11      0.11
+  u_mac16_top/u_mac/last_prod_reg[19]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.11 r
+  clock uncertainty                                0.03      0.14
+  library hold time                                0.01      0.15
+  data required time                                         0.15
+  ------------------------------------------------------------------------
+  data required time                                         0.15
+  data arrival time                                         -0.19
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: u_mac16_top/u_inA/shift_reg_reg[10] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[11] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inA/shift_reg_reg[10]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inA/shift_reg_reg[10]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.16 f
+  copt_h_inst_1272/Y (DLY2X0P5H9R)                 0.08      0.24 f
+  u_mac16_top/u_inA/data_out_reg[11]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.24 f
+  data arrival time                                          0.24
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[11]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.24
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: u_mac16_top/u_inA/shift_reg_reg[9] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[10] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inA/shift_reg_reg[9]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inA/shift_reg_reg[9]/Q (DFFRPQX0P5H9R)
+                                                   0.16      0.16 f
+  copt_h_inst_1276/Y (DLY2X0P5H9R)                 0.08      0.24 f
+  u_mac16_top/u_inA/data_out_reg[10]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.24 f
+  data arrival time                                          0.24
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[10]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.04      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.24
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: u_mac16_top/u_mac/u_mul/product_reg_reg[18] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/last_prod_reg[18] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_mac/u_mul/product_reg_reg[18]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_mac/u_mul/product_reg_reg[18]/Q (DFFRPQX0P5H9R)
+                                                   0.19      0.19 f
+  u_mac16_top/u_mac/last_prod_reg[18]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.19 f
+  data arrival time                                          0.19
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.11      0.11
+  u_mac16_top/u_mac/last_prod_reg[18]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.11 r
+  clock uncertainty                                0.03      0.14
+  library hold time                                0.01      0.14
+  data required time                                         0.14
+  ------------------------------------------------------------------------
+  data required time                                         0.14
+  data arrival time                                         -0.19
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: u_mac16_top/clk_gate_fifo_count_reg/latch (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_fifo_count_reg/main_gate (falling clock gating-check end-point clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (fall edge)                       0.50      0.50
+  clock network delay (propagated)                 0.00      0.50
+
+  u_mac16_top/clk_gate_fifo_count_reg/latch/GN (LATLQX0P5H9R)
+                                                   0.00      0.50 f
+  u_mac16_top/clk_gate_fifo_count_reg/latch/Q (LATLQX0P5H9R)
+                                                   0.08      0.58 r
+  u_mac16_top/clk_gate_fifo_count_reg/main_gate/A (AND2X0P5H9R)
+                                                   0.00      0.58 r
+  data arrival time                                          0.58
+
+  clock core_clk (fall edge)                       0.50      0.50
+  clock network delay (propagated)                 0.01      0.51
+  u_mac16_top/clk_gate_fifo_count_reg/main_gate/B (AND2X0P5H9R)
+                                                   0.00      0.51 f
+  clock uncertainty                                0.03      0.53
+  library hold time                                0.00      0.53
+  data required time                                         0.53
+  ------------------------------------------------------------------------
+  data required time                                         0.53
+  data arrival time                                         -0.58
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: u_mac16_top/u_mac/u_mul/product_reg_reg[21] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/last_prod_reg[21] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_mac/u_mul/product_reg_reg[21]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_mac/u_mul/product_reg_reg[21]/Q (DFFRPQX0P5H9R)
+                                                   0.20      0.20 f
+  u_mac16_top/u_mac/last_prod_reg[21]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.20 f
+  data arrival time                                          0.20
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.11      0.11
+  u_mac16_top/u_mac/last_prod_reg[21]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.11 r
+  clock uncertainty                                0.03      0.14
+  library hold time                                0.01      0.14
+  data required time                                         0.14
+  ------------------------------------------------------------------------
+  data required time                                         0.14
+  data arrival time                                         -0.20
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: u_mac16_top/u_inA/shift_reg_reg[7] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[8] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inA/shift_reg_reg[7]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inA/shift_reg_reg[7]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.15 f
+  copt_h_inst_1274/Y (DLY2X0P5H9R)                 0.09      0.24 f
+  u_mac16_top/u_inA/data_out_reg[8]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.24 f
+  data arrival time                                          0.24
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[8]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.03      0.19
+  data required time                                         0.19
+  ------------------------------------------------------------------------
+  data required time                                         0.19
+  data arrival time                                         -0.24
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: u_mac16_top/u_mac/u_mul/product_reg_reg[15] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/last_prod_reg[15] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_mac/u_mul/product_reg_reg[15]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_mac/u_mul/product_reg_reg[15]/Q (DFFRPQX0P5H9R)
+                                                   0.20      0.20 f
+  u_mac16_top/u_mac/last_prod_reg[15]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.20 f
+  data arrival time                                          0.20
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.11      0.11
+  u_mac16_top/u_mac/last_prod_reg[15]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.11 r
+  clock uncertainty                                0.03      0.14
+  library hold time                                0.01      0.14
+  data required time                                         0.14
+  ------------------------------------------------------------------------
+  data required time                                         0.14
+  data arrival time                                         -0.20
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.06
+
+
+
+  Startpoint: u_mac16_top/clk_gate_sched_cnt_reg/latch (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_sched_cnt_reg/main_gate (falling clock gating-check end-point clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (fall edge)                       0.50      0.50
+  clock network delay (propagated)                 0.00      0.50
+
+  u_mac16_top/clk_gate_sched_cnt_reg/latch/GN (LATLQX0P5H9R)
+                                                   0.00      0.50 f
+  u_mac16_top/clk_gate_sched_cnt_reg/latch/Q (LATLQX0P5H9R)
+                                                   0.08      0.59 r
+  u_mac16_top/clk_gate_sched_cnt_reg/main_gate/A (AND2X0P5H9R)
+                                                   0.00      0.59 r
+  data arrival time                                          0.59
+
+  clock core_clk (fall edge)                       0.50      0.50
+  clock network delay (propagated)                 0.01      0.51
+  u_mac16_top/clk_gate_sched_cnt_reg/main_gate/B (AND2X0P5H9R)
+                                                   0.00      0.51 f
+  clock uncertainty                                0.03      0.53
+  library hold time                                0.00      0.53
+  data required time                                         0.53
+  ------------------------------------------------------------------------
+  data required time                                         0.53
+  data arrival time                                         -0.59
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.06
+
+
+
+  Startpoint: u_mac16_top/u_inB/clk_gate_data_out_reg/latch (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/clk_gate_data_out_reg/main_gate (falling clock gating-check end-point clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (fall edge)                       0.50      0.50
+  clock network delay (propagated)                 0.00      0.50
+
+  u_mac16_top/u_inB/clk_gate_data_out_reg/latch/GN (LATLQX0P5H9R)
+                                                   0.00      0.50 f
+  u_mac16_top/u_inB/clk_gate_data_out_reg/latch/Q (LATLQX0P5H9R)
+                                                   0.08      0.59 r
+  u_mac16_top/u_inB/clk_gate_data_out_reg/main_gate/A (AND2X1H9R)
+                                                   0.00      0.59 r
+  data arrival time                                          0.59
+
+  clock core_clk (fall edge)                       0.50      0.50
+  clock network delay (propagated)                 0.01      0.51
+  u_mac16_top/u_inB/clk_gate_data_out_reg/main_gate/B (AND2X1H9R)
+                                                   0.00      0.51 f
+  clock uncertainty                                0.03      0.53
+  library hold time                                0.00      0.53
+  data required time                                         0.53
+  ------------------------------------------------------------------------
+  data required time                                         0.53
+  data arrival time                                         -0.59
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.06
+
+
+
+  Startpoint: u_mac16_top/u_mac/u_mul/product_reg_reg[7] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/last_prod_reg[7] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_mac/u_mul/product_reg_reg[7]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_mac/u_mul/product_reg_reg[7]/Q (DFFRPQX0P5H9R)
+                                                   0.21      0.22 f
+  u_mac16_top/u_mac/last_prod_reg[7]/D (DFFRQX1H9R)
+                                                   0.00      0.22 f
+  data arrival time                                          0.22
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.11      0.11
+  u_mac16_top/u_mac/last_prod_reg[7]/CK (DFFRQX1H9R)
+                                                   0.00      0.11 r
+  clock uncertainty                                0.03      0.14
+  library hold time                                0.02      0.16
+  data required time                                         0.16
+  ------------------------------------------------------------------------
+  data required time                                         0.16
+  data arrival time                                         -0.22
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.06
+
+
+
+  Startpoint: u_mac16_top/u_inA/clk_gate_data_out_reg/latch (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/clk_gate_data_out_reg/main_gate (falling clock gating-check end-point clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (fall edge)                       0.50      0.50
+  clock network delay (propagated)                 0.00      0.50
+
+  u_mac16_top/u_inA/clk_gate_data_out_reg/latch/GN (LATLQX0P5H9R)
+                                                   0.00      0.50 f
+  u_mac16_top/u_inA/clk_gate_data_out_reg/latch/Q (LATLQX0P5H9R)
+                                                   0.08      0.59 r
+  u_mac16_top/u_inA/clk_gate_data_out_reg/main_gate/A (AND2X1H9R)
+                                                   0.00      0.59 r
+  data arrival time                                          0.59
+
+  clock core_clk (fall edge)                       0.50      0.50
+  clock network delay (propagated)                 0.00      0.50
+  u_mac16_top/u_inA/clk_gate_data_out_reg/main_gate/B (AND2X1H9R)
+                                                   0.00      0.50 f
+  clock uncertainty                                0.03      0.53
+  library hold time                                0.00      0.53
+  data required time                                         0.53
+  ------------------------------------------------------------------------
+  data required time                                         0.53
+  data arrival time                                         -0.59
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.06
+
+
+
+  Startpoint: u_mac16_top/u_mac/u_mul/product_reg_reg[16] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/last_prod_reg[16] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_mac/u_mul/product_reg_reg[16]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_mac/u_mul/product_reg_reg[16]/Q (DFFRPQX0P5H9R)
+                                                   0.20      0.20 f
+  u_mac16_top/u_mac/last_prod_reg[16]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.20 f
+  data arrival time                                          0.20
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.11      0.11
+  u_mac16_top/u_mac/last_prod_reg[16]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.11 r
+  clock uncertainty                                0.03      0.14
+  library hold time                                0.01      0.14
+  data required time                                         0.14
+  ------------------------------------------------------------------------
+  data required time                                         0.14
+  data arrival time                                         -0.20
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.06
+
+
+
+  Startpoint: u_mac16_top/u_mac/u_mul/product_reg_reg[2] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/last_prod_reg[2] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_mac/u_mul/product_reg_reg[2]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_mac/u_mul/product_reg_reg[2]/Q (DFFRPQX0P5H9R)
+                                                   0.20      0.21 f
+  u_mac16_top/u_mac/last_prod_reg[2]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.21 f
+  data arrival time                                          0.21
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.11      0.11
+  u_mac16_top/u_mac/last_prod_reg[2]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.11 r
+  clock uncertainty                                0.03      0.14
+  library hold time                                0.01      0.14
+  data required time                                         0.14
+  ------------------------------------------------------------------------
+  data required time                                         0.14
+  data arrival time                                         -0.21
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.06
+
+
+
+  Startpoint: u_mac16_top/u_inA/shift_reg_reg[8] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[9] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_inA/shift_reg_reg[8]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_inA/shift_reg_reg[8]/Q (DFFRPQX0P5H9R)
+                                                   0.15      0.15 f
+  copt_h_inst_1280/Y (DLY2X0P5H9R)                 0.10      0.25 f
+  u_mac16_top/u_inA/data_out_reg[9]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.25 f
+  data arrival time                                          0.25
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.13      0.13
+  u_mac16_top/u_inA/data_out_reg[9]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.13 r
+  clock uncertainty                                0.03      0.15
+  library hold time                                0.03      0.18
+  data required time                                         0.18
+  ------------------------------------------------------------------------
+  data required time                                         0.18
+  data arrival time                                         -0.25
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.06
+
+
+
+  Startpoint: u_mac16_top/u_mac/u_mul/product_reg_reg[5] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/last_prod_reg[5] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_mac/u_mul/product_reg_reg[5]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_mac/u_mul/product_reg_reg[5]/Q (DFFRPQX0P5H9R)
+                                                   0.21      0.21 f
+  u_mac16_top/u_mac/last_prod_reg[5]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.21 f
+  data arrival time                                          0.21
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.11      0.11
+  u_mac16_top/u_mac/last_prod_reg[5]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.11 r
+  clock uncertainty                                0.03      0.14
+  library hold time                                0.00      0.14
+  data required time                                         0.14
+  ------------------------------------------------------------------------
+  data required time                                         0.14
+  data arrival time                                         -0.21
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.06
+
+
+
+  Startpoint: u_mac16_top/u_mac/u_mul/product_reg_reg[22] (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/last_prod_reg[22] (rising edge-triggered flip-flop clocked by core_clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/u_mac/u_mul/product_reg_reg[22]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.00 r
+  u_mac16_top/u_mac/u_mul/product_reg_reg[22]/Q (DFFRPQX0P5H9R)
+                                                   0.21      0.21 f
+  u_mac16_top/u_mac/last_prod_reg[22]/D (DFFRPQX0P5H9R)
+                                                   0.00      0.21 f
+  data arrival time                                          0.21
+
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.11      0.11
+  u_mac16_top/u_mac/last_prod_reg[22]/CK (DFFRPQX0P5H9R)
+                                                   0.00      0.11 r
+  clock uncertainty                                0.03      0.14
+  library hold time                                0.01      0.14
+  data required time                                         0.14
+  ------------------------------------------------------------------------
+  data required time                                         0.14
+  data arrival time                                         -0.21
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.06
+
+
+1

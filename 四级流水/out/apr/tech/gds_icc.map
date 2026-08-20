@@ -1,0 +1,23 @@
+; ICC2 layer mapping file: <db_layer_number> <gds_layer>:<gds_datatype>
+; derived from ics55.tf layerNumber + PDK icsprout55/gds.map (drawing)
+1 0:1
+2 2:1
+3 7:1
+4 9:1
+5 41:1
+6 52:1
+7 53:1
+8 72:1
+9 81:1
+10 91:1
+11 82:1
+12 92:1
+13 83:1
+14 93:1
+15 84:1
+16 94:1
+17 85:1
+18 113:1
+19 103:1
+20 120:1
+21 123:1

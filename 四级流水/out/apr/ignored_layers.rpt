@@ -1,0 +1,12 @@
+****************************************
+Report : Ignored Layers
+Design : mac16
+Version: V-2023.12
+Date   : Tue Aug 18 14:58:23 2026
+****************************************
+Layer Attribute                 Value
+--------------------------------------------------------------------------------
+Min Routing Layer               MET1
+Max Routing Layer               T4M2
+RC Estimation Ignored Layers    POLY RDL 
+1

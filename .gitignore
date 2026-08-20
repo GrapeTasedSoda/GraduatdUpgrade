@@ -9,3 +9,13 @@ csrc/
 simv
 simv.daidir/
 out/sim/
+
+# FC 布局布线：NDM/CLIBs 可由 fc_apr.tcl 自动重建，不入库
+out/apr/ndm/
+out/apr/CLIBs/
+*.ems
+fc_command.log
+icc2_command.log
+lm_command.log
+fc_output.txt
+icc2_output.txt

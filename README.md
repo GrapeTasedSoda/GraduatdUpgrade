@@ -1,46 +1,114 @@
-# GraduatdUpgrade
+# MAC16 串行乘累加器芯片设计工程
 
-基于全流程国产数字 EDA 系统的 MAC16 芯片设计（55nm、16bit 串行输入 / 24bit 串行输出乘累加器）。
+本工程对应《工程任务和论文.pdf》：基于全流程国产数字 EDA 系统，完成 55nm、输入 16 位、输出 24 位的串行乘累加运算器 MAC16 芯片的 RTL 设计、仿真、逻辑综合、形式验证与后端全流程。
 
-## 目录结构
+## 一、项目目标（摘自任务书）
+
+- 串行输入 `inA` / `inB`（16b，MSB 先入，1Gbps），由 `clk`（1GHz）上升沿采样。
+- 串行输出 `sum_out`（24b，MSB 先出），`out_ready` 同步；无输出时回 0。
+- `carry` 为溢出粘滞位，置 1 后可被 `rst_n` 或 `mode` 切换清除。
+- `mode=0`：输出当前乘积 + 上一状态乘积；`mode=1`：全部状态乘积累加；`mode` 切换时清空内部状态。
+- 指标：`Total Power ≤ 300uW`（挑战 ≤ 100uW）、3 个 PVT corner 在 1GHz 下 setup/hold 均通过、总面积 ≤ 90um×90um、金属层 ≤ 5 层（M1~M4 & TM2）。
+
+## 二、目录结构
 
 ```
-GraduatdUpgrade/
-├── 工程任务和论文.pdf          # 赛题任务书 + Chiplet/DSE 论文调研
-├── 论文/                      # 10 篇 Chiplet + DSE 相关论文 PDF
-├── design_sec/二级流水/        # 早期 2 级流水设计（RTL + testbench）
-├── 四级流水/
-│   ├── design/                # 最终 4 级流水核心 RTL（8 个模块）
-│   ├── testbench/             # 赛题验收 testbench（3 种 mode 组合自动比对）
-│   ├── lib/                   # 浙江创芯 ics55 标准单元库（7 个 PVT corner）
-│   ├── script/                # VCS 仿真 / DC 综合 / Formality 脚本与日志
-│   ├── out/syn/               # DC 综合结果（网表/SDF/SDC/时序/功耗/面积报告）
-│   ├── wave/                  # 前仿真波形（mac16.vpd）
-│   └── docs/                  # 模块层次图与数据通路图（PNG/SVG/DOT）
-└── README.md
+mac16/
+├── 工程任务和论文.pdf     # 任务书 + Chiplet/DSE 论文调研资料
+├── README.md             # 本文件
+├── design/               # 核心 RTL 代码（8 个模块，见下表）
+├── testbench/            # 赛题验收 testbench（3 种 mode 组合自动比对）
+├── script/               # VCS 仿真 Makefile / DC 综合脚本 / Formality 脚本 / SDC
+├── lib/                  # 浙江创芯 ics55 标准单元库（7 个 PVT corner .db）
+├── out/
+│   ├── sim/              # VCS 仿真产物（simv 等）
+│   └── syn/              # DC 综合结果（网表/SDF/SDC/时序/功耗/面积报告）
+├── wave/                 # 仿真波形（mac16.vpd）
+└── docs/                 # 模块图（PNG/SVG + DOT 源文件）
 ```
 
-## 工程现状
+## 三、核心 RTL 模块
+
+| 模块 | 文件 | 功能 |
+| --- | --- | --- |
+| `mac16` | [design/mac16/mac16.v](design/mac16/mac16.v) | 赛题顶层封装，仅暴露题目定义引脚 |
+| `mac16_top` | [design/mac16_top/mac16_top.v](design/mac16_top/mac16_top.v) | 全局调度控制器 + FIFO 数据通路 |
+| `serial_to_parallel` | [design/serial_to_parallel/serial_to_parallel.v](design/serial_to_parallel/serial_to_parallel.v) | 16b 串→并（MSB 先入），×2 实例 |
+| `mac_core` | [design/mac_core/mac_core.v](design/mac_core/mac_core.v) | 乘加核心（mode 0/1、累加、溢出） |
+| `mul_wallace_u16_pipe1` | [design/mul_wallace_u16_pipe1/mul_wallace_u16_pipe1.v](design/mul_wallace_u16_pipe1/mul_wallace_u16_pipe1.v) | 16×16 Wallace 树乘法器，4 级流水 |
+| `csa32` | [design/csa32/csa32.v](design/csa32/csa32.v) | 32b 进位保留加法器，乘法器内 15 实例 |
+| `fulladder` | [design/fulladder/fulladder.v](design/fulladder/fulladder.v) | 1bit 全加器，csa32 内 32 实例（共 480） |
+| `parallel_to_serial` | [design/parallel_to_serial/parallel_to_serial.v](design/parallel_to_serial/parallel_to_serial.v) | 24b 并→串（MSB 先出） |
+
+## 四、模块结构图
+
+### 4.1 模块层次图
+
+```mermaid
+flowchart TD
+    mac16["mac16（赛题顶层封装）"] --> top["mac16_top（全局控制器 + 数据通路调度）"]
+    top --> s2pA["serial_to_parallel u_inA 16b 串→并"]
+    top --> s2pB["serial_to_parallel u_inB 16b 串→并"]
+    top --> core["mac_core 乘加核心"]
+    top --> p2s["parallel_to_serial u_out 24b 并→串"]
+    core --> mul["mul_wallace_u16_pipe1 16×16 Wallace 4级流水"]
+    mul --> st1["Stage1 csa32×5"]
+    mul --> st2["Stage2 csa32×4"]
+    mul --> st3["Stage3 csa32×2"]
+    mul --> st4["Stage4 csa32×2"]
+    mul --> st56["Stage5/6 csa32×2 + 末级加法器"]
+```
+
+高清图：[module_hierarchy.png](docs/images/module_hierarchy.png)（[SVG](docs/images/module_hierarchy.svg)，[DOT 源文件](docs/module_hierarchy.dot)）
+
+### 4.2 数据通路图
+
+```mermaid
+flowchart LR
+    pin["输入引脚 clk/rst_n/mode/inA/inB/in_ready"] --> s2pA["serial_to_parallel u_inA"]
+    pin --> s2pB["serial_to_parallel u_inB"]
+    s2pA --> fifo["操作数 FIFO×4"]
+    s2pB --> fifo
+    fifo --> ctrl["全局调度控制器"]
+    ctrl --> mul["Wallace 16×16 乘法器（4拍）"]
+    mul --> acc["加法/累加器 mode0: prod+last / mode1: accum"]
+    acc --> rfifo["结果 FIFO×4"]
+    rfifo --> p2s["parallel_to_serial 24b 并→串"]
+    p2s --> pout["sum_out / out_ready"]
+    acc --> pout["carry"]
+```
+
+高清图：[datapath.png](docs/images/datapath.png)（[SVG](docs/images/datapath.svg)，[DOT 源文件](docs/datapath.dot)）
+
+## 五、工程现状（依据现有日志/报告）
 
 | 项目 | 结果 |
 | --- | --- |
-| 前仿真（3 种 mode 组合，18 组数据） | `Simulation Passed`（四级流水/script/sim.log） |
-| 逻辑综合（SS/1.08V/125℃/RCWorst） | 完成，无违例（四级流水/script/syn.log） |
-| Total Power | 0.266 mW = 266 µW（≤ 300 µW 达标） |
-| 时序 | setup slack MET、hold slack MET（四级流水/out/syn/） |
-| 形式验证 | Formality 流程与报告（四级流水/script/fm*.log） |
+| 前仿真（3 种 mode 组合，18 组数据） | `Simulation Passed`（见 [script/sim.log](script/sim.log)） |
+| 逻辑综合（SS/1.08V/125℃/RCWorst） | 完成，无违例（见 [script/syn.log](script/syn.log)、[out/syn](out/syn)） |
+| Total Power | 0.266 mW = 266 µW（≤ 300µW 达标；≤ 100µW 待优化） |
+| 综合后面积 | 总 cell 面积 11501.64（[area.rpt](out/syn/area.rpt)） |
+| 时序 | setup slack MET（0.00）、hold slack MET（0.01~0.04） |
+| 形式验证 | Formality 流程与报告位于 [script](script)（fm*.log / formality*.log） |
 
-## 复现步骤
+### 布局布线（Fusion Compiler）状态
+
+- 脚本：[fc_apr.tcl](script/fc_apr.tcl)（NDM 建库（ics55.tf + LEF）→ 布线层 M1~M4+TM2 → 144um die/134um core → PG → place/CTS/route → 报告与 GDS/SPEF 输出，幂等可重跑）
+- 运行日志：[out/apr/fc_apr.log](out/apr/fc_apr.log)，验证报告：[out/apr/fc_apr_report.md](out/apr/fc_apr_report.md)
+- **当前状态：P&R 已完整跑通（0 Error）**。1GHz 下 Setup WNS -0.01ns/TNS -0.04ns（12 条违例）、Hold 1 条 -0.00ns；Cell area 11171µm²；总功耗 720µW；Net DRC 1 条。与赛题指标差距见 [fc_apr_report.md](out/apr/fc_apr_report.md)（功耗/面积超指标、需 3 corner 与 LVS/DRC）。
+- 入库范围：`out/apr/` 下的报告、日志、GDS、网表、SDF、SPEF 与 `tech/` 工艺/寄生文件全部入库；`ndm/`、`CLIBs/`（约 29MB，可由脚本自动重建）及 FC 会话临时文件不入库（见 .gitignore）。
+
+## 六、流程复现
 
 ```bash
 # 1. 前仿真（VCS）
-cd 四级流水/script && make sim
+cd script && make sim        # 需先设置 VCS 环境
 
 # 2. 逻辑综合（DC）
-cd 四级流水/script && dc_shell -f dc_syn.tcl | tee syn.log
+cd script && dc_shell -f dc_syn.tcl | tee syn.log
 
 # 3. 形式验证（Formality）
-cd 四级流水/script && fm_shell -f fm_mac16.tcl | tee fm.log
+cd script && fm_shell -f fm_mac16.tcl | tee fm.log
 ```
 
-> 说明：`lib/` 为标准单元库文件（浙江创芯 ics55，7 个 PVT corner 的 .db），位于 `四级流水/lib/`，综合 / 形式验证脚本通过 `../lib` 相对路径直接引用，克隆后即可运行。
+> 注意：`lib/` 为标准单元库（ics55），`out/`、`wave/`、`script/FM_WORK*` 等为 EDA 工具产物，属任务书要求的“各阶段全部设计数据”，请勿随意删除。
