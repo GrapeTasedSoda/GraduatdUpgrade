@@ -1,0 +1,8 @@
+TDMCHECKPOINT="1.0"
+icsprout55/bipolars.Cat type="category"
+icsprout55/diodes.Cat type="category"
+icsprout55/mosfets.Cat type="category"
+icsprout55/varactors.Cat type="category"
+icsprout55/capacitors.Cat type="category"
+icsprout55/resistors.Cat type="category"
+icsprout55/primitives.Cat type="category"

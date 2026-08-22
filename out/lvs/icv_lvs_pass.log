@@ -1,0 +1,122 @@
+
+                                 IC Validator 
+
+          Version V-2023.12-SP5 for linux64 - Jul 19, 2024 cl#10488941
+
+                    Copyright (c) 1996 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Time Started: 2026-08-22 07:00:56
+Running on: localhost 4.18.0-553.134.1.el8_10.x86_64
+
+-------------
+
+Called as: icv ics55_lvs.rs -i invx.gds -s invx.cdl -sf SPICE
+
+-------------
+
+Command Line Summary:
+icv
+-i invx.gds
+-s invx.cdl
+-sf SPICE
+ics55_lvs.rs
+
+-------------
+unable to set sst options: No such file or directory
+Parsing runset "ics55_lvs.rs"
+
+ics55_lvs.rs:218: warning: ICV LVS device settings currently use append mode. Use command line option '-D ICV_REVERT_DEVICE_SETTING_APPEND_MODE' or runset instruction '#define ICV_REVERT_DEVICE_SETTING_APPEND_MODE' to revert LVS device setting back to overwrite mode in this release.
+ics55_lvs.rs:218: warning: No equiv pair is provided. This can lead to non-optimal LVS performance.
+warning: There were 2 evaluation warnings
+Runset Processing Time=0:00:01 User=1.35 Sys=0.12 Mem=0.411 GB
+
+Parsing finished
+Host startup begins.
+Host startup done: 2 successes, 0 failures.
+	localhost: 2 total cores, maximum 2 commands in parallel.
+Selecting "localhost" as Primary host
+
+System Startup Time=0.0152861 User=0.00699176
+
+Command execution begins.  Details recorded in the summary file and log db: 
+	"/home/user/mac16_lvs_final/run_details/INVX0P5H9R.sum"
+	"/home/user/mac16_lvs_final/run_details/dp.eventdb"
+
+Running ...
+  [0:00:00][0%]   Added 2 CPUs on host localhost (Total: 2 CPUs on 1 hosts)
+  [0:00:00][1%]   Rules: 0/1, Rules with Violations: 0, Total Violations: 0
+  [0:00:00][2%]   
+  [0:00:00][3%]   
+  [0:00:00][4%]   
+  [0:00:00][5%]   
+  [0:00:00][10%]  
+  [0:00:00][15%]  
+  [0:00:00][20%]  
+  [0:00:00][25%]  
+  [0:00:00][30%]  
+  [0:00:00][35%]  
+  [0:00:00][40%]  
+  [0:00:01][45%]  
+  [0:00:01][50%]  
+  [0:00:01][55%]  
+  [0:00:01][60%]  Rules: 1/1, Rules with Violations: 0, Total Violations: 0
+  [0:00:01][65%]  
+  [0:00:01][70%]  
+  [0:00:01][75%]  
+  [0:00:01][80%]  
+  [0:00:01][85%]  
+  [0:00:01][90%]  
+ compare() at ics55_lvs.rs:218
+Comparing schematic and layout netlists.
+LVS compare start time    : 2026-08-22 07:00:59
+  ICV_Compare [0:00:00][0%]
+  ICV_Compare [0:00:00][5%]
+  ICV_Compare [0:00:00][10%]
+  ICV_Compare [0:00:00][15%]
+  ICV_Compare [0:00:00][20%]
+  ICV_Compare [0:00:00][25%]
+  ICV_Compare [0:00:00][30%]
+  ICV_Compare [0:00:00][100%]
+LVS compare end time      : 2026-08-22 07:00:59
+Total runtime for LVS compare Time=0:00:00  User=0.00 Sys=0.01 Mem=0.016 GB
+   Check Time=0:00:00  User=0.00 Sys=0.00 Mem=0.012 GB
+
+
+  [0:00:01][100%] Rules: 1/1, Rules with Violations: 0, Total Violations: 0
+Engine Runtime=0.429152 User=0.0492351
+Error storage stats...
+  User=0.00 Sys=0.00 Mem=0.000 GB
+
+Generating INVX0P5H9R.LAYOUT_ERRORS...
+  Generation Time=0:00:00  User=0.00 Sys=0.00 Mem=0.001 GB
+
+Overall engine Time=0:00:02 Highest command Mem=0.034 GB
+
+-------------
+
+IC Validator Machine Memory Report
+localhost : Average = 0.427 GB, Peak = 0.427 GB
+
+Overall Disk Usage Disk=0.008 GB
+Group File Disk Usage Peak=0.000 GB
+
+Overall Manager Mem=0.411 GB
+
+
+Time Ended: 2026-08-22 07:00:59
+
+IC Validator is done.

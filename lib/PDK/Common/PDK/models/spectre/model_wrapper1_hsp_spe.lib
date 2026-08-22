@@ -1,0 +1,2238 @@
+simulator lang = spectre
+
+library model_wrapper1_hsp
+// * this file contains 1.2v and 3.3v corner model parameters.
+// * five corners are supported: tt_mos, ff_mos, ss_mos, fnsp_mos and snfp_mos.
+// * this file should be used with the model parameter files 'nsvt.mdl', 'nlvt.mdl', 'nhvt.mdl', 'psvt.mdl','plvt.mdl', 'phvt.mdl' , 'nnat1p2_lp.mdl'.
+// * 'nm3p3_lp.mdl', 'pm3p3_lp.mdl', 'nnat3p3_lp.mdl'. 
+// * the "prelayout" is globally changed parameter for mos device, which has been defined as the swith for contact to poly edge parasitic capacitance.
+// * the contact to poly edge parasitic capacitance will be included when the flag of prelayout is set to 1 for pre-layout simulation.
+// * user can include a "pre_layout" library section to set this flag for pre-layout simulation.
+// * please notice that the library "pre_layout" need to be placed behind tt/ff/ss/fnsp/snfp/mos_mc sections to prevent from the redefine(this flag changes back to 0)
+
+section tt
+
+parameters dtoxe_nm1p2_svt_lp = 0    dvth0_nm1p2_svt_lp = 0   
+parameters dxl_nm1p2_svt_lp = 0      dxw_nm1p2_svt_lp = 0     
+parameters dcjs_nm1p2_svt_lp = 0     dcjsws_nm1p2_svt_lp = 0  
+parameters dcjswgs_nm1p2_svt_lp = 0  dcgdo_nm1p2_svt_lp = 0   
+parameters dcgso_nm1p2_svt_lp = 0    dcgdl_nm1p2_svt_lp = 0   
+parameters dcgsl_nm1p2_svt_lp = 0    dcf_nm1p2_svt_lp = 0     
+parameters dlvth0_nm1p2_svt_lp = 0   dpvth0_nm1p2_svt_lp = 0  
+parameters dlu0_nm1p2_svt_lp = 0     dpu0_nm1p2_svt_lp = 0    
+parameters dleta0_nm1p2_svt_lp = 0   dwvth0_nm1p2_svt_lp = 0  
+parameters du0_nm1p2_svt_lp = 0      dwu0_nm1p2_svt_lp = 0    
+parameters dlvsat_nm1p2_svt_lp = 0   dpvsat_nm1p2_svt_lp = 0  
+parameters dpeta0_nm1p2_svt_lp = 0   dvoff_nm1p2_svt_lp = 0   
+parameters da0_nm1p2_svt_lp = 0      dla0_nm1p2_svt_lp = 0    
+parameters dwa0_nm1p2_svt_lp = 0     dpa0_nm1p2_svt_lp = 0    
+parameters dags_nm1p2_svt_lp = 0     dlags_nm1p2_svt_lp = 0   
+parameters dwags_nm1p2_svt_lp = 0    dpags_nm1p2_svt_lp = 0   
+     
+parameters dtoxe_nm1p2_lvt_lp = 0    dxl_nm1p2_lvt_lp = 0     
+parameters dxw_nm1p2_lvt_lp = 0      dvth0_nm1p2_lvt_lp = 0   
+parameters dcjs_nm1p2_lvt_lp = 0     dcjsws_nm1p2_lvt_lp = 0  
+parameters dcjswgs_nm1p2_lvt_lp = 0  dcgdo_nm1p2_lvt_lp = 0   
+parameters dcgso_nm1p2_lvt_lp = 0    dcgdl_nm1p2_lvt_lp = 0   
+parameters dcgsl_nm1p2_lvt_lp = 0    dcf_nm1p2_lvt_lp = 0     
+parameters dlvth0_nm1p2_lvt_lp = 0   dpvth0_nm1p2_lvt_lp = 0  
+parameters dwvth0_nm1p2_lvt_lp = 0   du0_nm1p2_lvt_lp = 0     
+parameters dlu0_nm1p2_lvt_lp = 0     dwu0_nm1p2_lvt_lp = 0    
+parameters dpu0_nm1p2_lvt_lp = 0     dleta0_nm1p2_lvt_lp = 0  
+parameters dpeta0_nm1p2_lvt_lp = 0   dvoff_nm1p2_lvt_lp = 0   
+parameters dvsat_nm1p2_lvt_lp = 0    dwvsat_nm1p2_lvt_lp = 0  
+parameters dlvsat_nm1p2_lvt_lp = 0   dpvsat_nm1p2_lvt_lp = 0  
+    
+parameters dxl_pm1p2_svt_lp = 0      dxw_pm1p2_svt_lp = 0     
+parameters dvoff_pm1p2_svt_lp = 0    dvth0_pm1p2_svt_lp = 0   
+parameters dlvth0_pm1p2_svt_lp = 0   dwvth0_pm1p2_svt_lp = 0  
+parameters dpvth0_pm1p2_svt_lp = 0   du0_pm1p2_svt_lp = 0     
+parameters dlu0_pm1p2_svt_lp = 0     dwu0_pm1p2_svt_lp = 0    
+parameters dpu0_pm1p2_svt_lp = 0     dlvsat_pm1p2_svt_lp = 0  
+parameters dpvsat_pm1p2_svt_lp = 0   dleta0_pm1p2_svt_lp = 0  
+parameters dpeta0_pm1p2_svt_lp = 0   dcgso_pm1p2_svt_lp = 0   
+parameters dcgdo_pm1p2_svt_lp = 0    dcgsl_pm1p2_svt_lp = 0   
+parameters dcgdl_pm1p2_svt_lp = 0    dcf_pm1p2_svt_lp = 0     
+parameters dcjs_pm1p2_svt_lp = 0     dcjsws_pm1p2_svt_lp = 0  
+parameters dcjswgs_pm1p2_svt_lp = 0  dags_pm1p2_svt_lp = 0    
+parameters dwags_pm1p2_svt_lp = 0    dtoxe_pm1p2_svt_lp = 0   
+    
+parameters dtoxe_pm1p2_lvt_lp = 0    dxl_pm1p2_lvt_lp = 0     
+parameters dpvsat_pm1p2_lvt_lp = 0   dxw_pm1p2_lvt_lp = 0     
+parameters dvoff_pm1p2_lvt_lp = 0    dvth0_pm1p2_lvt_lp = 0   
+parameters dlvth0_pm1p2_lvt_lp = 0   dwvth0_pm1p2_lvt_lp = 0  
+parameters dpvth0_pm1p2_lvt_lp = 0   du0_pm1p2_lvt_lp = 0     
+parameters dlu0_pm1p2_lvt_lp = 0     dwu0_pm1p2_lvt_lp = 0    
+parameters dpu0_pm1p2_lvt_lp = 0     deta0_pm1p2_lvt_lp = 0   
+parameters dpeta0_pm1p2_lvt_lp = 0   dcgso_pm1p2_lvt_lp = 0   
+parameters dcgdo_pm1p2_lvt_lp = 0    dcgsl_pm1p2_lvt_lp = 0   
+parameters dcgdl_pm1p2_lvt_lp = 0    dcf_pm1p2_lvt_lp = 0     
+parameters dcjs_pm1p2_lvt_lp = 0     dcjsws_pm1p2_lvt_lp = 0  
+parameters dcjswgs_pm1p2_lvt_lp = 0  dags_pm1p2_lvt_lp = 0    
+parameters dwags_pm1p2_lvt_lp = 0    dpags_pm1p2_lvt_lp = 0   
+parameters dvsat_pm1p2_lvt_lp = 0   
+ 
+// *------- nm1p2_hvt_lp tt corner -------
+parameters dtoxe_nm1p2_hvt_lp = 0    dxl_nm1p2_hvt_lp = 0     
+parameters dxw_nm1p2_hvt_lp = 0      dvth0_nm1p2_hvt_lp = 0   
+parameters dlvth0_nm1p2_hvt_lp = 0   dwvth0_nm1p2_hvt_lp = 0  
+parameters dpvth0_nm1p2_hvt_lp = 0   du0_nm1p2_hvt_lp = 0     
+parameters dlu0_nm1p2_hvt_lp = 0     dwu0_nm1p2_hvt_lp = 0    
+parameters dpu0_nm1p2_hvt_lp = 0     dvsat_nm1p2_hvt_lp = 0   
+parameters dpvsat_nm1p2_hvt_lp = 0   deta0_nm1p2_hvt_lp = 0   
+parameters dleta0_nm1p2_hvt_lp = 0   dpeta0_nm1p2_hvt_lp = 0  
+parameters dcgdo_nm1p2_hvt_lp = 0    dcgso_nm1p2_hvt_lp = 0   
+parameters dcgdl_nm1p2_hvt_lp = 0    dcgsl_nm1p2_hvt_lp = 0   
+parameters dcf_nm1p2_hvt_lp = 0      dcjs_nm1p2_hvt_lp = 0    
+parameters dcjsws_nm1p2_hvt_lp = 0   dcjswgs_nm1p2_hvt_lp = 0 
+parameters dlvsat_nm1p2_hvt_lp = 0   ddsub_nm1p2_hvt_lp = 0   
+parameters dldsub_nm1p2_hvt_lp = 0   dpdsub_nm1p2_hvt_lp = 0  
+parameters dvoff_nm1p2_hvt_lp = 0    dlvoff_nm1p2_hvt_lp = 0  
+parameters dwvoff_nm1p2_hvt_lp = 0   dpvoff_nm1p2_hvt_lp = 0  
+parameters djtsswgs_nm1p2_hvt_lp = 0 dlnfactor_nm1p2_hvt_lp = 0
+parameters dpnfactor_nm1p2_hvt_lp = 0 dpa0_nm1p2_hvt_lp = 0    
+parameters dwminv_nm1p2_hvt_lp = 0   da0_nm1p2_hvt_lp = 0     
+parameters dla0_nm1p2_hvt_lp = 0     dwa0_nm1p2_hvt_lp = 0    
+parameters dagidl_nm1p2_hvt_lp = 0  
+
+// *------- pm1p2_hvt_lp tt corner -------
+parameters dtoxe_pm1p2_hvt_lp = 0    dxl_pm1p2_hvt_lp = 0     
+parameters dxw_pm1p2_hvt_lp = 0      dvoff_pm1p2_hvt_lp = 0   
+parameters dtvoff_pm1p2_hvt_lp = 0   dvth0_pm1p2_hvt_lp = 0   
+parameters dlvth0_pm1p2_hvt_lp = 0   dwvth0_pm1p2_hvt_lp = 0  
+parameters dpvth0_pm1p2_hvt_lp = 0   du0_pm1p2_hvt_lp = 0     
+parameters dlu0_pm1p2_hvt_lp = 0     dpu0_pm1p2_hvt_lp = 0    
+parameters dleta0_pm1p2_hvt_lp = 0   dpeta0_pm1p2_hvt_lp = 0  
+parameters dcgso_pm1p2_hvt_lp = 0    dcgdo_pm1p2_hvt_lp = 0   
+parameters dcgsl_pm1p2_hvt_lp = 0    dcgdl_pm1p2_hvt_lp = 0   
+parameters dcf_pm1p2_hvt_lp = 0      dcjs_pm1p2_hvt_lp = 0    
+parameters dcjsws_pm1p2_hvt_lp = 0   dcjswgs_pm1p2_hvt_lp = 0 
+parameters djtsswgd_pm1p2_hvt_lp = 0 djtsswgs_pm1p2_hvt_lp = 0
+parameters dags_pm1p2_hvt_lp = 0     dlags_pm1p2_hvt_lp = 0   
+parameters dvsat_pm1p2_hvt_lp = 0    dpvsat_pm1p2_hvt_lp = 0  
+
+// *------- nnat1p2_lp tt corner -------
+parameters dtoxe_nnat1p2_lp = 0      dxl_nnat1p2_lp = 0       
+parameters dxw_nnat1p2_lp = 0        dvth0_nnat1p2_lp = 0     
+parameters dlvth0_nnat1p2_lp = 0     dpvth0_nnat1p2_lp = 0    
+parameters du0_nnat1p2_lp = 0        dlu0_nnat1p2_lp = 0      
+parameters dwu0_nnat1p2_lp = 0       dpu0_nnat1p2_lp = 0      
+parameters dags_nnat1p2_lp = 0       dlags_nnat1p2_lp = 0     
+parameters dpags_nnat1p2_lp = 0      dvoff_nnat1p2_lp = 0     
+parameters dcgso_nnat1p2_lp = 0      dcgdo_nnat1p2_lp = 0     
+parameters dcf_nnat1p2_lp = 0        dcgsl_nnat1p2_lp = 0     
+parameters dcgdl_nnat1p2_lp = 0      dcjs_nnat1p2_lp = 0      
+parameters dcjsws_nnat1p2_lp = 0     dcjswgs_nnat1p2_lp = 0   
+parameters dwvth0_nnat1p2_lp = 0     dwags_nnat1p2_lp = 0     
+
+// *------- nm3p3_lp tt corner -------
+parameters dvth0_nm3p3_lp = 0        dlvth0_nm3p3_lp = 0      
+parameters dwvth0_nm3p3_lp = 0       dpvth0_nm3p3_lp = 0      
+parameters ddsub_nm3p3_lp = 0        dldsub_nm3p3_lp = 0      
+parameters dwdsub_nm3p3_lp = 0       dpdsub_nm3p3_lp = 0      
+parameters du0_nm3p3_lp = 0          dlu0_nm3p3_lp = 0        
+parameters dwu0_nm3p3_lp = 0         dpu0_nm3p3_lp = 0        
+parameters dvsat_nm3p3_lp = 0        dlvsat_nm3p3_lp = 0      
+parameters dwvsat_nm3p3_lp = 0       dpvsat_nm3p3_lp = 0      
+parameters dags_nm3p3_lp = 0         dlags_nm3p3_lp = 0       
+parameters dwags_nm3p3_lp = 0        dpags_nm3p3_lp = 0       
+parameters ddvt0_nm3p3_lp = 0        dldvt0_nm3p3_lp = 0      
+parameters dpdvt0_nm3p3_lp = 0       dlpe0_nm3p3_lp = 0       
+parameters dllpe0_nm3p3_lp = 0       dplpe0_nm3p3_lp = 0      
+parameters dcf_nm3p3_lp = 0          dlcf_nm3p3_lp = 0        
+parameters dwcf_nm3p3_lp = 0         dpcf_nm3p3_lp = 0        
+parameters ddtox_nm3p3_lp = 0        dcgso_nm3p3_lp = 0       
+parameters dcgdo_nm3p3_lp = 0        dcjs_nm3p3_lp = 0        
+parameters dcjsws_nm3p3_lp = 0       dcjswgs_nm3p3_lp = 0     
+parameters dcgdl_nm3p3_lp = 0        dcgsl_nm3p3_lp = 0       
+// *------- pm3p3_lp tt corner -------
+parameters dtoxe_pm3p3_lp = 0        dtoxp_pm3p3_lp = 0       
+parameters dxl_pm3p3_lp = 0          dxw_pm3p3_lp = 0         
+parameters dvth0_pm3p3_lp = 0        dcjs_pm3p3_lp = 0        
+parameters dcjsws_pm3p3_lp = 0       dcjswgs_pm3p3_lp = 0     
+parameters dcgdo_pm3p3_lp = 0        dcgso_pm3p3_lp = 0       
+parameters dcgdl_pm3p3_lp = 0        dcgsl_pm3p3_lp = 0       
+parameters dcf_pm3p3_lp = 0          dlvth0_pm3p3_lp = 0      
+parameters dpvth0_pm3p3_lp = 0       dlu0_pm3p3_lp = 0        
+parameters dpu0_pm3p3_lp = 0         dlcit_pm3p3_lp = 0       
+parameters dpcit_pm3p3_lp = 0        dwcit_pm3p3_lp = 0       
+parameters dwvth0_pm3p3_lp = 0       dvoff_pm3p3_lp = 0       
+parameters ddvt0_pm3p3_lp = 0        deta0_pm3p3_lp = 0       
+parameters dwu0_pm3p3_lp = 0         dwa0_pm3p3_lp = 0        
+parameters dpeta0_pm3p3_lp = 0       dweta0_pm3p3_lp = 0      
+parameters dpa0_pm3p3_lp = 0         dpags_pm3p3_lp = 0       
+parameters dla0_pm3p3_lp = 0         dlvsat_pm3p3_lp = 0      
+parameters dwvsat_pm3p3_lp = 0       dpvsat_pm3p3_lp = 0      
+parameters dlvoff_pm3p3_lp = 0       dwvoff_pm3p3_lp = 0      
+parameters dpvoff_pm3p3_lp = 0       dagidl_pm3p3_lp = 0      
+parameters du0_pm3p3_lp = 0         
+// *------- nnat3p3_lp tt corner -------
+parameters dtoxe_nnat3p3_lp = 0      dxl_nnat3p3_lp = 0       
+parameters dxw_nnat3p3_lp = 0        dvth0_nnat3p3_lp = 0     
+parameters dlvth0_nnat3p3_lp = 0     dwvth0_nnat3p3_lp = 0    
+parameters dpvth0_nnat3p3_lp = 0     du0_nnat3p3_lp = 0       
+parameters dlu0_nnat3p3_lp = 0       dwu0_nnat3p3_lp = 0      
+parameters dpu0_nnat3p3_lp = 0       dvsat_nnat3p3_lp = 0     
+parameters dlvsat_nnat3p3_lp = 0     dpvsat_nnat3p3_lp = 0    
+parameters dcgso_nnat3p3_lp = 0      dcgdo_nnat3p3_lp = 0     
+parameters dcf_nnat3p3_lp = 0        dcgsl_nnat3p3_lp = 0     
+parameters dcgdl_nnat3p3_lp = 0      dcjs_nnat3p3_lp = 0      
+parameters dcjsws_nnat3p3_lp = 0     dcjswgs_nnat3p3_lp = 0   
+    
+
+
+
+endsection tt
+
+
+section ff
+
+parameters dtoxe_nm1p2_svt_lp = (-4.8e-11)*corner_ratio
+parameters dvth0_nm1p2_svt_lp = (-0.042000000)*corner_ratio
+parameters dxl_nm1p2_svt_lp = (-1e-009)*corner_ratio
+parameters dxw_nm1p2_svt_lp = (2e-009)*corner_ratio
+parameters dcjs_nm1p2_svt_lp = (-4.72e-5)*corner_ratio
+parameters dcjsws_nm1p2_svt_lp = (-9.08e-16)*corner_ratio
+parameters dcjswgs_nm1p2_svt_lp = (-1.33e-11)*corner_ratio
+parameters dcgdo_nm1p2_svt_lp = (3.75e-12)*corner_ratio
+parameters dcgso_nm1p2_svt_lp = (3.75e-12)*corner_ratio
+parameters dcgdl_nm1p2_svt_lp = (3.35e-12)*corner_ratio
+parameters dcgsl_nm1p2_svt_lp = (3.35e-12)*corner_ratio
+parameters dcf_nm1p2_svt_lp = (4.145e-12)*corner_ratio
+parameters dlvth0_nm1p2_svt_lp = (-2.82e-9)*corner_ratio
+parameters dpvth0_nm1p2_svt_lp = (6.0000000e-18)*corner_ratio
+parameters dlu0_nm1p2_svt_lp = (4.8000000e-11)*corner_ratio
+parameters dpu0_nm1p2_svt_lp = (-8.0e-18)*corner_ratio
+parameters dleta0_nm1p2_svt_lp = (0)*corner_ratio
+parameters dwvth0_nm1p2_svt_lp = (-5.8e-9)*corner_ratio
+parameters du0_nm1p2_svt_lp = (5.7562836e-5)*corner_ratio
+parameters dwu0_nm1p2_svt_lp = (-8.5e-11)*corner_ratio
+parameters dlvsat_nm1p2_svt_lp = (-1.0e-5)*corner_ratio
+parameters dpvsat_nm1p2_svt_lp = (-4.9e-12)*corner_ratio
+parameters dpeta0_nm1p2_svt_lp = (0)*corner_ratio
+parameters dvoff_nm1p2_svt_lp = (0)*corner_ratio
+parameters da0_nm1p2_svt_lp = (0)*corner_ratio
+parameters dla0_nm1p2_svt_lp = (0)*corner_ratio
+parameters dwa0_nm1p2_svt_lp = (0)*corner_ratio
+parameters dpa0_nm1p2_svt_lp = (0)*corner_ratio
+parameters dags_nm1p2_svt_lp = (-0.015)*corner_ratio
+parameters dlags_nm1p2_svt_lp = (-6.0e-8)*corner_ratio
+parameters dwags_nm1p2_svt_lp = (1.0e-11)*corner_ratio
+parameters dpags_nm1p2_svt_lp = (1.46e-15)*corner_ratio
+
+parameters dtoxe_nm1p2_lvt_lp = (-4.8e-011)*corner_ratio
+parameters dxl_nm1p2_lvt_lp = (-1.0e-9)*corner_ratio
+parameters dxw_nm1p2_lvt_lp = (2.0e-9)*corner_ratio
+parameters dvth0_nm1p2_lvt_lp = (-0.041)*corner_ratio
+parameters dcjs_nm1p2_lvt_lp = (-4.33e-005)*corner_ratio
+parameters dcjsws_nm1p2_lvt_lp = (-4.4e-16)*corner_ratio
+parameters dcjswgs_nm1p2_lvt_lp = (-1.075e-11)*corner_ratio
+parameters dcgdo_nm1p2_lvt_lp = (4.3419e-12)*corner_ratio
+parameters dcgso_nm1p2_lvt_lp = (4.3419e-12)*corner_ratio
+parameters dcgdl_nm1p2_lvt_lp = (5.0290e-12)*corner_ratio
+parameters dcgsl_nm1p2_lvt_lp = (5.0290e-12)*corner_ratio
+parameters dcf_nm1p2_lvt_lp = (3.2150e-12)*corner_ratio
+parameters dlvth0_nm1p2_lvt_lp = (-1.975e-9)*corner_ratio
+parameters dpvth0_nm1p2_lvt_lp = (-1.1e-16)*corner_ratio
+parameters dwvth0_nm1p2_lvt_lp = (-3.8e-9)*corner_ratio
+parameters du0_nm1p2_lvt_lp = (3.9e-4)*corner_ratio
+parameters dlu0_nm1p2_lvt_lp = (2.5200000e-10)*corner_ratio
+parameters dwu0_nm1p2_lvt_lp = (4.55e-11)*corner_ratio
+parameters dpu0_nm1p2_lvt_lp = (-1.3000000e-17)*corner_ratio
+parameters dleta0_nm1p2_lvt_lp = (0)*corner_ratio
+parameters dpeta0_nm1p2_lvt_lp = (0)*corner_ratio
+parameters dvoff_nm1p2_lvt_lp = (0)*corner_ratio
+parameters dvsat_nm1p2_lvt_lp = (-2280.0)*corner_ratio
+parameters dwvsat_nm1p2_lvt_lp = (5.0e-4)*corner_ratio
+parameters dlvsat_nm1p2_lvt_lp = (2.8e-4)*corner_ratio
+parameters dpvsat_nm1p2_lvt_lp = (0)*corner_ratio
+
+parameters dtoxe_pm1p2_svt_lp = (-4.8e-11)*corner_ratio
+parameters dxl_pm1p2_svt_lp = (-1e-009)*corner_ratio
+parameters dxw_pm1p2_svt_lp = (2e-009)*corner_ratio
+parameters dvoff_pm1p2_svt_lp = (0)*corner_ratio
+parameters dvth0_pm1p2_svt_lp = (0.041)*corner_ratio
+parameters dlvth0_pm1p2_svt_lp = (1.77000e-09)*corner_ratio
+parameters dwvth0_pm1p2_svt_lp = (3.8e-9)*corner_ratio
+parameters dpvth0_pm1p2_svt_lp = (6.5e-16)*corner_ratio
+parameters du0_pm1p2_svt_lp = (-2.2e-5)*corner_ratio
+parameters dlu0_pm1p2_svt_lp = (4.0e-11)*corner_ratio
+parameters dwu0_pm1p2_svt_lp = (4.7e-11)*corner_ratio
+parameters dpu0_pm1p2_svt_lp = (-1.0e-17)*corner_ratio
+parameters dlvsat_pm1p2_svt_lp = (2.0e-5)*corner_ratio
+parameters dpvsat_pm1p2_svt_lp = (4.15e-11)*corner_ratio
+parameters dleta0_pm1p2_svt_lp = (0)*corner_ratio
+parameters dpeta0_pm1p2_svt_lp = (0)*corner_ratio
+parameters dcgso_pm1p2_svt_lp = (7.12e-12)*corner_ratio
+parameters dcgdo_pm1p2_svt_lp = (7.12e-12)*corner_ratio
+parameters dcgsl_pm1p2_svt_lp = (3e-12)*corner_ratio
+parameters dcgdl_pm1p2_svt_lp = (3e-12)*corner_ratio
+parameters dcf_pm1p2_svt_lp = (4.125e-12)*corner_ratio
+parameters dcjs_pm1p2_svt_lp = (-5.05e-5)*corner_ratio
+parameters dcjsws_pm1p2_svt_lp = (-9.98e-14)*corner_ratio
+parameters dcjswgs_pm1p2_svt_lp = (-1.418e-11)*corner_ratio
+parameters dags_pm1p2_svt_lp = (-0.037)*corner_ratio
+parameters dwags_pm1p2_svt_lp = (-1.05e-8)*corner_ratio
+parameters dtoxe_pm1p2_lvt_lp = (-4.8e-011)*corner_ratio
+parameters dxl_pm1p2_lvt_lp = (-1.0e-9)*corner_ratio
+parameters dxw_pm1p2_lvt_lp = (2e-009)*corner_ratio
+parameters dvoff_pm1p2_lvt_lp = (0)*corner_ratio
+parameters dvth0_pm1p2_lvt_lp = (0.0424)*corner_ratio
+parameters dlvth0_pm1p2_lvt_lp = (1.89e-9)*corner_ratio
+parameters dwvth0_pm1p2_lvt_lp = (2.6e-9)*corner_ratio
+parameters dpvth0_pm1p2_lvt_lp = (4.316e-16)*corner_ratio
+parameters du0_pm1p2_lvt_lp = (0.00019048000)*corner_ratio
+parameters dlu0_pm1p2_lvt_lp = (-2.68e-11)*corner_ratio
+parameters dwu0_pm1p2_lvt_lp = (-1.518e-12)*corner_ratio
+parameters dpu0_pm1p2_lvt_lp = (-3.2000000e-18)*corner_ratio
+parameters deta0_pm1p2_lvt_lp = (0)*corner_ratio
+parameters dpeta0_pm1p2_lvt_lp = (-3.40200e-18)*corner_ratio
+parameters dcgso_pm1p2_lvt_lp = (8.37e-12)*corner_ratio
+parameters dcgdo_pm1p2_lvt_lp = (8.37e-12)*corner_ratio
+parameters dcgsl_pm1p2_lvt_lp = (4.86e-12)*corner_ratio
+parameters dcgdl_pm1p2_lvt_lp = (4.86e-12)*corner_ratio
+parameters dcf_pm1p2_lvt_lp = (3.215e-12)*corner_ratio
+parameters dcjs_pm1p2_lvt_lp = (-5.180e-5)*corner_ratio
+parameters dcjsws_pm1p2_lvt_lp = (-6.980e-14)*corner_ratio
+parameters dcjswgs_pm1p2_lvt_lp = (-1.005e-11)*corner_ratio
+parameters dags_pm1p2_lvt_lp = (0)*corner_ratio
+parameters dwags_pm1p2_lvt_lp = (0)*corner_ratio
+parameters dpags_pm1p2_lvt_lp = (-8.0000000e-15)*corner_ratio
+parameters dvsat_pm1p2_lvt_lp = (0)*corner_ratio
+parameters dpvsat_pm1p2_lvt_lp = (5.5e-11)*corner_ratio
+
+// *1.2v hvt core nmos (ff corner)
+parameters dtoxe_nm1p2_hvt_lp = (-4.8e-11)*corner_ratio
+parameters dxl_nm1p2_hvt_lp = (-1.0e-9)*corner_ratio
+parameters dxw_nm1p2_hvt_lp = (2.0e-9)*corner_ratio
+parameters dvth0_nm1p2_hvt_lp = (-0.044)*corner_ratio
+parameters dlvth0_nm1p2_hvt_lp = (-1.8e-9)*corner_ratio
+parameters dwvth0_nm1p2_hvt_lp = (-5.8e-10)*corner_ratio
+parameters dpvth0_nm1p2_hvt_lp = (-2.2e-16)*corner_ratio
+parameters du0_nm1p2_hvt_lp = (-5.0e-4)*corner_ratio
+parameters dlu0_nm1p2_hvt_lp = (1.0e-12)*corner_ratio
+parameters dwu0_nm1p2_hvt_lp = (2.0e-11)*corner_ratio
+parameters dpu0_nm1p2_hvt_lp = (10e-19)*corner_ratio
+parameters dvsat_nm1p2_hvt_lp = (-2e3)*corner_ratio
+parameters dpvsat_nm1p2_hvt_lp = (-1.0e-11)*corner_ratio
+parameters deta0_nm1p2_hvt_lp = (0.01)*corner_ratio
+parameters dleta0_nm1p2_hvt_lp = (0)*corner_ratio
+parameters dpeta0_nm1p2_hvt_lp = (0)*corner_ratio
+parameters dcgdo_nm1p2_hvt_lp = (1.0000e-11)*corner_ratio
+parameters dcgso_nm1p2_hvt_lp = (1.0000e-11)*corner_ratio
+parameters dcgdl_nm1p2_hvt_lp = (2.4075e-12)*corner_ratio
+parameters dcgsl_nm1p2_hvt_lp = (2.4075e-12)*corner_ratio
+parameters dcf_nm1p2_hvt_lp = (4.125e-12)*corner_ratio
+parameters dcjs_nm1p2_hvt_lp = (-6.31e-05)*corner_ratio
+parameters dcjsws_nm1p2_hvt_lp = (-1.51e-15)*corner_ratio
+parameters dcjswgs_nm1p2_hvt_lp = (-1.4550e-11)*corner_ratio
+parameters dlvsat_nm1p2_hvt_lp = (0)*corner_ratio
+parameters ddsub_nm1p2_hvt_lp = (0)*corner_ratio
+parameters dldsub_nm1p2_hvt_lp = (0)*corner_ratio
+parameters dpdsub_nm1p2_hvt_lp = (0)*corner_ratio
+parameters dvoff_nm1p2_hvt_lp = (0)*corner_ratio
+parameters dlvoff_nm1p2_hvt_lp = (0)*corner_ratio
+parameters dwvoff_nm1p2_hvt_lp = (0)*corner_ratio
+parameters dpvoff_nm1p2_hvt_lp = (0)*corner_ratio
+parameters djtsswgs_nm1p2_hvt_lp = (1.0)*corner_ratio
+parameters dlnfactor_nm1p2_hvt_lp = (-7.1e-9)*corner_ratio
+parameters dpnfactor_nm1p2_hvt_lp = (-6.0e-15)*corner_ratio
+parameters dpa0_nm1p2_hvt_lp = (3.5e-21)*corner_ratio
+parameters dwminv_nm1p2_hvt_lp = (0)*corner_ratio
+parameters da0_nm1p2_hvt_lp = (-0.05)*corner_ratio
+parameters dla0_nm1p2_hvt_lp = (0)*corner_ratio
+parameters dwa0_nm1p2_hvt_lp = (0)*corner_ratio
+parameters dagidl_nm1p2_hvt_lp = (0)*corner_ratio
+
+// *1.2v hvt core pmos (ff corner)
+parameters dtoxe_pm1p2_hvt_lp = (-4.8e-011)*corner_ratio
+parameters dxl_pm1p2_hvt_lp = (-1e-009)*corner_ratio
+parameters dxw_pm1p2_hvt_lp = (2e-009)*corner_ratio
+parameters dvoff_pm1p2_hvt_lp = (0)*corner_ratio
+parameters dtvoff_pm1p2_hvt_lp = (-2.6e-3)*corner_ratio
+parameters dvth0_pm1p2_hvt_lp = (0.0382000)*corner_ratio
+parameters dlvth0_pm1p2_hvt_lp = (1.57e-009)*corner_ratio
+parameters dwvth0_pm1p2_hvt_lp = (1.6e-009)*corner_ratio
+parameters dpvth0_pm1p2_hvt_lp = (1.69670e-15)*corner_ratio
+parameters du0_pm1p2_hvt_lp = ( 0*corner_ratio) + 5e-5
+parameters dlu0_pm1p2_hvt_lp = (3.59640e-12)*corner_ratio
+parameters dpu0_pm1p2_hvt_lp = (-3.12797e-18)*corner_ratio
+parameters dleta0_pm1p2_hvt_lp = (0)*corner_ratio
+parameters dpeta0_pm1p2_hvt_lp = (0)*corner_ratio
+parameters dcf_pm1p2_hvt_lp = (4.08e-012)*corner_ratio
+parameters dcjs_pm1p2_hvt_lp = (-5.07e-05)*corner_ratio
+parameters dcjsws_pm1p2_hvt_lp = (-8.67e-14)*corner_ratio
+parameters dcjswgs_pm1p2_hvt_lp = (-1.6070e-11)*corner_ratio
+parameters dcgso_pm1p2_hvt_lp = (7.1200e-12)*corner_ratio
+parameters dcgdo_pm1p2_hvt_lp = (7.1200e-12)*corner_ratio
+parameters dcgsl_pm1p2_hvt_lp = (2.0500e-12)*corner_ratio
+parameters dcgdl_pm1p2_hvt_lp = (2.0500e-12)*corner_ratio
+parameters djtsswgd_pm1p2_hvt_lp = (2e-008)*corner_ratio
+parameters djtsswgs_pm1p2_hvt_lp = (2e-008)*corner_ratio
+parameters dags_pm1p2_hvt_lp = 0.013*corner_ratio
+parameters dlags_pm1p2_hvt_lp = (0)*corner_ratio
+parameters dvsat_pm1p2_hvt_lp = (4550.0)*corner_ratio
+parameters dpvsat_pm1p2_hvt_lp = (-2.000e-11)*corner_ratio
+
+// *1.2v native nmos (ff corner) 
+parameters dtoxe_nnat1p2_lp = (-4.8e-11)*corner_ratio
+parameters dxl_nnat1p2_lp = (-1e-9)*corner_ratio
+parameters dxw_nnat1p2_lp = (2e-9)*corner_ratio
+parameters dvth0_nnat1p2_lp = (-0.029000000)*corner_ratio
+parameters dlvth0_nnat1p2_lp = (-6.7e-9)*corner_ratio
+parameters dpvth0_nnat1p2_lp = (1.6e-16)*corner_ratio
+parameters du0_nnat1p2_lp = (2.16e-4)*corner_ratio
+parameters dlu0_nnat1p2_lp = (-4.5000000e-11)*corner_ratio
+parameters dwu0_nnat1p2_lp = (1.32e-10)*corner_ratio
+parameters dpu0_nnat1p2_lp = (-3.478e-17)*corner_ratio
+parameters dags_nnat1p2_lp = (-0.023200000)*corner_ratio
+parameters dlags_nnat1p2_lp = (0)*corner_ratio
+parameters dpags_nnat1p2_lp = (2.0e-14)*corner_ratio
+parameters dvoff_nnat1p2_lp = (0)*corner_ratio
+parameters dcgso_nnat1p2_lp = (1.2500e-11)*corner_ratio
+parameters dcgdo_nnat1p2_lp = (1.2500e-11)*corner_ratio
+parameters dcf_nnat1p2_lp = (4.135e-12)*corner_ratio
+parameters dcgsl_nnat1p2_lp = (1.5000e-12)*corner_ratio
+parameters dcgdl_nnat1p2_lp = (1.5000e-12)*corner_ratio
+parameters dcjs_nnat1p2_lp = (-4.79e-06)*corner_ratio
+parameters dcjsws_nnat1p2_lp = (-2.74e-12)*corner_ratio
+parameters dcjswgs_nnat1p2_lp = (-1.5499e-12)*corner_ratio
+parameters dwvth0_nnat1p2_lp = (0)*corner_ratio
+parameters dwags_nnat1p2_lp = (0)*corner_ratio
+
+// *3.3v io nmos (ff corner)
+parameters dvth0_nm3p3_lp = (-0.058)*corner_ratio
+parameters dlvth0_nm3p3_lp = (-3.0e-9)*corner_ratio
+parameters dwvth0_nm3p3_lp = (1.0e-10)*corner_ratio
+parameters dpvth0_nm3p3_lp = (-2.1e-15)*corner_ratio
+parameters ddsub_nm3p3_lp = (0)*corner_ratio
+parameters dldsub_nm3p3_lp = (0)*corner_ratio
+parameters dwdsub_nm3p3_lp = (0)*corner_ratio
+parameters dpdsub_nm3p3_lp = (0)*corner_ratio
+parameters du0_nm3p3_lp = (1.0e-4)*corner_ratio
+parameters dlu0_nm3p3_lp = (1.1e-9)*corner_ratio
+parameters dwu0_nm3p3_lp = (2.2e-10)*corner_ratio
+parameters dpu0_nm3p3_lp = (4.0e-16)*corner_ratio
+parameters dvsat_nm3p3_lp = (5000.0)*corner_ratio
+parameters dlvsat_nm3p3_lp = (0)*corner_ratio
+parameters dwvsat_nm3p3_lp = (0)*corner_ratio
+parameters dpvsat_nm3p3_lp = (1.0e-10)*corner_ratio
+parameters dags_nm3p3_lp = (0.002)*corner_ratio
+parameters dlags_nm3p3_lp = (9.0e-9)*corner_ratio
+parameters dwags_nm3p3_lp = (0)*corner_ratio
+parameters dpags_nm3p3_lp = (3.0e-15)*corner_ratio
+parameters ddvt0_nm3p3_lp = (0.025)*corner_ratio
+parameters dldvt0_nm3p3_lp = (0)*corner_ratio
+parameters dpdvt0_nm3p3_lp = (0)*corner_ratio
+parameters dlpe0_nm3p3_lp = (5.0e-9)*corner_ratio
+parameters dllpe0_nm3p3_lp = (0)*corner_ratio
+parameters dplpe0_nm3p3_lp = (0)*corner_ratio
+parameters dcf_nm3p3_lp = (0)*corner_ratio
+parameters dlcf_nm3p3_lp = (0)*corner_ratio
+parameters dwcf_nm3p3_lp = (0)*corner_ratio
+parameters dpcf_nm3p3_lp = (0)*corner_ratio
+parameters ddtox_nm3p3_lp = (1.3e-10)*corner_ratio
+parameters dcgso_nm3p3_lp = (1.2500e-11)*corner_ratio
+parameters dcgdo_nm3p3_lp = (1.2500e-11)*corner_ratio
+parameters dcjs_nm3p3_lp = (-4.59e-05)*corner_ratio
+parameters dcjsws_nm3p3_lp = (-7.89e-13)*corner_ratio
+parameters dcjswgs_nm3p3_lp = (-1.0453e-11)*corner_ratio
+parameters dcgdl_nm3p3_lp = (3.5000e-12)*corner_ratio
+parameters dcgsl_nm3p3_lp = (3.5000e-12)*corner_ratio
+
+// *3.3v io pmos (ff corner)
+parameters dtoxe_pm3p3_lp = (-1.0e-10)*corner_ratio
+parameters dtoxp_pm3p3_lp = (-1.0e-10)*corner_ratio
+parameters dxl_pm3p3_lp = (-4.5e-9)*corner_ratio
+parameters dxw_pm3p3_lp = (4.5e-9)*corner_ratio
+parameters dvth0_pm3p3_lp = (0.055)*corner_ratio
+parameters dcjs_pm3p3_lp = (-5.2100e-05)*corner_ratio
+parameters dcjsws_pm3p3_lp = (-1.43e-13)*corner_ratio
+parameters dcjswgs_pm3p3_lp = (-1.1015e-11)*corner_ratio
+parameters dcgdo_pm3p3_lp = (1.0000e-11)*corner_ratio
+parameters dcgso_pm3p3_lp = (1.0000e-11)*corner_ratio
+parameters dcgdl_pm3p3_lp = (5.0000e-12)*corner_ratio
+parameters dcgsl_pm3p3_lp = (5.0000e-12)*corner_ratio
+parameters dcf_pm3p3_lp = (3.17e-12)*corner_ratio
+parameters dlvth0_pm3p3_lp = (1.4e-9)*corner_ratio
+parameters dpvth0_pm3p3_lp = (1.8e-15)*corner_ratio
+parameters dlu0_pm3p3_lp = (2.7e-10)*corner_ratio
+parameters dpu0_pm3p3_lp = (6.2e-17)*corner_ratio
+parameters dlcit_pm3p3_lp = (0)*corner_ratio
+parameters dpcit_pm3p3_lp = (0)*corner_ratio
+parameters dwcit_pm3p3_lp = (0)*corner_ratio
+parameters dwvth0_pm3p3_lp = (1.0e-9)*corner_ratio
+parameters dvoff_pm3p3_lp = (0)*corner_ratio
+parameters ddvt0_pm3p3_lp = (0.081)*corner_ratio
+parameters deta0_pm3p3_lp = (0)*corner_ratio
+parameters dwu0_pm3p3_lp = (1.7e-10)*corner_ratio
+parameters dwa0_pm3p3_lp = (-1.0e-8)*corner_ratio
+parameters dpeta0_pm3p3_lp = (0)*corner_ratio
+parameters dweta0_pm3p3_lp = (0)*corner_ratio
+parameters dpa0_pm3p3_lp = (0.0000e+000)*corner_ratio
+parameters dpags_pm3p3_lp = (0)*corner_ratio
+parameters dla0_pm3p3_lp = (1.635e-007)*corner_ratio
+parameters dlvsat_pm3p3_lp = (0.002)*corner_ratio
+parameters dwvsat_pm3p3_lp = (0)*corner_ratio
+parameters dpvsat_pm3p3_lp = (2.0e-11)*corner_ratio
+parameters dlvoff_pm3p3_lp = (0)*corner_ratio
+parameters dwvoff_pm3p3_lp = (+0.0000e+000)*corner_ratio
+parameters dpvoff_pm3p3_lp = (0.0000e+000)*corner_ratio
+parameters dagidl_pm3p3_lp = (0)*corner_ratio
+parameters du0_pm3p3_lp = (2.5e-4)*corner_ratio
+
+// *3.3v io native nmos (ff corner)
+parameters dtoxe_nnat3p3_lp = (-1.0e-10)*corner_ratio
+parameters dxl_nnat3p3_lp = (-4.5e-009)*corner_ratio
+parameters dxw_nnat3p3_lp = (4.5e-009)*corner_ratio
+parameters dvth0_nnat3p3_lp = (-0.0318)*corner_ratio
+parameters dlvth0_nnat3p3_lp = (-2.693e-8)*corner_ratio
+parameters dwvth0_nnat3p3_lp = 3.9e-10*corner_ratio
+parameters dpvth0_nnat3p3_lp = (-3.0e-16)*corner_ratio
+parameters du0_nnat3p3_lp = (0.00171)*corner_ratio
+parameters dlu0_nnat3p3_lp = (-3.8e-10)*corner_ratio
+parameters dwu0_nnat3p3_lp = 2.0e-10*corner_ratio
+parameters dpu0_nnat3p3_lp = 1.1e-16*corner_ratio
+parameters dvsat_nnat3p3_lp = 1500.0*corner_ratio
+parameters dlvsat_nnat3p3_lp = 9.0e-4
+parameters dpvsat_nnat3p3_lp = (-1.0e-10)*corner_ratio
+parameters dcgso_nnat3p3_lp = (1.0000e-11)*corner_ratio
+parameters dcgdo_nnat3p3_lp = (1.0000e-11)*corner_ratio
+parameters dcf_nnat3p3_lp = (3.22e-12)*corner_ratio
+parameters dcgsl_nnat3p3_lp = (1.3500e-11)*corner_ratio
+parameters dcgdl_nnat3p3_lp = (1.3500e-11)*corner_ratio
+parameters dcjs_nnat3p3_lp = (-5.95e-06)*corner_ratio
+parameters dcjsws_nnat3p3_lp = (-3.72e-12)*corner_ratio
+parameters dcjswgs_nnat3p3_lp = (-1.0172e-11)*corner_ratio
+
+
+
+endsection ff
+
+
+section ss
+
+parameters dtoxe_nm1p2_svt_lp = (4.8e-11)*corner_ratio
+parameters dvth0_nm1p2_svt_lp = (0.0402)*corner_ratio
+parameters dxl_nm1p2_svt_lp = (1e-009)*corner_ratio
+parameters dxw_nm1p2_svt_lp = (-2e-009)*corner_ratio
+parameters dcjs_nm1p2_svt_lp = (4.72e-5)*corner_ratio
+parameters dcjsws_nm1p2_svt_lp = (9.08e-16)*corner_ratio
+parameters dcjswgs_nm1p2_svt_lp = (1.33e-11)*corner_ratio
+parameters dcgdo_nm1p2_svt_lp = (-3.75e-12)*corner_ratio
+parameters dcgso_nm1p2_svt_lp = (-3.75e-12)*corner_ratio
+parameters dcgdl_nm1p2_svt_lp = (-3.35e-12)*corner_ratio
+parameters dcgsl_nm1p2_svt_lp = (-3.35e-12)*corner_ratio
+parameters dcf_nm1p2_svt_lp = (-4.145e-12)*corner_ratio
+parameters dlvth0_nm1p2_svt_lp = (3.07e-9)*corner_ratio
+parameters dpvth0_nm1p2_svt_lp = (-6.0000000e-18)*corner_ratio
+parameters dlu0_nm1p2_svt_lp = (-8.0e-11)*corner_ratio
+parameters dpu0_nm1p2_svt_lp = (8.0e-18)*corner_ratio
+parameters dleta0_nm1p2_svt_lp = (0)*corner_ratio
+parameters dwvth0_nm1p2_svt_lp = (5.8e-9)*corner_ratio
+parameters du0_nm1p2_svt_lp = (-3.178e-4)*corner_ratio
+parameters dwu0_nm1p2_svt_lp = (3.56e-11)*corner_ratio
+parameters dlvsat_nm1p2_svt_lp = (8.3263616e-5)*corner_ratio
+parameters dpvsat_nm1p2_svt_lp = (4.9e-12)*corner_ratio
+parameters dpeta0_nm1p2_svt_lp = (0)*corner_ratio
+parameters dvoff_nm1p2_svt_lp = (0)*corner_ratio
+parameters da0_nm1p2_svt_lp = (0)*corner_ratio
+parameters dla0_nm1p2_svt_lp = (0)*corner_ratio
+parameters dwa0_nm1p2_svt_lp = (0)*corner_ratio
+parameters dpa0_nm1p2_svt_lp = (0)*corner_ratio
+parameters dags_nm1p2_svt_lp = (0.013400000)*corner_ratio
+parameters dlags_nm1p2_svt_lp = (6.0e-8)*corner_ratio
+parameters dwags_nm1p2_svt_lp = (-6.0e-10)*corner_ratio
+parameters dpags_nm1p2_svt_lp = (-1.46e-15)*corner_ratio
+
+parameters dtoxe_nm1p2_lvt_lp = (4.8e-011)*corner_ratio
+parameters dxl_nm1p2_lvt_lp = (1.0e-9)*corner_ratio
+parameters dxw_nm1p2_lvt_lp = (-2.0e-9)*corner_ratio
+parameters dvth0_nm1p2_lvt_lp = (0.041)*corner_ratio
+parameters dcjs_nm1p2_lvt_lp = (4.33e-005)*corner_ratio
+parameters dcjsws_nm1p2_lvt_lp = (4.4e-16)*corner_ratio
+parameters dcjswgs_nm1p2_lvt_lp = (1.075e-11)*corner_ratio
+parameters dcgdo_nm1p2_lvt_lp = (-4.3419e-12)*corner_ratio
+parameters dcgso_nm1p2_lvt_lp = (-4.3419e-12)*corner_ratio
+parameters dcgdl_nm1p2_lvt_lp = (-5.0290e-12)*corner_ratio
+parameters dcgsl_nm1p2_lvt_lp = (-5.0290e-12)*corner_ratio
+parameters dcf_nm1p2_lvt_lp = (-3.2150e-12)*corner_ratio
+parameters dlvth0_nm1p2_lvt_lp = (2.005e-9)*corner_ratio
+parameters dpvth0_nm1p2_lvt_lp = (1.1e-16)*corner_ratio
+parameters dwvth0_nm1p2_lvt_lp = (3.8e-9)*corner_ratio
+parameters du0_nm1p2_lvt_lp = (-6.6e-4)*corner_ratio
+parameters dlu0_nm1p2_lvt_lp = (-3.4e-10)*corner_ratio
+parameters dwu0_nm1p2_lvt_lp = (-1.0330000e-10)*corner_ratio
+parameters dpu0_nm1p2_lvt_lp = (1.0e-18)*corner_ratio
+parameters dleta0_nm1p2_lvt_lp = (0)*corner_ratio
+parameters dpeta0_nm1p2_lvt_lp = (0)*corner_ratio
+parameters dvoff_nm1p2_lvt_lp = (0)*corner_ratio
+parameters dvsat_nm1p2_lvt_lp = (0)*corner_ratio
+parameters dwvsat_nm1p2_lvt_lp = (0)*corner_ratio
+parameters dlvsat_nm1p2_lvt_lp = (-1.8e-4)*corner_ratio
+parameters dpvsat_nm1p2_lvt_lp = (0)*corner_ratio
+
+parameters dtoxe_pm1p2_svt_lp = (4.8e-011)*corner_ratio
+parameters dxl_pm1p2_svt_lp = (1e-009)*corner_ratio
+parameters dxw_pm1p2_svt_lp = (-2e-009)*corner_ratio
+parameters dvoff_pm1p2_svt_lp = (0)*corner_ratio
+parameters dvth0_pm1p2_svt_lp = (-0.04)*corner_ratio
+parameters dlvth0_pm1p2_svt_lp = (-1.6e-9)*corner_ratio
+parameters dwvth0_pm1p2_svt_lp = (-3.8e-9)*corner_ratio
+parameters dpvth0_pm1p2_svt_lp = (-6.2e-16)*corner_ratio
+parameters du0_pm1p2_svt_lp = (-1.5e-5)*corner_ratio
+parameters dlu0_pm1p2_svt_lp = (-5.7e-11)*corner_ratio
+parameters dwu0_pm1p2_svt_lp = (-6.9e-11)*corner_ratio
+parameters dpu0_pm1p2_svt_lp = (1.2e-17)*corner_ratio
+parameters dlvsat_pm1p2_svt_lp = (5.0e-5)*corner_ratio
+parameters dpvsat_pm1p2_svt_lp = (-1.15e-10)*corner_ratio
+parameters dleta0_pm1p2_svt_lp = (0)*corner_ratio
+parameters dpeta0_pm1p2_svt_lp = (0)*corner_ratio
+parameters dcgso_pm1p2_svt_lp = (-7.12e-12)*corner_ratio
+parameters dcgdo_pm1p2_svt_lp = (-7.12e-12)*corner_ratio
+parameters dcgsl_pm1p2_svt_lp = (-3e-12)*corner_ratio
+parameters dcgdl_pm1p2_svt_lp = (-3e-12)*corner_ratio
+parameters dcf_pm1p2_svt_lp = (-4.125e-12)*corner_ratio
+parameters dcjs_pm1p2_svt_lp = (5.05e-5)*corner_ratio
+parameters dcjsws_pm1p2_svt_lp = (9.98e-14)*corner_ratio
+parameters dcjswgs_pm1p2_svt_lp = (1.418e-11)*corner_ratio
+parameters dags_pm1p2_svt_lp = (0.006)*corner_ratio
+parameters dwags_pm1p2_svt_lp = (7.5e-9)*corner_ratio
+parameters dtoxe_pm1p2_lvt_lp = (4.8e-011)*corner_ratio
+parameters dxl_pm1p2_lvt_lp = (1e-009)*corner_ratio
+parameters dxw_pm1p2_lvt_lp = (-2e-009)*corner_ratio
+parameters dvoff_pm1p2_lvt_lp = (0)*corner_ratio
+parameters deta0_pm1p2_lvt_lp = (-0.021931)*corner_ratio
+parameters dpeta0_pm1p2_lvt_lp = (2.18000e-17)*corner_ratio
+parameters dvth0_pm1p2_lvt_lp = (-0.04)*corner_ratio
+parameters dlvth0_pm1p2_lvt_lp = (-1.9e-9)*corner_ratio
+parameters dwvth0_pm1p2_lvt_lp = (-2.7e-9)*corner_ratio
+parameters dpvth0_pm1p2_lvt_lp = (-4.55e-16)*corner_ratio
+parameters du0_pm1p2_lvt_lp = (-3.4e-4)*corner_ratio
+parameters dlu0_pm1p2_lvt_lp = (1.95e-11)*corner_ratio
+parameters dwu0_pm1p2_lvt_lp = (-1.0e-11)*corner_ratio
+parameters dpu0_pm1p2_lvt_lp = (4.0e-18)*corner_ratio
+parameters dcgso_pm1p2_lvt_lp = (-8.37e-12)*corner_ratio
+parameters dcgdo_pm1p2_lvt_lp = (-8.37e-12)*corner_ratio
+parameters dcgsl_pm1p2_lvt_lp = (-4.86e-12)*corner_ratio
+parameters dcgdl_pm1p2_lvt_lp = (-4.86e-12)*corner_ratio
+parameters dcf_pm1p2_lvt_lp = (-3.215e-12)*corner_ratio
+parameters dcjs_pm1p2_lvt_lp = (5.180e-5)*corner_ratio
+parameters dcjsws_pm1p2_lvt_lp = (6.980e-14)*corner_ratio
+parameters dcjswgs_pm1p2_lvt_lp = (1.005e-11)*corner_ratio
+parameters dags_pm1p2_lvt_lp = (-0.005)*corner_ratio
+parameters dwags_pm1p2_lvt_lp = (-8.5e-9)*corner_ratio
+parameters dpags_pm1p2_lvt_lp = (0)*corner_ratio
+parameters dvsat_pm1p2_lvt_lp = (-3450.0)*corner_ratio
+parameters dpvsat_pm1p2_lvt_lp = (-4.1e-11)*corner_ratio
+
+// *1.2v hvt core nmos (ss corner)
+parameters dtoxe_nm1p2_hvt_lp = (4.8e-11)*corner_ratio
+parameters dxl_nm1p2_hvt_lp = (1.0e-9)*corner_ratio
+parameters dxw_nm1p2_hvt_lp = (-2.0e-9)*corner_ratio
+parameters dvth0_nm1p2_hvt_lp = (0.044)*corner_ratio
+parameters dlvth0_nm1p2_hvt_lp = (1.8e-9)*corner_ratio
+parameters dwvth0_nm1p2_hvt_lp = (5.5e-10)*corner_ratio
+parameters dpvth0_nm1p2_hvt_lp = (2.2e-16)*corner_ratio
+parameters du0_nm1p2_hvt_lp = (5.5e-4)*corner_ratio
+parameters dlu0_nm1p2_hvt_lp = (1.1e-11)*corner_ratio
+parameters dwu0_nm1p2_hvt_lp = (-2.0e-11)*corner_ratio
+parameters dpu0_nm1p2_hvt_lp = (-1.5e-18)*corner_ratio
+parameters dvsat_nm1p2_hvt_lp = (2e3)*corner_ratio
+parameters dpvsat_nm1p2_hvt_lp = (-1.0e-11)*corner_ratio
+parameters deta0_nm1p2_hvt_lp = (-0.01)*corner_ratio
+parameters dleta0_nm1p2_hvt_lp = (-0.0)*corner_ratio
+parameters dpeta0_nm1p2_hvt_lp = (-0.0)*corner_ratio
+parameters dcgdo_nm1p2_hvt_lp = (-1.0000e-11)*corner_ratio
+parameters dcgso_nm1p2_hvt_lp = (-1.0000e-11)*corner_ratio
+parameters dcgdl_nm1p2_hvt_lp = (-2.4075e-12)*corner_ratio
+parameters dcgsl_nm1p2_hvt_lp = (-2.4075e-12)*corner_ratio
+parameters dcf_nm1p2_hvt_lp = (-4.125e-12)*corner_ratio
+parameters dcjs_nm1p2_hvt_lp = (6.31e-05)*corner_ratio
+parameters dcjsws_nm1p2_hvt_lp = (1.51e-15)*corner_ratio
+parameters dcjswgs_nm1p2_hvt_lp = (1.4550e-11)*corner_ratio
+parameters dlvsat_nm1p2_hvt_lp = (0)*corner_ratio
+parameters ddsub_nm1p2_hvt_lp = (-0.0)*corner_ratio
+parameters dldsub_nm1p2_hvt_lp = (-0.0)*corner_ratio
+parameters dpdsub_nm1p2_hvt_lp = (-0.0)*corner_ratio
+parameters dvoff_nm1p2_hvt_lp = (-0.0)*corner_ratio
+parameters dlvoff_nm1p2_hvt_lp = (-0.0)*corner_ratio
+parameters dwvoff_nm1p2_hvt_lp = (-0.0)*corner_ratio
+parameters dpvoff_nm1p2_hvt_lp = (0)*corner_ratio
+parameters djtsswgs_nm1p2_hvt_lp = (-0.5)*corner_ratio
+parameters dlnfactor_nm1p2_hvt_lp = (7.1e-9)*corner_ratio
+parameters dpnfactor_nm1p2_hvt_lp = (6.0e-15)*corner_ratio
+parameters dpa0_nm1p2_hvt_lp = (-2.5e-21)*corner_ratio
+parameters dwminv_nm1p2_hvt_lp = (0)*corner_ratio
+parameters da0_nm1p2_hvt_lp = (0.05)*corner_ratio
+parameters dla0_nm1p2_hvt_lp = (0)*corner_ratio
+parameters dwa0_nm1p2_hvt_lp = (0)*corner_ratio
+parameters dagidl_nm1p2_hvt_lp = (-0.5)*corner_ratio
+
+// *1.2v hvt core pmos (ss corner) 
+parameters dtoxe_pm1p2_hvt_lp = (4.8e-011)*corner_ratio
+parameters dxl_pm1p2_hvt_lp = (1e-009)*corner_ratio
+parameters dxw_pm1p2_hvt_lp = (-2e-009)*corner_ratio
+parameters dvoff_pm1p2_hvt_lp = (0)*corner_ratio
+parameters dtvoff_pm1p2_hvt_lp = (0)*corner_ratio
+parameters dvth0_pm1p2_hvt_lp = (-0.040)*corner_ratio
+parameters dlvth0_pm1p2_hvt_lp = (-1.37e-009)*corner_ratio
+parameters dwvth0_pm1p2_hvt_lp = (-1.8e-009)*corner_ratio
+parameters dpvth0_pm1p2_hvt_lp = (-1.6255e-15)*corner_ratio
+parameters du0_pm1p2_hvt_lp = (-5e-5)*corner_ratio
+parameters dlu0_pm1p2_hvt_lp = (-6.61000e-12)*corner_ratio
+parameters dpu0_pm1p2_hvt_lp = 4.26538e-18*corner_ratio
+parameters dleta0_pm1p2_hvt_lp = (0)*corner_ratio
+parameters dpeta0_pm1p2_hvt_lp = (0)*corner_ratio
+parameters dcgso_pm1p2_hvt_lp = (-7.1200e-12)*corner_ratio
+parameters dcgdo_pm1p2_hvt_lp = (-7.1200e-12)*corner_ratio
+parameters dcgsl_pm1p2_hvt_lp = (-2.0500e-12)*corner_ratio
+parameters dcgdl_pm1p2_hvt_lp = (-2.0500e-12)*corner_ratio
+parameters dcf_pm1p2_hvt_lp = (-4.08e-012)*corner_ratio
+parameters dcjs_pm1p2_hvt_lp = (5.07e-05)*corner_ratio
+parameters dcjsws_pm1p2_hvt_lp = (8.67e-14)*corner_ratio
+parameters dcjswgs_pm1p2_hvt_lp = (1.6070e-11)*corner_ratio
+parameters djtsswgd_pm1p2_hvt_lp = (0)*corner_ratio
+parameters djtsswgs_pm1p2_hvt_lp = (0)*corner_ratio
+parameters dags_pm1p2_hvt_lp = (-0.100000)*corner_ratio
+parameters dlags_pm1p2_hvt_lp = (0)*corner_ratio
+parameters dvsat_pm1p2_hvt_lp = (-7560.0)*corner_ratio
+parameters dpvsat_pm1p2_hvt_lp = (-4e-11)*corner_ratio
+
+// *1.2v native nmos (ss corner) 
+parameters dtoxe_nnat1p2_lp = (4.8e-11)*corner_ratio
+parameters dxl_nnat1p2_lp = (1e-9)*corner_ratio
+parameters dxw_nnat1p2_lp = (-2e-9)*corner_ratio
+parameters dvth0_nnat1p2_lp = (0.02868)*corner_ratio
+parameters dlvth0_nnat1p2_lp = (6.814e-9)*corner_ratio
+parameters dpvth0_nnat1p2_lp = (-2.5028e-16)*corner_ratio
+parameters du0_nnat1p2_lp = (-0.00033000000)*corner_ratio
+parameters dlu0_nnat1p2_lp = (5.7000000e-11)*corner_ratio
+parameters dwu0_nnat1p2_lp = (-1.6e-10)*corner_ratio
+parameters dpu0_nnat1p2_lp = (2.37e-17)*corner_ratio
+parameters dags_nnat1p2_lp = (0.020000000)*corner_ratio
+parameters dlags_nnat1p2_lp = (-3.2800000e-08)*corner_ratio
+parameters dpags_nnat1p2_lp = (-2.02e-13)*corner_ratio
+parameters dvoff_nnat1p2_lp = (0)*corner_ratio
+parameters dcgso_nnat1p2_lp = (-1.2500e-11)*corner_ratio
+parameters dcgdo_nnat1p2_lp = (-1.2500e-11)*corner_ratio
+parameters dcf_nnat1p2_lp = (-4.135e-12)*corner_ratio
+parameters dcgsl_nnat1p2_lp = (-4e-12)*corner_ratio
+parameters dcgdl_nnat1p2_lp = (-4e-12)*corner_ratio
+parameters dcjs_nnat1p2_lp = (4.79e-06)*corner_ratio
+parameters dcjsws_nnat1p2_lp = (2.74e-12)*corner_ratio
+parameters dcjswgs_nnat1p2_lp = (1.5499e-12)*corner_ratio
+parameters dwvth0_nnat1p2_lp = (0)*corner_ratio
+parameters dwags_nnat1p2_lp = (3.16e-8)*corner_ratio
+
+// **3.3v io nmos (ss corner)
+parameters dvth0_nm3p3_lp = (0.056)*corner_ratio
+parameters dlvth0_nm3p3_lp = (1.0e-9)*corner_ratio
+parameters dwvth0_nm3p3_lp = (5.0e-10)*corner_ratio
+parameters dpvth0_nm3p3_lp = (2.0e-15)*corner_ratio
+parameters ddsub_nm3p3_lp = (0.005)*corner_ratio
+parameters dldsub_nm3p3_lp = (0)*corner_ratio
+parameters dwdsub_nm3p3_lp = (0)*corner_ratio
+parameters dpdsub_nm3p3_lp = (1.0e-15)*corner_ratio
+parameters du0_nm3p3_lp = (-3.0e-4)*corner_ratio
+parameters dlu0_nm3p3_lp = (-1.4e-9)*corner_ratio
+parameters dwu0_nm3p3_lp = (-1.8e-10)*corner_ratio
+parameters dpu0_nm3p3_lp = (-4.2e-16)*corner_ratio
+parameters dvsat_nm3p3_lp = (-5000.0)*corner_ratio
+parameters dlvsat_nm3p3_lp = (0)*corner_ratio
+parameters dwvsat_nm3p3_lp = (0)*corner_ratio
+parameters dpvsat_nm3p3_lp = (-1.0e-10)*corner_ratio
+parameters dags_nm3p3_lp = (-0.002)*corner_ratio
+parameters dlags_nm3p3_lp = (-1.0e-9)*corner_ratio
+parameters dwags_nm3p3_lp = (-1.5e-9)*corner_ratio
+parameters dpags_nm3p3_lp = (-9.0e-15)*corner_ratio
+parameters ddvt0_nm3p3_lp = (-0.001)*corner_ratio
+parameters dldvt0_nm3p3_lp = (0)*corner_ratio
+parameters dpdvt0_nm3p3_lp = (0)*corner_ratio
+parameters dlpe0_nm3p3_lp = (0)*corner_ratio
+parameters dllpe0_nm3p3_lp = (0)*corner_ratio
+parameters dplpe0_nm3p3_lp = (0)*corner_ratio
+parameters dcf_nm3p3_lp = (0)*corner_ratio
+parameters dlcf_nm3p3_lp = (0)*corner_ratio
+parameters dwcf_nm3p3_lp = (0)*corner_ratio
+parameters dpcf_nm3p3_lp = (0)*corner_ratio
+parameters ddtox_nm3p3_lp = (-1.3e-10)*corner_ratio
+parameters dcgso_nm3p3_lp = (-1.2500e-11)*corner_ratio
+parameters dcgdo_nm3p3_lp = (-1.2500e-11)*corner_ratio
+parameters dcjs_nm3p3_lp = (4.59e-05)*corner_ratio
+parameters dcjsws_nm3p3_lp = (7.89e-13)*corner_ratio
+parameters dcjswgs_nm3p3_lp = (1.0453e-11)*corner_ratio
+parameters dcgdl_nm3p3_lp = (-3.5000e-12)*corner_ratio
+parameters dcgsl_nm3p3_lp = (-3.5000e-12)*corner_ratio
+
+// *3.3v io pmos (ss corner)
+parameters dtoxe_pm3p3_lp = (1.0e-10)*corner_ratio
+parameters dtoxp_pm3p3_lp = (1.0e-10)*corner_ratio
+parameters dxl_pm3p3_lp = (4.5e-9)*corner_ratio
+parameters dxw_pm3p3_lp = (-4.5e-9)*corner_ratio
+parameters dvth0_pm3p3_lp = (-0.053)*corner_ratio
+parameters dcjs_pm3p3_lp = (5.2100e-05)*corner_ratio
+parameters dcjsws_pm3p3_lp = (1.43e-13)*corner_ratio
+parameters dcjswgs_pm3p3_lp = (1.1015e-11)*corner_ratio
+parameters dcgdo_pm3p3_lp = (-1.0000e-11)*corner_ratio
+parameters dcgso_pm3p3_lp = (-1.0000e-11)*corner_ratio
+parameters dcgdl_pm3p3_lp = (-5.0000e-12)*corner_ratio
+parameters dcgsl_pm3p3_lp = (-5.0000e-12)*corner_ratio
+parameters dcf_pm3p3_lp = (-3.17e-12)*corner_ratio
+parameters dlvth0_pm3p3_lp = (0)*corner_ratio
+parameters dpvth0_pm3p3_lp = (-1.4230e-015)*corner_ratio
+parameters dlu0_pm3p3_lp = (-2.8e-10)*corner_ratio
+parameters dpu0_pm3p3_lp = (-7.0e-17)*corner_ratio
+parameters dlcit_pm3p3_lp = (-1.66e-011)*corner_ratio
+parameters dpcit_pm3p3_lp = (-6.6e-019)*corner_ratio
+parameters dwcit_pm3p3_lp = (0)*corner_ratio
+parameters dwvth0_pm3p3_lp = (-1.0e-9)*corner_ratio
+parameters dvoff_pm3p3_lp = (0)*corner_ratio
+parameters ddvt0_pm3p3_lp = (-0.16058)*corner_ratio
+parameters deta0_pm3p3_lp = (0.026884)*corner_ratio
+parameters dwu0_pm3p3_lp = (-1.8e-10)*corner_ratio
+parameters dwa0_pm3p3_lp = (1.5e-8)*corner_ratio
+parameters dpeta0_pm3p3_lp = (-1.1583e-015)*corner_ratio
+parameters dweta0_pm3p3_lp = (0)*corner_ratio
+parameters dpa0_pm3p3_lp = (0)*corner_ratio
+parameters dpags_pm3p3_lp = (-1.0e-14)*corner_ratio
+parameters dla0_pm3p3_lp = (0)*corner_ratio
+parameters dlvsat_pm3p3_lp = (-0.0025)*corner_ratio
+parameters dwvsat_pm3p3_lp = (0)*corner_ratio
+parameters dpvsat_pm3p3_lp = (-9e-011)*corner_ratio
+parameters dlvoff_pm3p3_lp = (0)*corner_ratio
+parameters dwvoff_pm3p3_lp = (0)*corner_ratio
+parameters dpvoff_pm3p3_lp = (0)*corner_ratio
+parameters dagidl_pm3p3_lp = (0)*corner_ratio
+parameters du0_pm3p3_lp = (-3.0e-4)*corner_ratio
+
+// *3.3v io native nmos (ss corner)
+parameters dtoxe_nnat3p3_lp = (1.0e-10)*corner_ratio
+parameters dxl_nnat3p3_lp = (4.5e-009)*corner_ratio
+parameters dxw_nnat3p3_lp = (-4.5e-009)*corner_ratio
+parameters dvth0_nnat3p3_lp = (0.03075)*corner_ratio
+parameters dlvth0_nnat3p3_lp = (2.73e-8)*corner_ratio
+parameters dwvth0_nnat3p3_lp = (-3.0e-10)*corner_ratio
+parameters dpvth0_nnat3p3_lp = 0*corner_ratio
+parameters du0_nnat3p3_lp = (-0.00184)*corner_ratio
+parameters dlu0_nnat3p3_lp = 2.0e-10*corner_ratio
+parameters dwu0_nnat3p3_lp = (-2.6e-10)*corner_ratio
+parameters dpu0_nnat3p3_lp = 0*corner_ratio
+parameters dvsat_nnat3p3_lp = 0*corner_ratio
+parameters dlvsat_nnat3p3_lp = -0.0028
+parameters dpvsat_nnat3p3_lp = 0*corner_ratio
+parameters dcgso_nnat3p3_lp = (-1.0000e-11)*corner_ratio
+parameters dcgdo_nnat3p3_lp = (-1.0000e-11)*corner_ratio
+parameters dcf_nnat3p3_lp = (-3.22e-12)*corner_ratio
+parameters dcgsl_nnat3p3_lp = (-1.3500e-11)*corner_ratio
+parameters dcgdl_nnat3p3_lp = (-1.3500e-11)*corner_ratio
+parameters dcjs_nnat3p3_lp = (5.95e-06)*corner_ratio
+parameters dcjsws_nnat3p3_lp = (3.72e-12)*corner_ratio
+parameters dcjswgs_nnat3p3_lp = (1.0172e-11)*corner_ratio
+
+
+endsection ss
+
+
+section fnsp
+
+parameters dtoxe_nm1p2_svt_lp = (-4.8e-11)*corner_ratio*0.8
+parameters dvth0_nm1p2_svt_lp = (-0.042000000)*corner_ratio*0.8
+parameters dxl_nm1p2_svt_lp = (-1e-009)*corner_ratio*0.8
+parameters dxw_nm1p2_svt_lp = (2e-009)*corner_ratio*0.8
+parameters dcjs_nm1p2_svt_lp = (-4.72e-5)*corner_ratio*0.8
+parameters dcjsws_nm1p2_svt_lp = (-9.08e-16)*corner_ratio*0.8
+parameters dcjswgs_nm1p2_svt_lp = (-1.33e-11)*corner_ratio*0.8
+parameters dcgdo_nm1p2_svt_lp = (3.75e-12)*corner_ratio*0.8
+parameters dcgso_nm1p2_svt_lp = (3.75e-12)*corner_ratio*0.8
+parameters dcgdl_nm1p2_svt_lp = (3.35e-12)*corner_ratio*0.8
+parameters dcgsl_nm1p2_svt_lp = (3.35e-12)*corner_ratio*0.8
+parameters dcf_nm1p2_svt_lp = (4.145e-12)*corner_ratio*0.8
+parameters dlvth0_nm1p2_svt_lp = (-2.82e-9)*corner_ratio*0.8
+parameters dpvth0_nm1p2_svt_lp = (6.0000000e-18)*corner_ratio*0.8
+parameters dlu0_nm1p2_svt_lp = (4.8000000e-11)*corner_ratio*0.8
+parameters dpu0_nm1p2_svt_lp = (-8.0e-18)*corner_ratio*0.8
+parameters dleta0_nm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dwvth0_nm1p2_svt_lp = (-5.8e-9)*corner_ratio*0.8
+parameters du0_nm1p2_svt_lp = (5.7562836e-5)*corner_ratio*0.8
+parameters dwu0_nm1p2_svt_lp = (-8.5e-11)*corner_ratio*0.8
+parameters dlvsat_nm1p2_svt_lp = (-1.0e-5)*corner_ratio*0.8
+parameters dpvsat_nm1p2_svt_lp = (-4.9e-12)*corner_ratio*0.8
+parameters dpeta0_nm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dvoff_nm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters da0_nm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dla0_nm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dwa0_nm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dpa0_nm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dags_nm1p2_svt_lp = (-0.015)*corner_ratio*0.8
+parameters dlags_nm1p2_svt_lp = (-6.0e-8)*corner_ratio*0.8
+parameters dwags_nm1p2_svt_lp = (1.0e-11)*corner_ratio*0.8
+parameters dpags_nm1p2_svt_lp = (1.46e-15)*corner_ratio*0.8
+
+parameters dtoxe_nm1p2_lvt_lp = (-4.8e-011)*corner_ratio*0.8
+parameters dxl_nm1p2_lvt_lp = (-1.0e-9)*corner_ratio*0.8
+parameters dxw_nm1p2_lvt_lp = (2.0e-9)*corner_ratio*0.8
+parameters dvth0_nm1p2_lvt_lp = (-0.041)*corner_ratio*0.8
+parameters dcjs_nm1p2_lvt_lp = (-4.33e-005)*corner_ratio*0.8
+parameters dcjsws_nm1p2_lvt_lp = (-4.4e-16)*corner_ratio*0.8
+parameters dcjswgs_nm1p2_lvt_lp = (-1.075e-11)*corner_ratio*0.8
+parameters dcgdo_nm1p2_lvt_lp = (4.3419e-12)*corner_ratio*0.8
+parameters dcgso_nm1p2_lvt_lp = (4.3419e-12)*corner_ratio*0.8
+parameters dcgdl_nm1p2_lvt_lp = (5.0290e-12)*corner_ratio*0.8
+parameters dcgsl_nm1p2_lvt_lp = (5.0290e-12)*corner_ratio*0.8
+parameters dcf_nm1p2_lvt_lp = (3.2150e-12)*corner_ratio*0.8
+parameters dlvth0_nm1p2_lvt_lp = (-1.975e-9)*corner_ratio*0.8
+parameters dpvth0_nm1p2_lvt_lp = (-1.1e-16)*corner_ratio*0.8
+parameters dwvth0_nm1p2_lvt_lp = (-3.8e-9)*corner_ratio*0.8
+parameters du0_nm1p2_lvt_lp = (3.9e-4)*corner_ratio*0.8
+parameters dlu0_nm1p2_lvt_lp = (2.5200000e-10)*corner_ratio*0.8
+parameters dwu0_nm1p2_lvt_lp = (4.55e-11)*corner_ratio*0.8
+parameters dpu0_nm1p2_lvt_lp = (-1.3000000e-17)*corner_ratio*0.8
+parameters dleta0_nm1p2_lvt_lp = (0)*corner_ratio*0.8
+parameters dpeta0_nm1p2_lvt_lp = (0)*corner_ratio*0.8
+parameters dvoff_nm1p2_lvt_lp = (0)*corner_ratio*0.8
+parameters dvsat_nm1p2_lvt_lp = (-2280.0)*corner_ratio*0.8
+parameters dwvsat_nm1p2_lvt_lp = (5.0e-4)*corner_ratio*0.8
+parameters dlvsat_nm1p2_lvt_lp = (2.8e-4)*corner_ratio*0.8
+parameters dpvsat_nm1p2_lvt_lp = (0)*corner_ratio*0.8
+
+parameters dtoxe_pm1p2_svt_lp = (4.8e-011)*corner_ratio*0.8
+parameters dxl_pm1p2_svt_lp = (1e-009)*corner_ratio*0.8
+parameters dxw_pm1p2_svt_lp = (-2e-009)*corner_ratio*0.8
+parameters dvoff_pm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dvth0_pm1p2_svt_lp = (-0.04)*corner_ratio*0.8
+parameters dlvth0_pm1p2_svt_lp = (-1.6e-9)*corner_ratio*0.8
+parameters dwvth0_pm1p2_svt_lp = (-3.8e-9)*corner_ratio*0.8
+parameters dpvth0_pm1p2_svt_lp = (-6.2e-16)*corner_ratio*0.8
+parameters du0_pm1p2_svt_lp = (-1.5e-5)*corner_ratio*0.8
+parameters dlu0_pm1p2_svt_lp = (-5.7e-11)*corner_ratio*0.8
+parameters dwu0_pm1p2_svt_lp = (-6.9e-11)*corner_ratio*0.8
+parameters dpu0_pm1p2_svt_lp = (1.2e-17)*corner_ratio*0.8
+parameters dlvsat_pm1p2_svt_lp = (5.0e-5)*corner_ratio*0.8
+parameters dpvsat_pm1p2_svt_lp = (-1.15e-10)*corner_ratio*0.8
+parameters dleta0_pm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dpeta0_pm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dcgso_pm1p2_svt_lp = (-7.12e-12)*corner_ratio*0.8
+parameters dcgdo_pm1p2_svt_lp = (-7.12e-12)*corner_ratio*0.8
+parameters dcgsl_pm1p2_svt_lp = (-3e-12)*corner_ratio*0.8
+parameters dcgdl_pm1p2_svt_lp = (-3e-12)*corner_ratio*0.8
+parameters dcf_pm1p2_svt_lp = (-4.125e-12)*corner_ratio*0.8
+parameters dcjs_pm1p2_svt_lp = (5.05e-5)*corner_ratio*0.8
+parameters dcjsws_pm1p2_svt_lp = (9.98e-14)*corner_ratio*0.8
+parameters dcjswgs_pm1p2_svt_lp = (1.418e-11)*corner_ratio*0.8
+parameters dags_pm1p2_svt_lp = (0.006)*corner_ratio*0.8
+parameters dwags_pm1p2_svt_lp = (7.5e-9)*corner_ratio*0.8
+parameters dtoxe_pm1p2_lvt_lp = (4.8e-011)*corner_ratio*0.8
+parameters dxl_pm1p2_lvt_lp = (1e-009)*corner_ratio*0.8
+parameters dxw_pm1p2_lvt_lp = (-2e-009)*corner_ratio*0.8
+parameters dvoff_pm1p2_lvt_lp = (0)*corner_ratio*0.8
+parameters deta0_pm1p2_lvt_lp = (-0.021931)*corner_ratio*0.8
+parameters dpeta0_pm1p2_lvt_lp = (2.18000e-17)*corner_ratio*0.8
+parameters dvth0_pm1p2_lvt_lp = (-0.04)*corner_ratio*0.8
+parameters dlvth0_pm1p2_lvt_lp = (-1.9e-9)*corner_ratio*0.8
+parameters dwvth0_pm1p2_lvt_lp = (-2.7e-9)*corner_ratio*0.8
+parameters dpvth0_pm1p2_lvt_lp = (-4.55e-16)*corner_ratio*0.8
+parameters du0_pm1p2_lvt_lp = (-3.4e-4)*corner_ratio*0.8
+parameters dlu0_pm1p2_lvt_lp = (1.95e-11)*corner_ratio*0.8
+parameters dwu0_pm1p2_lvt_lp = (-1.0e-11)*corner_ratio*0.8
+parameters dpu0_pm1p2_lvt_lp = (4.0e-18)*corner_ratio*0.8
+parameters dcgso_pm1p2_lvt_lp = (-8.37e-12)*corner_ratio*0.8
+parameters dcgdo_pm1p2_lvt_lp = (-8.37e-12)*corner_ratio*0.8
+parameters dcgsl_pm1p2_lvt_lp = (-4.86e-12)*corner_ratio*0.8
+parameters dcgdl_pm1p2_lvt_lp = (-4.86e-12)*corner_ratio*0.8
+parameters dcf_pm1p2_lvt_lp = (-3.215e-12)*corner_ratio*0.8
+parameters dcjs_pm1p2_lvt_lp = (5.180e-5)*corner_ratio*0.8
+parameters dcjsws_pm1p2_lvt_lp = (6.980e-14)*corner_ratio*0.8
+parameters dcjswgs_pm1p2_lvt_lp = (1.005e-11)*corner_ratio*0.8
+parameters dags_pm1p2_lvt_lp = (-0.005)*corner_ratio*0.8
+parameters dwags_pm1p2_lvt_lp = (-8.5e-9)*corner_ratio*0.8
+parameters dpags_pm1p2_lvt_lp = (0)*corner_ratio*0.8
+parameters dvsat_pm1p2_lvt_lp = (-3450.0)*corner_ratio*0.8
+parameters dpvsat_pm1p2_lvt_lp = (-4.1e-11)*corner_ratio*0.8
+
+// *1.2v hvt core nmos (fnsp corner)
+parameters dtoxe_nm1p2_hvt_lp = (-4.8e-11)*0.8*corner_ratio
+parameters dxl_nm1p2_hvt_lp = (-1.0e-9)*0.8*corner_ratio
+parameters dxw_nm1p2_hvt_lp = (2.0e-9)*0.8*corner_ratio
+parameters dvth0_nm1p2_hvt_lp = (-0.044)*0.8*corner_ratio
+parameters dlvth0_nm1p2_hvt_lp = (-1.8e-9)*0.8*corner_ratio
+parameters dwvth0_nm1p2_hvt_lp = (-5.8e-10)*0.8*corner_ratio
+parameters dpvth0_nm1p2_hvt_lp = (-2.2e-16)*0.8*corner_ratio
+parameters du0_nm1p2_hvt_lp = (-5.0e-4)*0.8*corner_ratio
+parameters dlu0_nm1p2_hvt_lp = (1.0e-12)*0.8*corner_ratio
+parameters dwu0_nm1p2_hvt_lp = (2.0e-11)*0.8*corner_ratio
+parameters dpu0_nm1p2_hvt_lp = (10.0e-19)*0.8*corner_ratio
+parameters dvsat_nm1p2_hvt_lp = (-2e3)*0.8*corner_ratio
+parameters dpvsat_nm1p2_hvt_lp = (-1.0e-11)*0.8*corner_ratio
+parameters deta0_nm1p2_hvt_lp = (0.01)*0.8*corner_ratio
+parameters dleta0_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dpeta0_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dcgdo_nm1p2_hvt_lp = (1.0000e-11)*0.8*corner_ratio
+parameters dcgso_nm1p2_hvt_lp = (1.0000e-11)*0.8*corner_ratio
+parameters dcgdl_nm1p2_hvt_lp = (2.4075e-12)*0.8*corner_ratio
+parameters dcgsl_nm1p2_hvt_lp = (2.4075e-12)*0.8*corner_ratio
+parameters dcf_nm1p2_hvt_lp = (4.125e-12)*0.8*corner_ratio
+parameters dcjs_nm1p2_hvt_lp = (-6.31e-05)*0.8*corner_ratio
+parameters dcjsws_nm1p2_hvt_lp = (-1.51e-15)*0.8*corner_ratio
+parameters dcjswgs_nm1p2_hvt_lp = (-1.4550e-11)*0.8*corner_ratio
+parameters dlvsat_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters ddsub_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dldsub_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dpdsub_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dvoff_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dlvoff_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dwvoff_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dpvoff_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters djtsswgs_nm1p2_hvt_lp = (1.0)*0.8*corner_ratio
+parameters dlnfactor_nm1p2_hvt_lp = (-7.1e-9)*0.8*corner_ratio
+parameters dpnfactor_nm1p2_hvt_lp = (-6.0e-15)*0.8*corner_ratio
+parameters dpa0_nm1p2_hvt_lp = (3.5e-21)*0.8*corner_ratio
+parameters dwminv_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters da0_nm1p2_hvt_lp = (-0.05)*0.8*corner_ratio
+parameters dla0_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dwa0_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dagidl_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+
+// *1.2v hvt core pmos (fnsp corner)
+parameters dtoxe_pm1p2_hvt_lp = (4.8e-011)*0.8*corner_ratio
+parameters dxl_pm1p2_hvt_lp = (1e-009)*0.8*corner_ratio
+parameters dxw_pm1p2_hvt_lp = (-2e-009)*0.8*corner_ratio
+parameters dvoff_pm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dtvoff_pm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dvth0_pm1p2_hvt_lp = (-0.040)*0.8*corner_ratio
+parameters dlvth0_pm1p2_hvt_lp = (-1.37e-009)*0.8*corner_ratio
+parameters dwvth0_pm1p2_hvt_lp = (-1.8e-009)*0.8*corner_ratio
+parameters dpvth0_pm1p2_hvt_lp = (-1.6255e-15)*0.8*corner_ratio
+parameters du0_pm1p2_hvt_lp = (-5e-5)*0.8*corner_ratio
+parameters dlu0_pm1p2_hvt_lp = (-6.61000e-12)*0.8*corner_ratio
+parameters dpu0_pm1p2_hvt_lp = 4.26538e-18*0.8*corner_ratio
+parameters dleta0_pm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dpeta0_pm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dcgso_pm1p2_hvt_lp = (-7.1200e-12)*0.8*corner_ratio
+parameters dcgdo_pm1p2_hvt_lp = (-7.1200e-12)*0.8*corner_ratio
+parameters dcgsl_pm1p2_hvt_lp = (-2.0500e-12)*0.8*corner_ratio
+parameters dcgdl_pm1p2_hvt_lp = (-2.0500e-12)*0.8*corner_ratio
+parameters dcf_pm1p2_hvt_lp = (-4.08e-012)*0.8*corner_ratio
+parameters dcjs_pm1p2_hvt_lp = (5.07e-05)*0.8*corner_ratio
+parameters dcjsws_pm1p2_hvt_lp = (8.67e-14)*0.8*corner_ratio
+parameters dcjswgs_pm1p2_hvt_lp = (1.6070e-11)*0.8*corner_ratio
+parameters djtsswgd_pm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters djtsswgs_pm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dags_pm1p2_hvt_lp = (-0.100000)*0.8*corner_ratio
+parameters dlags_pm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dvsat_pm1p2_hvt_lp = (-7560.0)*0.8*corner_ratio
+parameters dpvsat_pm1p2_hvt_lp = (-4e-11)*0.8*corner_ratio
+           
+
+// *1.2v native nmos (fnsp corner) 
+parameters dtoxe_nnat1p2_lp = ((-4.8e-11)*corner_ratio)*0.8
+parameters dxl_nnat1p2_lp = ((-1e-9)*corner_ratio)*0.8
+parameters dxw_nnat1p2_lp = ((2e-9)*corner_ratio)*0.8
+parameters dvth0_nnat1p2_lp = ((-0.029000000)*corner_ratio)*0.8
+parameters dlvth0_nnat1p2_lp = ((-6.7e-9)*corner_ratio)*0.8
+parameters dpvth0_nnat1p2_lp = ((1.6e-16)*corner_ratio)*0.8
+parameters du0_nnat1p2_lp = ((2.16e-4)*corner_ratio)*0.8
+parameters dlu0_nnat1p2_lp = ((-4.5000000e-11)*corner_ratio)*0.8
+parameters dwu0_nnat1p2_lp = ((1.32e-10)*corner_ratio)*0.8
+parameters dpu0_nnat1p2_lp = ((-3.478e-17)*corner_ratio)*0.8
+parameters dags_nnat1p2_lp = ((-0.023200000)*corner_ratio)*0.8
+parameters dlags_nnat1p2_lp = ((0)*corner_ratio)*0.8
+parameters dpags_nnat1p2_lp = ((2.0e-14)*corner_ratio)*0.8
+parameters dvoff_nnat1p2_lp = ((0)*corner_ratio)*0.8
+parameters dcgso_nnat1p2_lp = ((1.2500e-11)*corner_ratio)*0.8
+parameters dcgdo_nnat1p2_lp = ((1.2500e-11)*corner_ratio)*0.8
+parameters dcf_nnat1p2_lp = ((4.135e-12)*corner_ratio)*0.8
+parameters dcgsl_nnat1p2_lp = ((1.5000e-12)*corner_ratio)*0.8
+parameters dcgdl_nnat1p2_lp = ((1.5000e-12)*corner_ratio)*0.8
+parameters dcjs_nnat1p2_lp = ((-4.79e-06)*corner_ratio)*0.8
+parameters dcjsws_nnat1p2_lp = ((-2.74e-12)*corner_ratio)*0.8
+parameters dcjswgs_nnat1p2_lp = ((-1.5499e-12)*corner_ratio)*0.8
+parameters dwvth0_nnat1p2_lp = ((0)*corner_ratio)*0.8
+parameters dwags_nnat1p2_lp = ((0)*corner_ratio)*0.8
+
+// *3.3v io nmos (fnsp corner)
+parameters dvth0_nm3p3_lp = (-0.058)*0.8*corner_ratio
+parameters dlvth0_nm3p3_lp = (-3.0e-9)*0.8*corner_ratio
+parameters dwvth0_nm3p3_lp = (1.0e-10)*0.8*corner_ratio
+parameters dpvth0_nm3p3_lp = (-2.1e-15)*0.8*corner_ratio
+parameters ddsub_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dldsub_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dwdsub_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dpdsub_nm3p3_lp = (0)*0.8*corner_ratio
+parameters du0_nm3p3_lp = (1.0e-4)*0.8*corner_ratio
+parameters dlu0_nm3p3_lp = (1.1e-9)*0.8*corner_ratio
+parameters dwu0_nm3p3_lp = (2.2e-10)*0.8*corner_ratio
+parameters dpu0_nm3p3_lp = (4.0e-16)*0.8*corner_ratio
+parameters dvsat_nm3p3_lp = (5000.0)*0.8*corner_ratio
+parameters dlvsat_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dwvsat_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dpvsat_nm3p3_lp = (1.0e-10)*0.8*corner_ratio
+parameters dags_nm3p3_lp = (0.002)*0.8*corner_ratio
+parameters dlags_nm3p3_lp = (9.0e-9)*0.8*corner_ratio
+parameters dwags_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dpags_nm3p3_lp = (3.0e-15)*0.8*corner_ratio
+parameters ddvt0_nm3p3_lp = (0.025)*0.8*corner_ratio
+parameters dldvt0_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dpdvt0_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dlpe0_nm3p3_lp = (5.0e-9)*0.8*corner_ratio
+parameters dllpe0_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dplpe0_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dcf_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dlcf_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dwcf_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dpcf_nm3p3_lp = (0)*0.8*corner_ratio
+parameters ddtox_nm3p3_lp = (1.3e-10)*0.8*corner_ratio
+parameters dcgso_nm3p3_lp = (1.2500e-11)*0.8*corner_ratio
+parameters dcgdo_nm3p3_lp = (1.2500e-11)*0.8*corner_ratio
+parameters dcjs_nm3p3_lp = (-4.59e-05)*0.8*corner_ratio
+parameters dcjsws_nm3p3_lp = (-7.89e-13)*0.8*corner_ratio
+parameters dcjswgs_nm3p3_lp = (-1.0453e-11)*0.8*corner_ratio
+parameters dcgdl_nm3p3_lp = (3.5000e-12)*0.8*corner_ratio
+parameters dcgsl_nm3p3_lp = (3.5000e-12)*0.8*corner_ratio
+
+// *3.3v io pmos (fnsp corner)
+parameters dtoxe_pm3p3_lp = (1.0e-10)*0.8*corner_ratio
+parameters dtoxp_pm3p3_lp = (1.0e-10)*0.8*corner_ratio
+parameters dxl_pm3p3_lp = (4.5e-9)*0.8*corner_ratio
+parameters dxw_pm3p3_lp = (-4.5e-9)*0.8*corner_ratio
+parameters dvth0_pm3p3_lp = (-0.053)*0.8*corner_ratio
+parameters dcjs_pm3p3_lp = (5.21e-05)*0.8*corner_ratio
+parameters dcjsws_pm3p3_lp = (1.43e-13)*0.8*corner_ratio
+parameters dcjswgs_pm3p3_lp = (1.1015e-11)*0.8*corner_ratio
+parameters dcgdo_pm3p3_lp = (-1.0000e-11)*0.8*corner_ratio
+parameters dcgso_pm3p3_lp = (-1.0000e-11)*0.8*corner_ratio
+parameters dcgdl_pm3p3_lp = (-5.0000e-12)*0.8*corner_ratio
+parameters dcgsl_pm3p3_lp = (-5.0000e-12)*0.8*corner_ratio
+parameters dcf_pm3p3_lp = (-3.17e-12)*0.8*corner_ratio
+parameters dlvth0_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dpvth0_pm3p3_lp = (-1.4230e-015)*0.8*corner_ratio
+parameters dlu0_pm3p3_lp = (-2.8e-10)*0.8*corner_ratio
+parameters dpu0_pm3p3_lp = (-7.0e-17)*0.8*corner_ratio
+parameters dlcit_pm3p3_lp = (-1.66e-011)*0.8*corner_ratio
+parameters dpcit_pm3p3_lp = (-6.6e-019)*0.8*corner_ratio
+parameters dwcit_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dwvth0_pm3p3_lp = (-1.0e-9)*0.8*corner_ratio
+parameters dvoff_pm3p3_lp = (0)*0.8*corner_ratio
+parameters ddvt0_pm3p3_lp = (-0.16058)*0.8*corner_ratio
+parameters deta0_pm3p3_lp = (0.026884)*0.8*corner_ratio
+parameters dwu0_pm3p3_lp = (-1.8e-10)*0.8*corner_ratio
+parameters dwa0_pm3p3_lp = (1.5e-8)*0.8*corner_ratio
+parameters dpeta0_pm3p3_lp = (-1.1583e-015)*0.8*corner_ratio
+parameters dweta0_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dpa0_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dpags_pm3p3_lp = (-1.0e-14)*0.8*corner_ratio
+parameters dla0_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dlvsat_pm3p3_lp = (-0.0025)*0.8*corner_ratio
+parameters dwvsat_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dpvsat_pm3p3_lp = (-9e-011)*0.8*corner_ratio
+parameters dlvoff_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dwvoff_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dpvoff_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dagidl_pm3p3_lp = (0)*0.8*corner_ratio
+parameters du0_pm3p3_lp = (-3.0e-4)*0.8*corner_ratio
+
+// *3.3v io native nmos (fnsp corner)
+parameters dtoxe_nnat3p3_lp = (-1.0e-10)*corner_ratio*0.8
+parameters dxl_nnat3p3_lp = (-4.5e-009)*corner_ratio*0.8
+parameters dxw_nnat3p3_lp = (4.5e-009)*corner_ratio*0.8
+parameters dvth0_nnat3p3_lp = (-0.0318)*corner_ratio*0.8
+parameters dlvth0_nnat3p3_lp = (-2.693e-8)*corner_ratio*0.8
+parameters dwvth0_nnat3p3_lp = 3.9e-10*corner_ratio*0.8
+parameters dpvth0_nnat3p3_lp = (-3.0e-16)*corner_ratio*0.8
+parameters du0_nnat3p3_lp = (0.00171)*corner_ratio*0.8
+parameters dlu0_nnat3p3_lp = (-3.8e-10)*corner_ratio*0.8
+parameters dwu0_nnat3p3_lp = 2.0e-10*corner_ratio*0.8
+parameters dpu0_nnat3p3_lp = 1.1e-16*corner_ratio*0.8
+parameters dvsat_nnat3p3_lp = 1500.0*corner_ratio*0.8
+parameters dlvsat_nnat3p3_lp = 9.0e-4*0.8
+parameters dpvsat_nnat3p3_lp = (-1.0e-10)*corner_ratio*0.8
+parameters dcgso_nnat3p3_lp = (1.0000e-11)*corner_ratio*0.8
+parameters dcgdo_nnat3p3_lp = (1.0000e-11)*corner_ratio*0.8
+parameters dcf_nnat3p3_lp = (3.22e-12)*corner_ratio*0.8
+parameters dcgsl_nnat3p3_lp = (1.3500e-11)*corner_ratio*0.8
+parameters dcgdl_nnat3p3_lp = (1.3500e-11)*corner_ratio*0.8
+parameters dcjs_nnat3p3_lp = (-5.95e-06)*corner_ratio*0.8
+parameters dcjsws_nnat3p3_lp = (-3.72e-12)*corner_ratio*0.8
+parameters dcjswgs_nnat3p3_lp = (-1.0172e-11)*corner_ratio*0.8
+
+
+endsection fnsp
+
+
+section snfp
+
+parameters dtoxe_nm1p2_svt_lp = (4.8e-11)*corner_ratio*0.8
+parameters dvth0_nm1p2_svt_lp = (0.0402)*corner_ratio*0.8
+parameters dxl_nm1p2_svt_lp = (1e-009)*corner_ratio*0.8
+parameters dxw_nm1p2_svt_lp = (-2e-009)*corner_ratio*0.8
+parameters dcjs_nm1p2_svt_lp = (4.72e-5)*corner_ratio*0.8
+parameters dcjsws_nm1p2_svt_lp = (9.08e-16)*corner_ratio*0.8
+parameters dcjswgs_nm1p2_svt_lp = (1.33e-11)*corner_ratio*0.8
+parameters dcgdo_nm1p2_svt_lp = (-3.75e-12)*corner_ratio*0.8
+parameters dcgso_nm1p2_svt_lp = (-3.75e-12)*corner_ratio*0.8
+parameters dcgdl_nm1p2_svt_lp = (-3.35e-12)*corner_ratio*0.8
+parameters dcgsl_nm1p2_svt_lp = (-3.35e-12)*corner_ratio*0.8
+parameters dcf_nm1p2_svt_lp = (-4.145e-12)*corner_ratio*0.8
+parameters dlvth0_nm1p2_svt_lp = (3.07e-9)*corner_ratio*0.8
+parameters dpvth0_nm1p2_svt_lp = (-6.0000000e-18)*corner_ratio*0.8
+parameters dlu0_nm1p2_svt_lp = (-8.0e-11)*corner_ratio*0.8
+parameters dpu0_nm1p2_svt_lp = (8.0e-18)*corner_ratio*0.8
+parameters dleta0_nm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dwvth0_nm1p2_svt_lp = (5.8e-9)*corner_ratio*0.8
+parameters du0_nm1p2_svt_lp = (-3.178e-4)*corner_ratio*0.8
+parameters dwu0_nm1p2_svt_lp = (3.56e-11)*corner_ratio*0.8
+parameters dlvsat_nm1p2_svt_lp = (8.3263616e-5)*corner_ratio*0.8
+parameters dpvsat_nm1p2_svt_lp = (4.9e-12)*corner_ratio*0.8
+parameters dpeta0_nm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dvoff_nm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters da0_nm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dla0_nm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dwa0_nm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dpa0_nm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dags_nm1p2_svt_lp = (0.013400000)*corner_ratio*0.8
+parameters dlags_nm1p2_svt_lp = (6.0e-8)*corner_ratio*0.8
+parameters dwags_nm1p2_svt_lp = (-6.0e-10)*corner_ratio*0.8
+parameters dpags_nm1p2_svt_lp = (-1.46e-15)*corner_ratio*0.8
+
+parameters dtoxe_nm1p2_lvt_lp = (4.8e-011)*corner_ratio*0.8
+parameters dxl_nm1p2_lvt_lp = (1.0e-9)*corner_ratio*0.8
+parameters dxw_nm1p2_lvt_lp = (-2.0e-9)*corner_ratio*0.8
+parameters dvth0_nm1p2_lvt_lp = (0.041)*corner_ratio*0.8
+parameters dcjs_nm1p2_lvt_lp = (4.33e-005)*corner_ratio*0.8
+parameters dcjsws_nm1p2_lvt_lp = (4.4e-16)*corner_ratio*0.8
+parameters dcjswgs_nm1p2_lvt_lp = (1.075e-11)*corner_ratio*0.8
+parameters dcgdo_nm1p2_lvt_lp = (-4.3419e-12)*corner_ratio*0.8
+parameters dcgso_nm1p2_lvt_lp = (-4.3419e-12)*corner_ratio*0.8
+parameters dcgdl_nm1p2_lvt_lp = (-5.0290e-12)*corner_ratio*0.8
+parameters dcgsl_nm1p2_lvt_lp = (-5.0290e-12)*corner_ratio*0.8
+parameters dcf_nm1p2_lvt_lp = (-3.2150e-12)*corner_ratio*0.8
+parameters dlvth0_nm1p2_lvt_lp = (2.005e-9)*corner_ratio*0.8
+parameters dpvth0_nm1p2_lvt_lp = (1.1e-16)*corner_ratio*0.8
+parameters dwvth0_nm1p2_lvt_lp = (3.8e-9)*corner_ratio*0.8
+parameters du0_nm1p2_lvt_lp = (-6.6e-4)*corner_ratio*0.8
+parameters dlu0_nm1p2_lvt_lp = (-3.4e-10)*corner_ratio*0.8
+parameters dwu0_nm1p2_lvt_lp = (-1.0330000e-10)*corner_ratio*0.8
+parameters dpu0_nm1p2_lvt_lp = (1.0e-18)*corner_ratio*0.8
+parameters dleta0_nm1p2_lvt_lp = (0)*corner_ratio*0.8
+parameters dpeta0_nm1p2_lvt_lp = (0)*corner_ratio*0.8
+parameters dvoff_nm1p2_lvt_lp = (0)*corner_ratio*0.8
+parameters dvsat_nm1p2_lvt_lp = (0)*corner_ratio*0.8
+parameters dwvsat_nm1p2_lvt_lp = (0)*corner_ratio*0.8
+parameters dlvsat_nm1p2_lvt_lp = (-1.8e-4)*corner_ratio*0.8
+parameters dpvsat_nm1p2_lvt_lp = (0)*corner_ratio*0.8
+
+parameters dtoxe_pm1p2_svt_lp = (-4.8e-11)*corner_ratio*0.8
+parameters dxl_pm1p2_svt_lp = (-1e-009)*corner_ratio*0.8
+parameters dxw_pm1p2_svt_lp = (2e-009)*corner_ratio*0.8
+parameters dvoff_pm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dvth0_pm1p2_svt_lp = (0.041)*corner_ratio*0.8
+parameters dlvth0_pm1p2_svt_lp = (1.77000e-09)*corner_ratio*0.8
+parameters dwvth0_pm1p2_svt_lp = (3.8e-9)*corner_ratio*0.8
+parameters dpvth0_pm1p2_svt_lp = (6.5e-16)*corner_ratio*0.8
+parameters du0_pm1p2_svt_lp = (-2.2e-5)*corner_ratio*0.8
+parameters dlu0_pm1p2_svt_lp = (4.0e-11)*corner_ratio*0.8
+parameters dwu0_pm1p2_svt_lp = (4.7e-11)*corner_ratio*0.8
+parameters dpu0_pm1p2_svt_lp = (-1.0e-17)*corner_ratio*0.8
+parameters dlvsat_pm1p2_svt_lp = (2.0e-5)*corner_ratio*0.8
+parameters dpvsat_pm1p2_svt_lp = (4.15e-11)*corner_ratio*0.8
+parameters dleta0_pm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dpeta0_pm1p2_svt_lp = (0)*corner_ratio*0.8
+parameters dcgso_pm1p2_svt_lp = (7.12e-12)*corner_ratio*0.8
+parameters dcgdo_pm1p2_svt_lp = (7.12e-12)*corner_ratio*0.8
+parameters dcgsl_pm1p2_svt_lp = (3e-12)*corner_ratio*0.8
+parameters dcgdl_pm1p2_svt_lp = (3e-12)*corner_ratio*0.8
+parameters dcf_pm1p2_svt_lp = (4.125e-12)*corner_ratio*0.8
+parameters dcjs_pm1p2_svt_lp = (-5.05e-5)*corner_ratio*0.8
+parameters dcjsws_pm1p2_svt_lp = (-9.98e-14)*corner_ratio*0.8
+parameters dcjswgs_pm1p2_svt_lp = (-1.418e-11)*corner_ratio*0.8
+parameters dags_pm1p2_svt_lp = (-0.037)*corner_ratio*0.8
+parameters dwags_pm1p2_svt_lp = (-1.05e-8)*corner_ratio*0.8
+parameters dtoxe_pm1p2_lvt_lp = (-4.8e-011)*corner_ratio*0.8
+parameters dxl_pm1p2_lvt_lp = (-1.0e-9)*corner_ratio*0.8
+parameters dxw_pm1p2_lvt_lp = (2e-009)*corner_ratio*0.8
+parameters dvoff_pm1p2_lvt_lp = (0)*corner_ratio*0.8
+parameters dvth0_pm1p2_lvt_lp = (0.0424)*corner_ratio*0.8
+parameters dlvth0_pm1p2_lvt_lp = (1.89e-9)*corner_ratio*0.8
+parameters dwvth0_pm1p2_lvt_lp = (2.6e-9)*corner_ratio*0.8
+parameters dpvth0_pm1p2_lvt_lp = (4.316e-16)*corner_ratio*0.8
+parameters du0_pm1p2_lvt_lp = (0.00019048000)*corner_ratio*0.8
+parameters dlu0_pm1p2_lvt_lp = (-2.68e-11)*corner_ratio*0.8
+parameters dwu0_pm1p2_lvt_lp = (-1.518e-12)*corner_ratio*0.8
+parameters dpu0_pm1p2_lvt_lp = (-3.2e-18)*corner_ratio*0.8
+parameters deta0_pm1p2_lvt_lp = (0)*corner_ratio*0.8
+parameters dpeta0_pm1p2_lvt_lp = (-3.40200e-18)*corner_ratio*0.8
+parameters dcgso_pm1p2_lvt_lp = (8.37e-12)*corner_ratio*0.8
+parameters dcgdo_pm1p2_lvt_lp = (8.37e-12)*corner_ratio*0.8
+parameters dcgsl_pm1p2_lvt_lp = (4.86e-12)*corner_ratio*0.8
+parameters dcgdl_pm1p2_lvt_lp = (4.86e-12)*corner_ratio*0.8
+parameters dcf_pm1p2_lvt_lp = (3.215e-12)*corner_ratio*0.8
+parameters dcjs_pm1p2_lvt_lp = (-5.180e-5)*corner_ratio*0.8
+parameters dcjsws_pm1p2_lvt_lp = (-6.980e-14)*corner_ratio*0.8
+parameters dcjswgs_pm1p2_lvt_lp = (-1.005e-11)*corner_ratio*0.8
+parameters dags_pm1p2_lvt_lp = (0)*corner_ratio*0.8
+parameters dwags_pm1p2_lvt_lp = (0)*corner_ratio*0.8
+parameters dpags_pm1p2_lvt_lp = (-8.0e-15)*corner_ratio*0.8
+parameters dvsat_pm1p2_lvt_lp = (0)*corner_ratio*0.8
+parameters dpvsat_pm1p2_lvt_lp = (5.5e-11)*corner_ratio*0.8
+
+// *1.2v hvt core nmos (snfp corner)
+parameters dtoxe_nm1p2_hvt_lp = (4.8e-11)*0.8*corner_ratio
+parameters dxl_nm1p2_hvt_lp = (1.0e-9)*0.8*corner_ratio
+parameters dxw_nm1p2_hvt_lp = (-2.0e-9)*0.8*corner_ratio
+parameters dvth0_nm1p2_hvt_lp = (0.044)*0.8*corner_ratio
+parameters dlvth0_nm1p2_hvt_lp = (1.8e-9)*0.8*corner_ratio
+parameters dwvth0_nm1p2_hvt_lp = (5.5e-10)*0.8*corner_ratio
+parameters dpvth0_nm1p2_hvt_lp = (2.2e-16)*0.8*corner_ratio
+parameters du0_nm1p2_hvt_lp = (5.5e-4)*0.8*corner_ratio
+parameters dlu0_nm1p2_hvt_lp = (1.1e-11)*0.8*corner_ratio
+parameters dwu0_nm1p2_hvt_lp = (-2.0e-11)*0.8*corner_ratio
+parameters dpu0_nm1p2_hvt_lp = (-1.5e-18)*0.8*corner_ratio
+parameters dvsat_nm1p2_hvt_lp = (2e3)*0.8*corner_ratio
+parameters dpvsat_nm1p2_hvt_lp = (-1.0e-11)*0.8*corner_ratio
+parameters deta0_nm1p2_hvt_lp = (-0.01)*0.8*corner_ratio
+parameters dleta0_nm1p2_hvt_lp = (-0.0)*0.8*corner_ratio
+parameters dpeta0_nm1p2_hvt_lp = (-0.0)*0.8*corner_ratio
+parameters dcgdo_nm1p2_hvt_lp = (-1.0000e-11)*0.8*corner_ratio
+parameters dcgso_nm1p2_hvt_lp = (-1.0000e-11)*0.8*corner_ratio
+parameters dcgdl_nm1p2_hvt_lp = (-2.4075e-12)*0.8*corner_ratio
+parameters dcgsl_nm1p2_hvt_lp = (-2.4075e-12)*0.8*corner_ratio
+parameters dcf_nm1p2_hvt_lp = (-4.125e-12)*0.8*corner_ratio
+parameters dcjs_nm1p2_hvt_lp = (6.31e-05)*0.8*corner_ratio
+parameters dcjsws_nm1p2_hvt_lp = (1.51e-15)*0.8*corner_ratio
+parameters dcjswgs_nm1p2_hvt_lp = (1.4550e-11)*0.8*corner_ratio
+parameters dlvsat_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters ddsub_nm1p2_hvt_lp = (-0.0)*0.8*corner_ratio
+parameters dldsub_nm1p2_hvt_lp = (-0.0)*0.8*corner_ratio
+parameters dpdsub_nm1p2_hvt_lp = (-0.0)*0.8*corner_ratio
+parameters dvoff_nm1p2_hvt_lp = (-0.0)*0.8*corner_ratio
+parameters dlvoff_nm1p2_hvt_lp = (-0.0)*0.8*corner_ratio
+parameters dwvoff_nm1p2_hvt_lp = (-0.0)*0.8*corner_ratio
+parameters dpvoff_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters djtsswgs_nm1p2_hvt_lp = (-0.5)*0.8*corner_ratio
+parameters dlnfactor_nm1p2_hvt_lp = (7.1e-9)*0.8*corner_ratio
+parameters dpnfactor_nm1p2_hvt_lp = (6.0e-15)*0.8*corner_ratio
+parameters dpa0_nm1p2_hvt_lp = (-2.5e-21)*0.8*corner_ratio
+parameters dwminv_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters da0_nm1p2_hvt_lp = (0.05)*0.8*corner_ratio
+parameters dla0_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dwa0_nm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dagidl_nm1p2_hvt_lp = (-0.5)*0.8*corner_ratio
+
+// *1.2v hvt core pmos (snfp corner) 
+parameters dtoxe_pm1p2_hvt_lp = (-4.8e-011)*0.8*corner_ratio
+parameters dxl_pm1p2_hvt_lp = (-1e-009)*0.8*corner_ratio
+parameters dxw_pm1p2_hvt_lp = (2e-009)*0.8*corner_ratio
+parameters dvoff_pm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dtvoff_pm1p2_hvt_lp = (-2.6e-3)*0.8*corner_ratio
+parameters dvth0_pm1p2_hvt_lp = (0.0382000)*0.8*corner_ratio
+parameters dlvth0_pm1p2_hvt_lp = (1.57e-009)*0.8*corner_ratio
+parameters dwvth0_pm1p2_hvt_lp = (1.6e-009)*0.8*corner_ratio
+parameters dpvth0_pm1p2_hvt_lp = (1.69670e-15)*0.8*corner_ratio
+parameters du0_pm1p2_hvt_lp = ( 0*0.8*corner_ratio) + 5e-5
+parameters dlu0_pm1p2_hvt_lp = (3.59640e-12)*0.8*corner_ratio
+parameters dpu0_pm1p2_hvt_lp = (-3.12797e-18)*0.8*corner_ratio
+parameters dleta0_pm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dpeta0_pm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dcf_pm1p2_hvt_lp = (4.08e-012)*0.8*corner_ratio
+parameters dcjs_pm1p2_hvt_lp = (-5.07e-05)*0.8*corner_ratio
+parameters dcjsws_pm1p2_hvt_lp = (-8.67e-14)*0.8*corner_ratio
+parameters dcjswgs_pm1p2_hvt_lp = (-1.6070e-11)*0.8*corner_ratio
+parameters dcgso_pm1p2_hvt_lp = (7.1200e-12)*0.8*corner_ratio
+parameters dcgdo_pm1p2_hvt_lp = (7.1200e-12)*0.8*corner_ratio
+parameters dcgsl_pm1p2_hvt_lp = (2.0500e-12)*0.8*corner_ratio
+parameters dcgdl_pm1p2_hvt_lp = (2.0500e-12)*0.8*corner_ratio
+parameters djtsswgd_pm1p2_hvt_lp = (2e-008)*0.8*corner_ratio
+parameters djtsswgs_pm1p2_hvt_lp = (2e-008)*0.8*corner_ratio
+parameters dags_pm1p2_hvt_lp = 0.013*0.8*corner_ratio
+parameters dlags_pm1p2_hvt_lp = (0)*0.8*corner_ratio
+parameters dvsat_pm1p2_hvt_lp = (4550.0)*0.8*corner_ratio
+parameters dpvsat_pm1p2_hvt_lp = (-2.000e-11)*0.8*corner_ratio
+
+// *1.2v native nmos (snfp corner) 
+parameters dtoxe_nnat1p2_lp = ((4.8e-11)*corner_ratio)*0.8
+parameters dxl_nnat1p2_lp = ((1e-9)*corner_ratio)*0.8
+parameters dxw_nnat1p2_lp = ((-2e-9)*corner_ratio)*0.8
+parameters dvth0_nnat1p2_lp = ((0.02868)*corner_ratio)*0.8
+parameters dlvth0_nnat1p2_lp = ((6.814e-9)*corner_ratio)*0.8
+parameters dpvth0_nnat1p2_lp = ((-2.5028e-16)*corner_ratio)*0.8
+parameters du0_nnat1p2_lp = ((-0.00033000000)*corner_ratio)*0.8
+parameters dlu0_nnat1p2_lp = ((5.7000000e-11)*corner_ratio)*0.8
+parameters dwu0_nnat1p2_lp = ((-1.6e-10)*corner_ratio)*0.8
+parameters dpu0_nnat1p2_lp = ((2.37e-17)*corner_ratio)*0.8
+parameters dags_nnat1p2_lp = ((0.020000000)*corner_ratio)*0.8
+parameters dlags_nnat1p2_lp = ((-3.2800000e-08)*corner_ratio)*0.8
+parameters dpags_nnat1p2_lp = ((-2.02e-13)*corner_ratio)*0.8
+parameters dvoff_nnat1p2_lp = ((0)*corner_ratio)*0.8
+parameters dcgso_nnat1p2_lp = ((-1.2500e-11)*corner_ratio)*0.8
+parameters dcgdo_nnat1p2_lp = ((-1.2500e-11)*corner_ratio)*0.8
+parameters dcf_nnat1p2_lp = ((-4.135e-12)*corner_ratio)*0.8
+parameters dcgsl_nnat1p2_lp = ((-4e-12)*corner_ratio)*0.8
+parameters dcgdl_nnat1p2_lp = ((-4e-12)*corner_ratio)*0.8
+parameters dcjs_nnat1p2_lp = ((4.79e-06)*corner_ratio)*0.8
+parameters dcjsws_nnat1p2_lp = ((2.74e-12)*corner_ratio)*0.8
+parameters dcjswgs_nnat1p2_lp = ((1.5499e-12)*corner_ratio)*0.8
+parameters dwvth0_nnat1p2_lp = ((0)*corner_ratio)*0.8
+parameters dwags_nnat1p2_lp = ((3.16e-8)*corner_ratio)*0.8
+
+// **3.3v io nmos (snfp corner)
+parameters dvth0_nm3p3_lp = (0.056)*0.8*corner_ratio
+parameters dlvth0_nm3p3_lp = (1.0e-9)*0.8*corner_ratio
+parameters dwvth0_nm3p3_lp = (5.0e-10)*0.8*corner_ratio
+parameters dpvth0_nm3p3_lp = (2.0e-15)*0.8*corner_ratio
+parameters ddsub_nm3p3_lp = (0.005)*0.8*corner_ratio
+parameters dldsub_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dwdsub_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dpdsub_nm3p3_lp = (1.0e-15)*0.8*corner_ratio
+parameters du0_nm3p3_lp = (-3.0e-4)*0.8*corner_ratio
+parameters dlu0_nm3p3_lp = (-1.4e-9)*0.8*corner_ratio
+parameters dwu0_nm3p3_lp = (-1.8e-10)*0.8*corner_ratio
+parameters dpu0_nm3p3_lp = (-4.2e-16)*0.8*corner_ratio
+parameters dvsat_nm3p3_lp = (-5000.0)*0.8*corner_ratio
+parameters dlvsat_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dwvsat_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dpvsat_nm3p3_lp = (-1.0e-10)*0.8*corner_ratio
+parameters dags_nm3p3_lp = (-0.002)*0.8*corner_ratio
+parameters dlags_nm3p3_lp = (-1.0e-9)*0.8*corner_ratio
+parameters dwags_nm3p3_lp = (-1.5e-9)*0.8*corner_ratio
+parameters dpags_nm3p3_lp = (-9.0e-15)*0.8*corner_ratio
+parameters ddvt0_nm3p3_lp = (-0.001)*0.8*corner_ratio
+parameters dldvt0_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dpdvt0_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dlpe0_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dllpe0_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dplpe0_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dcf_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dlcf_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dwcf_nm3p3_lp = (0)*0.8*corner_ratio
+parameters dpcf_nm3p3_lp = (0)*0.8*corner_ratio
+parameters ddtox_nm3p3_lp = (-1.3e-10)*0.8*corner_ratio
+parameters dcgso_nm3p3_lp = (-1.2500e-11)*0.8*corner_ratio
+parameters dcgdo_nm3p3_lp = (-1.2500e-11)*0.8*corner_ratio
+parameters dcjs_nm3p3_lp = (4.59e-05)*0.8*corner_ratio
+parameters dcjsws_nm3p3_lp = (7.89e-13)*0.8*corner_ratio
+parameters dcjswgs_nm3p3_lp = (1.0453e-11)*0.8*corner_ratio
+parameters dcgdl_nm3p3_lp = (-3.5000e-12)*0.8*corner_ratio
+parameters dcgsl_nm3p3_lp = (-3.5000e-12)*0.8*corner_ratio
+
+// *3.3v io pmos (snfp corner)
+parameters dtoxe_pm3p3_lp = (-1.0e-10)*0.8*corner_ratio
+parameters dtoxp_pm3p3_lp = (-1.0e-10)*0.8*corner_ratio
+parameters dxl_pm3p3_lp = (-4.5e-9)*0.8*corner_ratio
+parameters dxw_pm3p3_lp = (4.5e-9)*0.8*corner_ratio
+parameters dvth0_pm3p3_lp = (0.055)*0.8*corner_ratio
+parameters dcjs_pm3p3_lp = (-5.2100e-05)*0.8*corner_ratio
+parameters dcjsws_pm3p3_lp = (-1.43e-13)*0.8*corner_ratio
+parameters dcjswgs_pm3p3_lp = (-1.1015e-11)*0.8*corner_ratio
+parameters dcgdo_pm3p3_lp = (1.0000e-11)*0.8*corner_ratio
+parameters dcgso_pm3p3_lp = (1.0000e-11)*0.8*corner_ratio
+parameters dcgdl_pm3p3_lp = (5.0000e-12)*0.8*corner_ratio
+parameters dcgsl_pm3p3_lp = (5.0000e-12)*0.8*corner_ratio
+parameters dcf_pm3p3_lp = (3.17e-12)*0.8*corner_ratio
+parameters dlvth0_pm3p3_lp = (1.4e-9)*0.8*corner_ratio
+parameters dpvth0_pm3p3_lp = (1.8e-15)*0.8*corner_ratio
+parameters dlu0_pm3p3_lp = (2.7e-10)*0.8*corner_ratio
+parameters dpu0_pm3p3_lp = (6.2e-17)*0.8*corner_ratio
+parameters dlcit_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dpcit_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dwcit_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dwvth0_pm3p3_lp = (1.0e-9)*0.8*corner_ratio
+parameters dvoff_pm3p3_lp = (0)*0.8*corner_ratio
+parameters ddvt0_pm3p3_lp = (0.081)*0.8*corner_ratio
+parameters deta0_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dwu0_pm3p3_lp = (1.7e-10)*0.8*corner_ratio
+parameters dwa0_pm3p3_lp = (-1.0e-8)*0.8*corner_ratio
+parameters dpeta0_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dweta0_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dpa0_pm3p3_lp = (0.0000e+000)*0.8*corner_ratio
+parameters dpags_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dla0_pm3p3_lp = (1.635e-007)*0.8*corner_ratio
+parameters dlvsat_pm3p3_lp = (0.002)*0.8*corner_ratio
+parameters dwvsat_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dpvsat_pm3p3_lp = (2.0e-11)*0.8*corner_ratio
+parameters dlvoff_pm3p3_lp = (0)*0.8*corner_ratio
+parameters dwvoff_pm3p3_lp = (+0.0000e+000)*0.8*corner_ratio
+parameters dpvoff_pm3p3_lp = (0.0000e+000)*0.8*corner_ratio
+parameters dagidl_pm3p3_lp = (0)*0.8*corner_ratio
+parameters du0_pm3p3_lp = (2.5e-4)*0.8*corner_ratio
+
+// *3.3v io native nmos (snfp corner)
+parameters dtoxe_nnat3p3_lp = (1.0e-10)*corner_ratio*0.8
+parameters dxl_nnat3p3_lp = (4.5e-009)*corner_ratio*0.8
+parameters dxw_nnat3p3_lp = (-4.5e-009)*corner_ratio*0.8
+parameters dvth0_nnat3p3_lp = (0.03075)*corner_ratio*0.8
+parameters dlvth0_nnat3p3_lp = (2.73e-8)*corner_ratio*0.8
+parameters dwvth0_nnat3p3_lp = (-3.0e-10)*corner_ratio*0.8
+parameters dpvth0_nnat3p3_lp = 0*corner_ratio*0.8
+parameters du0_nnat3p3_lp = (-0.00184)*corner_ratio*0.8
+parameters dlu0_nnat3p3_lp = 2.0e-10*corner_ratio*0.8
+parameters dwu0_nnat3p3_lp = (-2.6e-10)*corner_ratio*0.8
+parameters dpu0_nnat3p3_lp = 0*corner_ratio*0.8
+parameters dvsat_nnat3p3_lp = 0*corner_ratio*0.8
+parameters dlvsat_nnat3p3_lp = -0.0028*0.8
+parameters dpvsat_nnat3p3_lp = 0*corner_ratio*0.8
+parameters dcgso_nnat3p3_lp = (-1.0000e-11)*corner_ratio*0.8
+parameters dcgdo_nnat3p3_lp = (-1.0000e-11)*corner_ratio*0.8
+parameters dcf_nnat3p3_lp = (-3.22e-12)*corner_ratio*0.8
+parameters dcgsl_nnat3p3_lp = (-1.3500e-11)*corner_ratio*0.8
+parameters dcgdl_nnat3p3_lp = (-1.3500e-11)*corner_ratio*0.8
+parameters dcjs_nnat3p3_lp = (5.95e-06)*corner_ratio*0.8
+parameters dcjsws_nnat3p3_lp = (3.72e-12)*corner_ratio*0.8
+parameters dcjswgs_nnat3p3_lp = (1.0172e-11)*corner_ratio*0.8
+
+
+endsection snfp
+
+
+section mos_mc
+
+parameters rnd0     = 0             
+parameters rnd1     = 0             
+parameters rnd2     = 0             
+parameters rnd3     = 0             
+parameters rnd4     = 0             
+parameters p0       = 1.0           
+parameters p1       = 1.0           
+parameters p2       = 1.0           
+parameters p3       = 1.0           
+parameters p4       = 1.0           
+parameters par0     = rnd0*p0       
+parameters par1     = rnd1*p1       
+parameters par2     = rnd2*p2       
+parameters par3     = rnd3*p3       
+parameters par4     = rnd4*p4       
+statistics {
+    process {
+        vary rnd0 dist = gauss std = 1/3
+        vary rnd1 dist = gauss std = 1/3
+        vary rnd2 dist = gauss std = 1/3
+        vary rnd3 dist = gauss std = 1/3
+        vary rnd4 dist = gauss std = 1/3
+    }
+}
+parameters dtoxe_nm1p2_svt_lp = 0+(4.5161e-11)*par0+(-1.6259e-11)*par1+(4.3114e-13)*par2+(-1.2793e-15)*par3+(9.0906e-19)*par4
+parameters dvth0_nm1p2_svt_lp = 0+(0.038661)*par0+(-0.013926)*par1+(0.00078124)*par2+(-8.2998e-07)*par3+(7.5614e-10)*par4
+parameters dxl_nm1p2_svt_lp = 0+(9.4084e-10)*par0+(-3.3872e-10)*par1+(8.9820e-12)*par2+(-2.6652e-14)*par3+(1.9481e-17)*par4
+parameters dxw_nm1p2_svt_lp = 0+(-1.8817e-09)*par0+(6.7744e-10)*par1+(-1.7964e-11)*par2+(5.3305e-14)*par3+(-3.8213e-17)*par4
+parameters dcjs_nm1p2_svt_lp = 0+(4.4408e-05)*par0+(-1.5988e-05)*par1+(4.2395e-07)*par2+(-1.2580e-09)*par3+(9.7843e-13)*par4
+parameters dcjsws_nm1p2_svt_lp = 0+(8.5429e-16)*par0+(-3.0756e-16)*par1+(8.1557e-18)*par2+(-2.4200e-20)*par3+(1.7600e-23)*par4
+parameters dcjswgs_nm1p2_svt_lp = 0+(1.2513e-11)*par0+(-4.5050e-12)*par1+(1.1946e-13)*par2+(-3.5448e-16)*par3+(2.5322e-19)*par4
+parameters dcgdo_nm1p2_svt_lp = 0+(-3.5282e-12)*par0+(1.2702e-12)*par1+(-3.3683e-14)*par2+(9.9946e-17)*par3+(-7.6031e-20)*par4
+parameters dcgso_nm1p2_svt_lp = 0+(-3.5282e-12)*par0+(1.2702e-12)*par1+(-3.3683e-14)*par2+(9.9946e-17)*par3+(-7.1126e-20)*par4
+parameters dcgdl_nm1p2_svt_lp = 0+(-3.1518e-12)*par0+(1.1347e-12)*par1+(-3.0090e-14)*par2+(8.9285e-17)*par3+(-5.8526e-20)*par4
+parameters dcgsl_nm1p2_svt_lp = 0+(-3.1518e-12)*par0+(1.1347e-12)*par1+(-3.0090e-14)*par2+(8.9285e-17)*par3+(-4.3125e-20)*par4
+parameters dcf_nm1p2_svt_lp = 0+(-3.8998e-12)*par0+(1.4040e-12)*par1+(-3.7230e-14)*par2+(1.1047e-16)*par3+(-6.9463e-20)*par4
+parameters dlvth0_nm1p2_svt_lp = 0+(2.7711e-09)*par0+(-9.9663e-10)*par1+(-3.0781e-11)*par2+(-1.1533e-13)*par3+(3.4493e-17)*par4
+parameters dpvth0_nm1p2_svt_lp = 0+(-5.6451e-18)*par0+(2.0323e-18)*par1+(-5.3892e-20)*par2+(1.5991e-22)*par3+(-9.0564e-26)*par4
+parameters dlu0_nm1p2_svt_lp = 0+(-5.9925e-11)*par0+(2.1447e-11)*par1+(6.7079e-12)*par2+(6.3821e-15)*par3+(-8.4745e-19)*par4
+parameters dpu0_nm1p2_svt_lp = 0+(7.5268e-18)*par0+(-2.7098e-18)*par1+(7.1856e-20)*par2+(-2.1322e-22)*par3+(1.3286e-25)*par4
+parameters dleta0_nm1p2_svt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dwvth0_nm1p2_svt_lp = 0+(5.4569e-09)*par0+(-1.9646e-09)*par1+(5.2096e-11)*par2+(-1.5458e-13)*par3+(5.3786e-17)*par4
+parameters du0_nm1p2_svt_lp = 0+(-0.00016910)*par0+(5.9884e-05)*par1+(5.5182e-05)*par2+(4.1337e-08)*par3+(-2.2951e-12)*par4
+parameters dwu0_nm1p2_svt_lp = 0+(5.5604e-11)*par0+(-2.0213e-11)*par1+(1.1649e-11)*par2+(5.5790e-15)*par3+(7.7118e-19)*par4
+parameters dlvsat_nm1p2_svt_lp = 0+(4.1504e-05)*par0+(-1.4666e-05)*par1+(-1.5390e-05)*par2+(-1.1334e-08)*par3+(6.3496e-13)*par4
+parameters dpvsat_nm1p2_svt_lp = 0+(4.6101e-12)*par0+(-1.6597e-12)*par1+(4.4012e-14)*par2+(-1.3060e-16)*par3+(7.5837e-20)*par4
+parameters dpeta0_nm1p2_svt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dvoff_nm1p2_svt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters da0_nm1p2_svt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dla0_nm1p2_svt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dwa0_nm1p2_svt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dpa0_nm1p2_svt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dags_nm1p2_svt_lp = 0+(0.013350)*par0+(-0.0048128)*par1+(0.00049371)*par2+(-1.4251e-07)*par3+(2.0713e-10)*par4
+parameters dlags_nm1p2_svt_lp = 0+(5.6451e-08)*par0+(-2.0323e-08)*par1+(5.3892e-10)*par2+(-1.5991e-12)*par3+(8.0886e-16)*par4
+parameters dwags_nm1p2_svt_lp = 0+(-2.6410e-10)*par0+(9.2920e-11)*par1+(1.2100e-10)*par2+(8.6967e-14)*par3+(-4.2507e-18)*par4
+parameters dpags_nm1p2_svt_lp = 0+(-1.3736e-15)*par0+(4.9453e-16)*par1+(-1.3114e-17)*par2+(3.8912e-20)*par3+(-2.0513e-23)*par4
+parameters dtoxe_nm1p2_lvt_lp = 0+(4.5161e-11)*par0+(-1.6259e-11)*par1+(4.3114e-13)*par2+(-1.2793e-15)*par3+(7.1129e-19)*par4
+parameters dxl_nm1p2_lvt_lp = 0+(9.4084e-10)*par0+(-3.3872e-10)*par1+(8.9820e-12)*par2+(-2.6652e-14)*par3+(1.7989e-17)*par4
+parameters dxw_nm1p2_lvt_lp = 0+(-1.8817e-09)*par0+(6.7744e-10)*par1+(-1.7964e-11)*par2+(5.3305e-14)*par3+(-3.3957e-17)*par4
+parameters dvth0_nm1p2_lvt_lp = 0+(0.038575)*par0+(-0.013888)*par1+(0.00036826)*par2+(-1.0927e-06)*par3+(7.4938e-10)*par4
+parameters dcjs_nm1p2_lvt_lp = 0+(4.0739e-05)*par0+(-1.4667e-05)*par1+(3.8892e-07)*par2+(-1.1540e-09)*par3+(8.3544e-13)*par4
+parameters dcjsws_nm1p2_lvt_lp = 0+(4.1397e-16)*par0+(-1.4904e-16)*par1+(3.9521e-18)*par2+(-1.1727e-20)*par3+(9.2939e-24)*par4
+parameters dcjswgs_nm1p2_lvt_lp = 0+(1.0114e-11)*par0+(-3.6412e-12)*par1+(9.6557e-14)*par2+(-2.8651e-16)*par3+(2.1246e-19)*par4
+parameters dcgdo_nm1p2_lvt_lp = 0+(-4.0851e-12)*par0+(1.4707e-12)*par1+(-3.8999e-14)*par2+(1.1572e-16)*par3+(-8.0574e-20)*par4
+parameters dcgso_nm1p2_lvt_lp = 0+(-4.0851e-12)*par0+(1.4707e-12)*par1+(-3.8999e-14)*par2+(1.1572e-16)*par3+(-7.5311e-20)*par4
+parameters dcgdl_nm1p2_lvt_lp = 0+(-4.7315e-12)*par0+(1.7034e-12)*par1+(-4.5171e-14)*par2+(1.3403e-16)*par3+(-8.0274e-20)*par4
+parameters dcgsl_nm1p2_lvt_lp = 0+(-4.7315e-12)*par0+(1.7034e-12)*par1+(-4.5171e-14)*par2+(1.3403e-16)*par3+(-7.8939e-20)*par4
+parameters dcf_nm1p2_lvt_lp = 0+(-3.0248e-12)*par0+(1.0890e-12)*par1+(-2.8877e-14)*par2+(8.5687e-17)*par3+(-4.5659e-20)*par4
+parameters dlvth0_nm1p2_lvt_lp = 0+(1.8724e-09)*par0+(-6.7396e-10)*par1+(1.1006e-11)*par2+(-5.7461e-14)*par3+(3.4102e-17)*par4
+parameters dpvth0_nm1p2_lvt_lp = 0+(1.0349e-16)*par0+(-3.7259e-17)*par1+(9.8802e-19)*par2+(-2.9317e-21)*par3+(1.3092e-24)*par4
+parameters dwvth0_nm1p2_lvt_lp = 0+(3.5752e-09)*par0+(-1.2871e-09)*par1+(3.4132e-11)*par2+(-1.0128e-13)*par3+(4.6162e-17)*par4
+parameters du0_nm1p2_lvt_lp = 0+(-0.00049141)*par0+(0.00017584)*par1+(5.6710e-05)*par2+(5.3432e-08)*par3+(-7.3496e-12)*par4
+parameters dlu0_nm1p2_lvt_lp = 0+(-2.7813e-10)*par0+(9.9780e-11)*par1+(1.7449e-11)*par2+(2.0816e-14)*par3+(-2.9948e-18)*par4
+parameters dwu0_nm1p2_lvt_lp = 0+(-6.9099e-11)*par0+(2.4649e-11)*par1+(1.2371e-11)*par2+(1.0343e-14)*par3+(-4.3737e-19)*par4
+parameters dpu0_nm1p2_lvt_lp = 0+(6.0946e-18)*par0+(-2.2389e-18)*par1+(2.6160e-18)*par2+(1.4732e-21)*par3+(3.8276e-26)*par4
+parameters dleta0_nm1p2_lvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dpeta0_nm1p2_lvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dvoff_nm1p2_lvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dvsat_nm1p2_lvt_lp = 0+(968.50)*par0+(-356.98)*par1+(483.92)*par2+(0.27801)*par3+(7.2045e-06)*par4
+parameters dwvsat_nm1p2_lvt_lp = 0+(-0.00021239)*par0+(7.8285e-05)*par1+(-0.00010612)*par2+(-6.0967e-08)*par3+(-2.2364e-12)*par4
+parameters dlvsat_nm1p2_lvt_lp = 0+(-0.00021501)*par0+(7.7806e-05)*par1+(-2.4839e-05)*par2+(-8.5715e-09)*par3+(-1.3484e-12)*par4
+parameters dpvsat_nm1p2_lvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dxl_pm1p2_svt_lp = 0+(5.3682e-10)*par0+(8.4350e-10)*par1+(1.8029e-11)*par2+(8.0372e-13)*par3+(6.0579e-18)*par4
+parameters dxw_pm1p2_svt_lp = 0+(-1.0736e-09)*par0+(-1.6870e-09)*par1+(-3.6057e-11)*par2+(-1.6074e-12)*par3+(-9.1657e-18)*par4
+parameters dvoff_pm1p2_svt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dvth0_pm1p2_svt_lp = 0+(-0.021738)*par0+(-0.034159)*par1+(-0.00095910)*par2+(-3.2698e-05)*par3+(-1.7222e-10)*par4
+parameters dlvth0_pm1p2_svt_lp = 0+(-9.0375e-10)*par0+(-1.4204e-09)*par1+(-6.9282e-11)*par2+(-1.3790e-12)*par3+(-8.6871e-18)*par4
+parameters dwvth0_pm1p2_svt_lp = 0+(-2.0399e-09)*par0+(-3.2053e-09)*par1+(-6.8508e-11)*par2+(-3.0541e-12)*par3+(-8.0066e-18)*par4
+parameters dpvth0_pm1p2_svt_lp = 0+(-3.4076e-16)*par0+(-5.3551e-16)*par1+(-1.8316e-17)*par2+(-5.1475e-19)*par3+(-2.0668e-24)*par4
+parameters du0_pm1p2_svt_lp = 0+(6.7197e-07)*par0+(1.0869e-06)*par1+(3.2584e-06)*par2+(3.1568e-09)*par3+(-7.3523e-15)*par4
+parameters dlu0_pm1p2_svt_lp = 0+(-2.6007e-11)*par0+(-4.0827e-11)*par1+(3.0082e-12)*par2+(-3.6357e-14)*par3+(-1.0312e-19)*par4
+parameters dwu0_pm1p2_svt_lp = 0+(-3.1089e-11)*par0+(-4.8802e-11)*par1+(3.9764e-12)*par2+(-4.3209e-14)*par3+(-9.6135e-20)*par4
+parameters dpu0_pm1p2_svt_lp = 0+(5.9063e-18)*par0+(9.2762e-18)*par1+(-2.5937e-19)*par2+(8.5386e-21)*par3+(3.6939e-26)*par4
+parameters dlvsat_pm1p2_svt_lp = 0+(5.6555e-06)*par0+(8.7814e-06)*par1+(-1.0766e-05)*par2+(1.1855e-09)*par3+(5.7654e-14)*par4
+parameters dpvsat_pm1p2_svt_lp = 0+(-4.1298e-11)*par0+(-6.4733e-11)*par1+(1.5073e-11)*par2+(-5.0890e-14)*par3+(-9.1560e-20)*par4
+parameters dleta0_pm1p2_svt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dpeta0_pm1p2_svt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dcgso_pm1p2_svt_lp = 0+(-3.8221e-12)*par0+(-6.0058e-12)*par1+(-1.2836e-13)*par2+(-5.7225e-15)*par3+(-1.5359e-20)*par4
+parameters dcgdo_pm1p2_svt_lp = 0+(-3.8221e-12)*par0+(-6.0058e-12)*par1+(-1.2836e-13)*par2+(-5.7225e-15)*par3+(-1.3539e-20)*par4
+parameters dcgsl_pm1p2_svt_lp = 0+(-1.6105e-12)*par0+(-2.5305e-12)*par1+(-5.4086e-14)*par2+(-2.4112e-15)*par3+(-3.3658e-21)*par4
+parameters dcgdl_pm1p2_svt_lp = 0+(-1.6105e-12)*par0+(-2.5305e-12)*par1+(-5.4086e-14)*par2+(-2.4112e-15)*par3+(-3.2940e-21)*par4
+parameters dcf_pm1p2_svt_lp = 0+(-2.2144e-12)*par0+(-3.4795e-12)*par1+(-7.4368e-14)*par2+(-3.3153e-15)*par3+(2.9731e-21)*par4
+parameters dcjs_pm1p2_svt_lp = 0+(2.7109e-05)*par0+(4.2597e-05)*par1+(9.1044e-07)*par2+(4.0588e-08)*par3+(5.7426e-14)*par4
+parameters dcjsws_pm1p2_svt_lp = 0+(5.3575e-14)*par0+(8.4182e-14)*par1+(1.7992e-15)*par2+(8.0211e-17)*par3+(-2.4589e-22)*par4
+parameters dcjswgs_pm1p2_svt_lp = 0+(7.6121e-12)*par0+(1.1961e-11)*par1+(2.5564e-13)*par2+(1.1397e-14)*par3+(-2.5892e-20)*par4
+parameters dags_pm1p2_svt_lp = 0+(0.010865)*par0+(0.017137)*par1+(0.0071078)*par2+(2.0749e-05)*par3+(-5.1380e-13)*par4
+parameters dwags_pm1p2_svt_lp = 0+(4.8077e-09)*par0+(7.5610e-09)*par1+(8.4666e-10)*par2+(7.6535e-12)*par3+(2.8472e-17)*par4
+parameters dtoxe_pm1p2_svt_lp = 0+(2.5767e-11)*par0+(4.0488e-11)*par1+(8.6537e-13)*par2+(3.8578e-14)*par3+(1.0237e-20)*par4
+parameters dtoxe_pm1p2_lvt_lp = 0+(2.5767e-11)*par0+(4.0488e-11)*par1+(8.6537e-13)*par2+(3.8578e-14)*par3+(-1.8668e-21)*par4
+parameters dxl_pm1p2_lvt_lp = 0+(5.3682e-10)*par0+(8.4350e-10)*par1+(1.8029e-11)*par2+(8.0372e-13)*par3+(-1.3416e-18)*par4
+parameters dpvsat_pm1p2_lvt_lp = 0+(-2.5665e-11)*par0+(-4.0358e-11)*par1+(-4.0617e-12)*par2+(-4.0552e-14)*par3+(-6.5743e-20)*par4
+parameters dxw_pm1p2_lvt_lp = 0+(-1.0736e-09)*par0+(-1.6870e-09)*par1+(-3.6057e-11)*par2+(-1.6074e-12)*par3+(2.3794e-18)*par4
+parameters dvoff_pm1p2_lvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dvth0_pm1p2_lvt_lp = 0+(-0.022107)*par0+(-0.034742)*par1+(-0.0012922)*par2+(-3.3464e-05)*par3+(-1.2550e-10)*par4
+parameters dlvth0_pm1p2_lvt_lp = 0+(-1.0173e-09)*par0+(-1.5985e-09)*par1+(-3.1874e-11)*par2+(-1.5216e-12)*par3+(4.9103e-18)*par4
+parameters dwvth0_pm1p2_lvt_lp = 0+(-1.4228e-09)*par0+(-2.2355e-09)*par1+(-2.4879e-11)*par2+(-2.1150e-12)*par3+(4.1191e-20)*par4
+parameters dpvth0_pm1p2_lvt_lp = 0+(-2.3803e-16)*par0+(-3.7396e-16)*par1+(-2.6343e-18)*par2+(-3.5281e-19)*par3+(1.8986e-25)*par4
+parameters du0_pm1p2_lvt_lp = 0+(-0.00014169)*par0+(-0.00022231)*par1+(2.9209e-05)*par2+(-1.8956e-07)*par3+(2.7666e-14)*par4
+parameters dlu0_pm1p2_lvt_lp = 0+(1.2372e-11)*par0+(1.9456e-11)*par1+(2.0833e-12)*par2+(1.9631e-14)*par3+(-9.3001e-20)*par4
+parameters dwu0_pm1p2_lvt_lp = 0+(-1.9647e-12)*par0+(-3.0656e-12)*par1+(2.1744e-12)*par2+(-1.4524e-15)*par3+(5.6939e-21)*par4
+parameters dpu0_pm1p2_lvt_lp = 0+(1.9326e-18)*par0+(3.0350e-18)*par1+(-1.1811e-19)*par2+(2.7718e-21)*par3+(-1.3629e-26)*par4
+parameters deta0_pm1p2_lvt_lp = 0+(-0.0054159)*par0+(-0.0084663)*par1+(0.0043855)*par2+(-5.0730e-06)*par3+(3.6960e-11)*par4
+parameters dpeta0_pm1p2_lvt_lp = 0+(6.4714e-18)*par0+(1.0130e-17)*par1+(-3.7795e-18)*par2+(7.0324e-21)*par3+(-4.2009e-26)*par4
+parameters dcgso_pm1p2_lvt_lp = 0+(-4.4932e-12)*par0+(-7.0601e-12)*par1+(-1.5090e-13)*par2+(-6.7271e-15)*par3+(5.3684e-20)*par4
+parameters dcgdo_pm1p2_lvt_lp = 0+(-4.4932e-12)*par0+(-7.0601e-12)*par1+(-1.5090e-13)*par2+(-6.7271e-15)*par3+(6.1522e-20)*par4
+parameters dcgsl_pm1p2_lvt_lp = 0+(-2.6089e-12)*par0+(-4.0994e-12)*par1+(-8.7619e-14)*par2+(-3.9061e-15)*par3+(4.4211e-20)*par4
+parameters dcgdl_pm1p2_lvt_lp = 0+(-2.6089e-12)*par0+(-4.0994e-12)*par1+(-8.7619e-14)*par2+(-3.9061e-15)*par3+(4.3381e-20)*par4
+parameters dcf_pm1p2_lvt_lp = 0+(-1.7259e-12)*par0+(-2.7119e-12)*par1+(-5.7962e-14)*par2+(-2.5840e-15)*par3+(2.1509e-20)*par4
+parameters dcjs_pm1p2_lvt_lp = 0+(2.7807e-05)*par0+(4.3694e-05)*par1+(9.3388e-07)*par2+(4.1633e-08)*par3+(-4.3774e-13)*par4
+parameters dcjsws_pm1p2_lvt_lp = 0+(3.7470e-14)*par0+(5.8877e-14)*par1+(1.2584e-15)*par2+(5.6100e-17)*par3+(-5.7738e-22)*par4
+parameters dcjswgs_pm1p2_lvt_lp = 0+(5.3950e-12)*par0+(8.4772e-12)*par1+(1.8119e-13)*par2+(8.0774e-15)*par3+(-8.4098e-20)*par4
+parameters dags_pm1p2_lvt_lp = 0+(-0.0012348)*par0+(-0.0019302)*par1+(0.00099983)*par2+(-1.1566e-06)*par3+(1.2329e-11)*par4
+parameters dwags_pm1p2_lvt_lp = 0+(-2.0991e-09)*par0+(-3.2813e-09)*par1+(1.6997e-09)*par2+(-1.9662e-12)*par3+(1.8461e-17)*par4
+parameters dpags_pm1p2_lvt_lp = 0+(1.9289e-15)*par0+(3.0469e-15)*par1+(1.7309e-15)*par2+(3.9953e-18)*par3+(-2.9074e-23)*par4
+parameters dvsat_pm1p2_lvt_lp = 0+(-851.99)*par0+(-1331.8)*par1+(689.88)*par2+(-0.79803)*par3+(8.5794e-06)*par4
+parameters dtoxe_nm1p2_hvt_lp = 0+(4.5161e-11)*par0+(-1.6259e-11)*par1+(4.3114e-13)*par2+(-1.2793e-15)*par3+(-4.7146e-19)*par4
+parameters dxl_nm1p2_hvt_lp = 0+(9.4084e-10)*par0+(-3.3872e-10)*par1+(8.9820e-12)*par2+(-2.6652e-14)*par3+(-1.0747e-17)*par4
+parameters dxw_nm1p2_hvt_lp = 0+(-1.8817e-09)*par0+(6.7744e-10)*par1+(-1.7964e-11)*par2+(5.3305e-14)*par3+(2.2974e-17)*par4
+parameters dvth0_nm1p2_hvt_lp = 0+(0.041397)*par0+(-0.014904)*par1+(0.00039521)*par2+(-1.1727e-06)*par3+(-4.8057e-10)*par4
+parameters dlvth0_nm1p2_hvt_lp = 0+(1.6935e-09)*par0+(-6.0970e-10)*par1+(1.6168e-11)*par2+(-4.7974e-14)*par3+(-2.4501e-17)*par4
+parameters dwvth0_nm1p2_hvt_lp = 0+(5.3144e-10)*par0+(-1.9145e-10)*par1+(1.1943e-11)*par2+(-1.0635e-14)*par3+(-6.3412e-18)*par4
+parameters dpvth0_nm1p2_hvt_lp = 0+(2.0699e-16)*par0+(-7.4519e-17)*par1+(1.9760e-18)*par2+(-5.8635e-21)*par3+(-2.5700e-24)*par4
+parameters du0_nm1p2_hvt_lp = 0+(0.00049399)*par0+(-0.00017764)*par1+(-6.7306e-06)*par2+(-2.1359e-08)*par3+(-5.7330e-12)*par4
+parameters dlu0_nm1p2_hvt_lp = 0+(4.1564e-12)*par0+(-1.4543e-12)*par1+(-2.3684e-12)*par2+(-1.6673e-15)*par3+(-4.6315e-20)*par4
+parameters dwu0_nm1p2_hvt_lp = 0+(-1.8817e-11)*par0+(6.7744e-12)*par1+(-1.7964e-13)*par2+(5.3305e-16)*par3+(2.2842e-19)*par4
+parameters dpu0_nm1p2_hvt_lp = 0+(-1.1728e-18)*par0+(4.2022e-19)*par1+(1.0282e-19)*par2+(1.0659e-22)*par3+(1.8251e-26)*par4
+parameters dvsat_nm1p2_hvt_lp = 0+(1881.7)*par0+(-677.44)*par1+(17.964)*par2+(-0.053305)*par3+(-2.2873e-05)*par4
+parameters dpvsat_nm1p2_hvt_lp = 0+(-5.8167e-14)*par0+(-5.1610e-14)*par1+(4.1466e-12)*par2+(2.6702e-15)*par3+(-8.5402e-21)*par4
+parameters deta0_nm1p2_hvt_lp = 0+(-0.0094084)*par0+(0.0033872)*par1+(-8.9820e-05)*par2+(2.6652e-07)*par3+(1.1878e-10)*par4
+parameters dleta0_nm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dpeta0_nm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dcgdo_nm1p2_hvt_lp = 0+(-9.4084e-12)*par0+(3.3872e-12)*par1+(-8.9820e-14)*par2+(2.6652e-16)*par3+(9.8165e-20)*par4
+parameters dcgso_nm1p2_hvt_lp = 0+(-9.4084e-12)*par0+(3.3872e-12)*par1+(-8.9820e-14)*par2+(2.6652e-16)*par3+(1.0318e-19)*par4
+parameters dcgdl_nm1p2_hvt_lp = 0+(-2.2651e-12)*par0+(8.1547e-13)*par1+(-2.1624e-14)*par2+(6.4165e-17)*par3+(3.6658e-20)*par4
+parameters dcgsl_nm1p2_hvt_lp = 0+(-2.2651e-12)*par0+(8.1547e-13)*par1+(-2.1624e-14)*par2+(6.4165e-17)*par3+(3.2127e-20)*par4
+parameters dcf_nm1p2_hvt_lp = 0+(-3.8810e-12)*par0+(1.3972e-12)*par1+(-3.7051e-14)*par2+(1.0994e-16)*par3+(6.0325e-20)*par4
+parameters dcjs_nm1p2_hvt_lp = 0+(5.9367e-05)*par0+(-2.1373e-05)*par1+(5.6677e-07)*par2+(-1.6818e-09)*par3+(-8.5152e-13)*par4
+parameters dcjsws_nm1p2_hvt_lp = 0+(1.4207e-15)*par0+(-5.1147e-16)*par1+(1.3563e-17)*par2+(-4.0245e-20)*par3+(-2.2354e-23)*par4
+parameters dcjswgs_nm1p2_hvt_lp = 0+(1.3689e-11)*par0+(-4.9284e-12)*par1+(1.3069e-13)*par2+(-3.8779e-16)*par3+(-1.8761e-19)*par4
+parameters dlvsat_nm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters ddsub_nm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dldsub_nm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dpdsub_nm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dvoff_nm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dlvoff_nm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dwvoff_nm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dpvoff_nm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters djtsswgs_nm1p2_hvt_lp = 0+(-0.69596)*par0+(0.25254)*par1+(-0.11983)*par2+(-5.3115e-05)*par3+(1.1672e-08)*par4
+parameters dlnfactor_nm1p2_hvt_lp = 0+(6.6800e-09)*par0+(-2.4049e-09)*par1+(6.3772e-11)*par2+(-1.8923e-13)*par3+(-9.7903e-17)*par4
+parameters dpnfactor_nm1p2_hvt_lp = 0+(5.6451e-15)*par0+(-2.0323e-15)*par1+(5.3892e-17)*par2+(-1.5991e-19)*par3+(-8.3688e-23)*par4
+parameters dpa0_nm1p2_hvt_lp = 0+(-2.8111e-21)*par0+(1.0161e-21)*par1+(-2.5516e-22)*par2+(-6.7287e-26)*par3+(4.8759e-29)*par4
+parameters dwminv_nm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters da0_nm1p2_hvt_lp = 0+(0.047042)*par0+(-0.016936)*par1+(0.00044910)*par2+(-1.3326e-06)*par3+(-8.2473e-10)*par4
+parameters dla0_nm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dwa0_nm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dagidl_nm1p2_hvt_lp = 0+(-0.21531)*par0+(0.075694)*par1+(0.10204)*par2+(7.3082e-05)*par3+(2.3706e-09)*par4
+parameters dtoxe_pm1p2_hvt_lp = 0+(2.5767e-11)*par0+(4.0488e-11)*par1+(8.6537e-13)*par2+(3.8578e-14)*par3+(-1.0194e-19)*par4
+parameters dxl_pm1p2_hvt_lp = 0+(5.3682e-10)*par0+(8.4350e-10)*par1+(1.8029e-11)*par2+(8.0372e-13)*par3+(-1.3749e-18)*par4
+parameters dxw_pm1p2_hvt_lp = 0+(-1.0736e-09)*par0+(-1.6870e-09)*par1+(-3.6057e-11)*par2+(-1.6074e-12)*par3+(5.7170e-18)*par4
+parameters dvoff_pm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dtvoff_pm1p2_hvt_lp = 0+(0.00062689)*par0+(0.00099023)*par1+(0.00056253)*par2+(1.2985e-06)*par3+(-4.2121e-12)*par4
+parameters dvth0_pm1p2_hvt_lp = 0+(-0.020994)*par0+(-0.032984)*par1+(-0.00029278)*par2+(-3.1158e-05)*par3+(-1.1195e-11)*par4
+parameters dlvth0_pm1p2_hvt_lp = 0+(-7.8810e-10)*par0+(-1.2388e-09)*par1+(-7.2258e-11)*par2+(-1.2104e-12)*par3+(1.9257e-18)*par4
+parameters dwvth0_pm1p2_hvt_lp = 0+(-9.1290e-10)*par0+(-1.4340e-09)*par1+(1.5137e-11)*par2+(-1.3363e-12)*par3+(4.5719e-18)*par4
+parameters dpvth0_pm1p2_hvt_lp = 0+(-8.9144e-16)*par0+(-1.4009e-15)*par1+(-4.6247e-17)*par2+(-1.3455e-18)*par3+(1.6948e-24)*par4
+parameters du0_pm1p2_hvt_lp = 0+(-2.4301e-05)*par0+(-4.3586e-05)*par1+(-1.3914e-06)*par2+(2.7881e-06)*par3+(-3.5369e-25)*par4
+parameters dlu0_pm1p2_hvt_lp = 0+(-2.7244e-12)*par0+(-4.2743e-12)*par1+(5.9258e-13)*par2+(-3.6242e-15)*par3+(8.0732e-21)*par4
+parameters dpu0_pm1p2_hvt_lp = 0+(1.9832e-18)*par0+(3.1137e-18)*par1+(-1.9329e-19)*par2+(2.7965e-21)*par3+(-4.4762e-27)*par4
+parameters dleta0_pm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dpeta0_pm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dcgso_pm1p2_hvt_lp = 0+(-3.8221e-12)*par0+(-6.0058e-12)*par1+(-1.2836e-13)*par2+(-5.7225e-15)*par3+(2.7623e-20)*par4
+parameters dcgdo_pm1p2_hvt_lp = 0+(-3.8221e-12)*par0+(-6.0058e-12)*par1+(-1.2836e-13)*par2+(-5.7225e-15)*par3+(4.1409e-20)*par4
+parameters dcgsl_pm1p2_hvt_lp = 0+(-1.1005e-12)*par0+(-1.7292e-12)*par1+(-3.6958e-14)*par2+(-1.6476e-15)*par3+(8.9221e-21)*par4
+parameters dcgdl_pm1p2_hvt_lp = 0+(-1.1005e-12)*par0+(-1.7292e-12)*par1+(-3.6958e-14)*par2+(-1.6476e-15)*par3+(1.0364e-20)*par4
+parameters dcf_pm1p2_hvt_lp = 0+(-2.1902e-12)*par0+(-3.4415e-12)*par1+(-7.3556e-14)*par2+(-3.2792e-15)*par3+(2.5811e-20)*par4
+parameters dcjs_pm1p2_hvt_lp = 0+(2.7217e-05)*par0+(4.2766e-05)*par1+(9.1405e-07)*par2+(4.0749e-08)*par3+(-2.4684e-13)*par4
+parameters dcjsws_pm1p2_hvt_lp = 0+(4.6542e-14)*par0+(7.3132e-14)*par1+(1.5631e-15)*par2+(6.9682e-17)*par3+(-5.1410e-22)*par4
+parameters dcjswgs_pm1p2_hvt_lp = 0+(8.6267e-12)*par0+(1.3555e-11)*par1+(2.8972e-13)*par2+(1.2916e-14)*par3+(-9.6831e-20)*par4
+parameters djtsswgd_pm1p2_hvt_lp = 0+(-4.8223e-09)*par0+(-7.6172e-09)*par1+(-4.3272e-09)*par2+(-9.9882e-12)*par3+(5.4879e-17)*par4
+parameters djtsswgs_pm1p2_hvt_lp = 0+(-4.8223e-09)*par0+(-7.6172e-09)*par1+(-4.3272e-09)*par2+(-9.9882e-12)*par3+(5.0232e-17)*par4
+parameters dags_pm1p2_hvt_lp = 0+(-0.028868)*par0+(-0.045179)*par1+(0.017825)*par2+(-3.0729e-05)*par3+(2.6492e-10)*par4
+parameters dlags_pm1p2_hvt_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dvsat_pm1p2_hvt_lp = 0+(-3239.2)*par0+(-5083.2)*par1+(576.27)*par2+(-4.3943)*par3+(1.9554e-05)*par4
+parameters dpvsat_pm1p2_hvt_lp = 0+(-3.2724e-12)*par0+(-5.0643e-12)*par1+(7.9778e-12)*par2+(4.7616e-16)*par3+(2.3798e-20)*par4
+parameters dtoxe_nnat1p2_lp = 0+(4.7996e-11)*par0+(-4.2906e-13)*par1+(2.6224e-13)*par2+(-3.7158e-13)*par3+(-2.9482e-19)*par4
+parameters dxl_nnat1p2_lp = 0+(9.9992e-10)*par0+(-8.9387e-12)*par1+(5.4634e-12)*par2+(-7.7411e-12)*par3+(-4.9973e-18)*par4
+parameters dxw_nnat1p2_lp = 0+(-1.9998e-09)*par0+(1.7877e-11)*par1+(-1.0927e-11)*par2+(1.5482e-11)*par3+(1.2853e-17)*par4
+parameters dvth0_nnat1p2_lp = 0+(0.028837)*par0+(-0.00032666)*par1+(0.00012117)*par2+(-0.00023879)*par3+(-2.2779e-10)*par4
+parameters dlvth0_nnat1p2_lp = 0+(6.7569e-09)*par0+(-2.4761e-11)*par1+(1.3767e-11)*par2+(3.6845e-12)*par3+(-6.9554e-17)*par4
+parameters dpvth0_nnat1p2_lp = 0+(-1.9622e-16)*par0+(-2.4667e-17)*par1+(1.6656e-18)*par2+(-5.4497e-17)*par3+(5.7166e-25)*par4
+parameters du0_nnat1p2_lp = 0+(-0.00027181)*par0+(-2.3127e-05)*par1+(5.2277e-06)*par2+(9.3724e-06)*par3+(-2.0959e-13)*par4
+parameters dlu0_nnat1p2_lp = 0+(5.0931e-11)*par0+(2.5069e-12)*par1+(-6.7647e-13)*par2+(5.8359e-13)*par3+(-2.6631e-19)*par4
+parameters dwu0_nnat1p2_lp = 0+(-1.4536e-10)*par0+(-3.6759e-12)*par1+(-1.3051e-11)*par2+(-1.1050e-12)*par3+(-3.4612e-19)*par4
+parameters dpu0_nnat1p2_lp = 0+(2.8726e-17)*par0+(-3.7048e-18)*par1+(3.2904e-18)*par2+(-2.2884e-18)*par3+(-2.9932e-25)*par4
+parameters dags_nnat1p2_lp = 0+(0.021544)*par0+(-0.0010488)*par1+(0.00027679)*par2+(-0.0011114)*par3+(-1.5026e-10)*par4
+parameters dlags_nnat1p2_lp = 0+(-1.4641e-08)*par0+(-6.9060e-09)*par1+(-1.6640e-09)*par2+(-2.0358e-09)*par3+(1.5873e-17)*par4
+parameters dpags_nnat1p2_lp = 0+(-1.0317e-13)*par0+(-3.8817e-14)*par1+(-1.0701e-14)*par2+(-7.5072e-15)*par3+(-2.0423e-22)*par4
+parameters dvoff_nnat1p2_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dcgso_nnat1p2_lp = 0+(-1.2499e-11)*par0+(1.1173e-13)*par1+(-6.8293e-14)*par2+(9.6764e-14)*par3+(1.8007e-19)*par4
+parameters dcgdo_nnat1p2_lp = 0+(-1.2499e-11)*par0+(1.1173e-13)*par1+(-6.8293e-14)*par2+(9.6764e-14)*par3+(1.2766e-19)*par4
+parameters dcf_nnat1p2_lp = 0+(-4.1346e-12)*par0+(3.6961e-14)*par1+(-2.2591e-14)*par2+(3.2010e-14)*par3+(5.4896e-20)*par4
+parameters dcgsl_nnat1p2_lp = 0+(-2.6950e-12)*par0+(-5.0412e-13)*par1+(-1.2783e-13)*par2+(1.7032e-13)*par3+(3.1961e-20)*par4
+parameters dcgdl_nnat1p2_lp = 0+(-2.6950e-12)*par0+(-5.0412e-13)*par1+(-1.2783e-13)*par2+(1.7032e-13)*par3+(2.2273e-20)*par4
+parameters dcjs_nnat1p2_lp = 0+(4.7896e-06)*par0+(-4.2816e-08)*par1+(2.6170e-08)*par2+(-3.7080e-08)*par3+(-4.9829e-14)*par4
+parameters dcjsws_nnat1p2_lp = 0+(2.7398e-12)*par0+(-2.4492e-14)*par1+(1.4970e-14)*par2+(-2.1211e-14)*par3+(-2.5363e-20)*par4
+parameters dcjswgs_nnat1p2_lp = 0+(1.5498e-12)*par0+(-1.3854e-14)*par1+(8.4678e-15)*par2+(-1.1998e-14)*par3+(-1.7205e-20)*par4
+parameters dwvth0_nnat1p2_lp = 0+(2.6127e-11)*par0+(4.9066e-12)*par1+(-3.2132e-11)*par2+(-3.1003e-12)*par3+(-3.7760e-20)*par4
+parameters dwags_nnat1p2_lp = 0+(1.4234e-08)*par0+(6.0482e-09)*par1+(-2.3596e-09)*par2+(2.2096e-09)*par3+(-3.4252e-17)*par4
+parameters dvth0_nm3p3_lp = 0+(0.053620)*par0+(-0.019312)*par1+(0.00096985)*par2+(-1.2243e-06)*par3+(-7.1203e-10)*par4
+parameters dlvth0_nm3p3_lp = 0+(1.8279e-09)*par0+(-6.6590e-10)*par1+(4.6387e-10)*par2+(2.3548e-13)*par3+(-3.2488e-17)*par4
+parameters dwvth0_nm3p3_lp = 0+(1.5668e-10)*par0+(-5.4428e-11)*par1+(-1.1175e-10)*par2+(-7.7309e-14)*par3+(-1.7438e-18)*par4
+parameters dpvth0_nm3p3_lp = 0+(1.9283e-15)*par0+(-6.9462e-16)*par1+(4.1306e-17)*par2+(-3.9891e-20)*par3+(-2.5096e-23)*par4
+parameters ddsub_nm3p3_lp = 0+(0.0021531)*par0+(-0.00075694)*par1+(-0.0010204)*par2+(-7.3082e-07)*par3+(-1.9379e-11)*par4
+parameters dldsub_nm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dwdsub_nm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dpdsub_nm3p3_lp = 0+(4.3062e-16)*par0+(-1.5139e-16)*par1+(-2.0408e-16)*par2+(-1.4616e-19)*par3+(-5.1059e-24)*par4
+parameters du0_nm3p3_lp = 0+(-0.00018405)*par0+(6.5479e-05)*par1+(4.2885e-05)*par2+(3.3940e-08)*par3+(2.6135e-12)*par4
+parameters dlu0_nm3p3_lp = 0+(-1.1752e-09)*par0+(4.2191e-10)*par1+(5.7373e-11)*par2+(7.7430e-14)*par3+(2.1761e-17)*par4
+parameters dwu0_nm3p3_lp = 0+(-1.8784e-10)*par0+(6.7787e-11)*par1+(-1.0943e-11)*par2+(-5.6652e-16)*par3+(3.0345e-18)*par4
+parameters dpu0_nm3p3_lp = 0+(-3.8579e-16)*par0+(1.3881e-16)*par1+(8.9642e-19)*par2+(1.3875e-20)*par3+(4.6660e-24)*par4
+parameters dvsat_nm3p3_lp = 0+(-4704.2)*par0+(1693.6)*par1+(-44.910)*par2+(0.13326)*par3+(5.6212e-05)*par4
+parameters dlvsat_nm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dwvsat_nm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dpvsat_nm3p3_lp = 0+(-9.4084e-11)*par0+(3.3872e-11)*par1+(-8.9820e-13)*par2+(2.6652e-15)*par3+(1.4344e-18)*par4
+parameters dags_nm3p3_lp = 0+(-0.0018817)*par0+(0.00067744)*par1+(-1.7964e-05)*par2+(5.3305e-08)*par3+(2.7665e-11)*par4
+parameters dlags_nm3p3_lp = 0+(-4.3929e-09)*par0+(1.6116e-09)*par1+(-1.7620e-09)*par2+(-9.8239e-13)*par3+(7.1444e-17)*par4
+parameters dwags_nm3p3_lp = 0+(-6.4593e-10)*par0+(2.2708e-10)*par1+(3.0612e-10)*par2+(2.1925e-13)*par3+(7.9635e-18)*par4
+parameters dpags_nm3p3_lp = 0+(-5.5214e-15)*par0+(1.9644e-15)*par1+(1.2865e-15)*par2+(1.0182e-18)*par3+(5.9685e-23)*par4
+parameters ddvt0_nm3p3_lp = 0+(-0.011195)*par0+(0.0041188)*par1+(-0.0051688)*par2+(-2.9401e-06)*par3+(1.4148e-10)*par4
+parameters dldvt0_nm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dpdvt0_nm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dlpe0_nm3p3_lp = 0+(-2.1239e-09)*par0+(7.8285e-10)*par1+(-1.0612e-09)*par2+(-6.0967e-13)*par3+(2.1837e-17)*par4
+parameters dllpe0_nm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dplpe0_nm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dcf_nm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dlcf_nm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dwcf_nm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dpcf_nm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters ddtox_nm3p3_lp = 0+(-1.2231e-10)*par0+(4.4034e-11)*par1+(-1.1677e-12)*par2+(3.4648e-15)*par3+(1.4168e-18)*par4
+parameters dcgso_nm3p3_lp = 0+(-1.1761e-11)*par0+(4.2340e-12)*par1+(-1.1228e-13)*par2+(3.3315e-16)*par3+(1.2510e-19)*par4
+parameters dcgdo_nm3p3_lp = 0+(-1.1761e-11)*par0+(4.2340e-12)*par1+(-1.1228e-13)*par2+(3.3315e-16)*par3+(1.4355e-19)*par4
+parameters dcjs_nm3p3_lp = 0+(4.3185e-05)*par0+(-1.5547e-05)*par1+(4.1227e-07)*par2+(-1.2233e-09)*par3+(-4.1711e-13)*par4
+parameters dcjsws_nm3p3_lp = 0+(7.4233e-13)*par0+(-2.6725e-13)*par1+(7.0868e-15)*par2+(-2.1029e-17)*par3+(-6.8019e-21)*par4
+parameters dcjswgs_nm3p3_lp = 0+(9.8346e-12)*par0+(-3.5406e-12)*par1+(9.3889e-14)*par2+(-2.7860e-16)*par3+(-1.0205e-19)*par4
+parameters dcgdl_nm3p3_lp = 0+(-3.2930e-12)*par0+(1.1855e-12)*par1+(-3.1437e-14)*par2+(9.3283e-17)*par3+(2.9898e-20)*par4
+parameters dcgsl_nm3p3_lp = 0+(-3.2930e-12)*par0+(1.1855e-12)*par1+(-3.1437e-14)*par2+(9.3283e-17)*par3+(3.7724e-20)*par4
+parameters dtoxe_pm3p3_lp = 0+(5.3682e-11)*par0+(8.4350e-11)*par1+(1.8029e-12)*par2+(8.0372e-14)*par3+(-3.4942e-21)*par4
+parameters dtoxp_pm3p3_lp = 0+(5.3682e-11)*par0+(8.4350e-11)*par1+(1.8029e-12)*par2+(8.0372e-14)*par3+(-1.2337e-19)*par4
+parameters dxl_pm3p3_lp = 0+(2.4157e-09)*par0+(3.7958e-09)*par1+(8.1128e-11)*par2+(3.6167e-12)*par3+(4.3617e-18)*par4
+parameters dxw_pm3p3_lp = 0+(-2.4157e-09)*par0+(-3.7958e-09)*par1+(-8.1128e-11)*par2+(-3.6167e-12)*par3+(6.7700e-18)*par4
+parameters dvth0_pm3p3_lp = 0+(-0.028981)*par0+(-0.045542)*par1+(-0.0014314)*par2+(-4.3694e-05)*par3+(-1.6419e-10)*par4
+parameters dcjs_pm3p3_lp = 0+(2.7968e-05)*par0+(4.3947e-05)*par1+(9.3929e-07)*par2+(4.1874e-08)*par3+(6.2742e-15)*par4
+parameters dcjsws_pm3p3_lp = 0+(7.6765e-14)*par0+(1.2062e-13)*par1+(2.5781e-15)*par2+(1.1493e-16)*par3+(3.1515e-22)*par4
+parameters dcjswgs_pm3p3_lp = 0+(5.9131e-12)*par0+(9.2912e-12)*par1+(1.9858e-13)*par2+(8.8530e-15)*par3+(2.3264e-20)*par4
+parameters dcgdo_pm3p3_lp = 0+(-5.3682e-12)*par0+(-8.4350e-12)*par1+(-1.8029e-13)*par2+(-8.0372e-15)*par3+(-2.6184e-20)*par4
+parameters dcgso_pm3p3_lp = 0+(-5.3682e-12)*par0+(-8.4350e-12)*par1+(-1.8029e-13)*par2+(-8.0372e-15)*par3+(-5.0188e-20)*par4
+parameters dcgdl_pm3p3_lp = 0+(-2.6841e-12)*par0+(-4.2175e-12)*par1+(-9.0143e-14)*par2+(-4.0186e-15)*par3+(-3.4643e-20)*par4
+parameters dcgsl_pm3p3_lp = 0+(-2.6841e-12)*par0+(-4.2175e-12)*par1+(-9.0143e-14)*par2+(-4.0186e-15)*par3+(-2.8797e-20)*par4
+parameters dcf_pm3p3_lp = 0+(-1.7017e-12)*par0+(-2.6739e-12)*par1+(-5.7150e-14)*par2+(-2.5478e-15)*par3+(-1.4423e-20)*par4
+parameters dlvth0_pm3p3_lp = 0+(-3.3756e-10)*par0+(-5.3320e-10)*par1+(-3.0290e-10)*par2+(-6.9918e-13)*par3+(-2.8575e-18)*par4
+parameters dpvth0_pm3p3_lp = 0+(-8.6264e-16)*par0+(-1.3563e-15)*par1+(-1.1520e-16)*par2+(-1.3488e-18)*par3+(-1.0639e-23)*par4
+parameters dlu0_pm3p3_lp = 0+(-1.4765e-10)*par0+(-2.3198e-10)*par1+(-2.6682e-12)*par2+(-2.1954e-13)*par3+(-1.8676e-18)*par4
+parameters dpu0_pm3p3_lp = 0+(-3.5442e-17)*par0+(-5.5673e-17)*par1+(6.4151e-19)*par2+(-5.1846e-20)*par3+(-5.0442e-25)*par4
+parameters dlcit_pm3p3_lp = 0+(-4.0994e-12)*par0+(-6.4083e-12)*par1+(3.3194e-12)*par2+(-3.8398e-15)*par3+(-7.6012e-20)*par4
+parameters dpcit_pm3p3_lp = 0+(-1.6299e-19)*par0+(-2.5479e-19)*par1+(1.3198e-19)*par2+(-1.5267e-22)*par3+(-2.2524e-27)*par4
+parameters dwcit_pm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dwvth0_pm3p3_lp = 0+(-5.3682e-10)*par0+(-8.4350e-10)*par1+(-1.8029e-11)*par2+(-8.0372e-13)*par3+(-7.6905e-18)*par4
+parameters dvoff_pm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters ddvt0_pm3p3_lp = 0+(-0.064369)*par0+(-0.10097)*par1+(0.015863)*par2+(-8.4393e-05)*par3+(-8.5505e-10)*par4
+parameters deta0_pm3p3_lp = 0+(0.0066391)*par0+(0.010378)*par1+(-0.0053759)*par2+(6.2187e-06)*par3+(1.0425e-10)*par4
+parameters dwu0_pm3p3_lp = 0+(-9.3967e-11)*par0+(-1.4763e-10)*par1+(-8.6537e-13)*par2+(-1.3916e-13)*par3+(-1.3155e-18)*par4
+parameters dwa0_pm3p3_lp = 0+(6.6983e-09)*par0+(1.0514e-08)*par1+(-9.1559e-10)*par2+(9.2705e-12)*par3+(1.2053e-16)*par4
+parameters dpeta0_pm3p3_lp = 0+(-2.8605e-16)*par0+(-4.4715e-16)*par1+(2.3162e-16)*par2+(-2.6793e-19)*par3+(-3.2402e-24)*par4
+parameters dweta0_pm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dpa0_pm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dpags_pm3p3_lp = 0+(-2.4695e-15)*par0+(-3.8604e-15)*par1+(1.9997e-15)*par2+(-2.3131e-18)*par3+(-2.6201e-23)*par4
+parameters dla0_pm3p3_lp = 0+(-3.9422e-08)*par0+(-6.2270e-08)*par1+(-3.5375e-08)*par2+(-8.1654e-11)*par3+(-4.4248e-16)*par4
+parameters dlvsat_pm3p3_lp = 0+(-0.0012079)*par0+(-0.0018969)*par1+(7.3818e-05)*par2+(-1.7324e-06)*par3+(-1.9737e-11)*par4
+parameters dwvsat_pm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dpvsat_pm3p3_lp = 0+(-2.8562e-11)*par0+(-4.4731e-11)*par1+(1.4435e-11)*par2+(-3.2530e-14)*par3+(-5.2501e-19)*par4
+parameters dlvoff_pm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dwvoff_pm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dpvoff_pm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters dagidl_pm3p3_lp = 0+(0)*par0+(0)*par1+(0)*par2+(0)*par3+(0)*par4
+parameters du0_pm3p3_lp = 0+(-0.00014766)*par0+(-0.00023191)*par1+(6.4843e-06)*par2+(-2.1347e-07)*par3+(-2.7484e-12)*par4
+parameters dtoxe_nnat3p3_lp = 0+(9.9992e-11)*par0+(-8.9387e-13)*par1+(5.4634e-13)*par2+(-7.7411e-13)*par3+(4.1919e-20)*par4
+parameters dxl_nnat3p3_lp = 0+(4.4996e-09)*par0+(-4.0224e-11)*par1+(2.4585e-11)*par2+(-3.4835e-11)*par3+(-1.0162e-17)*par4
+parameters dxw_nnat3p3_lp = 0+(-4.4996e-09)*par0+(4.0224e-11)*par1+(-2.4585e-11)*par2+(3.4835e-11)*par3+(-2.1054e-18)*par4
+parameters dvth0_nnat3p3_lp = 0+(0.031270)*par0+(-0.00050614)*par1+(0.00012234)*par2+(-0.00017797)*par3+(-2.6546e-11)*par4
+parameters dlvth0_nnat3p3_lp = 0+(2.7113e-08)*par0+(-1.6252e-10)*par1+(1.6524e-10)*par2+(-2.3250e-10)*par3+(-5.6037e-17)*par4
+parameters dwvth0_nnat3p3_lp = 0+(-3.4425e-10)*par0+(2.2466e-11)*par1+(2.2706e-12)*par2+(-2.8208e-12)*par3+(5.3387e-19)*par4
+parameters dpvth0_nnat3p3_lp = 0+(1.3604e-16)*par0+(-6.0081e-17)*par1+(-1.1861e-17)*par2+(1.5602e-17)*par3+(-1.0662e-24)*par4
+parameters du0_nnat3p3_lp = 0+(-0.0017748)*par0+(-1.2187e-05)*par1+(-1.5704e-05)*par2+(2.1677e-05)*par3+(-5.3309e-12)*par4
+parameters dlu0_nnat3p3_lp = 0+(2.8688e-10)*par0+(-4.1025e-11)*par1+(-6.6677e-12)*par2+(8.6610e-12)*par3+(5.1023e-19)*par4
+parameters dwu0_nnat3p3_lp = 0+(-2.2964e-10)*par0+(-1.0873e-11)*par1+(-4.0225e-12)*par2+(5.4351e-12)*par3+(-2.6760e-18)*par4
+parameters dpu0_nnat3p3_lp = 0+(-4.9880e-17)*par0+(2.2030e-17)*par1+(4.3490e-18)*par2+(-5.7207e-18)*par3+(-1.0334e-25)*par4
+parameters dvsat_nnat3p3_lp = 0+(-680.19)*par0+(300.40)*par1+(59.304)*par2+(-78.010)*par3+(3.5442e-06)*par4
+parameters dlvsat_nnat3p3_lp = 0+(-0.0018029)*par0+(-0.00038304)*par1+(-9.5319e-05)*par2+(0.00012690)*par3+(-1.1766e-11)*par4
+parameters dpvsat_nnat3p3_lp = 0+(4.5346e-11)*par0+(-2.0027e-11)*par1+(-3.9536e-12)*par2+(5.2007e-12)*par3+(2.8465e-19)*par4
+parameters dcgso_nnat3p3_lp = 0+(-9.9992e-12)*par0+(8.9387e-14)*par1+(-5.4634e-14)*par2+(7.7411e-14)*par3+(-1.4060e-19)*par4
+parameters dcgdo_nnat3p3_lp = 0+(-9.9992e-12)*par0+(8.9387e-14)*par1+(-5.4634e-14)*par2+(7.7411e-14)*par3+(-1.5973e-19)*par4
+parameters dcf_nnat3p3_lp = 0+(-3.2197e-12)*par0+(2.8783e-14)*par1+(-1.7592e-14)*par2+(2.4926e-14)*par3+(-2.5271e-20)*par4
+parameters dcgsl_nnat3p3_lp = 0+(-1.3499e-11)*par0+(1.2067e-13)*par1+(-7.3756e-14)*par2+(1.0451e-13)*par3+(-1.3476e-19)*par4
+parameters dcgdl_nnat3p3_lp = 0+(-1.3499e-11)*par0+(1.2067e-13)*par1+(-7.3756e-14)*par2+(1.0451e-13)*par3+(-2.1073e-19)*par4
+parameters dcjs_nnat3p3_lp = 0+(5.9495e-06)*par0+(-5.3185e-08)*par1+(3.2507e-08)*par2+(-4.6060e-08)*par3+(1.0570e-13)*par4
+parameters dcjsws_nnat3p3_lp = 0+(3.7197e-12)*par0+(-3.3252e-14)*par1+(2.0324e-14)*par2+(-2.8797e-14)*par3+(6.0402e-20)*par4
+parameters dcjswgs_nnat3p3_lp = 0+(1.0171e-11)*par0+(-9.0924e-14)*par1+(5.5574e-14)*par2+(-7.8743e-14)*par3+(2.4420e-19)*par4
+
+
+
+endsection mos_mc
+
+
+section mos_total
+
+parameters sigma_mis_a = 0          
+parameters sigma_mis_b = 0          
+parameters sigma_mis_c = 0          
+parameters sigma_mis_d = 0          
+parameters sigma_mis_e = 0          
+parameters sigma_mis_f = 0          
+parameters sigma_mis_g = 0          
+parameters sigma_mis_h = 0          
+statistics {
+    mismatch {
+        vary sigma_mis_a dist = gauss std = 1/1
+        vary sigma_mis_b dist = gauss std = 1/1
+        vary sigma_mis_c dist = gauss std = 1/1
+        vary sigma_mis_d dist = gauss std = 1/1
+        vary sigma_mis_e dist = gauss std = 1/1
+        vary sigma_mis_f dist = gauss std = 1/1
+        vary sigma_mis_g dist = gauss std = 1/1
+        vary sigma_mis_h dist = gauss std = 1/1
+    }
+}
+subckt nm1p2_svt_lp (d g s b )
+parameters
++w        = 1e-6          
++l        = 1e-6          
++sa       = 0             
++sb       = 0             
++sd       = 0             
++as       = 0             
++ad       = 0             
++ps       = 0             
++pd       = 0             
++nrd      = 0             
++nrs      = 0             
++sca      = 0             
++scb      = 0             
++scc      = 0             
++nf       = 1             
++mr       = 1             
++mismod   = 1             
++prelayout = 0            
+
+parameters geo_fac  = 1/sqrt(wef*lef*mr)
++lef      = l*0.9-2e-009-5*(-2.436e-008)
++wef      = (w*0.9+1.5e-008-0*2*(1e-008))/nf
++atoxe_nm1p2_svt_lp = 2.0e-19 avth0_nm1p2_svt_lp = 5e-9 avoff_nm1p2_svt_lp = 2.5e-9
++au0_nm1p2_svt_lp = 1.0e-12 aeta0_nm1p2_svt_lp = 1.0e-8
++dtoxe_nm1p2_svt_lp_mis = 0+atoxe_nm1p2_svt_lp*geo_fac*sigma_mis_a*mismod
++dvth0_nm1p2_svt_lp_mis = 0+avth0_nm1p2_svt_lp*geo_fac*sigma_mis_b*mismod
++du0_nm1p2_svt_lp_mis = 0+au0_nm1p2_svt_lp*geo_fac*sigma_mis_c*mismod
++dvoff_nm1p2_svt_lp_mis = 0+avoff_nm1p2_svt_lp*geo_fac*sigma_mis_d*mismod
++deta0_nm1p2_svt_lp_mis = 0+aeta0_nm1p2_svt_lp*geo_fac*sigma_mis_e*mismod
++dtoxe_nm1p2_svt_lp_mismatch = 0+dtoxe_nm1p2_svt_lp_mis
++dvth0_nm1p2_svt_lp_mismatch = 0+dvth0_nm1p2_svt_lp_mis
++du0_nm1p2_svt_lp_mismatch = 0+du0_nm1p2_svt_lp_mis
++dvoff_nm1p2_svt_lp_mismatch = 0+dvoff_nm1p2_svt_lp_mis
++deta0_nm1p2_svt_lp_mismatch = 0+deta0_nm1p2_svt_lp_mis
+m1 d g s b nm1p2_svt_lp w = w l = l sa = sa sb = sb sd = sd as = as ad = ad ps = ps pd = pd nrd = nrd nrs = nrs sca = sca scb = scb scc = scc nf = nf m = mr 
+include "./mos/nsvt_spe.mdl"
+ends nm1p2_svt_lp
+
+subckt nm1p2_lvt_lp (d g s b )
+parameters
++w        = 1e-6          
++l        = 1e-6          
++sa       = 0             
++sb       = 0             
++sd       = 0             
++as       = 0             
++ad       = 0             
++ps       = 0             
++pd       = 0             
++nrd      = 0             
++nrs      = 0             
++sca      = 0             
++scb      = 0             
++scc      = 0             
++nf       = 1             
++mr       = 1             
++mismod   = 1             
++prelayout = 0            
+
+parameters geo_fac  = 1/sqrt(wef*lef*mr)
++lef      = l*0.9+(-2e-009)-6*(-1.05e-008)
++wef      = (w*0.9+1.5e-008-2*(1e-008))/nf
++atoxe_nm1p2_lvt_lp = 5.5e-18 avth0_nm1p2_lvt_lp = 3.3e-9 avoff_nm1p2_lvt_lp = 2.0e-9
++au0_nm1p2_lvt_lp = 1.0e-12 aeta0_nm1p2_lvt_lp = 4.0e-9
++dtoxe_nm1p2_lvt_lp_mis = 0+atoxe_nm1p2_lvt_lp*geo_fac*sigma_mis_a*mismod
++dvth0_nm1p2_lvt_lp_mis = 0+avth0_nm1p2_lvt_lp*geo_fac*sigma_mis_b*mismod
++dvoff_nm1p2_lvt_lp_mis = 0+avoff_nm1p2_lvt_lp*geo_fac*sigma_mis_c*mismod
++du0_nm1p2_lvt_lp_mis = 0+au0_nm1p2_lvt_lp*geo_fac*sigma_mis_d*mismod
++deta0_nm1p2_lvt_lp_mis = 0+aeta0_nm1p2_lvt_lp*geo_fac*sigma_mis_e*mismod
++dtoxe_nm1p2_lvt_lp_mismatch = 0+dtoxe_nm1p2_lvt_lp_mis
++dvth0_nm1p2_lvt_lp_mismatch = 0+dvth0_nm1p2_lvt_lp_mis
++dvoff_nm1p2_lvt_lp_mismatch = 0+dvoff_nm1p2_lvt_lp_mis
++du0_nm1p2_lvt_lp_mismatch = 0+du0_nm1p2_lvt_lp_mis
++deta0_nm1p2_lvt_lp_mismatch = 0+deta0_nm1p2_lvt_lp_mis
+m1 d g s b nm1p2_lvt_lp w = w l = l sa = sa sb = sb sd = sd as = as ad = ad ps = ps pd = pd nrd = nrd nrs = nrs sca = sca scb = scb scc = scc nf = nf m = mr 
+include "./mos/nlvt_spe.mdl"
+ends nm1p2_lvt_lp
+
+subckt pm1p2_svt_lp (d g s b )
+parameters
++w        = 1e-6          
++l        = 1e-6          
++sa       = 0             
++sb       = 0             
++sd       = 0             
++as       = 0             
++ad       = 0             
++ps       = 0             
++pd       = 0             
++nrd      = 0             
++nrs      = 0             
++sca      = 0             
++scb      = 0             
++scc      = 0             
++nf       = 1             
++mr       = 1             
++mismod   = 1             
++prelayout = 0            
+
+parameters geo_fac  = 1/sqrt(wef*lef*mr)
++lef      = l*0.9-2e-009-2*(-1.7e-008)
++wef      = (w*0.9+8e-009-2*(-3e-008))/nf
++atoxe_pm1p2_svt_lp = 1.5e-19
++avth0_pm1p2_svt_lp = 2.75e-9
++avoff_pm1p2_svt_lp = 1.0e-9
++au0_pm1p2_svt_lp = 2.2e-11
++avsat_pm1p2_svt_lp = 4.8e-4
++aeta0_pm1p2_svt_lp = 2.8e-8
++dtoxe_pm1p2_svt_lp_mis = 0+atoxe_pm1p2_svt_lp*geo_fac*sigma_mis_a*mismod
++dvth0_pm1p2_svt_lp_mis = 0+avth0_pm1p2_svt_lp*geo_fac*sigma_mis_b*mismod
++dvoff_pm1p2_svt_lp_mis = 0+avoff_pm1p2_svt_lp*geo_fac*sigma_mis_c*mismod
++du0_pm1p2_svt_lp_mis = 0+au0_pm1p2_svt_lp*geo_fac*sigma_mis_d*mismod
++dvsat_pm1p2_svt_lp_mis = 0+avsat_pm1p2_svt_lp*geo_fac*sigma_mis_e*mismod
++deta0_pm1p2_svt_lp_mis = 0+aeta0_pm1p2_svt_lp*geo_fac*sigma_mis_f*mismod
+m1 d g s b pm1p2_svt_lp w = w l = l sa = sa sb = sb sd = sd as = as ad = ad ps = ps pd = pd nrd = nrd nrs = nrs sca = sca scb = scb scc = scc nf = nf m = mr 
+include "./mos/psvt_spe.mdl"
+ends pm1p2_svt_lp
+
+subckt pm1p2_lvt_lp (d g s b )
+parameters
++w        = 1e-6          
++l        = 1e-6          
++sa       = 0             
++sb       = 0             
++sd       = 0             
++as       = 0             
++ad       = 0             
++ps       = 0             
++pd       = 0             
++nrd      = 0             
++nrs      = 0             
++sca      = 0             
++scb      = 0             
++scc      = 0             
++nf       = 1             
++mr       = 1             
++mismod   = 1             
++prelayout = 0            
+
+parameters geo_fac  = 1/sqrt(wef*lef*mr)
++lef      = l*0.9+(-2e-009)-2*(3.5e-009)
++wef      = (w*0.9+8e-009-2*(-3.344e-008))/nf
++atoxe_pm1p2_lvt_lp = 1.3e-19 avth0_pm1p2_lvt_lp = 1.8e-9 avoff_pm1p2_lvt_lp = 2.1e-9
++au0_pm1p2_lvt_lp = 1.2e-11 avsat_pm1p2_lvt_lp = 6.5e-4
++dtoxe_pm1p2_lvt_lp_mis = 0+atoxe_pm1p2_lvt_lp*geo_fac*sigma_mis_a*mismod
++dvth0_pm1p2_lvt_lp_mis = 0+avth0_pm1p2_lvt_lp*geo_fac*sigma_mis_b*mismod
++dvoff_pm1p2_lvt_lp_mis = 0+avoff_pm1p2_lvt_lp*geo_fac*sigma_mis_c*mismod
++du0_pm1p2_lvt_lp_mis = 0+au0_pm1p2_lvt_lp*geo_fac*sigma_mis_d*mismod
++dvsat_pm1p2_lvt_lp_mis = 0+avsat_pm1p2_lvt_lp*geo_fac*sigma_mis_e*mismod
+m1 d g s b pm1p2_lvt_lp w = w l = l sa = sa sb = sb sd = sd as = as ad = ad ps = ps pd = pd nrd = nrd nrs = nrs sca = sca scb = scb scc = scc nf = nf m = mr 
+include "./mos/plvt_spe.mdl"
+ends pm1p2_lvt_lp
+
+// *1.2v hvt core nmos 
+subckt nm1p2_hvt_lp (d g s b )
+parameters
++w        = 1e-6          
++l        = 1e-6          
++sa       = 0             
++sb       = 0             
++sd       = 0             
++as       = 0             
++ad       = 0             
++ps       = 0             
++pd       = 0             
++nrd      = 0             
++nrs      = 0             
++sca      = 0             
++scb      = 0             
++scc      = 0             
++nf       = 1             
++mr       = 1             
++mismod   = 1             
++prelayout = 0            
+
+parameters geo_fac  = 1.06/sqrt(wef*lef*mr)
++lef      = l*0.9-2e-009-6*(-1.1e-008)
++wef      = (w*0.9+1.5e-008-2*(-4e-008))/nf
++atoxe_nm1p2_hvt_lp = 2.0e-19
++avth0_nm1p2_hvt_lp = 5.1e-09
++aeta0_nm1p2_hvt_lp = 0.4e-8
++au0_nm1p2_hvt_lp = 0.4e-10
++dtoxe_nm1p2_hvt_lp_mis = 0+atoxe_nm1p2_hvt_lp*geo_fac*sigma_mis_a*mismod
++dvth0_nm1p2_hvt_lp_mis = 0+avth0_nm1p2_hvt_lp*geo_fac*sigma_mis_b*mismod
++deta0_nm1p2_hvt_lp_mis = 0+aeta0_nm1p2_hvt_lp*geo_fac*sigma_mis_c*mismod
++du0_nm1p2_hvt_lp_mis = 0+au0_nm1p2_hvt_lp*geo_fac*sigma_mis_d*mismod
++dtoxe_nm1p2_hvt_lp_mismatch = 0+dtoxe_nm1p2_hvt_lp_mis
++dvth0_nm1p2_hvt_lp_mismatch = 0+dvth0_nm1p2_hvt_lp_mis
++deta0_nm1p2_hvt_lp_mismatch = 0+deta0_nm1p2_hvt_lp_mis
++du0_nm1p2_hvt_lp_mismatch = 0+du0_nm1p2_hvt_lp_mis
++dalpha0  = 0             
++dalpha1  = 1e-3          
++dbeta0   = 3.72e0        
+m1 d g s b nm1p2_hvt_lp w = w l = l sa = sa sb = sb sd = sd as = as ad = ad ps = ps pd = pd nrd = nrd nrs = nrs sca = sca scb = scb scc = scc nf = nf m = mr 
+include "./mos/nhvt_spe.mdl"
+ends nm1p2_hvt_lp
+
+
+// *1.2v hvt core pmos 
+subckt pm1p2_hvt_lp (d g s b )
+parameters
++w        = 1e-6          
++l        = 1e-6          
++sa       = 0             
++sb       = 0             
++sd       = 0             
++as       = 0             
++ad       = 0             
++ps       = 0             
++pd       = 0             
++nrd      = 0             
++nrs      = 0             
++sca      = 0             
++scb      = 0             
++scc      = 0             
++nf       = 1             
++mr       = 1             
++mismod   = 1             
++prelayout = 0            
+
+parameters geo_fac  = 1.4*1.09/sqrt(wef*lef*mr)
++lef      = l*0.9-2e-009-2*(-1.67e-008)
++wef      = (w*0.9+8e-009-2*(-5.5e-008))/nf
++atoxe_pm1p2_hvt_lp = 1.5e-19
++avth0_pm1p2_hvt_lp = 2.2e-9
++au0_pm1p2_hvt_lp = 0.8e-11
++avoff_pm1p2_hvt_lp = 3.0e-09
++dtoxe_pm1p2_hvt_lp_mis = 0+atoxe_pm1p2_hvt_lp*geo_fac*sigma_mis_a*mismod
++dvth0_pm1p2_hvt_lp_mis = 0+avth0_pm1p2_hvt_lp*geo_fac*sigma_mis_b*mismod
++du0_pm1p2_hvt_lp_mis = 0+au0_pm1p2_hvt_lp*geo_fac*sigma_mis_c*mismod
++dvoff_pm1p2_hvt_lp_mis = 0+avoff_pm1p2_hvt_lp*geo_fac*sigma_mis_d*mismod
++dalpha0  = 0             
++dalpha1  = 0             
++dbeta0   = 0             
+m1 d g s b pm1p2_hvt_lp w = w l = l sa = sa sb = sb sd = sd as = as ad = ad ps = ps pd = pd nrd = nrd nrs = nrs sca = sca scb = scb scc = scc nf = nf m = mr 
+include "./mos/phvt_spe.mdl"
+ends pm1p2_hvt_lp
+
+// *1.2v native nmos  
+subckt nnat1p2_lp (d g s b )
+parameters
++w        = 1e-6          
++l        = 1e-6          
++sa       = 0             
++sb       = 0             
++sd       = 0             
++as       = 0             
++ad       = 0             
++ps       = 0             
++pd       = 0             
++nrd      = 0             
++nrs      = 0             
++nf       = 1             
++mr       = 1             
++mismod   = 1             
++prelayout = 0            
+
+parameters du0_nnat1p2_lp_mis = 0+au0_nnat1p2_lp*geo_fac*sigma_mis_c*mismod
++dvth0_nnat1p2_lp_mis = 0+avth_nnat1p2_lp*geo_fac*sigma_mis_f*mismod
++dvsat_nnat1p2_lp_mis = 0+avsat_nnat1p2_lp*geo_fac*sigma_mis_a*mismod
++dvoff_nnat1p2_lp_mis = 0+avoff_nnat1p2_lp*geo_fac*sigma_mis_b*mismod
++deta0_nnat1p2_lp_mis = 0+aeta0_nnat1p2_lp*geo_fac*sigma_mis_d*mismod
++dpdiblc2_nnat1p2_lp_mis = 0+apdiblc2_nnat1p2_lp*geo_fac*sigma_mis_e*mismod
++geo_fac  = 1.12*1.06/sqrt(wef*lef*mr)
++lef      = l*0.9-2e-009-2*(-3.5e-008)
++wef      = (w*0.9+1.5e-008-2*(1.72e-008))/nf
++avth_nnat1p2_lp = 5.8e-9 
++avsat_nnat1p2_lp = 0     
++au0_nnat1p2_lp = 1.44e-10
++avoff_nnat1p2_lp = 0     
++aeta0_nnat1p2_lp = 5.0e-9
++apdiblc2_nnat1p2_lp = 1.0e-8
+m1 d g s b nnat1p2_lp w = w l = l sa = sa sb = sb sd = sd as = as ad = ad ps = ps pd = pd nrd = nrd nrs = nrs nf = nf m = mr 
+include "./mos/nnat1p2_lp_spe.mdl"
+ends nnat1p2_lp
+
+// *io native nmos 
+subckt nnat3p3_lp (d g s b )
+parameters
++w        = 1e-6          
++l        = 1e-6          
++sa       = 0             
++sb       = 0             
++sd       = 0             
++as       = 0             
++ad       = 0             
++ps       = 0             
++pd       = 0             
++nrd      = 0             
++nrs      = 0             
++nf       = 1             
++mr       = 1             
++mismod   = 1             
++prelayout = 0            
+
+parameters dtoxe_nnat3p3_lp_mis = 0+atoxe_nnat3p3_lp*geo_fac*sigma_mis_a*mismod
++dvth0_nnat3p3_lp_mis = 0+avth0_nnat3p3_lp*geo_fac*sigma_mis_b*mismod
++du0_nnat3p3_lp_mis = 0+au0_nnat3p3_lp*geo_fac*sigma_mis_c*mismod
++dvsat_nnat3p3_lp_mis = 0+avsat_nnat3p3_lp*geo_fac*sigma_mis_e*mismod
++geo_fac  = 1.06/sqrt(wef*lef*mr)
++lef      = l*0.9-2.8e-008
++wef      = (w*0.9+2e-008-2*(4.9e-008))/nf
++atoxe_nnat3p3_lp = 2.0e-19
++avth0_nnat3p3_lp = 2.6e-9
++au0_nnat3p3_lp = 4.0e-10 
++avsat_nnat3p3_lp = 0     
+m1 d g s b nnat3p3_lp w = w l = l sa = sa sb = sb sd = sd as = as ad = ad ps = ps pd = pd nrd = nrd nrs = nrs nf = nf m = mr 
+include "./mos/nnat3p3_lp_spe.mdl"
+ends nnat3p3_lp
+
+// *3.3v io nmos 
+subckt nm3p3_lp (d g s b )
+parameters
++w        = 1e-6          
++l        = 1e-6          
++sa       = 0             
++sb       = 0             
++sd       = 0             
++as       = 0             
++ad       = 0             
++ps       = 0             
++pd       = 0             
++nrd      = 0             
++nrs      = 0             
++sca      = 0             
++scb      = 0             
++scc      = 0             
++nf       = 1             
++mr       = 1             
++mismod   = 1             
++prelayout = 0            
+
+parameters dtoxe_nm3p3_lp_mis = 0+atoxe_nm3p3_lp*geo_fac*sigma_mis_a*mismod
++dvth0_nm3p3_lp_mis = 0+avth0_nm3p3_lp*geo_fac*sigma_mis_b*mismod
++dvoff_nm3p3_lp_mis = 0+avoff_nm3p3_lp*geo_fac*sigma_mis_c*mismod
++du0_nm3p3_lp_mis = 0+au0_nm3p3_lp*geo_fac*sigma_mis_d*mismod
++geo_fac  = 1.12/sqrt(wef*lef*mr)
++lef      = l*0.9         
++wef      = (w*0.9)/nf    
++atoxe_nm3p3_lp = 1e-18   
++avth0_nm3p3_lp = 2.6e-09 
++avoff_nm3p3_lp = 0.65e-08
++au0_nm3p3_lp = 1.1e-10   
++jtsswgds_w = 3e-6/w*1e-6 
+m1 d g s b nm3p3_lp w = w l = l sa = sa sb = sb sd = sd as = as ad = ad ps = ps pd = pd nrd = nrd nrs = nrs sca = sca scb = scb scc = scc nf = nf m = mr 
+include "./mos/nm3p3_lp_spe.mdl"
+ends nm3p3_lp
+
+// *3.3v io pmos 
+subckt pm3p3_lp (d g s b )
+parameters
++w        = 1e-6          
++l        = 1e-6          
++sa       = 0             
++sb       = 0             
++sd       = 0             
++as       = 0             
++ad       = 0             
++ps       = 0             
++pd       = 0             
++nrd      = 0             
++nrs      = 0             
++sca      = 0             
++scb      = 0             
++scc      = 0             
++nf       = 1             
++mr       = 1             
++mismod   = 1             
++prelayout = 0            
+
+parameters dtoxe_pm3p3_lp_mis = 0+atoxe_pm3p3_lp*geo_fac*sigma_mis_a*mismod
++dvth0_pm3p3_lp_mis = 0+avth0_pm3p3_lp*geo_fac*sigma_mis_b*mismod
++dvoff_pm3p3_lp_mis = 0+avoff_pm3p3_lp*geo_fac*sigma_mis_c*mismod
++du0_pm3p3_lp_mis = 0+au0_pm3p3_lp*geo_fac*sigma_mis_d*mismod
++geo_fac  = 1.15*1.12/sqrt(wef*lef*mr)
++lef      = l*0.9         
++wef      = (w*0.9)/nf    
++atoxe_pm3p3_lp = 0       
++avth0_pm3p3_lp = 3.1e-9  
++avoff_pm3p3_lp = 0       
++au0_pm3p3_lp = 2.5e-11   
++jtsswgds_w = 3e-6/w*1e-6 
+m1 d g s b pm3p3_lp w = w l = l sa = sa sb = sb sd = sd as = as ad = ad ps = ps pd = pd nrd = nrd nrs = nrs sca = sca scb = scb scc = scc nf = nf m = mr 
+include "./mos/pm3p3_lp_spe.mdl"
+ends pm3p3_lp
+
+
+
+
+endsection mos_total
+
+
+
+endlibrary model_wrapper1_hsp

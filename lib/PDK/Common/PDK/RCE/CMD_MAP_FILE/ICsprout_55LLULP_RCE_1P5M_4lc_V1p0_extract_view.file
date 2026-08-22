@@ -1,0 +1,219 @@
+def_device {
+M nm1p2_hvt_lp ncore_hvt_gate icsprout55 nm1p2_hvt_lp ivpcell D G S B LVS2CDF m=1 fingers=1 m=mr fingers=nf sd=0 w=W l=L sa=sa sb=sb nrs=NRS nrd=NRD ad=AD as=AS ps=PS pd=PD scc=scc scb=scb sca=sca editAreaPerim=TRUE mismod=mismod prelayout=prelayout 
+M nm1p2_lvt_lp ncore_lvt_gate icsprout55 nm1p2_lvt_lp ivpcell D G S B LVS2CDF m=1 fingers=1 m=mr fingers=nf sd=0 w=W l=L sa=sa sb=sb nrs=NRS nrd=NRD ad=AD as=AS ps=PS pd=PD scc=scc scb=scb sca=sca editAreaPerim=TRUE mismod=mismod prelayout=prelayout 
+M nm1p2_svt_lp ncore_svt_gate icsprout55 nm1p2_svt_lp ivpcell D G S B LVS2CDF m=1 fingers=1 fingers=nf m=mr w=W l=L sd=0 sa=sa sb=sb nrs=NRS nrd=NRD ad=AD as=AS ps=PS pd=PD scc=scc scb=scb sca=sca editAreaPerim=TRUE mismod=mismod prelayout=prelayout 
+M nm3p3_lp nio2_gate icsprout55 nm3p3_lp ivpcell D G S B LVS2CDF m=1 fingers=1 m=mr fingers=nf sd=0 w=W l=L sa=sa sb=sb nrs=NRS nrd=NRD ad=AD as=AS ps=PS pd=PD scc=scc scb=scb sca=sca editAreaPerim=TRUE mismod=mismod prelayout=prelayout 
+M nnat1p2_lp ncore_nt_gate icsprout55 nnat1p2_lp ivpcell D G S B LVS2CDF m=1 fingers=1 m=mr fingers=nf sd=0 w=W l=L sa=sa sb=sb nrs=NRS nrd=NRD ad=AD as=AS ps=PS pd=PD scc=scc scb=scb sca=sca editAreaPerim=TRUE mismod=mismod prelayout=prelayout 
+M nnat3p3_lp nio2_nt_gate icsprout55 nnat3p3_lp ivpcell D G S B LVS2CDF m=1 fingers=1 m=mr fingers=nf sd=0 w=W l=L sa=sa sb=sb nrs=NRS nrd=NRD ad=AD as=AS ps=PS pd=PD scc=scc scb=scb sca=sca editAreaPerim=TRUE mismod=mismod prelayout=prelayout 
+M pm1p2_hvt_lp pcore_hvt_gate icsprout55 pm1p2_hvt_lp ivpcell D G S B LVS2CDF m=1 fingers=1 m=mr fingers=nf sd=0 w=W l=L sa=sa sb=sb nrs=NRS nrd=NRD ad=AD as=AS ps=PS pd=PD scc=scc scb=scb sca=sca editAreaPerim=TRUE mismod=mismod prelayout=prelayout 
+M pm1p2_lvt_lp pcore_lvt_gate icsprout55 pm1p2_lvt_lp ivpcell D G S B LVS2CDF m=1 fingers=1 m=mr fingers=nf sd=0 w=W l=L sa=sa sb=sb nrs=NRS nrd=NRD ad=AD as=AS ps=PS pd=PD scc=scc scb=scb sca=sca editAreaPerim=TRUE mismod=mismod prelayout=prelayout 
+M pm1p2_svt_lp pcore_svt_gate icsprout55 pm1p2_svt_lp ivpcell D G S B LVS2CDF m=1 fingers=1 m=mr fingers=nf sd=0 w=W l=L sa=sa sb=sb nrs=NRS nrd=NRD ad=AD as=AS ps=PS pd=PD scc=scc scb=scb sca=sca editAreaPerim=TRUE mismod=mismod prelayout=prelayout 
+M pm3p3_lp pio2_gate icsprout55 pm3p3_lp ivpcell D G S B LVS2CDF m=1 fingers=1 m=mr fingers=nf sd=0 w=W l=L sa=sa sb=sb nrs=NRS nrd=NRD ad=AD as=AS ps=PS pd=PD scc=scc scb=scb sca=sca editAreaPerim=TRUE mismod=mismod prelayout=prelayout 
+D dio_1p2_dnw_psub_lp dnwdio_diode icsprout55 dio_1p2_dnw_psub_lp ivpcell PLUS MINUS LVS2CDF m=1 area=AREA pj=PJ 
+D dio_1p2_np_psub_nt_lp ndiocore_nt_diode icsprout55 dio_1p2_np_psub_nt_lp ivpcell PLUS MINUS LVS2CDF m=1 area=AREA pj=PJ 
+D dio_1p2_np_pw_dnw_lp ndiodnw12_diode icsprout55 dio_1p2_np_pw_dnw_lp ivpcell PLUS MINUS LVS2CDF m=1 area=AREA pj=PJ 
+D dio_1p2_np_pw_hvt_lp ndiocore_hvt_diode icsprout55 dio_1p2_np_pw_hvt_lp ivpcell PLUS MINUS LVS2CDF m=1 area=AREA pj=PJ 
+D dio_1p2_np_pw_lp ndiocore_svt_diode icsprout55 dio_1p2_np_pw_lp ivpcell PLUS MINUS LVS2CDF m=1 area=AREA pj=PJ 
+D dio_1p2_np_pw_lvt_lp ndiocore_lvt_diode icsprout55 dio_1p2_np_pw_lvt_lp ivpcell PLUS MINUS LVS2CDF m=1 area=AREA pj=PJ 
+D dio_1p2_nw_psub_lp nwdio_diode icsprout55 dio_1p2_nw_psub_lp ivpcell PLUS MINUS LVS2CDF m=1 area=AREA pj=PJ 
+D dio_1p2_pp_nw_hvt_lp pdiocore_hvt_diode icsprout55 dio_1p2_pp_nw_hvt_lp ivpcell PLUS MINUS LVS2CDF m=1 area=AREA pj=PJ 
+D dio_1p2_pp_nw_lp pdiocore_svt_diode icsprout55 dio_1p2_pp_nw_lp ivpcell PLUS MINUS LVS2CDF m=1 area=AREA pj=PJ 
+D dio_1p2_pp_nw_lvt_lp pdiocore_lvt_diode icsprout55 dio_1p2_pp_nw_lvt_lp ivpcell PLUS MINUS LVS2CDF m=1 area=AREA pj=PJ 
+D dio_1p2_pw_dnw_lp bpwdio_diode icsprout55 dio_1p2_pw_dnw_lp ivpcell PLUS MINUS LVS2CDF m=1 area=AREA pj=PJ 
+D dio_3p3_np_psub_nt_lp ndioio2_nt_diode icsprout55 dio_3p3_np_psub_nt_lp ivpcell PLUS MINUS LVS2CDF m=1 area=AREA pj=PJ 
+D dio_3p3_np_pw_lp ndioio2_diode icsprout55 dio_3p3_np_pw_lp ivpcell PLUS MINUS LVS2CDF m=1 area=AREA pj=PJ 
+D dio_3p3_nw_psub_lp nwdio_diode_io2 icsprout55 dio_3p3_nw_psub_lp ivpcell PLUS MINUS LVS2CDF m=1 area=AREA pj=PJ 
+D dio_3p3_pp_nw_lp pdioio2_diode icsprout55 dio_3p3_pp_nw_lp ivpcell PLUS MINUS LVS2CDF m=1 area=AREA pj=PJ 
+X mom_2t momcap12 icsprout55 mom_2t ivpcell PLUS MINUS LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_2t momcap13 icsprout55 mom_2t ivpcell PLUS MINUS LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_2t momcap14 icsprout55 mom_2t ivpcell PLUS MINUS LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_2t momcap15 icsprout55 mom_2t ivpcell PLUS MINUS LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_2t momcap16 icsprout55 mom_2t ivpcell PLUS MINUS LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_2t momcap23 icsprout55 mom_2t ivpcell PLUS MINUS LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_2t momcap24 icsprout55 mom_2t ivpcell PLUS MINUS LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_2t momcap25 icsprout55 mom_2t ivpcell PLUS MINUS LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_2t momcap26 icsprout55 mom_2t ivpcell PLUS MINUS LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_2t momcap34 icsprout55 mom_2t ivpcell PLUS MINUS LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_2t momcap35 icsprout55 mom_2t ivpcell PLUS MINUS LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_2t momcap36 icsprout55 mom_2t ivpcell PLUS MINUS LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_2t momcap45 icsprout55 mom_2t ivpcell PLUS MINUS LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_2t momcap46 icsprout55 mom_2t ivpcell PLUS MINUS LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_2t momcap56 icsprout55 mom_2t ivpcell PLUS MINUS LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap12_3t_wips icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap12_3t_wops icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap13_3t_wips icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap13_3t_wops icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap14_3t_wips icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap14_3t_wops icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap15_3t_wips icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap15_3t_wops icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap16_3t_wips icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap16_3t_wops icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap23_3t_wips icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap23_3t_wops icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap24_3t_wips icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap24_3t_wops icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap25_3t_wips icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap25_3t_wops icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap26_3t_wips icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap26_3t_wops icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap34_3t_wips icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap34_3t_wops icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap35_3t_wips icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap35_3t_wops icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap36_3t_wips icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap36_3t_wops icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap45_3t_wips icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap45_3t_wops icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap46_3t_wips icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap46_3t_wops icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap56_3t_wips icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+X mom_3t momcap56_3t_wops icsprout55 mom_3t ivpcell PLUS MINUS B LVS2CDF m=mr lr=lf nf=nf tm=tm bm=bm mismod_mom=mismod_mom 
+Q vnpn1p2_2x_lp core_npnEmitA4 icsprout55 vnpn1p2 ivpcell C B E LVS2CDF m=1 mismod=mismod 
+Q vnpn1p2_5x_lp core_npnEmitA25 icsprout55 vnpn1p2 ivpcell C B E LVS2CDF m=1 mismod=mismod 
+Q vnpn1p2_10x_lp core_npnEmitA100 icsprout55 vnpn1p2 ivpcell C B E LVS2CDF m=1 mismod=mismod 
+Q vpnp1p2_2x_lp core_pnpEmitA4 icsprout55 vpnp1p2 ivpcell C B E LVS2CDF m=1 mismod=mismod 
+Q vpnp1p2_5x_lp core_pnpEmitA25 icsprout55 vpnp1p2 ivpcell C B E LVS2CDF m=1 mismod=mismod 
+Q vpnp1p2_10x_lp core_pnpEmitA100 icsprout55 vpnp1p2 ivpcell C B E LVS2CDF m=1 mismod=mismod 
+Q vnpn3p3_2x_lp io2_npnEmitA4 icsprout55 vnpn3p3 ivpcell C B E LVS2CDF m=1 mismod=mismod 
+Q vnpn3p3_5x_lp io2_npnEmitA25 icsprout55 vnpn3p3 ivpcell C B E LVS2CDF m=1 mismod=mismod 
+Q vnpn3p3_10x_lp io2_npnEmitA100 icsprout55 vnpn3p3 ivpcell C B E LVS2CDF m=1 mismod=mismod 
+Q vpnp3p3_2x_lp io2_pnpEmitA4 icsprout55 vpnp3p3 ivpcell C B E LVS2CDF m=1 mismod=mismod 
+Q vpnp3p3_5x_lp io2_pnpEmitA25 icsprout55 vpnp3p3 ivpcell C B E LVS2CDF m=1 mismod=mismod 
+Q vpnp3p3_10x_lp io2_pnpEmitA100 icsprout55 vpnp3p3 ivpcell C B E LVS2CDF m=1 mismod=mismod 
+X var1p2_npd_nw_lp nwvarcore_var_seed icsprout55 var1p2_npd_nw_lp ivpcell PLUS MINUS LVS2CDF m=1 mr=1 m=mr nf=nf wr=wr lr=lr mismod=mismod 
+X var3p3_npd_nw_lp nwvario2_var_seed icsprout55 var3p3_npd_nw_lp ivpcell PLUS MINUS LVS2CDF m=1 mr=1 m=mr nf=nf wr=wr lr=lr mismod=mismod 
+X re_alpa_2t rrdl icsprout55 re_alpa_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_alpa_3t rrdl_3t icsprout55 re_alpa_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_m1_2t rm1 icsprout55 re_m1_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_m1_3t rm1_3t icsprout55 re_m1_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_m2_2t rm2 icsprout55 re_m2_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_m2_3t rm2_3t icsprout55 re_m2_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_m3_2t rm3 icsprout55 re_m3_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_m3_3t rm3_3t icsprout55 re_m3_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_m4_2t rm4 icsprout55 re_m4_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_m4_3t rm4_3t icsprout55 re_m4_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_m5_2t rm5 icsprout55 re_m5_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_m5_3t rm5_3t icsprout55 re_m5_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_m6_2t rm6 icsprout55 re_m6_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_m6_3t rm6_3t icsprout55 re_m6_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_tm1_2t rtm1 icsprout55 re_tm1_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_tm1_3t rtm1_3t icsprout55 re_tm1_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_ndif_2t rndif_2T icsprout55 re_ndif_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_pdif_2t rpdif_2T icsprout55 re_pdif_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_ndif_3t rndif_3T icsprout55 re_ndif_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_pdif_3t rpdif_3T icsprout55 re_pdif_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_ndif_sab_2t rndifsab_2T_seed icsprout55 re_ndif_sab_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_pdif_sab_2t rpdifsab_2T_seed icsprout55 re_pdif_sab_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_ndif_sab_3t rndifsab_3T_seed icsprout55 re_ndif_sab_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_pdif_sab_3t rpdifsab_3T_seed icsprout55 re_pdif_sab_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_nwaa_2t rnwaa_2T icsprout55 re_nwaa_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_nwsti_2t rnwsti_2T icsprout55 re_nwsti_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_nwaa_3t rnwaa_3T icsprout55 re_nwaa_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_nwsti_3t rnwsti_3T icsprout55 re_nwsti_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_npo_2t rnpo_2T icsprout55 re_npo_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_ppo_2t rppo_2T icsprout55 re_ppo_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_npo_sab_2t rnposab_2T icsprout55 re_npo_sab_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_ppo_sab_2t rpposab_2T icsprout55 re_ppo_sab_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_hrpo_2t rhrpo_2T icsprout55 re_hrpo_2t ivpcell PLUS MINUS LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_npo_3t rnpo_3T_nw icsprout55 re_npo_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_npo_3t rnpo_3T_pw icsprout55 re_npo_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_ppo_3t rppo_3T_nw icsprout55 re_ppo_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_ppo_3t rppo_3T_pw icsprout55 re_ppo_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_npo_sab_3t rnposab_3T_nw icsprout55 re_npo_sab_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_npo_sab_3t rnposab_3T_pw icsprout55 re_npo_sab_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_ppo_sab_3t rpposab_3T_nw icsprout55 re_ppo_sab_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_ppo_sab_3t rpposab_3T_pw icsprout55 re_ppo_sab_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_hrpo_3t rhrpo_3T_nw icsprout55 re_hrpo_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+X re_hrpo_3t rhrpo_3T_pw icsprout55 re_hrpo_3t ivpcell PLUS MINUS B LVS2CDF segments=1 mr=1 segW=w segL=l r=sr 
+}
+
+def_layer {
+
+APs                 RDL   drawing
+M1s                 MET1   drawing
+M2s                 MET2   drawing
+M3s                 MET3   drawing
+M4s                 MET4   drawing
+M5s                 MET5   drawing
+M6s                 MET6   drawing
+M7s                 MET7   drawing
+PAS                 CB   drawing
+VA1                 VIA1   drawing
+VA2                 VIA2   drawing
+VA3                 VIA3   drawing
+VA4                 VIA4   drawing
+VA5                 VIA5   drawing
+VA6                 VIA6   drawing
+core_npnEmit        ACT   drawing
+core_pnpEmit        ACT   drawing
+io1_npnEmit         ACT   drawing
+io1_pnpEmit         ACT   drawing
+io2_npnEmit         ACT   drawing
+io2_pnpEmit         ACT   drawing
+mom_terminal12      MET1   drawing
+mom_terminal13      MET1   drawing
+mom_terminal14      MET1   drawing
+mom_terminal15      MET1   drawing
+mom_terminal16      MET1   drawing
+mom_terminal23      MET2   drawing
+mom_terminal24      MET2   drawing
+mom_terminal25      MET2   drawing
+mom_terminal26      MET2   drawing
+mom_terminal34      MET3   drawing
+mom_terminal35      MET3   drawing
+mom_terminal36      MET3   drawing
+mom_terminal45      MET4   drawing
+mom_terminal46      MET4   drawing
+mom_terminal56      MET4   drawing
+ncore_hvt_gate      POLY   drawing
+ncore_lvt_gate      POLY   drawing
+ncore_nt_gate       POLY   drawing
+ncore_svt_gate      POLY   drawing
+ndfCT               CT   drawing
+npoCT               CT   drawing
+pdfCT               CT   drawing
+ppoCT               CT   drawing
+nSD                 ACT   drawing
+nTap                ACT   drawing
+ndiocore_hvt_diode  ACT   drawing
+ndiocore_lvt_diode  ACT   drawing
+ndiocore_nt_diode   ACT   drawing
+ndiocore_svt_diode  ACT   drawing
+ndiodnw12_diode     ACT   drawing
+ndioio1_diode       ACT   drawing
+ndioio1_nt_diode    ACT   drawing
+ndioio2_diode       ACT   drawing
+ndioio2_nt_diode    ACT   drawing
+pdiocore_hvt_diode  ACT   drawing
+pdiocore_lvt_diode  ACT   drawing
+pdiocore_svt_diode  ACT   drawing
+pdioio1_diode       ACT   drawing
+pdioio2_diode       ACT   drawing
+pSD                 ACT   drawing
+pTap                ACT   drawing
+ngpoly              POLY   drawing
+nio1_gate           POLY   drawing
+nio1_nt_gate        POLY   drawing
+nio1_od_gate        POLY   drawing
+nio1_od_nt_gate     POLY   drawing
+nio2_gate           POLY   drawing
+nio2_nt_gate        POLY   drawing
+nio2_od_gate        POLY   drawing
+nio2_od_nt_gate     POLY   drawing
+npoly               POLY   drawing
+nwvarcore_var       POLY   drawing
+nwvario1_var        POLY   drawing
+nwvario2_var        POLY   drawing
+pcore_hvt_gate      POLY   drawing
+pcore_lvt_gate      POLY   drawing
+pcore_svt_gate      POLY   drawing
+pgpoly              POLY   drawing
+pio1_gate           POLY   drawing
+pio1_od_gate        POLY   drawing
+pio2_gate           POLY   drawing
+pio2_od_gate        POLY   drawing
+ppoly               POLY   drawing
+
+
+}

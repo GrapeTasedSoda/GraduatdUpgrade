@@ -1,0 +1,28 @@
+Main deck update
+
+-------------------------------------------------------
+-------------------------------------------------------
+-------------------------------------------------------
+-------------------------------------------------------
+
+For LVS deck
+-------------------------------------------------------
+2024/06/25 Update history(V1.0):
+
+1. Initial version.
+
+-------------------------------------------------------
+2024/08/06 Update history(V1.01):   
+
+1. Add sram device: STNPDHVT,STNPGHVT,STPPUHVT;
+2. Update rsh/dw/dl for all resistors according to the model file;
+3. Delete the rc_element X for all diodes according to the model file;
+
+-------------------------------------------------------
+2024-08-28 Update history(V1.02):
+
+1. Add LVS/RC option
+-------------------------------------------------------
+2024-09-25 Update history(V1.1):
+
+1.set single topmetal :T4M1/T2M1/T8M1-->T4M2/T2M2/T8M2 

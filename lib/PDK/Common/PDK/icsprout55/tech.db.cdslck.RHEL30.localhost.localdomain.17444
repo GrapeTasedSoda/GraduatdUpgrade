@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      user1
+HostName                       localhost.localdomain
+ProcessIdentifier              17444
+ProcessCreationTime_UTC        1759279245
+ProcessCreationTime_Readable   Wed Oct  1 08:40:45 2025 CST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /data/yuhan/ZC55nm/design_250919/55nmePDK/ICsprout_55LLULP1233_1P7M_6lc_1T4Mc_RDL1_v1p12/icsprout55/tech.db.cdslck
+TimeEditLocked                 Mon Oct 13 21:49:41 2025 CST

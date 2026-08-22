@@ -19,13 +19,19 @@ mac16/
 ├── design/               # 核心 RTL 代码（8 个模块，见下表）
 ├── testbench/            # 赛题验收 testbench（3 种 mode 组合自动比对）
 ├── script/               # VCS 仿真 Makefile / DC 综合脚本 / Formality 脚本 / SDC
-├── lib/                  # 浙江创芯 ics55 标准单元库（7 个 PVT corner .db）
+├── lib/                  # 浙江创芯 ics55 标准单元库（7 个 PVT corner：.db + .lib.gz + PDK GDS/LEF/CDL/TF）
 ├── out/
 │   ├── sim/              # VCS 仿真产物（simv 等）
-│   └── syn/              # DC 综合结果（网表/SDF/SDC/时序/功耗/面积报告）
+│   ├── syn/              # DC 综合结果（网表/SDF/SDC/时序/功耗/面积报告）
+│   ├── apr/              # FC 布局布线结果（GDS/网表/SDF/SPEF/报告/工艺文件）
+│   └── lvs/              # IC Validator LVS 验证（规则 + 单单元验证 PASS 结果）
+├── host_setup/           # 宿主机/多机 Git 配置脚本（Windows PowerShell + Unix shell）
 ├── wave/                 # 仿真波形（mac16.vpd）
 └── docs/                 # 模块图（PNG/SVG + DOT 源文件）
 ```
+
+> 说明：标准单元库原始 `.lib`（约 113MB/个）超过 GitHub 单文件 100MB 上限，
+> 已压缩为 `.lib.gz` 入库（工具直接用 `.db` 即可；如需 `.lib` 解压即可）。
 
 ## 三、核心 RTL 模块
 
@@ -98,6 +104,13 @@ flowchart LR
 - **当前状态：P&R 已完整跑通（0 Error）**。1GHz 下 Setup WNS -0.01ns/TNS -0.04ns（12 条违例）、Hold 1 条 -0.00ns；Cell area 11171µm²；总功耗 720µW；Net DRC 1 条。与赛题指标差距见 [fc_apr_report.md](out/apr/fc_apr_report.md)（功耗/面积超指标、需 3 corner 与 LVS/DRC）。
 - 入库范围：`out/apr/` 下的报告、日志、GDS、网表、SDF、SPEF 与 `tech/` 工艺/寄生文件全部入库；`ndm/`、`CLIBs/`（约 29MB，可由脚本自动重建）及 FC 会话临时文件不入库（见 .gitignore）。
 
+### 物理验证（IC Validator LVS）状态
+
+- 规则与结果：[out/lvs](out/lvs)（`ics55_lvs.rs` + `invx.gds`/`invx.cdl` 单单元验证）
+- **当前状态：单元级 LVS 已验证 PASS**（`Final comparison result: PASS`，
+  2/2 器件、4/4 网络、4/4 端口全部匹配；NMOS W=210nm/L=60nm、PMOS W=295nm/L=60nm 与 CDL 一致）。
+- 运行方式、规则要点（`text_net()` 挂接标签、S/D 几何拆分）与整芯片 LVS 的下一步见 [out/lvs/README.md](out/lvs/README.md)。
+
 ## 六、流程复现
 
 ```bash
@@ -109,6 +122,14 @@ cd script && dc_shell -f dc_syn.tcl | tee syn.log
 
 # 3. 形式验证（Formality）
 cd script && fm_shell -f fm_mac16.tcl | tee fm.log
+
+# 4. 布局布线（FC，本地目录运行，幂等）
+cd script && fc_shell -batch -f fc_apr.tcl
+
+# 5. 单元级 LVS（IC Validator，务必在本机磁盘运行，勿用共享目录）
+cd /home/user/mac16_lvs_final
+icv ics55_lvs.rs -i invx.gds -s invx.cdl -sf SPICE
 ```
 
-> 注意：`lib/` 为标准单元库（ics55），`out/`、`wave/`、`script/FM_WORK*` 等为 EDA 工具产物，属任务书要求的“各阶段全部设计数据”，请勿随意删除。
+> 注意：`lib/` 为标准单元库（ics55），`out/`、`wave/` 等为 EDA 工具产物，属任务书要求的“各阶段全部设计数据”，请勿随意删除。
+> 仓库内不包含 EDA 会话缓存（`FM_WORK*`、`run_details/`、`ndm/`、`CLIBs/`、`*.svf`、`*.lck` 等，见 .gitignore）。

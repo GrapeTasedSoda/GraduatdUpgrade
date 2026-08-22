@@ -1,0 +1,130 @@
+simulator lang = spectre
+
+library icsprout_v1p12_usage_hsp
+section pre_layout
+
+setoption1 options scale = 0.9 
+parameters prelayout = 1.0          
+
+endsection pre_layout
+
+
+section tt_mos
+
+setoption2 options scale = 0.9 
+include "model_wrapper1_hsp_spe.lib" section=tt
+include "model_wrapper1_hsp_spe.lib" section=mos_total
+parameters corner_ratio = 1.0       
+
+endsection tt_mos
+
+
+section ff_mos
+
+setoption3 options scale = 0.9 
+include "model_wrapper1_hsp_spe.lib" section=ff
+include "model_wrapper1_hsp_spe.lib" section=mos_total
+parameters corner_ratio = 1.0       
+
+endsection ff_mos
+
+
+section ss_mos
+
+setoption4 options scale = 0.9 
+include "model_wrapper1_hsp_spe.lib" section=ss
+include "model_wrapper1_hsp_spe.lib" section=mos_total
+parameters corner_ratio = 1.0       
+
+endsection ss_mos
+
+
+section fnsp_mos
+
+setoption5 options scale = 0.9 
+include "model_wrapper1_hsp_spe.lib" section=fnsp
+include "model_wrapper1_hsp_spe.lib" section=mos_total
+parameters corner_ratio = 1.0       
+
+endsection fnsp_mos
+
+
+section snfp_mos
+
+setoption6 options scale = 0.9 
+include "model_wrapper1_hsp_spe.lib" section=snfp
+include "model_wrapper1_hsp_spe.lib" section=mos_total
+parameters corner_ratio = 1.0       
+
+endsection snfp_mos
+
+
+section mc_mos
+
+setoption7 options scale = 0.9 
+include "model_wrapper1_hsp_spe.lib" section=mos_mc
+include "model_wrapper1_hsp_spe.lib" section=mos_total
+parameters corner_ratio = 1.0       
+parameters mismod   = 0             
+
+endsection mc_mos
+
+
+section tt_passive
+
+setoption8 options scale = 0.9 
+include "model_wrapper2_hsp_spe.lib" section=bjt_core12_tt
+include "model_wrapper2_hsp_spe.lib" section=bjt_io33_tt
+include "model_wrapper2_hsp_spe.lib" section=dio_tt
+include "model_wrapper2_hsp_spe.lib" section=res_tt
+include "model_wrapper2_hsp_spe.lib" section=var_tt
+include "model_wrapper2_hsp_spe.lib" section=mom_tt
+
+endsection tt_passive
+
+
+section ff_passive
+
+setoption9 options scale = 0.9 
+include "model_wrapper2_hsp_spe.lib" section=bjt_core12_ff
+include "model_wrapper2_hsp_spe.lib" section=bjt_io33_ff
+include "model_wrapper2_hsp_spe.lib" section=dio_ff
+include "model_wrapper2_hsp_spe.lib" section=res_ff
+include "model_wrapper2_hsp_spe.lib" section=var_ff
+include "model_wrapper2_hsp_spe.lib" section=mom_ff
+
+endsection ff_passive
+
+
+section ss_passive
+
+setoption10 options scale = 0.9 
+include "model_wrapper2_hsp_spe.lib" section=bjt_core12_ss
+include "model_wrapper2_hsp_spe.lib" section=bjt_io33_ss
+include "model_wrapper2_hsp_spe.lib" section=dio_ss
+include "model_wrapper2_hsp_spe.lib" section=res_ss
+include "model_wrapper2_hsp_spe.lib" section=var_ss
+include "model_wrapper2_hsp_spe.lib" section=mom_ss
+
+endsection ss_passive
+
+
+section mc_passive
+
+setoption11 options scale = 0.9 
+include "model_wrapper2_hsp_spe.lib" section=bjt_core12_mc
+include "model_wrapper2_hsp_spe.lib" section=bjt_io33_mc
+include "model_wrapper2_hsp_spe.lib" section=dio_tt
+include "model_wrapper2_hsp_spe.lib" section=res_mc
+include "model_wrapper2_hsp_spe.lib" section=var_mc
+include "model_wrapper2_hsp_spe.lib" section=mom_mc
+parameters mismod_bjt = 0           
+parameters mismod_mom = 0           
+parameters mismod_var = 0           
+parameters resmis_mod = 0           
+
+endsection mc_passive
+
+
+
+endlibrary icsprout_v1p12_usage_hsp

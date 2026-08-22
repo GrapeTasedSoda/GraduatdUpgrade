@@ -1,0 +1,785 @@
+simulator lang = spectre
+
+// *  release version    : 1.2
+// *
+// *  release date       : 03/15/2025
+// *
+// *  simulation tool    : synopsys hspice version n-2017.12-sp2
+// *
+// *  model type         :
+// *    mosfet           : hspice level 54(bsim4v4.5)
+// *
+// *  model name         :
+// *    mosfet           :
+// *        *----------------------------------------------------------------------------------------------------*
+// *        |     mosfet type    |     3.3v      |   
+// *        |====================================================================================================|
+// *        *----------------------------------*
+// *        |      nmos      | nm3p3_lp   |
+// *        *----------------------------------*
+// *  valid temperature range is from -40c to 125c
+// *
+
+
+parameters wum      = w*1e6         
+
+parameters lum      = l*1e6         
+
+
+parameters vth0_w0p21_1 = -0.001    
+
+parameters vth0_w0p21_2 = 0.0       
+
+parameters vth0_w0p21_3 = 0.0       
+
+parameters vth0_w0p21_4 = -0.002    
+
+parameters vth0_w0p21_5 = 0.0       
+
+parameters vth0_w0p21_6 = 0.0       
+
+parameters vth0_w0p21_7 = 0.0       
+
+
+parameters vth0_w0p25_1 = 0.0       
+
+parameters vth0_w0p25_2 = 0.0       
+
+parameters vth0_w0p25_3 = 0.0       
+
+parameters vth0_w0p25_4 = 0.0       
+
+parameters vth0_w0p25_5 = 0.0       
+
+parameters vth0_w0p25_6 = 0.00      
+
+parameters vth0_w0p25_7 = 0.0       
+
+
+parameters vth0_w0p3_1 = -0.000     
+
+parameters vth0_w0p3_2 = 0.000      
+
+parameters vth0_w0p3_3 = 0.00       
+
+parameters vth0_w0p3_4 = 0.00       
+
+parameters vth0_w0p3_5 = 0.00       
+
+parameters vth0_w0p3_6 = 0.000      
+
+parameters vth0_w0p3_7 = 0.0        
+
+
+parameters vth0_w0p5_1 = 0          
+
+parameters vth0_w0p5_2 = 0          
+
+parameters vth0_w0p5_3 = -0.002     
+
+parameters vth0_w0p5_4 = -0.003     
+
+parameters vth0_w0p5_5 = -0.003     
+
+parameters vth0_w0p5_6 = 0.0        
+
+parameters vth0_w0p5_7 = 0.0        
+
+
+parameters vth0_w1_1 = 0.001        
+
+parameters vth0_w1_2 = 0            
+
+parameters vth0_w1_3 = 0            
+
+parameters vth0_w1_4 = -0.006       
+
+parameters vth0_w1_5 = -0.003       
+
+parameters vth0_w1_6 = 0.0          
+
+parameters vth0_w1_7 = -0.001       
+
+
+parameters vth0_w10_1 = 0.0         
+
+parameters vth0_w10_2 = 0.0         
+
+parameters vth0_w10_3 = 0           
+
+parameters vth0_w10_4 = -0.001      
+
+parameters vth0_w10_5 = 0.0         
+
+parameters vth0_w10_6 = 0.0         
+
+parameters vth0_w10_7 = 0.0         
+
+
+
+parameters u0_w0p21_1 = 0.0         
+
+parameters u0_w0p21_2 = -5.0e-4     
+
+parameters u0_w0p21_3 = 0.0         
+
+parameters u0_w0p21_4 = 0.0         
+
+parameters u0_w0p21_5 = 0.0         
+
+parameters u0_w0p21_6 = 0.0         
+
+parameters u0_w0p21_7 = 0.0         
+
+
+parameters u0_w0p25_1 = 0.0         
+
+parameters u0_w0p25_2 = 0           
+
+parameters u0_w0p25_3 = 0           
+
+parameters u0_w0p25_4 = 0           
+
+parameters u0_w0p25_5 = 0.0         
+
+parameters u0_w0p25_6 = 0.0         
+
+parameters u0_w0p25_7 = 0           
+
+
+parameters u0_w0p3_1 = -0.001       
+
+parameters u0_w0p3_2 = -5.0e-4      
+
+parameters u0_w0p3_3 = -5.0e-4      
+
+parameters u0_w0p3_4 = 0            
+
+parameters u0_w0p3_5 = 0            
+
+parameters u0_w0p3_6 = 0.0          
+
+parameters u0_w0p3_7 = -1.0e-4      
+
+
+parameters u0_w0p5_1 = -0.002       
+
+parameters u0_w0p5_2 = -0.0011      
+
+parameters u0_w0p5_3 = -8.0e-4      
+
+parameters u0_w0p5_4 = -3.5e-4      
+
+parameters u0_w0p5_5 = -2.4e-4      
+
+parameters u0_w0p5_6 = 0            
+
+parameters u0_w0p5_7 = -0.001       
+
+
+parameters u0_w1_1  = -5.0e-4       
+
+parameters u0_w1_2  = -5.0e-4       
+
+parameters u0_w1_3  = 0.0           
+
+parameters u0_w1_4  = 0             
+
+parameters u0_w1_5  = 0             
+
+parameters u0_w1_6  = 0             
+
+parameters u0_w1_7  = -0.001        
+
+
+parameters u0_w10_1 = 0.0           
+
+parameters u0_w10_2 = 0.0           
+
+parameters u0_w10_3 = 0             
+
+parameters u0_w10_4 = 0.0           
+
+parameters u0_w10_5 = 0.0           
+
+parameters u0_w10_6 = 0.0           
+
+parameters u0_w10_7 = 0.0           
+
+
+
+parameters dsub_w0p21_1 = 0.0       
+
+parameters dsub_w0p21_2 = 0.0       
+
+parameters dsub_w0p21_3 = 0.0       
+
+parameters dsub_w0p21_4 = 0.0       
+
+parameters dsub_w0p21_5 = 0.0       
+
+parameters dsub_w0p21_6 = 0.0       
+
+parameters dsub_w0p21_7 = 0.0       
+
+
+parameters dsub_w0p25_1 = 0.0       
+
+parameters dsub_w0p25_2 = 0.0       
+
+parameters dsub_w0p25_3 = 0.0       
+
+parameters dsub_w0p25_4 = 0.0       
+
+parameters dsub_w0p25_5 = 0.0       
+
+parameters dsub_w0p25_6 = 0.0       
+
+parameters dsub_w0p25_7 = 0.0       
+
+
+parameters dsub_w0p3_1 = 0.0        
+
+parameters dsub_w0p3_2 = 0.0        
+
+parameters dsub_w0p3_3 = 0.0        
+
+parameters dsub_w0p3_4 = 0.0        
+
+parameters dsub_w0p3_5 = 0.0        
+
+parameters dsub_w0p3_6 = 0.0        
+
+parameters dsub_w0p3_7 = 0.0        
+
+
+parameters dsub_w0p5_1 = 0.0        
+
+parameters dsub_w0p5_2 = 0.0        
+
+parameters dsub_w0p5_3 = 0.0        
+
+parameters dsub_w0p5_4 = 0.0        
+
+parameters dsub_w0p5_5 = 0.0        
+
+parameters dsub_w0p5_6 = 0.0        
+
+parameters dsub_w0p5_7 = 0.0        
+
+
+parameters dsub_w1_1 = 0.0          
+
+parameters dsub_w1_2 = 0.0          
+
+parameters dsub_w1_3 = 0.0          
+
+parameters dsub_w1_4 = 0.0          
+
+parameters dsub_w1_5 = 0.0          
+
+parameters dsub_w1_6 = 0.0          
+
+parameters dsub_w1_7 = 0.0          
+
+
+parameters dsub_w10_1 = 0.0         
+
+parameters dsub_w10_2 = 0.0         
+
+parameters dsub_w10_3 = 0.0         
+
+parameters dsub_w10_4 = 0.0         
+
+parameters dsub_w10_5 = 0.0         
+
+parameters dsub_w10_6 = 0.0         
+
+parameters dsub_w10_7 = 0.0         
+
+
+parameters ags_w0p21_1 = 0.0        
+
+parameters ags_w0p21_2 = 0.0        
+
+parameters ags_w0p21_3 = 0.0        
+
+parameters ags_w0p21_4 = 0.0        
+
+parameters ags_w0p21_5 = 0.02       
+
+parameters ags_w0p21_6 = 0.0        
+
+parameters ags_w0p21_7 = -0.04      
+
+
+parameters ags_w0p25_1 = 0.0        
+
+parameters ags_w0p25_2 = 0.0        
+
+parameters ags_w0p25_3 = 0.0        
+
+parameters ags_w0p25_4 = 0.0        
+
+parameters ags_w0p25_5 = 0.0        
+
+parameters ags_w0p25_6 = 0.0        
+
+parameters ags_w0p25_7 = 0.0        
+
+
+parameters ags_w0p3_1 = 0.0         
+
+parameters ags_w0p3_2 = 0.0         
+
+parameters ags_w0p3_3 = 0.0         
+
+parameters ags_w0p3_4 = 0.0         
+
+parameters ags_w0p3_5 = 0.0         
+
+parameters ags_w0p3_6 = 0.0         
+
+parameters ags_w0p3_7 = -0.06       
+
+
+parameters ags_w0p5_1 = 0.0         
+
+parameters ags_w0p5_2 = 0.0         
+
+parameters ags_w0p5_3 = 0.0         
+
+parameters ags_w0p5_4 = 0.0         
+
+parameters ags_w0p5_5 = 0.0         
+
+parameters ags_w0p5_6 = 0.0         
+
+parameters ags_w0p5_7 = -0.05       
+
+
+parameters ags_w1_1 = 0.0           
+
+parameters ags_w1_2 = 0.0           
+
+parameters ags_w1_3 = 0.0           
+
+parameters ags_w1_4 = 0.02          
+
+parameters ags_w1_5 = 0.0           
+
+parameters ags_w1_6 = 0.0           
+
+parameters ags_w1_7 = -0.05         
+
+
+parameters ags_w10_1 = 0.0          
+
+parameters ags_w10_2 = 0.0          
+
+parameters ags_w10_3 = 0.0          
+
+parameters ags_w10_4 = 0.05         
+
+parameters ags_w10_5 = 0.04         
+
+parameters ags_w10_6 = 0.0          
+
+parameters ags_w10_7 = -0.025       
+
+
+parameters vsat_w0p21_1 = 0.0       
+
+parameters vsat_w0p21_2 = 0         
+
+parameters vsat_w0p21_3 = 0         
+
+parameters vsat_w0p21_4 = 0.0       
+
+parameters vsat_w0p21_5 = 0.0       
+
+parameters vsat_w0p21_6 = 0.0       
+
+parameters vsat_w0p21_7 = 0.0       
+
+
+parameters vsat_w0p25_1 = 0         
+
+parameters vsat_w0p25_2 = 0.0       
+
+parameters vsat_w0p25_3 = 0.0       
+
+parameters vsat_w0p25_4 = 0         
+
+parameters vsat_w0p25_5 = 0.0       
+
+parameters vsat_w0p25_6 = 0.0       
+
+parameters vsat_w0p25_7 = 0.0       
+
+
+parameters vsat_w0p3_1 = 0          
+
+parameters vsat_w0p3_2 = 0.0        
+
+parameters vsat_w0p3_3 = 0.0        
+
+parameters vsat_w0p3_4 = 0.0        
+
+parameters vsat_w0p3_5 = 0.0        
+
+parameters vsat_w0p3_6 = 0.0        
+
+parameters vsat_w0p3_7 = 0.0        
+
+
+parameters vsat_w0p5_1 = 0          
+
+parameters vsat_w0p5_2 = 0.0        
+
+parameters vsat_w0p5_3 = 0          
+
+parameters vsat_w0p5_4 = 0.0        
+
+parameters vsat_w0p5_5 = 0.0        
+
+parameters vsat_w0p5_6 = 0.0        
+
+parameters vsat_w0p5_7 = 0.0        
+
+
+parameters vsat_w1_1 = 0            
+
+parameters vsat_w1_2 = 0.0          
+
+parameters vsat_w1_3 = 0            
+
+parameters vsat_w1_4 = 0.0          
+
+parameters vsat_w1_5 = 0.0          
+
+parameters vsat_w1_6 = 0.0          
+
+parameters vsat_w1_7 = 0.0          
+
+
+parameters vsat_w10_1 = 0.0         
+
+parameters vsat_w10_2 = 0.0         
+
+parameters vsat_w10_3 = 0           
+
+parameters vsat_w10_4 = 6000.0      
+
+parameters vsat_w10_5 = 0.0         
+
+parameters vsat_w10_6 = 0.0         
+
+parameters vsat_w10_7 = 0.0         
+
+
+
+real evalbin(real p1, real p2, real p3, real p4) {
+	return (p1/lbin/dbin-p2/lbin/ubin+p3/rbin/ubin-p4/rbin/dbin + ((p2-p1)/lbin+(p4-p3)/rbin)/lum + ((p4-p1)/dbin+(p2-p3)/ubin)/wum + (p1-p2+p3-p4)/lum/wum)/(1/lbin-1/rbin)/(1/dbin-1/ubin);
+}
+
+real select6(real v, real v1, real v2, real v3, real v4, real v5, real v6) {
+	return v<v1?1 : v<v2?1 : v<v3?2 : v<v4?3 : v<v5?4 : v<v6?5 : 5;
+}
+
+real select7(real v, real v1, real v2, real v3, real v4, real v5, real v6, real v7) {
+	return v<v1?1 : v<v2?1 : v<v3?2 : v<v4?3 : v<v5?4 : v<v6?5 : v<v7?6 : 6;
+}
+
+real selectp6(real p, real p1, real p2, real p3, real p4, real p5, real p6) {
+	return p==1?p1 : p==2?p2 : p==3?p3 : p==4?p4 : p==5?p5 : p==6?p6 : 1e4;
+}
+
+real selectp7(real p, real p1, real p2, real p3, real p4, real p5, real p6, real p7) {
+	return p==1?p1 : p==2?p2 : p==3?p3 : p==4?p4 : p==5?p5 : p==6?p6 : p==7?p7 : 1e4;
+}
+
+
+parameters xbin     = select6(wum,0.21,0.25,0.3,0.5,1,10)
+
+parameters lbin     = selectp6(xbin,0.21,0.25,0.3,0.5,1,10)
+
+parameters rbin     = selectp6(xbin+1,0.21,0.25,0.3,0.5,1,10)
+
+parameters ybin     = select7(lum,0.38,0.4,0.5,1,2,5,10)
+
+parameters dbin     = selectp7(ybin,0.38,0.4,0.5,1,2,5,10)
+
+parameters ubin     = selectp7(ybin+1,0.38,0.4,0.5,1,2,5,10)
+
+
+real vth0_w0p21(real y) {
+	return selectp7(y,vth0_w0p21_1,vth0_w0p21_2,vth0_w0p21_3,vth0_w0p21_4,vth0_w0p21_5,vth0_w0p21_6,vth0_w0p21_7);
+}
+
+real vth0_w0p25(real y) {
+	return selectp7(y,vth0_w0p25_1,vth0_w0p25_2,vth0_w0p25_3,vth0_w0p25_4,vth0_w0p25_5,vth0_w0p25_6,vth0_w0p25_7);
+}
+
+real vth0_w0p3(real y) {
+	return selectp7(y,vth0_w0p3_1,vth0_w0p3_2,vth0_w0p3_3,vth0_w0p3_4,vth0_w0p3_5,vth0_w0p3_6,vth0_w0p3_7);
+}
+
+real vth0_w0p5(real y) {
+	return selectp7(y,vth0_w0p5_1,vth0_w0p5_2,vth0_w0p5_3,vth0_w0p5_4,vth0_w0p5_5,vth0_w0p5_6,vth0_w0p5_7);
+}
+
+real vth0_w1(real y) {
+	return selectp7(y,vth0_w1_1,vth0_w1_2,vth0_w1_3,vth0_w1_4,vth0_w1_5,vth0_w1_6,vth0_w1_7);
+}
+
+real vth0_w10(real y) {
+	return selectp7(y,vth0_w10_1,vth0_w10_2,vth0_w10_3,vth0_w10_4,vth0_w10_5,vth0_w10_6,vth0_w10_7);
+}
+
+real vth0_c(real x, real y) {
+	return selectp6(x, vth0_w0p21(y), vth0_w0p25(y), vth0_w0p3(y), vth0_w0p5(y), vth0_w1(y), vth0_w10(y));
+}
+
+parameters vth0_q   = evalbin(vth0_c(xbin+1,ybin+1), vth0_c(xbin+1,ybin), vth0_c(xbin,ybin), vth0_c(xbin,ybin+1))
+
+
+real u0_w0p21(real y) {
+	return selectp7(y,u0_w0p21_1,u0_w0p21_2,u0_w0p21_3,u0_w0p21_4,u0_w0p21_5,u0_w0p21_6,u0_w0p21_7);
+}
+
+real u0_w0p25(real y) {
+	return selectp7(y,u0_w0p25_1,u0_w0p25_2,u0_w0p25_3,u0_w0p25_4,u0_w0p25_5,u0_w0p25_6,u0_w0p25_7);
+}
+
+real u0_w0p3(real y) {
+	return selectp7(y,u0_w0p3_1,u0_w0p3_2,u0_w0p3_3,u0_w0p3_4,u0_w0p3_5,u0_w0p3_6,u0_w0p3_7);
+}
+
+real u0_w0p5(real y) {
+	return selectp7(y,u0_w0p5_1,u0_w0p5_2,u0_w0p5_3,u0_w0p5_4,u0_w0p5_5,u0_w0p5_6,u0_w0p5_7);
+}
+
+real u0_w1(real y) {
+	return selectp7(y,u0_w1_1,u0_w1_2,u0_w1_3,u0_w1_4,u0_w1_5,u0_w1_6,u0_w1_7);
+}
+
+real u0_w10(real y) {
+	return selectp7(y,u0_w10_1,u0_w10_2,u0_w10_3,u0_w10_4,u0_w10_5,u0_w10_6,u0_w10_7);
+}
+
+real u0_c(real x, real y) {
+	return selectp6(x, u0_w0p21(y), u0_w0p25(y), u0_w0p3(y), u0_w0p5(y), u0_w1(y), u0_w10(y));
+}
+
+parameters u0_q     = evalbin(u0_c(xbin+1,ybin+1), u0_c(xbin+1,ybin), u0_c(xbin,ybin), u0_c(xbin,ybin+1))
+
+
+real dsub_w0p21(real y) {
+	return selectp7(y,dsub_w0p21_1,dsub_w0p21_2,dsub_w0p21_3,dsub_w0p21_4,dsub_w0p21_5,dsub_w0p21_6,dsub_w0p21_7);
+}
+
+real dsub_w0p25(real y) {
+	return selectp7(y,dsub_w0p25_1,dsub_w0p25_2,dsub_w0p25_3,dsub_w0p25_4,dsub_w0p25_5,dsub_w0p25_6,dsub_w0p25_7);
+}
+
+real dsub_w0p3(real y) {
+	return selectp7(y,dsub_w0p3_1,dsub_w0p3_2,dsub_w0p3_3,dsub_w0p3_4,dsub_w0p3_5,dsub_w0p3_6,dsub_w0p3_7);
+}
+
+real dsub_w0p5(real y) {
+	return selectp7(y,dsub_w0p5_1,dsub_w0p5_2,dsub_w0p5_3,dsub_w0p5_4,dsub_w0p5_5,dsub_w0p5_6,dsub_w0p5_7);
+}
+
+real dsub_w1(real y) {
+	return selectp7(y,dsub_w1_1,dsub_w1_2,dsub_w1_3,dsub_w1_4,dsub_w1_5,dsub_w1_6,dsub_w1_7);
+}
+
+real dsub_w10(real y) {
+	return selectp7(y,dsub_w10_1,dsub_w10_2,dsub_w10_3,dsub_w10_4,dsub_w10_5,dsub_w10_6,dsub_w10_7);
+}
+
+real dsub_c(real x, real y) {
+	return selectp6(x, dsub_w0p21(y), dsub_w0p25(y), dsub_w0p3(y), dsub_w0p5(y), dsub_w1(y), dsub_w10(y));
+}
+
+parameters dsub_qq  = evalbin(dsub_c(xbin+1,ybin+1), dsub_c(xbin+1,ybin), dsub_c(xbin,ybin), dsub_c(xbin,ybin+1))
+
+
+real ags_w0p21(real y) {
+	return selectp7(y,ags_w0p21_1,ags_w0p21_2,ags_w0p21_3,ags_w0p21_4,ags_w0p21_5,ags_w0p21_6,ags_w0p21_7);
+}
+
+real ags_w0p25(real y) {
+	return selectp7(y,ags_w0p25_1,ags_w0p25_2,ags_w0p25_3,ags_w0p25_4,ags_w0p25_5,ags_w0p25_6,ags_w0p25_7);
+}
+
+real ags_w0p3(real y) {
+	return selectp7(y,ags_w0p3_1,ags_w0p3_2,ags_w0p3_3,ags_w0p3_4,ags_w0p3_5,ags_w0p3_6,ags_w0p3_7);
+}
+
+real ags_w0p5(real y) {
+	return selectp7(y,ags_w0p5_1,ags_w0p5_2,ags_w0p5_3,ags_w0p5_4,ags_w0p5_5,ags_w0p5_6,ags_w0p5_7);
+}
+
+real ags_w1(real y) {
+	return selectp7(y,ags_w1_1,ags_w1_2,ags_w1_3,ags_w1_4,ags_w1_5,ags_w1_6,ags_w1_7);
+}
+
+real ags_w10(real y) {
+	return selectp7(y,ags_w10_1,ags_w10_2,ags_w10_3,ags_w10_4,ags_w10_5,ags_w10_6,ags_w10_7);
+}
+
+real ags_c(real x, real y) {
+	return selectp6(x, ags_w0p21(y), ags_w0p25(y), ags_w0p3(y), ags_w0p5(y), ags_w1(y), ags_w10(y));
+}
+
+parameters ags_qq   = evalbin(ags_c(xbin+1,ybin+1), ags_c(xbin+1,ybin), ags_c(xbin,ybin), ags_c(xbin,ybin+1))
+
+
+real vsat_w0p21(real y) {
+	return selectp7(y,vsat_w0p21_1,vsat_w0p21_2,vsat_w0p21_3,vsat_w0p21_4,vsat_w0p21_5,vsat_w0p21_6,vsat_w0p21_7);
+}
+
+real vsat_w0p25(real y) {
+	return selectp7(y,vsat_w0p25_1,vsat_w0p25_2,vsat_w0p25_3,vsat_w0p25_4,vsat_w0p25_5,vsat_w0p25_6,vsat_w0p25_7);
+}
+
+real vsat_w0p3(real y) {
+	return selectp7(y,vsat_w0p3_1,vsat_w0p3_2,vsat_w0p3_3,vsat_w0p3_4,vsat_w0p3_5,vsat_w0p3_6,vsat_w0p3_7);
+}
+
+real vsat_w0p5(real y) {
+	return selectp7(y,vsat_w0p5_1,vsat_w0p5_2,vsat_w0p5_3,vsat_w0p5_4,vsat_w0p5_5,vsat_w0p5_6,vsat_w0p5_7);
+}
+
+real vsat_w1(real y) {
+	return selectp7(y,vsat_w1_1,vsat_w1_2,vsat_w1_3,vsat_w1_4,vsat_w1_5,vsat_w1_6,vsat_w1_7);
+}
+
+real vsat_w10(real y) {
+	return selectp7(y,vsat_w10_1,vsat_w10_2,vsat_w10_3,vsat_w10_4,vsat_w10_5,vsat_w10_6,vsat_w10_7);
+}
+
+real vsat_c(real x, real y) {
+	return selectp6(x, vsat_w0p21(y), vsat_w0p25(y), vsat_w0p3(y), vsat_w0p5(y), vsat_w1(y), vsat_w10(y));
+}
+
+parameters vsat_qq  = evalbin(vsat_c(xbin+1,ybin+1), vsat_c(xbin+1,ybin), vsat_c(xbin,ybin), vsat_c(xbin,ybin+1))
+
+
+
+// ***********************************************************************************
+// *                              3.3v io nmos model                               *
+// ***********************************************************************************
+model nm3p3_lp bsim4 
++type     = n              lmin     = 3.42e-007      lmax     = 0.0001        
++wmin     = 1.89e-007      wmax     = 0.0001         version  = 4.5           
++binunit  = 2              paramchk = 1              mobmod   = 0             
++capmod   = 2              igcmod   = 0              igbmod   = 0             
++geomod   = 0              diomod   = 2              rdsmod   = 0             
++rbodymod = 0              rgeomod  = 1              rgatemod = 0             
++permod   = 1              acnqsmod = 0              trnqsmod = 0             
++tempmod  = 0              wpemod   = 1              tnom     = 25            
++toxe     = 6.44e-009 + dtoxe_nm3p3_lp_mis dtox     = (-3.5e-10) + ddtox_nm3p3_lp epsrox   = 3.9           
++toxref   = 6.44e-009      wint     = -8.22e-008     lint     = 1.2e-8        
++ll       = -1.1e-15       wl       = -6e-014        lln      = 1.08          
++wln      = 0.85           lw       = -3.75e-14      ww       = 7.531e-16     
++lwn      = 0.92           wwn      = 1              lwl      = 1.2795e-021   
++wwl      = 1.3195e-020    llc      = 0              wlc      = 0             
++lwc      = 0              wwc      = 0              lwlc     = 0             
++wwlc     = 0              xl       = 3e-009         xw       = 2e-008        
++dlc      = 6.6e-9         dwc      = -1.0e-8        dlcig    = 1e-009        
++xpart    = 0              vth0     = 0.58 + dvth0_nm3p3_lp + dvth0_nm3p3_lp_mis+vth0_q lvth0    = 8.1e-8 + dlvth0_nm3p3_lp
++wvth0    = (-2.5e-8) + dwvth0_nm3p3_lp pvth0    = -1.01076e-14 + dpvth0_nm3p3_lp k1       = 0.6           
++k2       = -0.005         lk2      = -6.3e-8        wk2      = -5.0e-9       
++pk2      = 2.0e-15        k3       = 40.0           k3b      = -13.0         
++w0       = 5.0e-6         pw0      = -2.5e-021      dvt0     = 0.03 + ddvt0_nm3p3_lp
++ldvt0    = 1.0034e-007 + dldvt0_nm3p3_lp pdvt0    = -1.4807e-14+ dpdvt0_nm3p3_lp dvt1     = 0.09          
++dvt2     = 0.023          dvt0w    = 10.0           dvt1w    = 1.0e7         
++dvt2w    = 0              dsub     = 0.6934 + ddsub_nm3p3_lp minv     = -0.72528      
++lminv    = 2.57365e-7     pminv    = -6e-015        voffl    = 0             
++dvtp0    = 0              dvtp1    = 0.001          lpe0     = (-1.0e-7) + dlpe0_nm3p3_lp
++llpe0    = 0 + dllpe0_nm3p3_lp plpe0    = 0 + dplpe0_nm3p3_lp lpeb     = 0             
++xj       = 8e-008         ngate    = 8.0e20         ndep     = 1.5e+017      
++phin     = 0.0509         cdsc     = 0.00024        ud       = 0             
++cdscb    = 0              cdscd    = 0              cit      = 0.0018        
++lcit     = -2.5e-10       wcit     = -1.3e-10       pcit     = -5.4438e-17   
++voff     = (-0.15) +dvoff_nm3p3_lp_mis lvoff    = 1.0e-9         wvoff    = 0             
++pvoff    = -4.5718e-016   nfactor  = 0.57104        eta0     = 0.83143       
++peta0    = 5.3476e-014    etab     = -0.1163        ldsub    = -4.7e-8 + dldsub_nm3p3_lp
++wdsub    = 6e-9 + dwdsub_nm3p3_lp pdsub    = 1.5e-15 + dpdsub_nm3p3_lp petab    = 0             
++u0       = 0.0275 + du0_nm3p3_lp+du0_nm3p3_lp_mis+u0_q lu0      = 6.2847e-9 + dlu0_nm3p3_lp wu0      = (-3.13e-9) + dwu0_nm3p3_lp
++pu0      = 6.5656e-16 + dpu0_nm3p3_lp ua       = -1.4636e-9     lua      = 5.0e-16       
++wua      = 1.4036e-016    pua      = 2.5988e-023    ub       = 2.5881e-18    
++lub      = 3.7e-25        wub      = -1.0378e-025   pub      = 0             
++uc       = 8.0e-11        luc      = 0              wuc      = -1.5e-17      
++puc      = 5.0e-24        vsat     = 100000 + dvsat_nm3p3_lp+vsat_qq lvsat    = 0 + dlvsat_nm3p3_lp
++pvsat    = (-3.6e-9) + dpvsat_nm3p3_lp a0       = 1.3            la0      = -4.0e-7       
++wa0      = 7.6641e-008    pa0      = 0              ags      = 0.38 + dags_nm3p3_lp+ags_qq
++wags     = (-6.0e-9) + dwags_nm3p3_lp pags     = (0) + dpags_nm3p3_lp a1       = 0             
++a2       = 1              b0       = 1.0e-8         b1       = 0             
++keta     = -0.024727      lketa    = 3e-9           wketa    = -3.4e-009     
++pketa    = -2.2219e-015   dwg      = 0              dwb      = 0             
++pclm     = 0.4            ppclm    = 2e-014         pdiblc1  = 0.29635       
++pdiblc2  = 5.0e-4         lpdiblc2 = 2.0e-9         pdiblcb  = 0.34          
++drout    = 0.56           pvag     = 1              delta    = 0.0097207     
++ldelta   = 1.1147e-9      pscbe1   = 5.9988e+008    pscbe2   = 5e-007        
++rsh      = 12             rdsw     = 210            prwg     = 1             
++prwb     = -0.5           alpha0   = 0              alpha1   = 3             
++lalpha1  = -5.1986e-7     palpha1  = 1.1085e-013    beta0    = 2.01e1        
++lbeta0   = -9.55e-007     agidl    = 1.0e-12        bgidl    = 9.8838e+008   
++lbgidl   = -76.86         wbgidl   = -163.61        pbgidl   = 5.555e-005    
++cgidl    = 0.5            egidl    = 0.496          aigbacc  = 0.000949      
++bigbacc  = 0.00171        cigbacc  = 0.075          nigbacc  = 1             
++aigbinv  = 0.0111         bigbinv  = 0.000949       cigbinv  = 0.006         
++eigbinv  = 1.1            nigbinv  = 3              aigc     = 0.0136        
++bigc     = 0.00171        cigc     = 0.075          aigsd    = 0.011642      
++bigsd    = 0.00171        cigsd    = 0.075          nigc     = 1             
++poxedge  = 1              pigcd    = 1              ntox     = 1             
++cgso     = 2.5e-10 + dcgso_nm3p3_lp cgdo     = 2.5e-10 + dcgdo_nm3p3_lp cgbo     = 0             
++cgdl     = 7.0e-11+ dcgdl_nm3p3_lp cgsl     = 7.0e-11 + dcgsl_nm3p3_lp clc      = 1e-018        
++cf       = 5.66e-011 +dcf_nm3p3_lp acde     = 0.3            moin     = 5.0           
++lmoin    = 6.0e-6         noff     = 2.1008         lnoff    = 10e-7         
++voffcv   = -0.1           lvoffcv  = -4.0e-8        tvoff    = 0.003         
++kt1      = -0.25          lkt1     = 2.0e-8         wkt1     = 1.0e-8        
++pkt1     = -5.0e-15       kt1l     = 2.6782e-009    kt2      = -0.03838      
++lkt2     = 4e-009         ute      = -1.0           lute     = 7.0e-9        
++wute     = -5.0e-8        pute     = 2.0e-14        ua1      = 2.5e-9        
++lua1     = 2.7e-16        wua1     = -5.0382e-016   pua1     = 2.5e-23       
++ub1      = -2.4182e-018   lub1     = -1.0585e-024   wub1     = 5.7411e-025   
++pub1     = 6.65e-032      uc1      = -1e-012        luc1     = 0             
++at       = 30000.0        pat      = -2.0e-9        fnoimod  = 1             
++tnoimod  = 0              em       = 4.1e+007       ef       = 1.0           
++noia     = 1.0e42         noib     = 1e+024         noic     = 8.75          
++lintnoi  = 0              jss      = 3.0e-7         jsws     = 5e-13         
++jswgs    = 5.6e-014       njs      = 1.056          bvs      = 10.05         
++xjbvs    = 1              jtss     = 0              jtsd     = 0             
++jtssws   = 0              jtsswd   = 0              jtsswgs  = 1.0e-11+jtsswgds_w
++jtsswgd  = 1.0e-11+jtsswgds_w njts     = 20             njtssw   = 20            
++njtsswg  = 20             xtss     = 0.02           xtsd     = 0.02          
++xtssws   = 0.02           xtsswd   = 0.02           xtsswgs  = 0.001         
++xtsswgd  = 0.001          tnjts    = 0              tnjtssw  = 0             
++tnjtsswg = 0              pbs      = 0.71153        cjs      = 9.17e-04+dcjs_nm3p3_lp
++mjs      = 0.32603        pbsws    = 0.42082        cjsws    = 1.58e-11+dcjsws_nm3p3_lp
++mjsws    = 0.16851        pbswgs   = 0.87669        cjswgs   = 2.0906e-010+dcjswgs_nm3p3_lp
++mjswgs   = 0.49146        tpb      = 0.001366       tcj      = 8.55e-4       
++tpbsw    = 7.8438e-4      tcjsw    = 0.0078544      tpbswg   = 0.0014966     
++tcjswg   = 0.00081285     xtis     = 3              dmcg     = 1.22e-007     
++dmci     = 2.93e-007      dmdg     = 0              dmcgt    = 0             
++dwj      = 0              web      = 1              wec      = 1             
++kvth0we  = 0.015          lkvth0we = -3e-010        wkvth0we = -4e-010       
++k2we     = 0.003          ku0we    = 1.0e-5         lku0we   = -1.0e-9       
++wku0we   = 1.0e-10        pku0we   = 1.0e-16        saref    = 4.14e-007     
++sbref    = 4.14e-007      wlod     = 0              kvth0    = 2.0e-9        
++lkvth0   = -2.05e-007     wkvth0   = 0              pkvth0   = 3e-014        
++llodvth  = 1              wlodvth  = 1              stk2     = 0             
++lodk2    = 1              lodeta0  = 1              ku0      = -6.1e-008     
++lku0     = 4e-007         wku0     = 5e-007         pku0     = 0             
++llodku0  = 1              wlodku0  = 1              kvsat    = 0.4           
++steta0   = 8e-009         tku0     = 0              wdvt1    = -2.0e-9       
++pdvt2    = -1.0e-15       wpdiblc2 = -2.5e-10       lk1      = 1.0e-7        
++wpclm    = -1.4e-7        vtsswgs  = 1.0            vtsswgd  = 1.0           
++ckappas  = 2.0            ckappad  = 2.0           
+
+

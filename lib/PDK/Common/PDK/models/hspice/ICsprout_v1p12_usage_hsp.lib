@@ -1,0 +1,104 @@
+.LIB pre_layout
+.option scale = 0.9 
+.PARAM
++prelayout= 1.0           
+.ENDL pre_layout
+
+.LIB tt_mos
+.option scale = 0.9 
+.LIB 'model_wrapper1_hsp.lib' tt
+.LIB 'model_wrapper1_hsp.lib' mos_total
+.PARAM
++corner_ratio= 1.0        
+.ENDL tt_mos
+
+.LIB ff_mos
+.option scale = 0.9 
+.LIB 'model_wrapper1_hsp.lib' ff
+.LIB 'model_wrapper1_hsp.lib' mos_total
+.PARAM
++corner_ratio= 1.0        
+.ENDL ff_mos
+
+.LIB ss_mos
+.option scale = 0.9 
+.LIB 'model_wrapper1_hsp.lib' ss
+.LIB 'model_wrapper1_hsp.lib' mos_total
+.PARAM
++corner_ratio= 1.0        
+.ENDL ss_mos
+
+.LIB fnsp_mos
+.option scale = 0.9 
+.LIB 'model_wrapper1_hsp.lib' fnsp
+.LIB 'model_wrapper1_hsp.lib' mos_total
+.PARAM
++corner_ratio= 1.0        
+.ENDL fnsp_mos
+
+.LIB snfp_mos
+.option scale = 0.9 
+.LIB 'model_wrapper1_hsp.lib' snfp
+.LIB 'model_wrapper1_hsp.lib' mos_total
+.PARAM
++corner_ratio= 1.0        
+.ENDL snfp_mos
+
+.LIB mc_mos
+.option scale = 0.9 
+.LIB 'model_wrapper1_hsp.lib' mos_mc
+.LIB 'model_wrapper1_hsp.lib' mos_total
+.PARAM
++corner_ratio= 1.0        
+.PARAM
++mismod  = 0              
+.ENDL mc_mos
+
+.LIB tt_passive
+.option scale = 0.9 
+.LIB 'model_wrapper2_hsp.lib' bjt_core12_tt
+.LIB 'model_wrapper2_hsp.lib' bjt_io33_tt
+.LIB 'model_wrapper2_hsp.lib' dio_tt
+.LIB 'model_wrapper2_hsp.lib' res_tt
+.LIB 'model_wrapper2_hsp.lib' var_tt
+.LIB 'model_wrapper2_hsp.lib' mom_tt
+.ENDL tt_passive
+
+.LIB ff_passive
+.option scale = 0.9 
+.LIB 'model_wrapper2_hsp.lib' bjt_core12_ff
+.LIB 'model_wrapper2_hsp.lib' bjt_io33_ff
+.LIB 'model_wrapper2_hsp.lib' dio_ff
+.LIB 'model_wrapper2_hsp.lib' res_ff
+.LIB 'model_wrapper2_hsp.lib' var_ff
+.LIB 'model_wrapper2_hsp.lib' mom_ff
+.ENDL ff_passive
+
+.LIB ss_passive
+.option scale = 0.9 
+.LIB 'model_wrapper2_hsp.lib' bjt_core12_ss
+.LIB 'model_wrapper2_hsp.lib' bjt_io33_ss
+.LIB 'model_wrapper2_hsp.lib' dio_ss
+.LIB 'model_wrapper2_hsp.lib' res_ss
+.LIB 'model_wrapper2_hsp.lib' var_ss
+.LIB 'model_wrapper2_hsp.lib' mom_ss
+.ENDL ss_passive
+
+.LIB mc_passive
+.option scale = 0.9 
+.LIB 'model_wrapper2_hsp.lib' bjt_core12_mc
+.LIB 'model_wrapper2_hsp.lib' bjt_io33_mc
+.LIB 'model_wrapper2_hsp.lib' dio_tt
+.LIB 'model_wrapper2_hsp.lib' res_mc
+.LIB 'model_wrapper2_hsp.lib' var_mc
+.LIB 'model_wrapper2_hsp.lib' mom_mc
+.PARAM
++mismod_bjt= 0            
+.PARAM
++mismod_mom= 0            
+.PARAM
++mismod_var= 0            
+.PARAM
++resmis_mod= 0            
+.ENDL mc_passive
+

@@ -1,0 +1,17 @@
+// ics55 ICV LVS 用户函数
+#include <icv_compare.rh>
+#include <math.rh>
+#include <string.rh>
+
+default_par_mos_props : entrypoint function (void) returning void
+{
+    vDEV_ID = lvs_current_device();
+    vP_valid = lvs_sum_of_products(vDEV_ID, "W", "L", vP);
+    vQ_valid = lvs_sum_of_divisions(vDEV_ID, "W", "L", vQ);
+    if (vP_valid && vQ_valid) {
+        vW = sqrt(vP * vQ);
+        vL = sqrt(vP / vQ);
+        lvs_save_double_property("W", vW);
+        lvs_save_double_property("L", vL);
+    }
+}

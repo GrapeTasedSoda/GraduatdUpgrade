@@ -1,0 +1,247 @@
+After ICsprout_ArgDRC_55LLULP1233_REV1_11_20250807.tar.gz is uncompressed by using command: tar -zxvf ICsprout_ArgDRC_55LLULP1233_REV1_11_20250807.tar.gz, you will see below file trees:
+
+ICsprout_ArgDRC_55LLULP1233_REV1_11_20250807
+├── 1_release_note.txt
+├── 2_user_guide.txt
+├── ICsprout_ArgDRC_55LLULP1233_REV1_11.drc
+├── ICsprout_ArgDRC_55LLULP1233_REV1_1.ant
+
+0 directories, 4 files
+
+1. ICsprout_ArgDRC_55LLULP1233_REV1_11_20250807.tar.gz 
+2. argusIC_2024.06.sp1 was used for this runset's development
+
+// Main rule DRC deck
+#//##############################
+#//#  <Choice 1>   IO Voltage   #
+#//##############################
+
+#//There are 2 kinds of voltage combinations, Please select one according to your own design.
+#//For 55nm Logic LL 0.9/1.2/1.8/2.5V process or 2.5v overdrive to 3.3v, set this option to 1825;
+#//For 55nm Logic LL 0.9/1.2/1.8/3.3V process, set this option to 1833;
+#//Default value is 1833
+
+trs::pvrs_block  {
+#DEFINE IO 1833             //; The Valid value is: {1825,1833} 
+}
+
+#//#########################################################
+#//#  <Choice 2>   Total metal and Top metal choice        #
+#//#########################################################
+
+# Notice that below metal and via only means MET1~MET8,T2M1,T2V1,T2M2,T2V2,T4M1,T4V1,T4M2,T4V2,T8M1,T8V1,T8M2,T8V2
+# if define top metal 1, please set T2V2_T2M2, T4V2_T4M2 or T8V2_T8M2 to 1 as your top metal layer
+
+set total_metal 7          ; # The Valid value is: {10,9,8,7,6,5,4}
+                            ; # Please set the total metal counts based on your design
+
+set top_metal 1             ; # The Valid value is: {1,2}
+                            ; # Please set the top metal counts based on your design
+                            ; # Please change the default value "2" into "1" if there is only one top metal in your design
+
+set T2V1_T2M1 0             ; # The Valid value is: {0,1}
+                            ; # Please set the top metal "T2M1" and top via "T2V1" count based on your design
+                            ; # The value "0" means that there is no this kind of top metal and top via in your design
+                            ; # Please change the default value "0" into "1" if this kind of top metal and top via exists in your design
+
+set T2V2_T2M2 0             ; # The Valid value is: {0,1}
+                            ; # Please set the top metal "T2M2" and top via "T2V2" count based on your design
+                            ; # The value "0" means that there is no this kind of top metal and top via in your design
+                            ; # Please change the default value "0" into "1" if this kind of top metal and top via exists in your design
+
+set T4V1_T4M1 0            ; # The Valid value is: {0,1}
+                            ; # Please set the top metal "T4M1" and top via "T4V1" count based on your design
+                            ; # The value "0" means that there is no this kind of top metal and top via in your design
+                            ; # Please change the default value "0" into "1" if this kind of top metal and top via exists in your design
+
+set T4V2_T4M2 1             ; # The Valid value is: {0,1}
+                            ; # Please set the top metal "T4M2" and top via "T4V2" count based on your design
+                            ; # The value "0" means that there is no this kind of top metal and top via in your design
+                            ; # Please change the default value "0" into "1" if this kind of top metal and top via exists in your design
+
+set T8V1_T8M1 0             ; # The Valid value is: {0,1}
+                            ; # Please set the Ultra Thick top metal1 count based on your design
+                            ; # The value "0" means that there is no this kind of top metal and top via1 in your design
+                            ; # Please change the default value "0" into "1" if this kind of top metal1 and top via exists in your design
+
+set T8V2_T8M2 0             ; # The Valid value is: {0,1}
+                            ; # Please set the Ultra Thick top metal2 count based on your design
+                            ; # The value "0" means that there is no this kind of top metal2 and top via2 in your design
+                            ; # Please change the default value "0" into "1" if this kind of top metal and top via exists in your design
+#//##########################################
+#//#  <Choice 3>   Recommended rules Choice #
+#//##########################################
+
+#The rules with the superscript of [R] in DR are recommended rules which require performing DRC runset,
+#but DRC checking is not gated for recommended rules. Pls consult with process integration engineer if customers have the doubt.
+
+trs::pvrs_block  {
+//; Default: NO
+#DEFINE OPEN_RECOMMENDED_ON NO     //; The Valid value is: {YES,NO} 
+//; # Please set the value for the switch to "YES" OR "NO" only based on the descriptions above.
+//; # ACT.W.3a[R], ACT.S.1[R], ACT.S.2a[R], 
+//; # PO.L.2[R], PO.S.4[R], PO.S.7a[R], PO.S.8[R], PO.S.13[R], PO.S.14a[R],  PO.S.18[R], PO.EN.1[R], PO.EN.2[R], PO.EN.3[R], PO.EX1[R], PO.EX.3[R], PO.A.1[R]
+//; # SAB.EX.4[R],
+//; # CT.S.1a[R], CT.S.1a[R], CT.S.4[R], CT.EN.2[R], CT.EN.3[R], CT.EN.4a[R], CT.EN.4b[R]
+//; # M1.S.1[R], Mn.S.1[R]
+//; # Vn.EN.2a[R], Vn.EN.2b[R], Vn.R.1[R], Vn.R.4[R], T4V1.R.1[R], T4V1.R.4[R], T4V2.R.1[R], T4V2.R.4[R]
+//; # T2V1.EN.2a[R], T2V1.EN.2b[R], T2V1.R.4[R], T2V2.EN.2a[R], T2V2.EN.2b[R], T2V2.R.4[R]
+//; # T8M1.D.1[R], T8M2.D.1[R]
+//; # Please change the value "YES" into "NO" if recommended rules shouldn't be checked. 
+}
+#//#########################################
+#//#  <Choice 4>   Guidelines rules choice #  
+#//#########################################
+
+trs::pvrs_block  {
+//; Default: YES
+#DEFINE LATCH_UP_CHECK      YES          //; The Valid value is: {YES,NO}  
+//; # Default value is "YES" to check Latch-Up rules.
+//; # Please change the value "YES" into "NO" if not to check Latch-Up rules.     
+//; Default: YES
+#DEFINE DUP_CHECK           YES          //; The Valid value is: {YES,NO}  
+//; # Default value is "YES" to check DUP rules.
+//; # Please change the value "YES" into "NO" if not to check DUP rules.
+//; Default: YES
+#DEFINE Metal_Slot_CHECK    YES          //; The Valid value is: {YES,NO} 
+//; # Default value is "YES" to check Metal Slot rules.
+//; # Please change the value "YES" into "NO" if not to check Metal Slot rules.
+//; Default: YES
+#DEFINE MOM_CHECK           YES          //; The Valid value is: {YES,NO}  
+//; # Default value is "YES" to check MOM rules.
+//; # Please change the value "YES" into "NO" if not to check MOM rules.
+//; Default: YES
+#DEFINE ESD_CHECK           YES          //; The Valid value is: {YES,NO}  
+//; # Default value is "NO" not to check ESD rules.
+//; # Please change the value "NO" into "YES" if want to check ESD rules.
+//; Default: NO
+#DEFINE Poly_EFuse_CHECK    NO           //; The Valid value is: {YES,NO} 
+//; # Default value is "NO" not to check Poly EFuse rules.
+//; # Please change the value "NO" into "YES" if want to check Poly EFuse rules.
+}
+
+
+#//###################################
+#//#  <Choice 5>   ALLOW_V01         #
+#//###################################
+
+# If DRC needs to allow via size 0.1*0.1, then "set ALLOW_V01 YES"
+# If DRC needs to highlight via size 0.1*0.1, then "set ALLOW_V01 NO"
+# Default is "set ALLOW_V01 NO"
+
+trs::pvrs_block  {
+//; Default: NO
+#DEFINE ALLOW_V01 NO                    //; The valid value is: {YES,NO} 
+}
+
+
+
+#//##################################
+#//#  <Choice 6>   CHIPEDGE Rules     #
+#//##################################
+
+trs::pvrs_block  {
+//; Default: YES
+#DEFINE CHIPEDGE_CHECK YES              //; The Valid value is: {YES,NO} 
+//; # Please set the value for the switch to "YES" OR "NO" only based on the descriptions above.
+//; # Default value is "YES" to check CHIPEDGE rules.
+//; # Please change the value "YES" into "NO" if CHIPEDGE rules shouldn't be checked.
+}
+
+#//*************************************
+#//*  <Choice 7>  Latch Up selection   *
+#//*************************************
+
+trs::pvrs_block  {
+//; Default: 1
+#DEFINE DEFINE_PAD_BY_TEXT  1         //; The Valid value is: {0,1}   
+//;# when\BF?VDD?\BF,\BF?VCC?\BF,\BF?VSS?\BF,\BF?GND?\BF as text name using layer ALPATXT on ALPA,
+//;# if value is 0, it is regarded as I/O PAD; if value is 1, it is regarded POWER PAD.    
+//; Default: 0
+
+#DEFINE CONNECT_ALL_RESISTOR 0        //; The Valid value is: {0,1} 
+//;#when resistors are between PAD and AA injector   
+//;#if value is 0,the connection is broken; if value is 1,the connection is not broken;
+//; Default: ACCURATE
+#DEFINE LU_3_CHECK ACCURATE           //; The Valid value is: {ACCURATE,FAST}      
+//;#choose LU.3[G] check mode.
+}
+
+
+#//*************************************
+#//*  <Choice 8>  Density rules  *
+#//*************************************
+
+trs::pvrs_block  {
+//; Default: YES
+#DEFINE Density_rules YES          //;The Valid value is: {YES,NO} 
+//;#if value is NO, not to check Density rules; if value is YES, Check Density rules.
+//;#Related Rules:ACT_D_1_min, ACT_D_1_max, ACT_D_2, ACT_D_3, ACT_D_4_min, ACT_D_4_max, PO_D_1_min, PO_D_1_max, PO_D_2_min, PO_D_2_max, PO_D_3, MET1_D_1_min, MET1_D_1_max MET1_D_2, MET1_D_3, Mn_D_1_min, Mn_D_1_max, Mn_D_2, Mn_D_3, T4M1_D_1_min, T4M1_D_1_max, T4M1_D_2, T4M1_D_3, T4M2_D_1_min, T4M2_D_1_max, T4M2_D_2, T4M2_D_3, T2M1_D_1_min, T2M1_D_1_max,T2M1_D_2, T2M1_D_3, T2M2_D_1_min, T2M2_D_1_max, T2M2_D_2, T2M2_D_3, T8M1_D_1_R, T8M1_D_2, T8M1_D_3, T8M2_D_1_R, T8M2_D_2, T8M2_D_3, RDL_D_1_R, RDL_D_2_R
+//;# Default value is YES
+}
+
+
+
+
+//Antenna effect check deck
+
+######################################
+#  <Choice 1>   Total metal count    #
+######################################
+
+# Total metal count. Valid choices are 4~10 . See metallization option table in document. Default is 10 .
+
+set M 7
+
+
+#################################
+#  <Choice 2>   top metal count #
+#################################
+
+# Top metal count. Valid choices are 1,2. See metallization option table in document. Default is 2 .
+
+set T 1
+
+# If M is 4, then valid choices of T is 1.
+# If M is 5, then valid choices of T is 1,2.
+# If M is 6, then valid choices of T is 1,2.
+# If M is 7, then valid choices of T is 1,2.
+# If M is 8, then valid choices of T is 1,2.
+# If M is 9, then valid choices of T is 1,2.
+# If M is 10, then valid choices of T is 2.
+
+
+#############################################
+#  <Choice 3>   top metal and top via name  #
+#############################################
+
+# top metal name. Valid choices are T4M2, T2M2 or T8M2 (for Top metal count 1); T4M1, T2M1 or T8M1(for Top metal count 2). Default is T4M2 
+# top via   name. Valid choices are T4V2, T2V2 or T8V2 (for Top metal count 1); T4V1, T2V1 or T8V1(for Top metal count 2). Default is T4V2
+
+set TM_NAME T4M2 
+
+set TV_NAME T4V2 
+
+
+########################################################
+#  <Choice 4>  inter top metal and inter top via name  #
+########################################################
+
+# inter top metal name. Valid choices are T4M1, T2M1, T8M1.  Default is T4M1
+# inter top via   name. Valid choices are T4V1, T2V1, T8V1.  Default is T4V1
+# Please change both "T4M1" and "T4V1" value into 0 if your design only has one top metal( for Top metal count 1).
+
+set TM_1_NAME T4M1 
+
+set TV_1_NAME T4V1 
+
+
+#################################
+#  <Choice 5>   RDL thickness  #     
+#################################
+
+# RDL thickness used in this runset is defined as typical thickness * 1.1 .
+# There are two kinds of RDL thickness for selection: 1.595um (1.45um * 1.1) and 3.08um (2.8um * 1.1), Default to check 1.595um
+# If customer want to check 3.08um, please change this option to "set RDL_thickness 3.08"
+
+set RDL_thickness 1.595

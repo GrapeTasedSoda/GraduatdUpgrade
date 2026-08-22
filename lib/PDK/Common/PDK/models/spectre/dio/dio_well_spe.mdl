@@ -1,0 +1,350 @@
+simulator lang = spectre
+
+// *  release version    : 1.2
+// *
+// *  release date       : 03/15/2025
+// *
+// *  simulation tool    : synopsys hspice version n-2017.12-sp2
+// *
+// *  model type         :
+// *    vertical     bjt : hspice level 3
+// *
+// * model name:
+// *   well junction diode   :
+// *        *----------------------------------------------------------* 
+// *        | junction diode type|    1.2v        |     
+// *        |-----------------------------------------------------------
+// *        |     nwell/psub     |  dio_1p2_nw_psub_lp    |   (na)   |    (na) |
+// *        |-----------------------------------------------------------
+// *        |    nplus/pwell/dnwell    |  dio_1p2_np_pw_dnw_lp  |   (na)   |    (na) |
+// *        |-----------------------------------------------------------
+// *        |     rwell/dnwell    |  dio_1p2_pw_dnw_lp  |   (na)   |    (na) |
+// *        |-----------------------------------------------------------
+// *        |     dnwell/psub    |  dio_1p2_dnw_psub_lp  |   (na)   |    (na) |
+// *        |-----------------------------------------------------------
+// *        |     nwell/psub     |parasitic_nwd   |   (na)   |    (na) |
+// *        |-----------------------------------------------------------
+// *        |    rwell/dnwell    |parasitic_rwd   |   (na)   |    (na) |
+// *        |-----------------------------------------------------------
+// *        |     dnwell/psub    |parasitic_dnwd  |   (na)   |    (na) |
+// *        *----------------------------------------------------------*																	 
+// *
+// *   the valid temperature range is from -40c to 125c 
+// * 
+// *
+// *
+// ***********************************************************************************
+// *                             nwell/psub diode model                            *
+// ***********************************************************************************
+// *
+model dio_1p2_nw_psub_lp diode 
++level    = 3.0           
++bv       = 11.05         
++ibv      = 166.7         
++ik       = 1.0e21        
++ikr      = 167000        
++isw      = 9.0e-13+djsw_nwdio_lp
++n        = 1.0+dn_nwdio_lp
++ns       = 1.0+dn_nwdio_lp
++nz       = 1.0+dn_nwdio_lp
++rs       = 2.5e-5        
++area     = 6.0e-9        
++pj       = 3.2e-4        
++jtun     = 1.0e-6        
++jtunsw   = 4.0e-9        
++ntun     = 30.0          
++cjo      = 7.99e-5+dcj_nwdio_lp
++vj       = 0.8           
++m        = 0.834         
++fc       = 0             
++fcs      = 0             
++cjsw     = 7.376e-10+dcjsw_nwdio_lp
++mjsw     = 0.32357       
++vjsw     = 0.8012        
++tlev     = 1.0           
++tlevc    = 1.0           
++tnom     = 25.0          
++eg       = 1.16          
++xti      = 3.0           
++cta      = 0.00214       
++ctp      = 0.001453      
++pta      = 0.00212       
++ptp      = 0.00223       
++trs      = 7.44e-4       
++xtitun   = -0.9          
++is       = 1.67e-6+djs_nwdio_lp
++imax     = 1e20          
++minr     = 1e-6          
++allow_scaling = 1        
+
+
+
+// *
+// ***********************************************************************************
+// *                             nplus/pwell/dnwell diode model                            *
+// ***********************************************************************************
+// *
+model dio_1p2_np_pw_dnw_lp diode 
++level    = 3.0           
++bv       = 11.05         
++ibv      = 166.7         
++ik       = 1.0e21        
++ikr      = 167000        
++isw      = 2.8e-13+djsw_npdndio_lp
++n        = 1.0+dn_npdndio_lp
++ns       = 1.0+dn_npdndio_lp
++nz       = 1.0+dn_npdndio_lp
++rs       = 2.2e-6        
++area     = 6.0e-9        
++pj       = 3.2e-4        
++jtun     = 2.0e-17       
++cjo      = 8.59014e-4+dcj_npdndio_lp
++vj       = 0.58343       
++m        = 0.33673       
++fc       = 0             
++fcs      = 0             
++cjsw     = (1.46e-13)+dcjsw_npdndio_lp
++mjsw     = 0.53957       
++vjsw     = 0.71012       
++tlev     = 1.0           
++tlevc    = 1.0           
++tnom     = 25.0          
++eg       = 1.17          
++xti      = 3.0           
++cta      = 9.4e-4        
++ctp      = 9.23e-4       
++pta      = 0.00103       
++ptp      = 0.00185       
++trs      = 0.0040044     
++is       = 5.0e-8+djs_npdndio_lp
++imax     = 1e20          
++minr     = 1e-6          
++allow_scaling = 1        
+
+
+
+// *
+// ***********************************************************************************
+// *                             rwell/dnwell diode model                            *
+// ***********************************************************************************
+// *
+model dio_1p2_pw_dnw_lp diode 
++level    = 3.0           
++bv       = 11.2          
++ibv      = 166.7         
++ik       = 1.0e21        
++ikr      = 167000        
++isw      = 3e-13+djsw_rwd_lp
++n        = 1.01137 +dn_rwd_lp
++ns       = 1.01137 +dn_rwd_lp
++nz       = 1.01137 +dn_rwd_lp
++rs       = 4.2e-6        
++area     = 6.0e-9        
++pj       = 3.2e-4        
++jtun     = 7.9e-10       
++ntun     = 30.0          
++cjo      = 4.22739e-4+dcj_rwd_lp
++vj       = 0.70001       
++m        = 0.35153       
++fc       = 0             
++fcs      = 0             
++cjsw     = 2.05732e-10+dcjsw_rwd_lp
++mjsw     = 0.47094       
++vjsw     = 0.66028       
++tlev     = 1.0           
++tlevc    = 1.0           
++tnom     = 25.0          
++eg       = 1.17          
++xti      = 3.0           
++cta      = 6.261e-4      
++ctp      = 0.004672      
++pta      = 0.00118       
++ptp      = 1.0e-4        
++trs      = 0.0045683     
++is       = 2.2202e-7   +djs_rwd_lp
++imax     = 1e20          
++minr     = 1e-6          
++allow_scaling = 1        
+
+
+
+// *
+// ***********************************************************************************
+// *                             dnwell/psub diode model                            *
+// ***********************************************************************************
+// *
+model dio_1p2_dnw_psub_lp diode 
++level    = 3.0           
++bv       = 11.12         
++ibv      = 166.7         
++ik       = 1.0e21        
++ikr      = 167000        
++isw      = 7.01e-12+djsw_dnwpsub12_lp
++n        = 1.005+dn_dnwpsub12_lp
++ns       = 1.005+dn_dnwpsub12_lp
++nz       = 1.005+dn_dnwpsub12_lp
++rs       = 3.9e-5        
++area     = 6.0e-9        
++pj       = 3.2e-4        
++jtun     = 2.0e-5        
++cjo      = 1.1253e-4+dcj_dnwpsub12_lp
++vj       = 0.70652       
++m        = 0.41422       
++fc       = 0             
++fcs      = 0             
++cjsw     = 1.6826e-10+dcjsw_dnwpsub12_lp
++mjsw     = 0.75658       
++vjsw     = 0.35718       
++tlev     = 1.0           
++tlevc    = 1.0           
++tnom     = 25.0          
++eg       = 1.18          
++xti      = 3.0           
++cta      = 0.0011483     
++ctp      = 0.0065866     
++pta      = 8.239e-4      
++ptp      = 0.0017093     
++trs      = 0.0047044     
++is       = 3.1835e-6   +djs_dnwpsub12_lp
++imax     = 1e20          
++minr     = 1e-6          
++allow_scaling = 1        
+
+
+
+// *
+// ************************************************************************************
+// *                             nwell/psub diode model                               *
+// ************************************************************************************
+// *
+model parasitic_nwd diode 
++level    = 3.0           
++bv       = 11.05         
++ibv      = 166.7         
++ik       = 1.0e21        
++ikr      = 167000        
++isw      = 9.0e-13+djsw_nwdio_lp
++n        = 1.0+dn_nwdio_lp
++ns       = 1.0+dn_nwdio_lp
++nz       = 1.0+dn_nwdio_lp
++rs       = 2.5e-5        
++area     = 6.0e-9        
++pj       = 3.2e-4        
++jtun     = 1.0e-6        
++jtunsw   = 4.0e-9        
++ntun     = 30.0          
++cjo      = 7.99e-5+dcj_nwdio_lp
++vj       = 0.8           
++m        = 0.834         
++fc       = 0             
++fcs      = 0             
++cjsw     = 7.376e-10+dcjsw_nwdio_lp
++mjsw     = 0.32357       
++vjsw     = 0.8012        
++tlev     = 1.0           
++tlevc    = 1.0           
++tnom     = 25.0          
++eg       = 1.16          
++xti      = 3.0           
++cta      = 0.00214       
++ctp      = 0.001453      
++pta      = 0.00212       
++ptp      = 0.00223       
++trs      = 7.44e-4       
++xtitun   = -0.9          
++is       = 1.67e-6+djs_nwdio_lp
++imax     = 1e20          
++minr     = 1e-6          
++allow_scaling = 1        
+
+
+
+// *
+// ***********************************************************************************
+// *                             rwell/dnwell diode model                            *
+// ***********************************************************************************
+// *
+model parasitic_rwd diode 
++level    = 3.0           
++bv       = 11.2          
++ibv      = 166.7         
++ik       = 1.0e21        
++ikr      = 167000        
++isw      = 3e-13+djsw_rwd_lp
++n        = 1.01137 +dn_rwd_lp
++ns       = 1.01137 +dn_rwd_lp
++nz       = 1.01137 +dn_rwd_lp
++rs       = 4.2e-6        
++area     = 6.0e-9        
++pj       = 3.2e-4        
++jtun     = 7.9e-10       
++ntun     = 30.0          
++cjo      = 4.22739e-4+dcj_rwd_lp
++vj       = 0.70001       
++m        = 0.35153       
++fc       = 0             
++fcs      = 0             
++cjsw     = 2.05732e-10+dcjsw_rwd_lp
++mjsw     = 0.47094       
++vjsw     = 0.66028       
++tlev     = 1.0           
++tlevc    = 1.0           
++tnom     = 25.0          
++eg       = 1.17          
++xti      = 3.0           
++cta      = 6.261e-4      
++ctp      = 0.004672      
++pta      = 0.00118       
++ptp      = 1.0e-4        
++trs      = 0.0045683     
++is       = 2.2202e-7   +djs_rwd_lp
++imax     = 1e20          
++minr     = 1e-6          
++allow_scaling = 1        
+
+
+
+// *
+// ***********************************************************************************
+// *                             dnwell/psub diode model                             *
+// ***********************************************************************************
+// *
+model parasitic_dnwd diode 
++level    = 3.0           
++bv       = 11.12         
++ibv      = 166.7         
++ik       = 1.0e21        
++ikr      = 167000        
++isw      = 7.01e-12+djsw_dnwpsub12_lp
++n        = 1.005+dn_dnwpsub12_lp
++ns       = 1.005+dn_dnwpsub12_lp
++nz       = 1.005+dn_dnwpsub12_lp
++rs       = 3.9e-5        
++area     = 6.0e-9        
++pj       = 3.2e-4        
++jtun     = 2.0e-5        
++cjo      = 1.1253e-4+dcj_dnwpsub12_lp
++vj       = 0.70652       
++m        = 0.41422       
++fc       = 0             
++fcs      = 0             
++cjsw     = 1.6826e-10+dcjsw_dnwpsub12_lp
++mjsw     = 0.75658       
++vjsw     = 0.35718       
++tlev     = 1.0           
++tlevc    = 1.0           
++tnom     = 25.0          
++eg       = 1.18          
++xti      = 3.0           
++cta      = 0.0011483     
++ctp      = 0.0065866     
++pta      = 8.239e-4      
++ptp      = 0.0017093     
++trs      = 0.0047044     
++is       = 3.1835e-6   +djs_dnwpsub12_lp
++imax     = 1e20          
++minr     = 1e-6          
++allow_scaling = 1        
+
+
+

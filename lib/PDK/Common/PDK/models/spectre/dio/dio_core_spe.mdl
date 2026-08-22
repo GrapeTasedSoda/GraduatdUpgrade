@@ -1,0 +1,343 @@
+simulator lang = spectre
+
+// *  release version    : 1.2
+// *
+// *  release date       : 03/15/2025
+// *
+// *  simulation tool    : synopsys hspice version n-2017.12-sp2
+// *
+// *  model type         :
+// *    vertical     bjt : hspice level 3
+// *
+// * model name:
+// *   core junction diode   :
+// *        *--------------------------------------------------------------------------------------* 
+// *        | junction diode type|    1.2v       |   1.2v hvt   |  1.2v lvt   |   
+// *        |======================================================================================| 
+// *        |      n+/pwell      |  dio_1p2_np_pw_lp    |     (na) |    (na)  |dio_1p2_np_pw_hvt_lp |dio_1p2_np_pw_lvt_lp |    
+// *        |------------------------------------------------------------------------------------------------------------------|
+// *        |      p+/nwell      |  dio_1p2_pp_nw_lp d    |     (na) |    (na)  |dio_1p2_pp_nw_hvt_lp |dio_1p2_pp_nw_lvt_lp |
+// *        |------------------------------------------------------------------------------------------------------------------|
+// *        |   native n+/pwell  |  dio_1p2_np_psub_nt_lp   |     (na) |    (na)  |     (na)    |    (na)     |
+// *        *--------------------------------------------------------------------------------------*
+
+
+// *
+// *   the valid temperature range is from -40c to 125c 
+// * 
+
+// ***********************************************************************************
+// *                            1.2v n+/pwell diode model                            *
+// ***********************************************************************************
+model dio_1p2_np_pw_lp diode 
++level    = 3.0           
++bv       = 10.8          
++ibv      = 277.8         
++ik       = 1.0e21        
++ikr      = 278000        
++isw      = 5.2e-14+djsw_dio_1p2_np_pw_lp
++n        = 1.005+dn_dio_1p2_np_pw_lp
++ns       = 1.005+dn_dio_1p2_np_pw_lp
++nz       = 1.005+dn_dio_1p2_np_pw_lp
++rs       = 1.5e-6        
++area     = 3.6e-9        
++pj       = 2.4e-4        
++jtun     = 5.0e-4        
++jtunsw   = 1.0e-10       
++ntun     = 30.0          
++cjo      = 0.000871540+dcj_dio_1p2_np_pw_lp
++vj       = 0.579         
++m        = 0.344         
++fc       = 0             
++fcs      = 0             
++cjsw     = 1.0e-13+dcjsw_dio_1p2_np_pw_lp
++mjsw     = 0.29047       
++vjsw     = 0.972         
++tlev     = 1.0           
++tlevc    = 1.0           
++tnom     = 25.0          
++eg       = 1.16          
++xti      = 3.0           
++cta      = 0.001072      
++ctp      = 0.685         
++pta      = 0.00118       
++ptp      = 2.7025e-3     
++trs      = 0.00122       
++xtitun   = -56.0         
++is       = 1.1e-7+djs_dio_1p2_np_pw_lp
++imax     = 1e20          
++minr     = 1e-6          
++allow_scaling = 1        
+
+
+// ***********************************************************************************
+// *                            1.2v p+/nwell diode model                            * 
+// ***********************************************************************************
+// * 
+// ****************************************************************
+model dio_1p2_pp_nw_lp diode 
++level    = 3.0           
++bv       = 9.8           
++ibv      = 277.8         
++ik       = 1.0e21        
++ikr      = 278000        
++isw      = 8.0e-14+djsw_dio_1p2_pp_nw_lp
++n        = 1.013+dn_dio_1p2_pp_nw_lp
++ns       = 1.013+dn_dio_1p2_pp_nw_lp
++nz       = 1.013+dn_dio_1p2_pp_nw_lp
++rs       = 1.17e-6       
++area     = 3.6e-9        
++pj       = 2.4e-4        
++jtun     = 2.7e-6        
++jtunsw   = 0             
++ntun     = 15.8          
++cjo      = 0.001018+dcj_dio_1p2_pp_nw_lp
++vj       = 0.69916       
++m        = 0.33695       
++fc       = 0             
++fcs      = 0             
++cjsw     = 7.94e-12+dcjsw_dio_1p2_pp_nw_lp
++mjsw     = 0.860148      
++vjsw     = 0.989         
++tlev     = 1.0           
++tlevc    = 1.0           
++tnom     = 25.0          
++eg       = 1.16          
++xti      = 3.0           
++cta      = 9.9062e-4     
++ctp      = 0.00138142    
++pta      = 0.00173       
++ptp      = 1.0e-4        
++trs      = 0.0016        
++is       = 1.90000e-07+djs_dio_1p2_pp_nw_lp
++imax     = 1e20          
++minr     = 1e-6          
++allow_scaling = 1        
+
+
+
+// ***********************************************************************************
+// *                            1.2v native n+/pwell diode model                     *
+// ***********************************************************************************
+// *
+model dio_1p2_np_psub_nt_lp diode 
++level    = 3.0           
++bv       = 17.0          
++ibv      = 277.8         
++ik       = 1.0e21        
++ikr      = 278000        
++isw      = 3.5e-13+djsw_dio_1p2_np_psub_nt_lp
++n        = 1.066+dn_dio_1p2_np_psub_nt_lp
++ns       = 1.066+dn_dio_1p2_np_psub_nt_lp
++nz       = 1.066+dn_dio_1p2_np_psub_nt_lp
++rs       = 1.0e-10       
++area     = 3.6e-9        
++pj       = 2.4e-4        
++cjo      = 9.54450e-05+dcj_dio_1p2_np_psub_nt_lp
++vj       = 0.864         
++m        = 0.706         
++fc       = 0             
++fcs      = 0             
++cjsw     = 5.47000e-11+dcjsw_dio_1p2_np_psub_nt_lp
++mjsw     = 0.272         
++vjsw     = 0.902         
++tlev     = 1.0           
++tlevc    = 1.0           
++tnom     = 25.0          
++eg       = 1.16          
++xti      = 3.0           
++cta      = 0.00170745    
++ctp      = 1.2187e-4     
++pta      = 0.0021        
++ptp      = 0.00249       
++trs      = 0.0014        
++is       = 6.4e-6+djs_dio_1p2_np_psub_nt_lp
++imax     = 1e20          
++minr     = 1e-6          
++allow_scaling = 1        
+
+
+
+// ***********************************************************************************
+// *                            1.2v n+/pwell hvt diode model                        *
+// ***********************************************************************************
+// *
+model dio_1p2_np_pw_hvt_lp diode 
++level    = 3.0           
++bv       = 9.2           
++ibv      = 277.8         
++ik       = 1.0e21        
++ikr      = 278000        
++isw      = 5.08e-14+djsw_dio_1p2_np_pw_hvt_lp
++n        = 1.008+dn_dio_1p2_np_pw_hvt_lp
++ns       = 1.008+dn_dio_1p2_np_pw_hvt_lp
++nz       = 1.008+dn_dio_1p2_np_pw_hvt_lp
++rs       = 1.5e-6        
++area     = 3.6e-9        
++pj       = 2.4e-4        
++jtun     = 4.0e-4        
++jtunsw   = 0             
++ntun     = 30.0          
++cjo      = 0.001277+dcj_dio_1p2_np_pw_hvt_lp
++vj       = 1.012         
++m        = 0.646         
++fc       = 0             
++fcs      = 0             
++cjsw     = 1.0e-13+dcjsw_dio_1p2_np_pw_hvt_lp
++mjsw     = 0.139         
++vjsw     = 1.012         
++tlev     = 1.0           
++tlevc    = 1.0           
++tnom     = 25.0          
++eg       = 1.16          
++xti      = 3.0           
++cta      = 0.001009      
++ctp      = 0.074         
++pta      = 0.0014        
++ptp      = 2.0054e-3     
++trs      = 0.00101       
++xtitun   = -55.7         
++is       = 1.16e-7+djs_dio_1p2_np_pw_hvt_lp
++imax     = 1e20          
++minr     = 1e-6          
++allow_scaling = 1        
+
+
+
+// ***********************************************************************************
+// *                            1.2v p+/nwell hvt diode model                        * 
+// ***********************************************************************************
+// *
+model dio_1p2_pp_nw_hvt_lp diode 
++level    = 3.0           
++bv       = 9.8           
++ibv      = 277.8         
++ik       = 1.0e21        
++ikr      = 278000        
++isw      = 1.5e-13+djsw_dio_1p2_pp_nw_hvt_lp
++n        = 1.01+dn_dio_1p2_pp_nw_hvt_lp
++ns       = 1.01+dn_dio_1p2_pp_nw_hvt_lp
++nz       = 1.01+dn_dio_1p2_pp_nw_hvt_lp
++rs       = 1.35e-6       
++area     = 3.6e-9        
++pj       = 2.4e-4        
++jtun     = 1.5e-6        
++jtunsw   = 0             
++ntun     = 15.0          
++cjo      = 0.001019+dcj_dio_1p2_pp_nw_hvt_lp
++vj       = 0.6918        
++m        = 0.34085       
++fc       = 0             
++fcs      = 0             
++cjsw     = 6.9e-12+dcjsw_dio_1p2_pp_nw_hvt_lp
++mjsw     = 0.24          
++vjsw     = 0.27178       
++tlev     = 1.0           
++tlevc    = 1.0           
++tnom     = 25.0          
++eg       = 1.16          
++xti      = 3.0           
++cta      = 8.4947e-4     
++ctp      = 6.6049e-4     
++pta      = 0.0014468     
++ptp      = 1.809e-5      
++trs      = 0.0012        
++xtitun   = 3.0           
++is       = 1.76e-7+djs_dio_1p2_pp_nw_hvt_lp
++imax     = 1e20          
++minr     = 1e-6          
++allow_scaling = 1        
+
+
+
+// ***********************************************************************************
+// *                            1.2v n+/pwell lvt diode model                        *
+// ***********************************************************************************
+// *
+model dio_1p2_np_pw_lvt_lp diode 
++level    = 3.0           
++bv       = 11.6          
++ibv      = 277.8         
++ik       = 1.0e21        
++ikr      = 278000        
++isw      = 4.0e-14+djsw_dio_1p2_np_pw_lvt_lp
++n        = 1.0+dn_dio_1p2_np_pw_lvt_lp
++ns       = 1.0+dn_dio_1p2_np_pw_lvt_lp
++nz       = 1.0+dn_dio_1p2_np_pw_lvt_lp
++rs       = 1.3e-6        
++area     = 3.6e-9        
++pj       = 2.4e-4        
++jtun     = 4.0e-4        
++jtunsw   = 0             
++ntun     = 35.0          
++cjo      = 7.37e-4+dcj_dio_1p2_np_pw_lvt_lp
++vj       = 0.621         
++m        = 0.286         
++fc       = 0             
++fcs      = 0             
++cjsw     = 1.0e-13+dcjsw_dio_1p2_np_pw_lvt_lp
++mjsw     = 0.01          
++vjsw     = 1.0           
++tlev     = 1.0           
++tlevc    = 1.0           
++tnom     = 25.0          
++eg       = 1.16          
++xti      = 3.0           
++cta      = 8.9e-4        
++ctp      = 0.555         
++pta      = 0.00163       
++ptp      = 3.2504e-3     
++trs      = 0.00223       
++xtitun   = -54.7         
++is       = 1.0e-7+djs_dio_1p2_np_pw_lvt_lp
++imax     = 1e20          
++minr     = 1e-6          
++allow_scaling = 1        
+
+
+
+// ***********************************************************************************
+// *                            1.2v p+/nwell lvt diode model                        * 
+// ***********************************************************************************
+// *
+model dio_1p2_pp_nw_lvt_lp diode 
++level    = 3.0           
++bv       = 9.8           
++ibv      = 277.8         
++ik       = 1.0e21        
++ikr      = 278000        
++isw      = 1.0e-13+djsw_dio_1p2_pp_nw_lvt_lp
++n        = 1.005+dn_dio_1p2_pp_nw_lvt_lp
++ns       = 1.005+dn_dio_1p2_pp_nw_lvt_lp
++nz       = 1.005+dn_dio_1p2_pp_nw_lvt_lp
++rs       = 1.3e-6        
++area     = 3.6e-9        
++pj       = 2.4e-4        
++jtun     = 6.3e-7        
++jtunsw   = 0             
++ntun     = 13.0          
++cjo      = 0.001017+dcj_dio_1p2_pp_nw_lvt_lp
++vj       = 0.70368       
++m        = 0.338685      
++fc       = 0             
++fcs      = 0             
++cjsw     = 6.8985e-12+dcjsw_dio_1p2_pp_nw_lvt_lp
++mjsw     = 0.568         
++vjsw     = 0.979         
++tlev     = 1.0           
++tlevc    = 1.0           
++tnom     = 25.0          
++eg       = 1.16          
++xti      = 3.0           
++cta      = 8.836e-4      
++ctp      = 1.505e-5      
++pta      = 0.0015627     
++ptp      = 0.0025964     
++trs      = 0.002         
++is       = 1.6e-7+djs_dio_1p2_pp_nw_lvt_lp
++imax     = 1e20          
++minr     = 1e-6          
++allow_scaling = 1        
+
+
+

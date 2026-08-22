@@ -1,0 +1,151 @@
+After ICsprout_ArgLVS_55LLULP1233_REV1_1_20250807.tar.gz is uncompressed by using command: tar -zxvf ICsprout_ArgLVS_55LLULP1233_REV1_1_20250807.tar.gz, you will see below file trees:
+
+ICsprout_ArgLVS_55LLULP1233_REV1_1_20250807
+├── 1_release_note.txt
+├── 2_user_guide.txt
+├── ICsprout_ArgLVS_55LLULP1233_REV1_1.lvs
+├── subckt.sp
+
+0 directories, 4 files
+
+1. ICsprout_ArgLVS_55LLULP1233_REV1_1_20250807.tar.gz 
+2. argusIC_2024.06.sp1 was used for this runset's development
+
+// Main rule DRC deck
+///////////////////////////////////////////////////////////////////////////////////
+//                                                                               //
+//                          Environment Setting                                  //
+//                                                                               //
+///////////////////////////////////////////////////////////////////////////////////
+//*Please set the following options to proper values according to your design:
+//==================================================================================
+//*OPTION 0: Define Process is half node or not. value can be TRUE or FALSE (Upper Case)
+//*For half node process such as 28nm, 40nm, 55nm, 0.11um node, set this option to TRUE ;
+//*For half node process such as 32nm, 45nm, 65nm, 0.13um node, set this option to FALSE ;
+//Default value is FALSE
+#DEFINE HALF_NODE TRUE  
+//===================================================================================
+//*OPTION 1: Define IO. The value can be DG_25 DG_33 TG_25 TG_33. Defult value is TG_33
+//*For Logic 2.5V DG IO process, set this option to DG_25;
+//*For Logic 3.3V DG IO process, set this option to DG_33;
+//*For Logic 2.5V TG IO process, set this option to TG_25;
+//*For Logic 3.3V TG IO process, set this option to TG_33;
+#DEFINE IO  TG_33 
+//===================================================================================
+//*OPTION 2: Define Total Metal. The value can be 10,9,8,7,6,5,4. Default value is 10.
+#DEFINE TOTALMETAL 7 
+//===================================================================================
+//*OPTION 3: Define number of top metal.The value can be SINGLE or DOUBLE(Uper Case). 
+//*Default value is single.
+//*If you use double top metal process, set this option to DOUBLE (Upper Case).
+//*If you use single top metal process, set this option to SINGLE (Upper Case).
+//*If you set TOTALMETAL to 10, you must set option TOP_METAL_NUM to double, single top 
+//*metal for 1P10M is not allowed!
+//*If you set TOTALMETAL to 4, you must set option TOP_METAL_NUM to single, double top 
+//*metal for 1P4M is not allowed!
+//*If you set TOP_METAL_NUM to SINGLE , you must set option TM2_TYPE to 2,4 or 15, 
+//*option TM1_TYPE for single top metal is not allowed
+#DEFINE TOP_METAL_NUM SINGLE 
+//===================================================================================
+//*OPTION 4: Define WIDTH of TM2.The value can be 2,4 or 15. Default value is 4.
+//*2: TM2 is defined as T2M2.
+//*4: TM2 is defined as T4M2.
+//*15:TM2 is defined as T8M2.
+#DEFINE TM2_TYPE 4 
+//===================================================================================
+//*OPTION 5: Define WIDTH of TM1.The value can be 2,4 or 15. Default value is 4.
+//*2: TM1 is defined as T2M1.
+//*4: TM1 is defined as T4M1.
+//*15:TM1 is defined as T8M1.
+//*If TM1_TYPE is defined 4, then TM2_TYPE shold be 4 or 15, cannot be 2.
+//*This option only effect in "TOP_METAL_NUM DOUBLE" condition.
+#DEFINE TM1_TYPE 4 
+//===================================================================================
+//*OPTION 6: Define RC EXTRACT or not.The value can be TRUE or FALSE(Upper Case).
+//*FALSE(Upper Case):it is only for LVS check.
+//*TRUE (Upper Case):it is for LVS+RC flow.
+#DEFINE RC_EXTRACT FALSE 
+//===================================================================================
+//*OPTION 6.1: Define RC EXTRACT flow t.The value can be ACI or RCE(Upper Case).
+//*ACI (Upper Case):it is for Argus Connection Interface (ACI) flow.
+//*RCE (Upper Case):it is for Argus RCE flow.
+#DEFINE RC_EXTRACT_FLOW ACI 
+//===================================================================================
+//*OPTION 7: Define the back annotation flow.The value can be 1 or 2,Default value is 2.
+//*1: extrview flow,LVS will reserve some extra parameters for back-annotation.
+//*2: netlist flow,LVS will not reserve the back-annotation parameters.
+#DEFINE BACK_ANNOTATION_FLOW 2 
+//===================================================================================
+//*OPTION 8: Define ERC Check or Not. The value can be TRUE or FALSE(Upper Case).
+//*Default value is TURE.
+#DEFINE ERC_CHECK TRUE  
+//===================================================================================
+//*OPTION 9: turn on gate floating check or not. The value can be TRUE or FALSE(Upper Case).
+//*Default value is FALSE.
+#DEFINE GATE_FLOATING_CHECK FALSE  
+//===================================================================================
+//*OPTION 10: turn on nwell floating check or not. The value can be TRUE or FALSE(Upper Case).
+//*Default value is FALSE.
+#DEFINE NWELL_FLOATING_CHECK FALSE  
+//===================================================================================
+//*OPTION 11: turn on nwell not connecting to power check or not. The value can be TRUE or FALSE(Upper Case).
+//*Default value is FALSE.
+#DEFINE NWELL_NOT_TO_POWER_CHECK FALSE  
+//===================================================================================
+//*OPTION 12: turn on pwell not connecting to ground check or not. The value can be TRUE or FALSE(Upper Case).
+//*Default value is FALSE.
+#DEFINE PWELL_NOT_TO_GROUND_CHECK FALSE  
+//===================================================================================
+//*OPTION 13: compare diode number and connectivity or not for parasitic DNW DIODE.The value can be TRUE or FALSE(Upper Case).
+//*Default value is FALSE.
+#DEFINE PARASI_DIO_CHECK_DNW FALSE 
+//===================================================================================
+//*OPTION 14: compare diode number and connectivity or not for parasitic NW DIODE.The value can be TRUE or FALSE(Upper Case).
+//*Default value is FALSE.
+#DEFINE PARASI_DIO_CHECK_NW FALSE 
+//===================================================================================
+//*OPTION 15: compare parameters for parasitic DNW DIODE.The value can be TRUE or FALSE(Upper Case).
+//*Default value is FALSE.
+#DEFINE PARASI_DIO_PROPERTY_CHECK_DNW FALSE 
+//===================================================================================
+//*OPTION 16: compare parameters for parasitic NW DIODE.The value can be TRUE or FALSE(Upper Case).
+//*Default value is FALSE.
+#DEFINE PARASI_DIO_PROPERTY_CHECK_NW FALSE 
+//===================================================================================
+//*OPTION 17: Define MOS mismatch model.Set this option to 1 to turn on mos mismatch model.
+//Set this option to 0 to turn off it. Default value is 1. 
+#DEFINE MOS_MIS_MODE 1 
+//===================================================================================
+//*OPTION 18: Define BJT mismatch model.Set this option to 1 to turn on bjt mismatch model.
+//Set this option to 0 to turn off it. Default value is 1.
+#DEFINE BJT_MIS_MODE 1 
+//===================================================================================
+//*OPTION 19: Define VAR mismatch model.Set this option to 1 to turn on var mismatch model.
+//Set this option to 0 to turn off it. Default value is 1.
+#DEFINE VAR_MIS_MODE 1 
+//===================================================================================
+//*OPTION 20: Define MOM mismatch model.Set this option to 1 to turn on MOM mismatch model.
+//Set this option to 0 to turn off it. Default value is 1.
+#DEFINE MOM_MIS_MODE 1 
+//===================================================================================
+//*OPTION 21: Define RES mismatch model.Set this option to 1 to turn on RES mismatch model.
+//Set this option to 0 to turn off it. Default value is 1.
+#DEFINE RES_MIS_MODE 1 
+//===================================================================================
+//*OPTION 22: Define whether to use CASE_SENSIVITY.The value can be TRUE or FALSE(Upper Case). 
+#DEFINE CASE_SENSITIVITY TRUE 
+//===================================================================================
+//*OPTION 23: Define whether to use PSUB mark layer for substrate logical ISOLATION .The value can be TRUE or FALSE(Upper Case). 
+//*Pleasenote that the PSUB only used for logical isolation, not real physical isolation for substrate while set to TRUE
+//*Default value is TRUE
+#DEFINE PSUB_ISO TRUE 
+//===================================================================================
+//*OPTION 24: Define whether to check well soft connection error.The value can be TRUE or FALSE(Upper Case). 
+//*Set the value to FALSE when RC_EXTRACT "TRUE". Default value is TRUE 
+#DEFINE SOFT_CHECK TRUE 
+//===================================================================================
+//*OPTION 25: Define 28K ALPA OR NOT, the value can be YES or NO
+//*Set the value to NO when not use 28K ALPA
+#DEFINE ALPA_28K NO 
+//===================================================================================
+//***********************************************************************************

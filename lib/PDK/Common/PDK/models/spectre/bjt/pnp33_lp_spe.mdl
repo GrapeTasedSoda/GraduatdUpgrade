@@ -1,0 +1,200 @@
+simulator lang = spectre
+
+// * release version    : 1.2
+// *
+// *  release date       : 03/15/2025
+// *
+// *  simulation tool    : synopsys hspice version n-2017.12-sp2
+// *
+// *  model type         :
+// *    vertical     bjt : hspice level 1
+// *
+// *  model name         :
+// *
+// *        *----------------------------------------------------*
+// *        |  p+/nwell/psub bjt type          |     3.3v        |
+// *        |====================================================|
+// *        | emitter area: 2*2*0.81 um^2      | vpnp3p3_2x_lp      |
+// *        *----------------------------------------------------*
+// *        | emitter area: 5*5*0.81 um^2      | vpnp3p3_5x_lp     |
+// *        *----------------------------------------------------*
+// *        | emitter area: 10*10*0.81 um^2    | vpnp3p3_10x_lp    |
+// *        *----------------------------------------------------*
+// *
+// *  the valid temperature range is from -40c to 125c
+// *
+// *******************************************************************************
+// *    3.3v vertival p+/nwell/psub bipolar model (emitter area=2x2x0.81um^2)    *
+// *******************************************************************************
+subckt vpnp3p3_2x_lp (c b e )
+parameters
++mismod_bjt = 1           
+
+parameters dbf_vpnp3p3_2x_lp_mis = 0.00523*sigma_mis_bjt33_a*mismod_bjt
++dis_vpnp3p3_2x_lp_mis = 0.55e-21*sigma_mis_bjt33_b*mismod_bjt
+q1 c b e vpnp3p3_2x_lp 
+model vpnp3p3_2x_lp bjt 
++type     = pnp            tlev     = 0             
++tlevc    = 1.0            is       = 2.42522e-19+dis_vpnp3p3_2x_lp+dis_vpnp3p3_2x_lp_mis
++bf       = 0.648557+dbf_vpnp3p3_2x_lp+dbf_vpnp3p3_2x_lp_mis nf       = 1.003+dnf_vpnp3p3_2x_lp
++vaf      = 850.0          ikf      = 0.0031287     
++nkf      = 0.23           ise      = 1.0e-19       
++ne       = 1.023          br       = 0.0358165     
++nr       = 1.0015         var      = 44.6          
++ikr      = 0.005          isc      = 9.363e-16     
++nc       = 1.0115         rb       = 55.0          
++irb      = 0.0055         rbm      = 2.0           
++re       = 28.1           rc       = 5.0           
++cje      = 3.37608e-15+dcje_vpnp3p3_2x_lp vje      = 0.7434        
++mje      = 0.33301        cjc      = 2.58876e-16+dcjc_vpnp3p3_2x_lp
++vjc      = 0.8            mjc      = 0.834         
++cjs      = 0              vjs      = 0.75          
++mjs      = 0.5            tf       = 1.0e-10       
++xtf      = 1.0            vtf      = 10.0          
++itf      = 0.1            xcjc     = 0.5           
++fc       = 0              tr       = 0             
++ptf      = 0              xtb      = 0             
++xti      = 3.0            eg       = 1.19          
++tns1     = 0              tbf1     = 0.0054        
++tbf2     = 4.0e-6         tnf1     = 6.0e-5        
++tnf2     = 3.0e-7         tvaf1    = -1.0e-4       
++tikf1    = -0.00633336    tikf2    = 1.0e-7        
++tne1     = 0              tne2     = 0             
++tbr1     = 3.0e-6         tbr2     = 5.0e-6        
++tnr1     = 1.1817e-4      tnr2     = 2.919e-7      
++tvar1    = 0              tikr1    = 0             
++tikr2    = -1.0e-20       tnc1     = 4.09271e-5    
++tnc2     = 5.0e-7         tirb1    = 0             
++tmje1    = 0              ttf1     = 0             
++titf1    = 0              tmjc1    = 0             
++ttr1     = 0              tmjs1    = 0             
++cte      = 7.7584e-4      ctc      = 0.00214       
++cts      = 0              tvje     = 0.0014226     
++tvjc     = 0.00212        tvjs     = 0             
++tre1     = 3.5e-7         trb1     = 0             
++trb2     = 1.0855e-8      trm1     = 0             
++trc1     = 0              kf       = 0             
++af       = 1.0            tnom     = 25.0          
++bex      = 0              bexv     = 0             
++rbmod    = spice          minr     = 1e-6          
+
+ends vpnp3p3_2x_lp
+
+
+// ********************************************************************************
+// *    3.3v vertival p+/nwell/psub bipolar model (emitter area=5x5x0.81um^2)     *
+// ********************************************************************************
+subckt vpnp3p3_5x_lp (c b e )
+parameters
++mismod_bjt = 1           
+
+parameters dbf_vpnp3p3_5x_lp_mis = 0.001453*sigma_mis_bjt33_a*mismod_bjt
++dis_vpnp3p3_5x_lp_mis = 8.50e-22*sigma_mis_bjt33_b*mismod_bjt
+q1 c b e vpnp3p3_5x_lp 
+model vpnp3p3_5x_lp bjt 
++type     = pnp            tlev     = 0             
++tlevc    = 1.0            is       = 1.11060e-18+dis_vpnp3p3_5x_lp+dis_vpnp3p3_5x_lp_mis
++bf       = 0.55236+dbf_vpnp3p3_5x_lp+dbf_vpnp3p3_5x_lp_mis nf       = 0.998+dnf_vpnp3p3_5x_lp
++vaf      = 850.0          ikf      = 0.0037185     
++nkf      = 0.35           ise      = 2.3145e-15    
++ne       = 2.3232         br       = 1.473         
++nr       = 0.996          var      = 44.6          
++ikr      = 0.005          isc      = 1.359e-15     
++nc       = 1.0098         rb       = 75.89         
++irb      = 0.0055         rbm      = 2.0           
++re       = 2.1            rc       = 1.0           
++cje      = 2.11005e-14+dcje_vpnp3p3_5x_lp vje      = 0.7434        
++mje      = 0.33301        cjc      = 1.61798e-15+dcjc_vpnp3p3_5x_lp
++vjc      = 0.8            mjc      = 0.834         
++cjs      = 0              vjs      = 0.75          
++mjs      = 0.5            tf       = 1.0e-10       
++xtf      = 1.0            vtf      = 10.0          
++itf      = 0.1            xcjc     = 0.5           
++fc       = 0              tr       = 0             
++ptf      = 0              xtb      = 0             
++xti      = 3.0            eg       = 1.165         
++tns1     = 0              tbf1     = 0.0037782     
++tbf2     = -1.8262e-6     tnf1     = -3.5e-5       
++tnf2     = 1.0e-7         tvaf1    = 0             
++tikf1    = 0              tikf2    = 1.01e-4       
++tne1     = 2.1814e-5      tne2     = 0             
++tbr1     = 6.0e-6         tbr2     = 6.8111e-6     
++tnr1     = -8.2e-5        tnr2     = -5.0e-7       
++tvar1    = 0              tikr1    = 0             
++tikr2    = -1.0e-20       tisc1    = 0             
++tnc1     = -1.01647e-4    tirb1    = 0             
++tmje1    = 0              ttf1     = 0             
++titf1    = 0              tmjc1    = 0             
++ttr1     = 0              tmjs1    = 0             
++cte      = 7.7584e-4      ctc      = 0.00214       
++cts      = 0              tvje     = 0.0014226     
++tvjc     = 0.00212        tvjs     = 0             
++tre1     = 0              tre2     = 7.0e-4        
++trb1     = 9.6176e-4      trb2     = 0             
++trm1     = 0              trc1     = 0             
++kf       = 0              af       = 1.0           
++tnom     = 25.0           bex      = 0             
++bexv     = 0              rbmod    = spice         
++minr     = 1e-6          
+
+ends vpnp3p3_5x_lp
+
+
+// *********************************************************************************
+// *    3.3v vertival p+/nwell/psub bipolar model (emitter area=10x10x0.81um^2)    *
+// *********************************************************************************
+subckt vpnp3p3_10x_lp (c b e )
+parameters
++mismod_bjt = 1           
+
+parameters dbf_vpnp3p3_10x_lp_mis = 0.000689*sigma_mis_bjt33_a*mismod_bjt
++dis_vpnp3p3_10x_lp_mis = 3.48e-21*sigma_mis_bjt33_b*mismod_bjt
+q1 c b e vpnp3p3_10x_lp 
+model vpnp3p3_10x_lp bjt 
++type     = pnp            tlev     = 0             
++tlevc    = 1.0            is       = 4.571e-18+dis_vpnp3p3_10x_lp+dis_vpnp3p3_10x_lp_mis
++bf       = 0.57836+dbf_vpnp3p3_10x_lp+dbf_vpnp3p3_10x_lp_mis nf       = 1.00267+dnf_vpnp3p3_10x_lp
++vaf      = 850.0          ikf      = 0.0035695     
++nkf      = 0.365          ise      = 0             
++ne       = 1.8121         br       = 0.00521       
++nr       = 1.0043         var      = 55.6          
++ikr      = 0.005          isc      = 1.3013e-15    
++nc       = 1.022          rb       = 31.0          
++irb      = 0.0055         rbm      = 1.0           
++re       = 14.0462        rc       = 2.0           
++cje      = 8.4402e-14+dcje_vpnp3p3_10x_lp vje      = 0.7434        
++mje      = 0.33301        cjc      = 6.47e-15+dcjc_vpnp3p3_10x_lp
++vjc      = 0.8            mjc      = 0.834         
++cjs      = 0              vjs      = 0.75          
++mjs      = 0.5            tf       = 1.0e-10       
++xtf      = 1.0            vtf      = 10.0          
++itf      = 0.1            xcjc     = 0.5           
++fc       = 0              tr       = 0             
++ptf      = 0              xtb      = 0             
++xti      = 3.0            eg       = 1.185         
++tns1     = 0              tbf1     = 0.0036679     
++tbf2     = 2.1738e-6      tnf1     = 1.03319e-4    
++tnf2     = 3.6505e-7      tvaf1    = 0             
++tikf1    = -0.0091618     tikf2    = 4.765e-5      
++tne1     = 4.14725e-4     tne2     = 7.0e-6        
++tbr1     = 3.8721e-4      tbr2     = 8.0e-7        
++tnr1     = 9.63e-7        tnr2     = -1.3842e-7    
++tvar1    = 0              tikr1    = 0             
++tikr2    = -1.0e-20       tnc1     = -2.0187e-4    
++tirb1    = 0              tmje1    = 0             
++ttf1     = 0              titf1    = 0             
++tmjc1    = 0              ttr1     = 0             
++tmjs1    = 0              cte      = 7.7584e-4     
++ctc      = 0.00214        cts      = 0             
++tvje     = 0.0014226      tvjc     = 0.00212       
++tvjs     = 0              tre1     = -0.0049       
++tre2     = 7.336e-5       trb1     = 0.003         
++trb2     = 2.0e-6         trm1     = 0             
++trc1     = -0.0054        kf       = 0             
++af       = 1.0            tnom     = 25.0          
++bex      = 0              bexv     = 0             
++rbmod    = spice          minr     = 1e-6          
+
+ends vpnp3p3_10x_lp
+
+

@@ -5,10 +5,16 @@ DVEfiles/
 ucli.key
 formality1_svf/
 default.svf
+*.svf
 csrc/
 simv
 simv.daidir/
 out/sim/
+script/*.log
+run_details/
+.icv_cmd
+.lvs_init
+*.vue
 
 # FC 布局布线：NDM/CLIBs 可由 fc_apr.tcl 自动重建，不入库
 out/apr/ndm/
@@ -19,3 +25,15 @@ icc2_command.log
 lm_command.log
 fc_output.txt
 icc2_output.txt
+check_workspace.ems
+
+# 磁盘缓存与 EDA 会话临时文件
+Milkyway.cmd.*
+Milkyway.log.*
+.NullXServerPID*
+.history
+*.daidir/
+waves.shm/
+
+# 超大 ASCII 工艺库（已入库 .gz 压缩版；如需原始 .lib 请解压）
+lib/PDK/Common/ics55_LLSC_H9CR_0917/liberty/lib/*.lib

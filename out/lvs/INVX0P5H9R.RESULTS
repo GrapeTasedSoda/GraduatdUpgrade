@@ -1,0 +1,168 @@
+                         LVS Compare Results: PASS
+
+                          ####   ###    ####   ####
+                         #   #  #   #  #      #
+                         ####   #####  #####  #####
+                         #      #   #      #      #
+                         #      #   #  ####   #### 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                     DRC and Extraction Results: CLEAN
+
+                      ####  #      #####   ###   #   #
+                     #      #      #      #   #  ##  #
+                     #      #      ####   #####  # # #
+                     #      #      #      #   #  #  ##
+                      ####  #####  #####  #   #  #   #
+
+===========================================================================
+
+
+---------------------------------------------------------------------------
+ICV Execution
+---------------------------------------------------------------------------
+
+
+                                 IC Validator 
+
+          Version V-2023.12-SP5 for linux64 - Jul 19, 2024 cl#10488941
+
+                    Copyright (c) 1996 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Called as: icv ics55_lvs.rs -i invx.gds -s invx.cdl -sf SPICE
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Input file name:        invx.gds
+Top cell name:          INVX0P5H9R
+Layout format:          GDSII
+Runset file:            ics55_lvs.rs
+Working directory:      /home/user/mac16_lvs_final
+Run details directory:  /home/user/mac16_lvs_final/run_details
+LVS error file:         INVX0P5H9R.LVS_ERRORS
+Layout error file:      INVX0P5H9R.LAYOUT_ERRORS
+User name:              user
+Time started:           2026/08/22 07:00:56AM
+Time ended:             2026/08/22 07:00:59AM
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+---------------------------------------------------------------------------
+Results Summary
+---------------------------------------------------------------------------
+
+LVS Device Extraction Error Summary
+
+1 total rule was run.
+0 rules NOT EXECUTED.
+0 rules have violations.
+There are 0 total violations.
+Refer to INVX0P5H9R.LAYOUT_ERRORS
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+LVS Compare Summary
+
+LVS Compare Result: PASS
+TOP equivalence point: [INVX0P5H9R, INVX0P5H9R]
+
+    blackbox cells checked: 0
+      passed  0
+      failed  0
+
+    equivalence points checked: 1
+      passed  1
+      failed  0
+
+Refer to INVX0P5H9R.LVS_ERRORS for LVS Error Diagnostics
+
+
+    [PASS]  INVX0P5H9R == INVX0P5H9R   (level 0)
+
+
+---------------------------------------------------------------------------
+Assign Layer Statistics
+---------------------------------------------------------------------------
+
+Utilized Assign Layers = 26
+ Empty Utilized Assign Layers = 17
+ Non-Empty Utilized Assign Layers = 9
+Pruned Assign Layers = 7
+
+
+---------------------------------------------------------------------------
+Run Configuration
+---------------------------------------------------------------------------
+
+run_options()
+ verbose_results_file = { ERRORS }
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+hierarchy_options()
+ delete = { }
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+error_options()
+ error_limit_per_check = 1000
+ match_errors = { }
+ match_errors_processing_mode = HIERARCHICAL
+ match_errors_tolerance = 0.0000
+ violation_options = { }
+ report_empty_violations = true
+ clean_classifications = { }
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Production Environment Variables
+
+HOME = "/home/user"
+ICV_HOME_DIR = "/home/user/eda/icvalidator/V-2023.12-SP5"
+LM_LICENSE_FILE = "27000@localhost.localdomain"
+PATH = "/home/user/eda/icvalidator/V-2023.12-SP5/bin/LINUX.64:/home/user/eda/icvalidator/V-2023.12-SP5/contrib/bin/LINUX.64:/usr/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/home/user/.codex/tmp/arg0/codex-arg0jlT0oi:/usr/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/home/user/.local/bin:/home/user/.local/bin:/home/user/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/user/eda/scl/2025.03/linux64/bin:/home/user/eda/vcs/V-2023.12-SP1/bin:/home/user/eda/fusioncompiler/V-2023.12/bin:/home/user/eda/syn/V-2023.12-SP5/bin:/home/user/eda/icvalidator/V-2023.12-SP5/bin:/home/user/eda/fm/V-2023.12-SP5/bin:/home/user/eda/prime/V-2023.12-SP5-1/bin:/home/user/eda/starrc/V-2023.12-SP3/bin:/home/user/eda/lc/V-2023.12-SP3/bin:/home/user/eda/mw/V-2023.12-SP3/bin/linux64:/home/user/eda/verdi/V-2023.12-SP2/bin:/home/user/eda/vc_static/V-2023.12-SP1/bin:/home/user/eda/scl/2025.03/linux64/bin:/home/user/eda/vcs/V-2023.12-SP1/bin:/home/user/eda/fusioncompiler/V-2023.12/bin:/home/user/eda/syn/V-2023.12-SP5/bin:/home/user/eda/icvalidator/V-2023.12-SP5/bin:/home/user/eda/fm/V-2023.12-SP5/bin:/home/user/eda/prime/V-2023.12-SP5-1/bin:/home/user/eda/starrc/V-2023.12-SP3/bin:/home/user/eda/lc/V-2023.12-SP3/bin:/home/user/eda/mw/V-2023.12-SP3/bin/linux64:/home/user/eda/verdi/V-2023.12-SP2/bin:/home/user/eda/vc_static/V-2023.12-SP1/bin:/home/user/eda/scl/2025.03/linux64/bin:/home/user/eda/vcs/V-2023.12-SP1/bin:/home/user/eda/fusioncompiler/V-2023.12/bin:/home/user/eda/syn/V-2023.12-SP5/bin:/home/user/eda/icvalidator/V-2023.12-SP5/bin:/home/user/eda/fm/V-2023.12-SP5/bin:/home/user/eda/prime/V-2023.12-SP5-1/bin:/home/user/eda/starrc/V-2023.12-SP3/bin:/home/user/eda/lc/V-2023.12-SP3/bin:/home/user/eda/mw/V-2023.12-SP3/bin/linux64:/home/user/eda/verdi/V-2023.12-SP2/bin:/home/user/eda/vc_static/V-2023.12-SP1/bin:/home/user/eda/scl/2025.03/linux64/bin:/home/user/eda/vcs/V-2023.12-SP1/bin:/home/user/eda/fusioncompiler/V-2023.12/bin:/home/user/eda/syn/V-2023.12-SP5/bin:/home/user/eda/icvalidator/V-2023.12-SP5/bin:/home/user/eda/fm/V-2023.12-SP5/bin:/home/user/eda/prime/V-2023.12-SP5-1/bin:/home/user/eda/starrc/V-2023.12-SP3/bin:/home/user/eda/lc/V-2023.12-SP3/bin:/home/user/eda/mw/V-2023.12-SP3/bin/linux64:/home/user/eda/verdi/V-2023.12-SP2/bin:/home/user/eda/vc_static/V-2023.12-SP1/bin"
+SNPSLMD_LICENSE_FILE = "27000@localhost.localdomain"
+USER = "user"
+
+6 production environment variables set.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Debug Environment Variables
+
+_ICV_IGRAPH_DP = "FALSE"
+_ICV_IGRAPH_FALLBACK = "TRUE"
+
+2 debug environment variables set.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Distributed Processing
+ Distributed Cores = 2
+
+
+---------------------------------------------------------------------------
+Performance Statistics
+---------------------------------------------------------------------------
+
+IC Validator Run Time = 0:00:02
+Peak Single Command Memory = 0.000 GB
+
+Distributed Host Memory Usage
+localhost (2/2)  ....  Average=0.427 GB, Peak=0.427 GB / 9.455 GB
+IC Validator is done.

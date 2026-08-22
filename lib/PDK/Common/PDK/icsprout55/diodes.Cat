@@ -1,0 +1,25 @@
+TDMCHECKPOINT="1.0"
+icsprout55/dio_1p2_np_pw_lp type="cell"
+icsprout55/dio_1p2_pp_nw_lp type="cell"
+
+icsprout55/dio_3p3_np_pw_lp type="cell"
+icsprout55/dio_3p3_pp_nw_lp type="cell"
+
+icsprout55/dio_1p2_nw_psub_lp type="cell"
+
+
+icsprout55/dio_1p2_np_psub_nt_lp type="cell"
+icsprout55/dio_3p3_np_psub_nt_lp type="cell"
+
+icsprout55/dio_1p2_np_pw_hvt_lp type="cell"
+icsprout55/dio_1p2_pp_nw_hvt_lp type="cell"
+icsprout55/dio_1p2_np_pw_lvt_lp type="cell"
+icsprout55/dio_1p2_pp_nw_lvt_lp type="cell"
+
+icsprout55/dio_1p2_np_pw_dnw_lp type="cell"
+icsprout55/dio_1p2_pw_dnw_lp type="cell"
+icsprout55/dio_1p2_dnw_psub_lp type="cell"
+
+icsprout55/parasitic_nwd type="cell"
+icsprout55/parasitic_rwd type="cell"
+icsprout55/parasitic_dnwd type="cell"

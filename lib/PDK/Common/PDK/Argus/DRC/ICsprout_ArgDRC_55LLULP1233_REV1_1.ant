@@ -1,0 +1,1122 @@
+#!trs
+
+namespace import trs::* 
+
+
+trs::pvrs_block  {
+//|===============================================================================
+//| Revision History :                                                            
+//| Rev              Date               Who                 Description           
+//| V1.0             2024-06-25         Warren              Initial               
+//| V1.1             2024-09-25         Warren              Update: 
+//|                                                                1.AR.8: ANT_GT_8b_12_RDL 2000-->1000
+//|                                                                2.set single topmetal :T4M1/T2M1/T8M1-->T4M2/T2M2/T8M2
+//|===============================================================================
+}
+
+#################################################
+#     Environmental Variables Setting           #
+#################################################
+
+
+######################################
+#  <Choice 1>   Total metal count    #
+######################################
+
+# Total metal count. Valid choices are 4~10 . See metallization option table in document. Default is 10 .
+
+set M 7
+
+
+#################################
+#  <Choice 2>   top metal count #
+#################################
+
+# Top metal count. Valid choices are 1,2. See metallization option table in document. Default is 2 .
+
+set T 1
+
+# If M is 4, then valid choices of T is 1.
+# If M is 5, then valid choices of T is 1,2.
+# If M is 6, then valid choices of T is 1,2.
+# If M is 7, then valid choices of T is 1,2.
+# If M is 8, then valid choices of T is 1,2.
+# If M is 9, then valid choices of T is 1,2.
+# If M is 10, then valid choices of T is 2.
+
+
+#############################################
+#  <Choice 3>   top metal and top via name  #
+#############################################
+
+# top metal name. Valid choices are T4M2, T2M2 or T8M2 (for Top metal count 1); T4M1, T2M1 or T8M1(for Top metal count 2). Default is T4M2 
+# top via   name. Valid choices are T4V2, T2V2 or T8V2 (for Top metal count 1); T4V1, T2V1 or T8V1(for Top metal count 2). Default is T4V2
+
+set TM_NAME T4M2 
+
+set TV_NAME T4V2 
+
+
+########################################################
+#  <Choice 4>  inter top metal and inter top via name  #
+########################################################
+
+# inter top metal name. Valid choices are T4M1, T2M1, T8M1.  Default is T4M1
+# inter top via   name. Valid choices are T4V1, T2V1, T8V1.  Default is T4V1
+# Please change both "T4M1" and "T4V1" value into 0 if your design only has one top metal( for Top metal count 1).
+
+set TM_1_NAME T4M1 
+
+set TV_1_NAME T4V1 
+
+
+#################################
+#  <Choice 5>   RDL thickness  #     
+#################################
+
+# RDL thickness used in this runset is defined as typical thickness * 1.1 .
+# There are two kinds of RDL thickness for selection: 1.595um (1.45um * 1.1) and 3.08um (2.8um * 1.1), Default to check 1.595um
+# If customer want to check 3.08um, please change this option to "set RDL_thickness 3.08"
+
+set RDL_thickness 1.595
+
+
+trs::pvrs_block  {
+//|===============================================================================|
+//*************************************
+//     DIRECTIVE SECTION
+//*************************************
+layout_input ( path "*.gds"  ) 
+layout_input ( top_cell "topcell"  ) 
+layout_input ( format gds  ) 
+
+drc_result ( db "antenna_ARG.OUT" text_format  ) 
+drc_summary ( "antenna_ARG.SUM"  ) 
+
+drc_max_result (  1000   ) 
+drc_max_vertex (  199   ) 
+//************************************
+//    INPUT LAYER STATEMENTS
+//************************************
+layer_map ( 2  datatype 1  2001   ) 
+layer ( ACTi 2001  ) 
+layer_map ( 27  datatype 1  2013   ) 
+layer ( DGOX 2013  ) 
+layer_map ( 28  datatype 1  2014   ) 
+layer ( TGOX 2014  ) 
+layer_map ( 41  datatype 1  2015   ) 
+layer ( POLYi 2015  ) 
+layer_map ( 52  datatype 1  2023   ) 
+layer ( NPi 2023  ) 
+layer_map ( 53  datatype 1  2024   ) 
+layer ( PPi 2024  ) 
+layer_map ( 72  datatype 1  2028   ) 
+layer ( CT 2028  ) 
+layer_map ( 81  datatype 1  2031   ) 
+layer ( MET1i 2031  ) 
+layer_map ( 81  datatype 2  2032   ) 
+layer ( MET1dmi 2032  ) 
+layer_map ( 81  datatype 3  2033   ) 
+layer ( MET1dmblk 2033  ) 
+layer_map ( 81  datatype 4  2034   ) 
+layer ( MET1res 2034  ) 
+layer_map ( 81  datatype 5  2035   ) 
+layer ( MET1opcblk 2035  ) 
+layer_map ( 81  texttype 6  2036   ) 
+layer ( MET1text 2036  ) 
+layer_map ( 81  datatype 8  2037   ) 
+layer ( MET1sloti 2037  ) 
+layer_map ( 81  datatype 9  2038   ) 
+layer ( MET1slotblk 2038  ) 
+layer_map ( 81  datatype 10  2039   ) 
+layer ( MET1mom 2039  ) 
+layer_map ( 82  datatype 1  2040   ) 
+layer_map ( 82  texttype 1  2040   ) 
+layer ( MET2i 2040  ) 
+layer_map ( 82  datatype 2  2041   ) 
+layer ( MET2dmi 2041  ) 
+layer_map ( 82  datatype 3  2042   ) 
+layer ( MET2dmblk 2042  ) 
+layer_map ( 82  datatype 4  2043   ) 
+layer ( MET2res 2043  ) 
+layer_map ( 82  datatype 5  2044   ) 
+layer ( MET2opcblk 2044  ) 
+layer_map ( 82  texttype 6  2045   ) 
+layer ( MET2text 2045  ) 
+layer_map ( 82  datatype 8  2046   ) 
+layer ( MET2sloti 2046  ) 
+layer_map ( 82  datatype 9  2047   ) 
+layer ( MET2slotblk 2047  ) 
+layer_map ( 82  datatype 10  2048   ) 
+layer ( MET2mom 2048  ) 
+layer_map ( 83  datatype 1  2049   ) 
+layer_map ( 83  texttype 1  2049   ) 
+layer ( MET3i 2049  ) 
+layer_map ( 83  datatype 2  2050   ) 
+layer ( MET3dmi 2050  ) 
+layer_map ( 83  datatype 3  2051   ) 
+layer ( MET3dmblk 2051  ) 
+layer_map ( 83  datatype 4  2052   ) 
+layer ( MET3res 2052  ) 
+layer_map ( 83  datatype 5  2053   ) 
+layer ( MET3opcblk 2053  ) 
+layer_map ( 83  texttype 6  2054   ) 
+layer ( MET3text 2054  ) 
+layer_map ( 83  datatype 8  2055   ) 
+layer ( MET3sloti 2055  ) 
+layer_map ( 83  datatype 9  2056   ) 
+layer ( MET3slotblk 2056  ) 
+layer_map ( 83  datatype 10  2057   ) 
+layer ( MET3mom 2057  ) 
+layer_map ( 84  datatype 1  2058   ) 
+layer_map ( 84  texttype 1  2058   ) 
+layer ( MET4i 2058  ) 
+layer_map ( 84  datatype 2  2059   ) 
+layer ( MET4dmi 2059  ) 
+layer_map ( 84  datatype 3  2060   ) 
+layer ( MET4dmblk 2060  ) 
+layer_map ( 84  datatype 4  2061   ) 
+layer ( MET4res 2061  ) 
+layer_map ( 84  datatype 5  2062   ) 
+layer ( MET4opcblk 2062  ) 
+layer_map ( 84  texttype 6  2063   ) 
+layer ( MET4text 2063  ) 
+layer_map ( 84  datatype 8  2064   ) 
+layer ( MET4sloti 2064  ) 
+layer_map ( 84  datatype 9  2065   ) 
+layer ( MET4slotblk 2065  ) 
+layer_map ( 84  datatype 10  2066   ) 
+layer ( MET4mom 2066  ) 
+layer_map ( 85  datatype 1  2067   ) 
+layer_map ( 85  texttype 1  2067   ) 
+layer ( MET5i 2067  ) 
+layer_map ( 85  datatype 2  2068   ) 
+layer ( MET5dmi 2068  ) 
+layer_map ( 85  datatype 3  2069   ) 
+layer ( MET5dmblk 2069  ) 
+layer_map ( 85  datatype 4  2070   ) 
+layer ( MET5res 2070  ) 
+layer_map ( 85  datatype 5  2071   ) 
+layer ( MET5opcblk 2071  ) 
+layer_map ( 85  texttype 6  2072   ) 
+layer ( MET5text 2072  ) 
+layer_map ( 85  datatype 8  2073   ) 
+layer ( MET5sloti 2073  ) 
+layer_map ( 85  datatype 9  2074   ) 
+layer ( MET5slotblk 2074  ) 
+layer_map ( 85  datatype 10  2075   ) 
+layer ( MET5mom 2075  ) 
+layer_map ( 86  datatype 1  2076   ) 
+layer_map ( 86  texttype 1  2076   ) 
+layer ( MET6i 2076  ) 
+layer_map ( 86  datatype 2  2077   ) 
+layer ( MET6dmi 2077  ) 
+layer_map ( 86  datatype 3  2078   ) 
+layer ( MET6dmblk 2078  ) 
+layer_map ( 86  datatype 4  2079   ) 
+layer ( MET6res 2079  ) 
+layer_map ( 86  datatype 5  2080   ) 
+layer ( MET6opcblk 2080  ) 
+layer_map ( 86  texttype 6  2081   ) 
+layer ( MET6text 2081  ) 
+layer_map ( 86  datatype 8  2082   ) 
+layer ( MET6sloti 2082  ) 
+layer_map ( 86  datatype 9  2083   ) 
+layer ( MET6slotblk 2083  ) 
+layer_map ( 86  datatype 10  2084   ) 
+layer ( MET6mom 2084  ) 
+layer_map ( 87  datatype 1  2085   ) 
+layer_map ( 87  texttype 1  2085   ) 
+layer ( MET7i 2085  ) 
+layer_map ( 87  datatype 2  2086   ) 
+layer ( MET7dmi 2086  ) 
+layer_map ( 87  datatype 3  2087   ) 
+layer ( MET7dmblk 2087  ) 
+layer_map ( 87  datatype 4  2088   ) 
+layer ( MET7res 2088  ) 
+layer_map ( 87  datatype 5  2089   ) 
+layer ( MET7opcblk 2089  ) 
+layer_map ( 87  texttype 6  2090   ) 
+layer ( MET7text 2090  ) 
+layer_map ( 87  datatype 8  2091   ) 
+layer ( MET7sloti 2091  ) 
+layer_map ( 87  datatype 9  2092   ) 
+layer ( MET7slotblk 2092  ) 
+layer_map ( 87  datatype 10  2093   ) 
+layer ( MET7mom 2093  ) 
+layer_map ( 88  datatype 1  2094   ) 
+layer_map ( 88  texttype 1  2094   ) 
+layer ( MET8i 2094  ) 
+layer_map ( 88  datatype 2  2095   ) 
+layer ( MET8dmi 2095  ) 
+layer_map ( 88  datatype 3  2096   ) 
+layer ( MET8dmblk 2096  ) 
+layer_map ( 88  datatype 4  2097   ) 
+layer ( MET8res 2097  ) 
+layer_map ( 88  datatype 5  2098   ) 
+layer ( MET8opcblk 2098  ) 
+layer_map ( 88  texttype 6  2099   ) 
+layer ( MET8text 2099  ) 
+layer_map ( 88  datatype 8  2100   ) 
+layer ( MET8sloti 2100  ) 
+layer_map ( 88  datatype 9  2101   ) 
+layer ( MET8slotblk 2101  ) 
+layer_map ( 88  datatype 10  2102   ) 
+layer ( MET8mom 2102  ) 
+layer_map ( 91  datatype 1  2103   ) 
+layer ( VIA1i 2103  ) 
+layer_map ( 91  datatype 7  2104   ) 
+layer ( VIA1bar 2104  ) 
+layer_map ( 92  datatype 1  2105   ) 
+layer ( VIA2i 2105  ) 
+layer_map ( 92  datatype 7  2106   ) 
+layer ( VIA2bar 2106  ) 
+layer_map ( 93  datatype 1  2107   ) 
+layer ( VIA3i 2107  ) 
+layer_map ( 93  datatype 7  2108   ) 
+layer ( VIA3bar 2108  ) 
+layer_map ( 94  datatype 1  2109   ) 
+layer ( VIA4i 2109  ) 
+layer_map ( 94  datatype 7  2110   ) 
+layer ( VIA4bar 2110  ) 
+layer_map ( 95  datatype 1  2111   ) 
+layer ( VIA5i 2111  ) 
+layer_map ( 95  datatype 7  2112   ) 
+layer ( VIA5bar 2112  ) 
+layer_map ( 96  datatype 1  2113   ) 
+layer ( VIA6i 2113  ) 
+layer_map ( 96  datatype 7  2114   ) 
+layer ( VIA6bar 2114  ) 
+layer_map ( 97  datatype 1  2115   ) 
+layer ( VIA7i 2115  ) 
+layer_map ( 97  datatype 7  2116   ) 
+layer ( VIA7bar 2116  ) 
+layer_map ( 100  datatype 1  2117   ) 
+layer_map ( 100  texttype 1  2117   ) 
+layer ( T2M1i 2117  ) 
+layer_map ( 100  datatype 2  2118   ) 
+layer ( T2M1dmi 2118  ) 
+layer_map ( 100  datatype 3  2119   ) 
+layer ( T2M1dmblk 2119  ) 
+layer_map ( 100  datatype 4  2120   ) 
+layer ( T2M1res 2120  ) 
+layer_map ( 100  datatype 5  2121   ) 
+layer ( T2M1opcblk 2121  ) 
+layer_map ( 100  texttype 6  2122   ) 
+layer ( T2M1text 2122  ) 
+layer_map ( 100  datatype 8  2123   ) 
+layer ( T2M1sloti 2123  ) 
+layer_map ( 100  datatype 9  2124   ) 
+layer ( T2M1slotblk 2124  ) 
+layer_map ( 101  datatype 1  2125   ) 
+layer_map ( 101  texttype 1  2125   ) 
+layer ( T2M2i 2125  ) 
+layer_map ( 101  datatype 2  2126   ) 
+layer ( T2M2dmi 2126  ) 
+layer_map ( 101  datatype 3  2127   ) 
+layer ( T2M2dmblk 2127  ) 
+layer_map ( 101  datatype 4  2128   ) 
+layer ( T2M2res 2128  ) 
+layer_map ( 101  datatype 5  2129   ) 
+layer ( T2M2opcblk 2129  ) 
+layer_map ( 101  texttype 6  2130   ) 
+layer ( T2M2text 2130  ) 
+layer_map ( 101  datatype 8  2131   ) 
+layer ( T2M2sloti 2131  ) 
+layer_map ( 101  datatype 9  2132   ) 
+layer ( T2M2slotblk 2132  ) 
+layer_map ( 102  datatype 1  2133   ) 
+layer_map ( 102  texttype 1  2133   ) 
+layer ( T4M1i 2133  ) 
+layer_map ( 102  datatype 2  2134   ) 
+layer ( T4M1dmi 2134  ) 
+layer_map ( 102  datatype 3  2135   ) 
+layer ( T4M1dmblk 2135  ) 
+layer_map ( 102  datatype 4  2136   ) 
+layer ( T4M1res 2136  ) 
+layer_map ( 102  datatype 5  2137   ) 
+layer ( T4M1opcblk 2137  ) 
+layer_map ( 102  texttype 6  2138   ) 
+layer ( T4M1text 2138  ) 
+layer_map ( 102  datatype 8  2139   ) 
+layer ( T4M1sloti 2139  ) 
+layer_map ( 102  datatype 9  2140   ) 
+layer ( T4M1slotblk 2140  ) 
+layer_map ( 103  datatype 1  2141   ) 
+layer_map ( 103  texttype 1  2141   ) 
+layer ( T4M2i 2141  ) 
+layer_map ( 103  datatype 2  2142   ) 
+layer ( T4M2dmi 2142  ) 
+layer_map ( 103  datatype 3  2143   ) 
+layer ( T4M2dmblk 2143  ) 
+layer_map ( 103  datatype 4  2144   ) 
+layer ( T4M2res 2144  ) 
+layer_map ( 103  datatype 5  2145   ) 
+layer ( T4M2opcblk 2145  ) 
+layer_map ( 103  texttype 6  2146   ) 
+layer ( T4M2text 2146  ) 
+layer_map ( 103  datatype 8  2147   ) 
+layer ( T4M2sloti 2147  ) 
+layer_map ( 103  datatype 9  2148   ) 
+layer ( T4M2slotblk 2148  ) 
+layer_map ( 104  datatype 1  2149   ) 
+layer_map ( 104  texttype 1  2149   ) 
+layer ( T8M1i 2149  ) 
+layer_map ( 104  datatype 2  2150   ) 
+layer ( T8M1dmi 2150  ) 
+layer_map ( 104  datatype 3  2151   ) 
+layer ( T8M1dmblk 2151  ) 
+layer_map ( 104  datatype 4  2152   ) 
+layer ( T8M1res 2152  ) 
+layer_map ( 104  datatype 5  2153   ) 
+layer ( T8M1opcblk 2153  ) 
+layer_map ( 104  texttype 6  2154   ) 
+layer ( T8M1text 2154  ) 
+layer_map ( 104  datatype 8  2155   ) 
+layer ( T8M1sloti 2155  ) 
+layer_map ( 104  datatype 9  2156   ) 
+layer ( T8M1slotblk 2156  ) 
+layer_map ( 105  datatype 1  2157   ) 
+layer_map ( 105  texttype 1  2157   ) 
+layer ( T8M2i 2157  ) 
+layer_map ( 105  datatype 2  2158   ) 
+layer ( T8M2dmi 2158  ) 
+layer_map ( 105  datatype 3  2159   ) 
+layer ( T8M2dmblk 2159  ) 
+layer_map ( 105  datatype 4  2160   ) 
+layer ( T8M2res 2160  ) 
+layer_map ( 105  datatype 5  2161   ) 
+layer ( T8M2opcblk 2161  ) 
+layer_map ( 105  texttype 6  2162   ) 
+layer ( T8M2text 2162  ) 
+layer_map ( 105  datatype 8  2163   ) 
+layer ( T8M2sloti 2163  ) 
+layer_map ( 105  datatype 9  2164   ) 
+layer ( T8M2slotblk 2164  ) 
+layer_map ( 110  datatype 1  2165   ) 
+layer ( T2V1i 2165  ) 
+layer_map ( 110  datatype 7  2166   ) 
+layer ( T2V1bar 2166  ) 
+layer_map ( 111  datatype 1  2167   ) 
+layer ( T2V2i 2167  ) 
+layer_map ( 111  datatype 7  2168   ) 
+layer ( T2V2bar 2168  ) 
+layer_map ( 112  datatype 1  2169   ) 
+layer ( T4V1i 2169  ) 
+layer_map ( 112  datatype 7  2170   ) 
+layer ( T4V1bar 2170  ) 
+layer_map ( 113  datatype 1  2171   ) 
+layer ( T4V2i 2171  ) 
+layer_map ( 113  datatype 7  2172   ) 
+layer ( T4V2bar 2172  ) 
+layer_map ( 114  datatype 1  2173   ) 
+layer ( T8V1i 2173  ) 
+layer_map ( 114  datatype 7  2174   ) 
+layer ( T8V1bar 2174  ) 
+layer_map ( 115  datatype 1  2175   ) 
+layer ( T8V2i 2175  ) 
+layer_map ( 115  datatype 7  2176   ) 
+layer ( T8V2bar 2176  ) 
+layer_map ( 120  datatype 1  2177   ) 
+layer ( RV 2177  ) 
+layer_map ( 121  datatype 1  2178   ) 
+layer ( CB 2178  ) 
+layer_map ( 121  texttype 6  2179   ) 
+layer ( CBtext 2179  ) 
+layer_map ( 122  datatype 1  2180   ) 
+layer_map ( 122  texttype 1  2180   ) 
+layer ( ALPAD 2180  ) 
+layer_map ( 122  datatype 4  2181   ) 
+layer ( ALPADres 2181  ) 
+layer_map ( 122  texttype 6  2182   ) 
+layer ( ALPADtext 2182  ) 
+layer_map ( 122  datatype 8  2183   ) 
+layer ( ALPADsloti 2183  ) 
+layer_map ( 122  datatype 9  2184   ) 
+layer ( ALPADslotblk 2184  ) 
+layer_map ( 123  datatype 1  2185   ) 
+layer_map ( 123  texttype 1  2185   ) 
+layer ( RDL 2185  ) 
+
+
+RDV = geom_or (  RV CB ) 
+
+M1i = copy ( MET1i ) 
+M2i = copy ( MET2i ) 
+M3i = copy ( MET3i ) 
+M4i = copy ( MET4i ) 
+M5i = copy ( MET5i ) 
+M6i = copy ( MET6i ) 
+M7i = copy ( MET7i ) 
+M8i = copy ( MET8i ) 
+
+
+
+
+
+M1 = geom_not (  MET1i MET1sloti ) 
+M2 = geom_not (  MET2i MET2sloti ) 
+M3 = geom_not (  MET3i MET3sloti ) 
+M4 = geom_not (  MET4i MET4sloti ) 
+M5 = geom_not (  MET5i MET5sloti ) 
+M6 = geom_not (  MET6i MET6sloti ) 
+M7 = geom_not (  MET7i MET7sloti ) 
+M8 = geom_not (  MET8i MET8sloti ) 
+
+T4M1 = geom_not (  T4M1i T4M1sloti ) 
+T4M2 = geom_not (  T4M2i T4M2sloti ) 
+T2M1 = geom_not (  T2M1i T2M1sloti ) 
+T2M2 = geom_not (  T2M2i T2M2sloti ) 
+T8M1 = geom_not (  T8M1i T8M1sloti ) 
+T8M2 = geom_not (  T8M2i T8M2sloti ) 
+
+
+
+
+V1i = geom_or (  VIA1i VIA1bar ) 
+V2i = geom_or (  VIA2i VIA2bar ) 
+V3i = geom_or (  VIA3i VIA3bar ) 
+V4i = geom_or (  VIA4i VIA4bar ) 
+V5i = geom_or (  VIA5i VIA5bar ) 
+V6i = geom_or (  VIA6i VIA6bar ) 
+V7i = geom_or (  VIA7i VIA7bar ) 
+
+V1 = copy ( V1i ) 
+V2 = copy ( V2i ) 
+V3 = copy ( V3i ) 
+V4 = copy ( V4i ) 
+V5 = copy ( V5i ) 
+V6 = copy ( V6i ) 
+V7 = copy ( V7i ) 
+T2V1 = geom_or (  T2V1i T2V1bar ) 
+T2V2 = geom_or (  T2V2i T2V2bar ) 
+T4V1 = geom_or (  T4V1i T4V1bar ) 
+T4V2 = geom_or (  T4V2i T4V2bar ) 
+T8V1 = geom_or (  T8V1i T8V1bar ) 
+T8V2 = geom_or (  T8V2i T8V2bar ) 
+
+
+AA = copy ( ACTi ) 
+GT = copy ( POLYi ) 
+//GATE = geom_and ( GT AA )
+
+
+GATE = geom_interact (  geom_and (  GT AA ) SD_1 == 2  ) 
+SD_1 = geom_not (  AA GT ) 
+
+SD = geom_not (  geom_and (  geom_or (  NPi PPi ) AA ) GT ) 
+
+GATE18 = geom_and (  GATE DGOX ) 
+GATE1825 = geom_and (  GATE geom_or (  DGOX TGOX ) ) 
+
+incremental_connect (  yes  ) 
+}
+
+#//*******************************************
+#//    LAYER DERIVATIONS AND OPERATIONS
+#//*******************************************
+
+#//=================
+#//    GT Layer 
+#//=================
+
+connect GT GATE 
+connect GT GATE18 
+connect GT GATE1825 
+
+trs::rule ANT_GT_1 {
+trs::rule_comment Max. (Poly area / gate area) is 250
+
+ trs::outputlayer check_nar ( GT GATE > 250 
+ trs::outputlayer \[ AREA(GT) / AREA(GATE) \]
+ trs::outputlayer RESULT_DB ANT_GT2.rep GT GATE )
+}
+
+trs::rule ANT_GT_2 { 
+trs::rule_comment Max. (Poly perim*thickness / gate area) is 500
+
+ trs::outputlayer check_nar ( GT GATE > 500  \[ PERIMETER(GT) * 0.10 / AREA(GATE) \]  RESULT_DB ANT_GT1.rep GT GATE )
+}
+
+#//=================
+#//    CT Layer
+#//=================
+
+connect CT GT 
+
+trs::rule ANT_GT_3 { 
+trs::rule_comment Max. (contact area / gate area) is 10
+
+ trs::outputlayer check_nar ( CT GATE > 10   
+ trs::outputlayer \[ AREA(CT) / AREA(GATE) \] 
+ trs::outputlayer RESULT_DB ANT_GT3.rep CT GATE )
+}
+
+#//=================
+#//    M1 Layer 
+#//=================
+
+connect M1 GT SD by CT 
+
+# minimum effective diode >0 um2
+trs::setlayer M1_DIO = geom_net ( by_area SD > 0  ) 
+connect M1 M1_DIO by CT 
+
+trs::rule ANT_GT_5b_5c_M1 { 
+trs::rule_comment Max. (M1 area / gate area) is 5000 (without effective diode)
+trs::rule_comment Max. (M1 area / gate area) is Ratio Equation (with effective diode)
+  
+ trs::setlayer A1 = check_nar ( GT M1 M1_DIO GATE > 5000  incremental "\[ AREA(M1)/AREA(GATE) -(AREA(M1_DIO)*500 + !!AREA(M1_DIO)*39000) \]" 
+ trs::outputlayer RESULT_DB ANT_GT_5b_5c_M1.rep GT M1 M1_DIO GATE )
+ trs::outputlayer copy ( A1 ) 
+ trs::outputlayer print_log ( nar A1 M1.rpt ) 
+}
+
+trs::rule ANT_GT18_5a_M1 {
+trs::rule_comment Max. (M1 area / 1.8v gate area) is 1000 (without effective diode)
+trs::rule_comment Max. (M1 area / 1.8v gate area) is Ratio Equation (with effective diode)
+ 
+ trs::setlayer A1_18 = check_nar ( GT M1 M1_DIO GATE18 > 1000  incremental "\[ AREA(M1)/AREA(GATE18) -(AREA(M1_DIO)*500 + !!AREA(M1_DIO)*43000) \]" 
+ trs::outputlayer RESULT_DB ANT_GT18_5a_M1.rep GT M1 M1_DIO GATE18 )
+ trs::outputlayer copy ( A1_18 ) 
+ trs::outputlayer print_log ( nar A1_18 M1_18.rpt ) 
+}
+
+
+#//=================
+#//   V1 Layer
+#//=================
+
+connect V1 M1 
+
+trs::rule ANT_GT_4a_4b_V1 {
+trs::rule_comment (V1 area / gate area) > 20 (without effective diode)
+trs::rule_comment (V1 area / gate area) > Ratio Equation (with effective diode)
+trs::rule_comment single layer Via area to the active poly gate area, no accumulate
+
+ trs::setlayer AV1_no_accumulate = check_nar ( GT M1 V1 M1_DIO GATE > 20  "\[ AREA(V1)/AREA(GATE) -(AREA(M1_DIO)*200 + !!AREA(M1_DIO)*980) \]" 
+ trs::outputlayer RESULT_DB ANT_GT_4a_4b_V1_no_accumulate.rep GT M1 V1 M1_DIO GATE )
+ trs::outputlayer copy ( AV1_no_accumulate ) 
+}
+
+trs::rule ANT_GT_6a_6b_9_V1 {
+trs::rule_comment (V1 area / gate area) > 50 (without effective diode)
+trs::rule_comment (V1 area / gate area) > Ratio Equation (with effective diode)
+
+ trs::setlayer AV1 = check_nar ( GT M1 V1 M1_DIO GATE > 50  incremental "\[ AREA(V1)/AREA(GATE) -(AREA(M1_DIO)*200 + !!AREA(M1_DIO)*950) \]" 
+ trs::outputlayer RESULT_DB ANT_GT_6a_6b_9_V1.rep GT M1 V1 M1_DIO GATE )
+ trs::outputlayer copy ( AV1 ) 
+}
+
+#//=================
+#//    M2 Layer 
+#//=================
+
+ trs::setlayer AC1 = check_nar ( M1 GATE >= 0  incremental ) 
+ trs::setlayer AC1_18 = check_nar ( M1 GATE18 >= 0  incremental ) 
+ trs::setlayer AC1_V = check_nar ( V1 GATE >= 0  incremental ) 
+
+connect M2 M1 by V1 
+
+# minimum effective diode >0um2
+ trs::setlayer M2_DIO = geom_net ( by_area SD > 0  ) 
+connect M1 M2_DIO by CT 
+
+trs::rule ANT_GT_5b_5c_M2 { 
+trs::rule_comment Max. (M2 area / gate area) is 5000 (without effective diode)
+trs::rule_comment Max. (M2 area / gate area) is Ratio Equation (with effective diode)
+
+ trs::setlayer A2 = check_nar ( GT M1 M2 M2_DIO GATE > 5000  incremental AC1 "\[ AREA(M2)/AREA(GATE) -(AREA(M2_DIO)*500 + !!AREA(M2_DIO)*39000) \]" 
+ trs::outputlayer RESULT_DB ANT_GT_5b_5c_M2.rep GT M1 M2 M2_DIO GATE) 
+ trs::outputlayer copy ( A2 ) 
+ trs::outputlayer print_log ( nar A2 M2.rpt ) 
+}
+
+trs::rule ANT_GT18_5a_M2 {
+trs::rule_comment Max. (M2 area / 1.8v gate area) is 1000 (without effective diode)
+trs::rule_comment Max. (M2 area / 1.8v gate area) is Ratio Equation (with effective diode)
+
+ trs::setlayer A2_18 = check_nar ( GT M1 M2 M2_DIO GATE18 > 1000  incremental AC1_18 "\[ AREA(M2)/AREA(GATE18) -(AREA(M2_DIO)*500 + !!AREA(M2_DIO)*43000) \]" 
+ trs::outputlayer RESULT_DB ANT_GT18_5a_M2.rep GT M1 M2 M2_DIO GATE18 )
+ trs::outputlayer copy ( A2_18 ) 
+ trs::outputlayer print_log ( nar A2_18 M2_18.rpt ) 
+}
+
+if { $T == 1 } {
+
+set l [expr $M - 2]
+
+for { set i 2 } { $i <= $l } { incr i } {
+
+#//=================
+#//   V$i Layer
+#//=================
+
+connect M$i V$i 
+
+set v_list GT
+for { set j 1 } { $j <= $i } { incr j } {
+lappend v_list M$j
+}
+lappend v_list V$i
+lappend v_list M${i}_DIO
+
+trs::rule ANT_GT_4a_4b_V$i {
+trs::rule_comment (V$i area / gate area) > 20 (without effective diode)
+trs::rule_comment (V$i area / gate area) > Ratio Equation (with effective diode)
+trs::rule_comment single layer Via area to the active poly gate area, no accumulate
+
+ trs::setlayer "AV${i}_no_accumulate" = check_nar ( $v_list GATE > 20  "\[ AREA(V$i)/AREA(GATE) - (AREA(M${i}_DIO)*200 + !!AREA(M${i}_DIO)*980) \]" 
+ trs::outputlayer RESULT_DB ANT_GT_4a_4b_V${i}_no_accumulate.rep $v_list GATE )
+ trs::outputlayer copy ( "AV${i}_no_accumulate" ) 
+}
+
+trs::rule ANT_GT_6a_6b_9_V$i {
+trs::rule_comment (V$i area / gate area) > 50 (without effective diode)
+trs::rule_comment (V$i area / gate area) > Ratio Equation (with effective diode)
+
+ trs::setlayer AV$i = check_nar ( $v_list GATE > 50  incremental "AC[expr $i - 1]_V" "\[ AREA(V$i)/AREA(GATE) - (AREA(M${i}_DIO)*200 + !!AREA(M${i}_DIO)*950) \]" 
+ trs::outputlayer RESULT_DB ANT_GT_6a__6b_9_V$i.rep $v_list GATE )
+ trs::outputlayer copy ( AV$i ) 
+}
+
+#//========================
+#//    M[expr $i + 1] Layer 
+#//========================
+
+ trs::setlayer AC$i = check_nar ( M$i GATE >= 0  incremental "AC[expr $i - 1]" ) 
+ trs::setlayer "AC${i}_18" = check_nar ( M$i GATE18 >= 0  incremental "AC[expr $i - 1]_18" ) 
+ trs::setlayer "AC${i}_V" = check_nar ( V$i GATE >= 0  incremental "AC[expr $i - 1]_V" ) 
+
+connect "M[expr $i + 1]" M$i by V$i 
+
+ trs::setlayer "M[expr $i + 1]_DIO" = geom_net ( by_area SD > 0  ) 
+# minimum effective diode >0
+connect M1 "M[expr $i + 1]_DIO" by CT 
+
+set k [expr $i + 1]
+
+set m_list GT
+for { set j 1 } { $j <= $k } { incr j } {
+lappend m_list M$j
+}
+lappend m_list M[expr $i + 1]_DIO
+
+trs::rule ANT_GT_5b_5c_10_M[expr $i + 1 ] { 
+trs::rule_comment Max. (M[expr $i + 1 ] area / gate area) is 5000 (without effective diode)
+trs::rule_comment Max. (M[expr $i + 1 ] area / gate area) is Ratio Equation (with effective diode)
+
+ trs::SETLAYER A[expr $i + 1] = check_nar ($m_list GATE > 5000 INCREMENTAL AC$i \[ AREA(M[expr $i + 1])/AREA(GATE) - (AREA(M[expr $i + 1]_DIO)*500 + !!AREA(M[expr $i + 1]_DIO)*39000)\]
+ trs::outputlayer RESULT_DB ANT_GT_5b_5c_10_M[expr $i + 1].rep $m_list GATE )
+ trs::outputlayer copy ( "A[expr $i + 1]" ) 
+ trs::outputlayer print_log ( nar "A[expr $i + 1]" "M[expr $i + 1].rpt" ) 
+}
+
+trs::rule ANT_GT18_5a_M[expr $i + 1] {
+trs::rule_comment Max. (M[expr $i + 1] area / 1.8v gate area) is 1000 (without effective diode)
+trs::rule_comment Max. (M[expr $i + 1] area / 1.8v gate area) is Ratio Equation (with effective diode)
+
+trs::SETLAYER A[expr $i + 1]_18 = check_nar ($m_list  GATE18 > 1000 INCREMENTAL AC${i}_18  \[ AREA(M[expr $i + 1])/AREA(GATE18) -(AREA(M[expr $i + 1]_DIO)*500 + !!AREA(M[expr $i + 1]_DIO)*43000) \]
+ trs::outputlayer RESULT_DB ANT_GT18_5a_M[expr $i + 1].rep $m_list GATE18 )
+ trs::outputlayer copy ( "A[expr $i + 1]_18" ) 
+ trs::outputlayer print_log ( nar "A[expr $i + 1]_18" "M[expr $i + 1]_18.rpt" ) 
+}
+}
+
+#//=================
+#//   $TV_NAME Layer
+#//=================
+
+connect $TV_NAME M$i 
+
+set tv_list GT
+for { set j 1 } { $j <= $i } { incr j } {
+lappend tv_list M$j
+}
+lappend tv_list $TV_NAME
+lappend tv_list M${i}_DIO
+
+trs::rule ANT_GT_4a_4b_$TV_NAME {
+trs::rule_comment ($TV_NAME area / gate area) > 20 (without effective diode)
+trs::rule_comment ($TV_NAME area / gate area) > Ratio Equation (with effective diode)
+trs::rule_comment single layer Via area to the active poly gate area, no accumulate
+
+ trs::setlayer "AV${i}_no_accumulate" = check_nar ( $tv_list GATE > 20  "\[ AREA($TV_NAME)/AREA(GATE) -(AREA(M${i}_DIO)*200 + !!AREA(M${i}_DIO)*980)\]" 
+ trs::outputlayer RESULT_DB ANT_GT_4a_4b_${TV_NAME}_no_accumulate.rep $tv_list GATE )
+ trs::outputlayer copy ( "AV${i}_no_accumulate" ) 
+}
+
+trs::rule ANT_GT_6a_6b_9_$TV_NAME {
+trs::rule_comment ($TV_NAME area / gate area) > 50 (without effective diode)
+trs::rule_comment ($TV_NAME area / gate area) > Ratio Equation (with effective diode)
+
+ trs::setlayer AV$i = check_nar ( $tv_list GATE > 50  incremental "AC[expr $i - 1]_V" "\[ AREA($TV_NAME)/AREA(GATE) -(AREA(M${i}_DIO)*200 + !!AREA(M${i}_DIO)*950)\]" 
+ trs::outputlayer RESULT_DB ANT_GT_6a_6b_9_${TV_NAME}.rep $tv_list GATE )
+ trs::outputlayer copy ( AV$i ) 
+}
+
+#//=================
+#//   $TM_NAME Layer  
+#//=================
+
+ trs::setlayer AC$i = check_nar ( M$i GATE >= 0  incremental "AC[expr $i - 1]" ) 
+ trs::setlayer "AC${i}_18" = check_nar ( M$i GATE18 >= 0  incremental "AC[expr $i - 1]_18" ) 
+
+connect $TM_NAME M$i by $TV_NAME 
+
+trs::setlayer "${TM_NAME}_DIO" = geom_net ( by_area SD > 0  ) 
+#minimum effective diode >0um2
+connect M1 "${TM_NAME}_DIO" by CT 
+
+set tm_list GT
+for { set j 1 } { $j <= $i } { incr j } {
+lappend tm_list M$j
+}
+lappend tm_list $TM_NAME
+
+trs::rule ANT_GT_5b_5c_10_$TM_NAME { 
+trs::rule_comment Max. ($TM_NAME area / gate area) is 5000 (without effective diode)
+trs::rule_comment Max. ($TM_NAME area / gate area) is Ratio Equation (with effective diode)
+
+ trs::setlayer "A[expr $i + 1]" = check_nar ( $tm_list "${TM_NAME}_DIO" GATE > 5000  incremental AC$i "\[ AREA($TM_NAME)/AREA(GATE) - (AREA(${TM_NAME}_DIO)*9984 + !!AREA(${TM_NAME}_DIO)*50000)\]" 
+ trs::outputlayer RESULT_DB ANT_GT_5b_5c_10_${TM_NAME}.rep $tm_list ${TM_NAME}_DIO GATE )
+ trs::outputlayer copy ( "A[expr $i + 1]" ) 
+}
+
+trs::rule ANT_GT18_5a_$TM_NAME {
+trs::rule_comment Max. ($TM_NAME area / 1.8v gate area) is 1000 (without effective diode)
+trs::rule_comment Max. ($TM_NAME area / 1.8v gate area) is Ratio Equation (with effective diode)
+
+ trs::setlayer "A[expr $i + 1]_18" = check_nar ( $tm_list "${TM_NAME}_DIO" GATE18 > 1000  incremental "AC${i}_18" "\[ AREA($TM_NAME)/AREA(GATE18) - (AREA(${TM_NAME}_DIO)*9984 + !!AREA(${TM_NAME}_DIO)*19000)\]" 
+ trs::outputlayer RESULT_DB ANT_GT18_5a_${TM_NAME}.rep $tm_list ${TM_NAME}_DIO GATE18 )
+ trs::outputlayer copy ( "A[expr $i + 1]_18" ) 
+}
+
+#//=================
+#//    RDV Layer  
+#//=================
+
+connect RDV $TM_NAME 
+
+trs::rule ANT_GT_7a_11_RDV { 
+trs::rule_comment Max. (RDV area / 1.8V/2.5V gate area) is 20   (without effective diode)
+trs::rule_comment Max. (RDV area / 1.8V/2.5V gate area) is Ratio Equation (with effective diode)
+
+ trs::outputlayer check_nar ( $tm_list RDV "${TM_NAME}_DIO" GATE1825 > 20  
+ trs::outputlayer \[ AREA(RDV)/AREA(GATE1825) - (AREA(${TM_NAME}_DIO)*100 + !!AREA(${TM_NAME}_DIO)*380)\]
+ trs::outputlayer RESULT_DB ANT_GT7a_11_RDV.rep $tm_list RDV ${TM_NAME}_DIO GATE1825 )
+}
+
+trs::rule ANT_GT_7b_11_RDV { 
+trs::rule_comment Max. (RDV area /  gate area) is 200  (without effective diode)
+trs::rule_comment Max. (RDV area /  gate area) is Ratio Equation (with effective diode)
+
+ trs::outputlayer check_nar ( $tm_list RDV "${TM_NAME}_DIO" GATE > 200  
+ trs::outputlayer \[ AREA(RDV)/AREA(GATE) - (AREA(${TM_NAME}_DIO)*100 + !!AREA(${TM_NAME}_DIO)*200)\] 
+ trs::outputlayer RESULT_DB ANT_GT7b_11_RDV.rep $tm_list RDV ${TM_NAME}_DIO GATE )
+}
+
+#//=================
+#//    RDL Layer  
+#//=================
+
+connect RDL $TM_NAME by RDV 
+
+trs::setlayer RDL_DIO = geom_net ( by_area SD > 0  ) 
+# minimum effective diode >0um2
+
+trs::rule ANT_GT_8a_12_RDL { 
+trs::rule_comment Max. (RDL side-wall area / 1.8V/2.5V gate area) is 1000 (without effective diode)
+trs::rule_comment Max. (RDL side-wall area / 1.8V/2.5V gate area) is Ratio Equation (with effective diode)
+
+ trs::outputlayer check_nar ( $tm_list RDL RDL_DIO GATE1825 > 1000  
+ trs::outputlayer \[ PERIMETER(RDL)*$RDL_thickness/AREA(GATE1825) - (AREA(RDL_DIO)*8000 + !!AREA(RDL_DIO)*29000)\] 
+ trs::outputlayer RESULT_DB ANT_GT8a_12_RDL.rep $tm_list RDL RDL_DIO GATE1825 )
+}
+
+trs::rule ANT_GT_8b_12_RDL { 
+trs::rule_comment Max. (RDL side-wall area /  gate area) is 1000 (without effective diode)
+trs::rule_comment Max. (RDL side-wall area /  gate area) is Ratio Equation (with effective diode)
+
+ trs::outputlayer check_nar ( $tm_list RDL RDL_DIO GATE > 1000  
+ trs::outputlayer \[ PERIMETER(RDL)*$RDL_thickness/AREA(GATE) - (AREA(RDL_DIO)*8000 + !!AREA(RDL_DIO)*28000)\] 
+ trs::outputlayer RESULT_DB ANT_GT8b_12_RDL.rep $tm_list RDL RDL_DIO GATE )
+}
+}
+
+if { $T == 2 } {
+
+set l [expr $M - 3]
+
+for { set i 2 } { $i <= $l } { incr i } {
+
+#//=================
+#//   V$i Layer
+#//=================
+
+connect M$i V$i 
+
+set v_list GT
+for { set j 1 } { $j <= $i } { incr j } {
+lappend v_list M$j
+}
+lappend v_list V$i
+lappend v_list M${i}_DIO
+
+trs::rule ANT_GT_4a_4b_V$i {
+trs::rule_comment (V$i area / gate area) > 20 (without effective diode)
+trs::rule_comment (V$i area / gate area) > Ratio Equation (with effective diode)
+trs::rule_comment single layer Via area to the active poly gate area, no accumulate
+
+ trs::setlayer "AV${i}_no_accumulate" = check_nar ( $v_list GATE > 20  "\[ AREA(V$i)/AREA(GATE) - (AREA(M${i}_DIO)*200 + !!AREA(M${i}_DIO)*980) \]" 
+ trs::outputlayer RESULT_DB ANT_GT4a_4b_V${i}_no_accumulate.rep $v_list GATE )
+ trs::outputlayer copy ( "AV${i}_no_accumulate" ) 
+}
+
+trs::rule ANT_GT_6a_6b_9_V$i {
+trs::rule_comment (V$i area / gate area) > 50 (without effective diode)
+trs::rule_comment (V$i area / gate area) > Ratio Equation (with effective diode)
+
+ trs::setlayer AV$i = check_nar ( $v_list GATE > 50  incremental "AC[expr $i - 1]_V" "\[ AREA(V$i)/AREA(GATE) - (AREA(M${i}_DIO)*200 + !!AREA(M${i}_DIO)*950) \]" 
+ trs::outputlayer RESULT_DB ANT_GT6a_6b_9_V$i.rep $v_list GATE )
+ trs::outputlayer copy ( AV$i ) 
+}
+
+#//========================
+#//    M[expr $i + 1] Layer 
+#//========================
+
+ trs::setlayer AC$i = check_nar ( M$i GATE >= 0  incremental "AC[expr $i - 1]" ) 
+ trs::setlayer "AC${i}_18" = check_nar ( M$i GATE18 >= 0  incremental "AC[expr $i - 1]_18" ) 
+ trs::setlayer "AC${i}_V" = check_nar ( V$i GATE >= 0  incremental "AC[expr $i - 1]_V" ) 
+
+connect "M[expr $i + 1]" M$i by V$i 
+
+ trs::setlayer "M[expr $i + 1]_DIO" = geom_net ( by_area SD > 0  ) 
+# minimum effective diode >0um2
+connect M1 "M[expr $i + 1]_DIO" by CT 
+
+set k [expr $i + 1]
+
+set m_list GT
+for { set j 1 } { $j <= $k } { incr j } {
+lappend m_list M$j
+}
+lappend m_list M[expr $i + 1]_DIO
+
+trs::rule ANT_GT_5b_5c_M[expr $i + 1 ] { 
+trs::rule_comment Max. (M[expr $i + 1 ] area / gate area) is 5000 (without effective diode)
+trs::rule_comment Max. (M[expr $i + 1 ] area / gate area) is Ratio Equation (with effective diode)
+
+trs::SETLAYER A[expr $i + 1] = check_nar ($m_list GATE > 5000 INCREMENTAL AC$i  \[ AREA(M[expr $i + 1])/AREA(GATE) - (AREA(M[expr $i + 1]_DIO)*500 + !!AREA(M[expr $i + 1]_DIO)*39000)\]
+ trs::outputlayer RESULT_DB ANT_GT5b_5c_M[expr $i + 1].rep $m_list GATE )
+ trs::outputlayer copy ( "A[expr $i + 1]" ) 
+ trs::outputlayer print_log ( nar "A[expr $i + 1]" "M[expr $i + 1].rpt" ) 
+}
+
+trs::rule ANT_GT18_5a_M[expr $i + 1] {
+trs::rule_comment Max. (M[expr $i + 1] area / 1.8v gate area) is 1000 (without effective diode)
+trs::rule_comment Max. (M[expr $i + 1] area / 1.8v gate area) is Ratio Equation (with effective diode)
+
+trs::SETLAYER A[expr $i + 1]_18 = check_nar ($m_list  GATE18 > 1000 INCREMENTAL AC${i}_18  \[ AREA(M[expr $i + 1])/AREA(GATE18) -(AREA(M[expr $i + 1]_DIO)*500 + !!AREA(M[expr $i + 1]_DIO)*43000) \]
+ trs::outputlayer RESULT_DB ANT_GT18_5a_M[expr $i + 1].rep $m_list GATE18 )
+ trs::outputlayer copy ( "A[expr $i + 1]_18" ) 
+ trs::outputlayer print_log ( nar "A[expr $i + 1]_18" "M[expr $i + 1]_18.rpt" ) 
+}
+}
+
+#//=================
+#// $TV_1_NAME Layer
+#//=================
+
+connect $TV_1_NAME M$i 
+
+set tv_list GT
+for { set j 1 } { $j <= $i } { incr j } {
+lappend tv_list M$j
+}
+lappend tv_list $TV_1_NAME
+lappend tv_list M${i}_DIO
+
+trs::rule ANT_GT_4a_4b_$TV_1_NAME {
+trs::rule_comment ($TV_1_NAME area / gate area) > 20 (without effective diode)
+trs::rule_comment ($TV_1_NAME area / gate area) > Ratio Equation (with effective diode)
+trs::rule_comment single layer Via area to the active poly gate area, no accumulate
+
+ trs::setlayer "AV${i}_no_accumulate" = check_nar ( $tv_list GATE > 20  "\[ AREA($TV_1_NAME)/AREA(GATE) -(AREA(M${i}_DIO)*200 + !!AREA(M${i}_DIO)*980)\]" 
+ trs::outputlayer RESULT_DB ANT_GT4a_4b_${TV_1_NAME}_no_accumulate.rep $tv_list GATE )
+ trs::outputlayer copy ( "AV${i}_no_accumulate" ) 
+}
+
+trs::rule ANT_GT_6a_6b_9_$TV_1_NAME {
+trs::rule_comment ($TV_1_NAME area / gate area) > 50 (without effective diode)
+trs::rule_comment ($TV_1_NAME area / gate area) > Ratio Equation (with effective diode)
+
+ trs::setlayer AV$i = check_nar ( $tv_list GATE > 50  incremental "AC[expr $i - 1]_V" "\[ AREA($TV_1_NAME)/AREA(GATE) -(AREA(M${i}_DIO)*200 + !!AREA(M${i}_DIO)*950)\]" 
+ trs::outputlayer RESULT_DB ANT_GT6a_6b_9_${TV_1_NAME}.rep $tv_list GATE )
+ trs::outputlayer copy ( AV$i ) 
+}
+
+#//=================
+#// $TM_1_NAME Layer
+#//=================
+
+ trs::setlayer AC$i = check_nar ( M$i GATE >= 0  incremental "AC[expr $i - 1]" ) 
+ trs::setlayer "AC${i}_18" = check_nar ( M$i GATE18 >= 0  incremental "AC[expr $i - 1]_18" ) 
+ trs::setlayer "AC${i}_V" = check_nar ( $TV_1_NAME GATE >= 0  incremental "AC[expr $i - 1]_V" ) 
+
+connect $TM_1_NAME M$i by $TV_1_NAME 
+
+set tm_list GT
+for { set j 1 } { $j <= $i } { incr j } {
+lappend tm_list M$j
+}
+lappend tm_list $TM_1_NAME
+lappend tm_list ${TM_1_NAME}_DIO
+
+ trs::setlayer "${TM_1_NAME}_DIO" = geom_net ( by_area SD > 0  ) 
+#minimum effective diode >0um2
+connect M1 "${TM_1_NAME}_DIO" by CT 
+
+
+trs::rule ANT_GT_5b_5c__$TM_1_NAME {
+trs::rule_comment Max. ($TM_1_NAME area / gate area) is 5000 (without effective diode)
+trs::rule_comment Max. ($TM_1_NAME area / gate area) is Ratio Equation (with effective diode)
+
+ trs::setlayer "A[expr $i + 1]" = check_nar ( $tm_list GATE > 5000  incremental AC$i "\[ AREA($TM_1_NAME)/AREA(GATE) - (AREA(${TM_1_NAME}_DIO)*9984 + !!AREA(${TM_1_NAME}_DIO)*50000)\]" 
+ trs::outputlayer RESULT_DB ANT_GT_5b_5c_10_${TM_1_NAME}.rep $tm_list GATE )
+ trs::outputlayer copy ( "A[expr $i + 1]" ) 
+}
+
+trs::rule ANT_GT18_5a_$TM_1_NAME {
+trs::rule_comment Max. ($TM_1_NAME area / 1.8v gate area) is 1000 (without effective diode)
+trs::rule_comment Max. ($TM_1_NAME area / 1.8v gate area) is Ratio Equation (with effective diode)
+
+ trs::setlayer "A[expr $i + 1]_18" = check_nar ( $tm_list GATE18 > 1000  incremental "AC${i}_18" "\[ AREA($TM_1_NAME)/AREA(GATE18) - (AREA(${TM_1_NAME}_DIO)*9984 + !!AREA(${TM_1_NAME}_DIO)*19000)\]" 
+ trs::outputlayer RESULT_DB ANT_GT18_5a_${TM_1_NAME}.rep $tm_list GATE18 )
+ trs::outputlayer copy ( "A[expr $i + 1]_18" ) 
+}
+
+
+#//=================
+#// $TV_NAME Layer
+#//=================
+
+connect $TV_NAME $TM_1_NAME 
+
+set tv2_list GT
+for { set j 1 } { $j <= $i } { incr j } {
+lappend tv2_list M$j
+}
+lappend tv2_list $TM_1_NAME
+lappend tv2_list $TV_NAME
+lappend tv2_list ${TM_1_NAME}_DIO
+
+trs::rule ANT_GT_4a_4b_$TV_NAME {
+trs::rule_comment ($TV_NAME area / gate area) > 20 (without effective diode)
+trs::rule_comment ($TV_NAME area / gate area) > Ratio Equation (with effective diode)
+trs::rule_comment single layer Via area to the active poly gate area, no accumulate
+
+ trs::setlayer "AV[expr $i + 1]_no_accumulate" = check_nar ( $tv2_list GATE > 20  "\[ AREA($TV_NAME)/AREA(GATE) -(AREA(${TM_1_NAME}_DIO)*200 + !!AREA(${TM_1_NAME}_DIO)*980)\]" 
+ trs::outputlayer RESULT_DB ANT_GT4a_4b_${TV_NAME}_no_accumulate.rep $tv2_list GATE )
+ trs::outputlayer copy ( "AV[expr $i + 1]_no_accumulate" ) 
+}
+
+trs::rule ANT_GT_6a_6b_9_$TV_NAME {
+trs::rule_comment ($TV_NAME area / gate area) > 50 (without effective diode)
+trs::rule_comment ($TV_NAME area / gate area) > Ratio Equation (with effective diode)
+
+ trs::setlayer "AV[expr $i + 1]" = check_nar ( $tv2_list GATE > 50  incremental "AC${i}_V" "\[ AREA($TV_NAME)/AREA(GATE) -(AREA(${TM_1_NAME}_DIO)*200 + !!AREA(${TM_1_NAME}_DIO)*950)\]" 
+ trs::outputlayer RESULT_DB ANT_GT6a_6b_9_${TV_NAME}.rep $tv2_list GATE )
+ trs::outputlayer copy ( "AV[expr $i + 1]" ) 
+}
+
+#//=================
+#//    $TM_NAME Layer  
+#//=================
+
+ trs::setlayer "AC[expr $i + 1]" = check_nar ( $TM_1_NAME GATE >= 0  incremental AC$i ) 
+ trs::setlayer "AC[expr $i + 1]_18" = check_nar ( $TM_1_NAME GATE18 >= 0  incremental "AC${i}_18" ) 
+
+connect $TM_NAME $TM_1_NAME by $TV_NAME 
+
+ trs::setlayer "${TM_NAME}_DIO" = geom_net ( by_area SD > 0  ) 
+#minimum effective diode >0um2
+connect M1 "${TM_NAME}_DIO" by CT 
+
+set tm2_list GT
+for { set j 1 } { $j <= $i } { incr j } {
+lappend tm2_list M$j
+}
+lappend tm2_list $TM_1_NAME
+lappend tm2_list $TM_NAME
+
+trs::rule ANT_GT_5b_5c_9_$TM_NAME { 
+trs::rule_comment Max. ($TM_NAME area / gate area) is 5000 (without effective diode)
+trs::rule_comment Max. ($TM_NAME area / gate area) is Ratio Equation (with effective diode)
+
+ trs::setlayer "A[expr $i + 2]" = check_nar ( $tm2_list "${TM_NAME}_DIO" GATE > 5000  incremental "AC[expr $i + 1]" "\[ AREA($TM_NAME)/AREA(GATE) - (AREA(${TM_NAME}_DIO)*9984 + !!AREA(${TM_NAME}_DIO)*50000)\]" 
+ trs::outputlayer RESULT_DB ANT_GT5b_5c_9_${TM_NAME}.rep $tm2_list ${TM_NAME}_DIO GATE )
+ trs::outputlayer copy ( "A[expr $i + 2]" ) 
+}
+
+trs::rule ANT_GT18_5a_$TM_NAME {
+trs::rule_comment Max. (${TM_NAME} area / 1.8v gate area) is 1000 (without effective diode)
+trs::rule_comment Max. (${TM_NAME} area / 1.8v gate area) is Ratio Equation (with effective diode)
+
+ trs::setlayer "A[expr $i + 2]_18" = check_nar ( $tm2_list "${TM_NAME}_DIO" GATE18 > 1000  incremental "AC[expr $i + 1]_18" "\[ AREA($TM_NAME)/AREA(GATE18) - (AREA(${TM_NAME}_DIO)*9984 + !!AREA(${TM_NAME}_DIO)*19000)\]" 
+ trs::outputlayer RESULT_DB ANT_GT18_5a_${TM_NAME}.rep $tm2_list ${TM_NAME}_DIO GATE18 )
+ trs::outputlayer copy ( "A[expr $i + 2]_18" ) 
+}
+
+#//=================
+#//   RDV Layer  
+#//=================
+
+connect RDV $TM_NAME 
+
+trs::rule ANT_GT_7a_11_RDV { 
+trs::rule_comment Max. (RDV area / 1.8V/2.5V gate area) is 20   (without effective diode)
+trs::rule_comment Max. (RDV area / 1.8V/2.5V gate area) is Ratio Equation (with effective diode)
+
+ trs::outputlayer check_nar ( $tm2_list RDV "${TM_NAME}_DIO" GATE1825 > 20  
+ trs::outputlayer \[ AREA(RDV)/AREA(GATE1825) - (AREA(${TM_NAME}_DIO)*100 + !!AREA(${TM_NAME}_DIO)*380)\] 
+ trs::outputlayer RESULT_DB ANT_GT7a_11_RDV.rep $tm2_list RDV ${TM_NAME}_DIO GATE1825 )
+}
+
+trs::rule ANT_GT_7b_11_RDV { 
+trs::rule_comment Max. (RDV area /  gate area) is 200  (without effective diode)
+trs::rule_comment Max. (RDV area /  gate area) is Ratio Equation (with effective diode)
+
+ trs::outputlayer check_nar ( $tm2_list RDV "${TM_NAME}_DIO" GATE > 200  
+ trs::outputlayer \[ AREA(RDV)/AREA(GATE) - (AREA(${TM_NAME}_DIO)*100 + !!AREA(${TM_NAME}_DIO)*200)\] 
+ trs::outputlayer RESULT_DB ANT_GT7b_11_RDV.rep $tm2_list RDV ${TM_NAME}_DIO GATE )
+}
+
+#//=================
+#//    RDL Layer  
+#//=================
+
+connect RDL $TM_NAME by RDV 
+
+trs::setlayer RDL_DIO = geom_net ( by_area SD > 0  ) 
+# minimum effective diode >0um2
+
+trs::rule ANT_GT_8a_12_RDL { 
+trs::rule_comment Max. (RDL side-wall area / 1.8V/2.5V gate area) is 1000 (without effective diode)
+trs::rule_comment Max. (RDL side-wafl area / 1.8V/2.5V gate area) is Ratio Equation (with effective diode)
+
+ trs::outputlayer check_nar ( $tm2_list RDL RDL_DIO GATE1825 > 1000  
+ trs::outputlayer \[ PERIMETER(RDL)*$RDL_thickness/AREA(GATE1825) - (AREA(RDL_DIO)*8000 + !!AREA(RDL_DIO)*29000)\] 
+ trs::outputlayer RESULT_DB ANT_GT8a_12_RDL.rep $tm2_list RDL RDL_DIO GATE1825 )
+}
+
+trs::rule ANT_GT_8b_12_RDL { 
+trs::rule_comment Max. (RDL side-wall area /  gate area) is 1000 (without effective diode)
+trs::rule_comment Max. (RDL side-wall area /  gate area) is Ratio Equation (with effective diode)
+
+ trs::outputlayer check_nar ( $tm2_list RDL RDL_DIO GATE > 1000  
+ trs::outputlayer \[ PERIMETER(RDL)*$RDL_thickness/AREA(GATE) - (AREA(RDL_DIO)*8000 + !!AREA(RDL_DIO)*28000)\] 
+ trs::outputlayer RESULT_DB ANT_GT8b_12_RDL.rep $tm2_list RDL RDL_DIO GATE )
+}
+}

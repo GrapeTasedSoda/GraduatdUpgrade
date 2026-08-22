@@ -1,0 +1,229 @@
+conductor_layers
+ npoly	                NPOLY
+ ppoly	                PPOLY
+ ncore_svt_gate	        NPOLY
+ ncore_hvt_gate	        NPOLY
+ ncore_lvt_gate	        NPOLY
+ ncore_nt_gate	        NPOLY
+ 
+ nio1_gate	            NPOLY
+ nio1_nt_gate	        NPOLY
+ nio1_od_gate	        NPOLY
+ nio1_od_nt_gate	    NPOLY
+ nio2_gate	            NPOLY
+ nio2_nt_gate	        NPOLY
+ nio2_od_gate	        NPOLY
+ nio2_od_nt_gate	    NPOLY
+ 
+ ngpoly	                NPOLY
+ nwvarcore_var	        NPOLY	
+ nwvario1_var	        NPOLY	
+ nwvario2_var	        NPOLY	
+ 
+ pcore_svt_gate	        PPOLY
+ pcore_hvt_gate	        PPOLY
+ pcore_lvt_gate	        PPOLY
+ 
+ pio1_gate	            PPOLY
+ pio1_od_gate	        PPOLY
+ pio2_gate	            PPOLY
+ pio2_od_gate	        PPOLY
+ pgpoly	                PPOLY
+
+ rndif_2T               NDIFF	SHEETR=0  
+ rpdif_2T               PDIFF	SHEETR=0  
+ rndif_3T               NDIFF	SHEETR=0
+ rpdif_3T               PDIFF	SHEETR=0  
+ rndifsab_2T_seed       NDIFF	SHEETR=0
+ rpdifsab_2T_seed       PDIFF 	SHEETR=0 
+ rndifsab_3T_seed       NDIFF	SHEETR=0
+ rpdifsab_3T_seed       PDIFF	SHEETR=0 
+ rnwaa_2T               NDIFF	SHEETR=0
+ rnwsti_2T              SUBSTRATE   precedence = 1
+ rnwaa_3T               NDIFF	SHEETR=0
+ rnwsti_3T              SUBSTRATE   precedence = 1
+ rnpo_2T 	            NPOLY	SHEETR=0
+ rppo_2T 	            PPOLY	SHEETR=0
+ rnposab_2T 	        NPOLY	SHEETR=0
+ rpposab_2T 	        PPOLY	SHEETR=0
+ rhrpo_2T  	            NPOLY	SHEETR=0
+ rnpo_3T_nw 	        NPOLY	SHEETR=0
+ rnpo_3T_pw 	        NPOLY	SHEETR=0
+ rppo_3T_nw 	        PPOLY	SHEETR=0
+ rppo_3T_pw 	        PPOLY	SHEETR=0
+ rnposab_3T_nw 	        NPOLY	SHEETR=0
+ rnposab_3T_pw 	        NPOLY	SHEETR=0
+ rpposab_3T_nw 	        PPOLY	SHEETR=0
+ rpposab_3T_pw 	        PPOLY	SHEETR=0
+ rhrpo_3T_nw  	        NPOLY	SHEETR=0	
+ rhrpo_3T_pw  	        NPOLY	SHEETR=0
+
+ rm1	    M1	   SHEETR=0
+ rm2	    M2	   SHEETR=0
+ rm3	    M3 	   SHEETR=0   
+ rm4	    M4 	   SHEETR=0
+ rm5	    M5 	   SHEETR=0
+ rm6	    M6 	   SHEETR=0
+ rm1_3t	    M1 	   SHEETR=0
+ rm2_3t	    M2 	   SHEETR=0
+ rm3_3t	    M3 	   SHEETR=0
+ rm4_3t	    M4 	   SHEETR=0
+ rm5_3t	    M5 	   SHEETR=0
+ rm6_3t	    M6 	   SHEETR=0
+ rtm1       TM     SHEETR=0
+ rtm1_3t    TM     SHEETR=0
+ rrdl       RDL	   SHEETR=0
+ rrdl_3t    RDL	   SHEETR=0
+
+ nSD	    NDIFF SHEETR=0
+ pSD	    PDIFF SHEETR=0
+ nTap	    NDIFF 
+ pTap	    PDIFF 
+
+ ndiocore_svt_diode	    NDIFF	SHEETR=0
+ pdiocore_svt_diode     PDIFF	SHEETR=0
+ ndiocore_hvt_diode	    NDIFF	SHEETR=0	
+ pdiocore_hvt_diode     PDIFF	SHEETR=0
+ ndiocore_ull_diode     NDIFF   SHEETR=0
+ pdiocore_ull_diode     PDIFF   SHEETR=0
+ ndiocore_lvt_diode	    NDIFF	SHEETR=0	
+ pdiocore_lvt_diode     PDIFF	SHEETR=0
+ ndioio1_diode	        NDIFF	SHEETR=0
+ pdioio1_diode          PDIFF	SHEETR=0
+ ndioio2_diode	        NDIFF	SHEETR=0
+ pdioio2_diode          PDIFF	SHEETR=0
+ ndiocore_nt_diode	    NDIFF	SHEETR=0
+ ndioio1_nt_diode	    NDIFF	SHEETR=0
+ ndioio2_nt_diode	    NDIFF	SHEETR=0
+ nwdio_diode	        NDIFF	
+ dnwdio_diode	        NDIFF	
+ bpwdio_diode           PDIFF	
+ nwdio_diode_io1	    NDIFF	
+ nwdio_diode_io2	    NDIFF	
+ ndiodnw12_diode            NDIFF	SHEETR=0
+
+ core_npnEmit	        NDIFF	SHEETR=0
+ core_pnpEmit           PDIFF	SHEETR=0
+ io1_npnEmit	        NDIFF	SHEETR=0
+ io1_pnpEmit            PDIFF	SHEETR=0
+ io2_npnEmit	        NDIFF	SHEETR=0
+ io2_pnpEmit            PDIFF	SHEETR=0
+ pnp_col   SUBSTRATE    precedence = 3 
+
+ mom_terminal12	        M1	
+ mom_terminal13	        M1	
+ mom_terminal14	        M1	
+ mom_terminal15	        M1	
+ mom_terminal16         M1 	
+ mom_terminal23	        M2	
+ mom_terminal24	        M2	
+ mom_terminal25	        M2	
+ mom_terminal26	        M2	
+ mom_terminal34	        M3	
+ mom_terminal35	        M3	
+ mom_terminal36	        M3	
+ mom_terminal45	        M4	
+ mom_terminal46	        M4	
+ mom_terminal56	        M5	
+ 
+ M1s	M1
+ M2s	M2
+ M3s	M3
+ M4s	M4
+ M5s	M5
+ M6s	M6
+ M7s	TM
+ APs	RDL
+
+ DNW	   SUBSTRATE	precedence = 2 
+ nWell	   SUBSTRATE	precedence = 3 
+ pWell	   SUBSTRATE	precedence = 3
+ pWellSub  SUBSTRATE	precedence = 1 
+ bpWell	   SUBSTRATE	precedence = 3 
+ 
+
+via_layers
+ npoCT	CT_NP
+ ppoCT	CT_PP
+ ndfCT	CT_ND
+ pdfCT	CT_PD
+ nTap_dnw_subcon	NSUBCONT
+ nTap_nWell_subcon	NSUBCONT
+ pTap_pWell_subcon	PSUBCONT	
+ pTap_bpWell_subcon	PSUBCONT
+ VA1	V1
+ VA2	V2
+ VA3	V3
+ VA4	V4
+ VA5	V5
+ VA6	TV
+ PAS	RV
+
+marker_layers
+
+delete_layers 
+all_sd
+gate_all_check
+mom_nw
+mom_pw
+bulk_all
+
+skip_cap_layers
+
+rndif_3T    SUBSTRATE
+rpdif_3T    SUBSTRATE
+rndifsab_3T_seed   SUBSTRATE
+rpdifsab_3T_seed   SUBSTRATE
+rnpo_3T_nw  SUBSTRATE
+rnpo_3T_pw  SUBSTRATE
+rppo_3T_nw  SUBSTRATE
+rppo_3T_pw  SUBSTRATE
+rnposab_3T_nw  SUBSTRATE
+rnposab_3T_pw  SUBSTRATE
+rpposab_3T_nw  SUBSTRATE
+rpposab_3T_pw  SUBSTRATE
+rhrpo_3T_nw  SUBSTRATE
+rhrpo_3T_pw  SUBSTRATE
+
+rm1_3t  SUBSTRATE
+rm2_3t  SUBSTRATE
+rm3_3t  SUBSTRATE
+rm4_3t  SUBSTRATE
+rm5_3t  SUBSTRATE
+rm6_3t  SUBSTRATE
+rtm1_3t SUBSTRATE
+rrdl_3t SUBSTRATE
+
+ndiocore_svt_diode  SUBSTRATE
+ndiocore_hvt_diode  SUBSTRATE
+ndiocore_lvt_diode  SUBSTRATE
+ndioio1_diode  SUBSTRATE
+ndioio2_diode  SUBSTRATE
+ndiocore_nt_diode  SUBSTRATE
+ndioio1_nt_diode  SUBSTRATE
+ndioio2_nt_diode  SUBSTRATE
+ndiodnw12_diode   SUBSTRATE
+pdiocore_svt_diode  SUBSTRATE
+pdiocore_hvt_diode  SUBSTRATE
+pdiocore_lvt_diode  SUBSTRATE
+pdioio1_diode  SUBSTRATE
+pdioio2_diode  SUBSTRATE
+
+nwvario2_var  SUBSTRATE
+nwvario1_var  SUBSTRATE
+nwvarcore_var  SUBSTRATE
+nTap          SUBSTRATE
+pTap          SUBSTRATE
+
+nTap pTap 
+core_npnEmit pTap
+io1_npnEmit pTap
+io2_npnEmit pTap
+
+core_pnpEmit nTap
+io1_pnpEmit nTap
+io2_pnpEmit nTap  
+
+nwvarcore_var nTap
+nwvario1_var nTap
+nwvario2_var nTap              
