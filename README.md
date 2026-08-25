@@ -106,10 +106,16 @@ flowchart LR
 
 ### 物理验证（IC Validator LVS）状态
 
-- 规则与结果：[out/lvs](out/lvs)（`ics55_lvs.rs` + `invx.gds`/`invx.cdl` 单单元验证）
-- **当前状态：单元级 LVS 已验证 PASS**（`Final comparison result: PASS`，
-  2/2 器件、4/4 网络、4/4 端口全部匹配；NMOS W=210nm/L=60nm、PMOS W=295nm/L=60nm 与 CDL 一致）。
-- 运行方式、规则要点（`text_net()` 挂接标签、S/D 几何拆分）与整芯片 LVS 的下一步见 [out/lvs/README.md](out/lvs/README.md)。
+- 单元级验证：[out/lvs](out/lvs)（`ics55_lvs.rs` + `invx.gds`/`invx.cdl`，PASS）
+- **整芯片验证：[out/lvs/chip](out/lvs/chip)（`mac16_merged.gds` vs `mac16_lvs.cdl`，PASS）**
+  - 35155/35155 器件匹配（NMOS 17567 + PMOS 17588），网络/端口全部匹配
+  - 流程：`merge_gds.py` 合并 GDS（APR 0.1nm/DB + PDK 单元 ×10）→
+    `gen_schematic.py` 展平网表（含时钟门控 + CDL）→ `ics55_chip_lvs.rs` 抽取比较
+- 本次验证发现并修复了两个真实问题：
+  1. FC 流程缺电源网格/单元轨连接（VDD/VSS 开路）——已给 [fc_apr.tcl](script/fc_apr.tcl)
+     增加 `create_pg_mesh_pattern` + `create_pg_std_cell_conn_pattern` 后重跑，电源成网；
+  2. 综合网表中未使用的 DFF Q 引脚悬空——原理图生成改为保留悬空节点（不接 VSS）。
+- 详细说明见 [out/lvs/chip/README.md](out/lvs/chip/README.md)。
 
 ## 六、流程复现
 

@@ -4,21 +4,21 @@ Report : qor
         -summary
 Design : mac16
 Version: V-2023.12
-Date   : Tue Aug 18 14:58:22 2026
+Date   : Tue Aug 25 07:44:13 2026
 ****************************************
 
 Timing
 ---------------------------------------------------------------------------
 Context                                 WNS            TNS            NVE
 ---------------------------------------------------------------------------
-Design             (Setup)            -0.01          -0.04             12
+Design             (Setup)            -0.02          -0.07              9
 
-Design             (Hold)             -0.00          -0.00              1
+Design             (Hold)              0.01           0.00              0
 ---------------------------------------------------------------------------
 
 Miscellaneous
 ---------------------------------------------------------------------------
-Cell Area (netlist):                          11171.16
-Cell Area (netlist and physical only):        11171.16
-Nets with DRC Violations:        1
+Cell Area (netlist):                          11166.84
+Cell Area (netlist and physical only):        11166.84
+Nets with DRC Violations:        0
 1

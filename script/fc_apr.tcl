@@ -88,7 +88,20 @@ create_pg_ring_pattern pg_ring \
     -corner_bridge true
 set_pg_strategy pg_ring_strategy -core \
     -pattern {{name: pg_ring} {nets: {VDD VSS VDD VSS}} {offset: {0 0}}}
-compile_pg -strategies pg_ring_strategy
+# 内部电源网格：M3 竖条 + T4M2 横条（pitch 24um，宽 1.2um，覆盖整个 core）
+create_pg_mesh_pattern pg_mesh \
+    -layers { \
+        {{vertical_layer: MET3}{width: 1.2}{spacing: interleaving}{pitch: 24}{offset: 12}} \
+        {{horizontal_layer: T4M2}{width: 1.2}{spacing: interleaving}{pitch: 24}{offset: 12}} \
+    }
+set_pg_strategy pg_mesh_strategy -core \
+    -pattern {{name: pg_mesh} {nets: {VDD VSS}} {offset: {0 0}}}
+# 标准单元连接：把网格/环通过 M2 通道连到单元 M1 电源轨（上一版缺失此步导致 VDD/VSS 开路）
+create_pg_std_cell_conn_pattern pg_std_conn -layers { {MET1} }
+set_pg_strategy pg_std_conn_strategy -core \
+    -pattern {{name: pg_std_conn} {nets: {VDD VSS}} {offset: {0 0}}} \
+    -extension { {stop: 10} {layers: MET2} }
+compile_pg -strategies {pg_ring_strategy pg_mesh_strategy pg_std_conn_strategy}
 
 # ---- 7) 布局 / 时钟树 / 布线 ----
 puts "== place_opt =="
@@ -115,6 +128,7 @@ if {[catch {write_gds -layer_map $GDS_MAP -layer_map_format icc2 \
                             $OUTDIR/mac16_apr.gds} e2]} {
     puts "WARN: GDS 写出失败 -> $e2"
 }
+save_lib
 
 puts "==== FC 布局布线流程结束（route_opt 已完成）===="
 exit

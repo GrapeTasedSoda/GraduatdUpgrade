@@ -1,0 +1,123 @@
+
+                                 IC Validator 
+
+          Version V-2023.12-SP5 for linux64 - Jul 19, 2024 cl#10488941
+
+                    Copyright (c) 1996 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Time Started: 2026-08-25 07:46:43
+Running on: localhost 4.18.0-553.134.1.el8_10.x86_64
+
+-------------
+
+Called as: icv ics55_chip_lvs.rs -i mac16_merged.gds -s mac16_lvs.cdl -sf SPICE
+
+-------------
+
+Command Line Summary:
+icv
+-i mac16_merged.gds
+-s mac16_lvs.cdl
+-sf SPICE
+ics55_chip_lvs.rs
+
+-------------
+unable to set sst options: No such file or directory
+Parsing runset "ics55_chip_lvs.rs"
+
+Cannot load input library file due to GDSII file is truncated. Could not read record header. File offset 3135594.
+ics55_chip_lvs.rs:199: warning: ICV LVS device settings currently use append mode. Use command line option '-D ICV_REVERT_DEVICE_SETTING_APPEND_MODE' or runset instruction '#define ICV_REVERT_DEVICE_SETTING_APPEND_MODE' to revert LVS device setting back to overwrite mode in this release.
+ics55_chip_lvs.rs:199: warning: No equiv pair is provided. This can lead to non-optimal LVS performance.
+warning: There were 2 evaluation warnings
+Runset Processing Time=0:00:01 User=1.37 Sys=0.08 Mem=0.358 GB
+
+Parsing finished
+Host startup begins.
+Host startup done: 2 successes, 0 failures.
+	localhost: 2 total cores, maximum 2 commands in parallel.
+Selecting "localhost" as Primary host
+
+System Startup Time=0.0144558 User=0.00680513
+
+Command execution begins.  Details recorded in the summary file and log db: 
+	"/home/user/mac16_chip_lvs/run_details/mac16.sum"
+	"/home/user/mac16_chip_lvs/run_details/dp.eventdb"
+
+Running ...
+  [0:00:00][0%]   Added 2 CPUs on host localhost (Total: 2 CPUs on 1 hosts)
+  [0:00:00][1%]   Rules: 0/1, Rules with Violations: 0, Total Violations: 0
+  [0:00:00][2%]   
+  [0:00:00][3%]   
+  [0:00:00][4%]   
+  [0:00:00][5%]   
+  [0:00:00][10%]  
+  [0:00:00][15%]  
+  [0:00:00][20%]  
+  [0:00:00][25%]  
+  [0:00:00][30%]  
+  [0:00:00][35%]  
+  [0:00:00][40%]  
+  [0:00:00][45%]  
+  [0:00:00][50%]  
+  [0:00:00][55%]  
+  [0:00:00][60%]  
+  [0:00:01][65%]  
+  [0:00:01][70%]  
+  [0:00:01][75%]  Rules: 1/1, Rules with Violations: 0, Total Violations: 0
+  [0:00:01][80%]  
+  [0:00:01][85%]  
+  [0:00:01][90%]  
+ compare() at ics55_chip_lvs.rs:199
+Comparing schematic and layout netlists.
+LVS compare start time    : 2026-08-25 07:46:47
+  ICV_Compare [0:00:00][0%]
+  ICV_Compare [0:00:00][5%]
+  ICV_Compare [0:00:00][10%]
+  ICV_Compare [0:00:00][15%]
+  ICV_Compare [0:00:00][20%]
+  ICV_Compare [0:00:00][25%]
+  ICV_Compare [0:00:00][30%]
+  ICV_Compare [0:00:00][100%]
+LVS compare end time      : 2026-08-25 07:46:47
+Total runtime for LVS compare Time=0:00:00  User=0.08 Sys=0.03 Mem=0.037 GB
+   Check Time=0:00:00  User=0.00 Sys=0.00 Mem=0.014 GB
+
+
+  [0:00:01][100%] Rules: 1/1, Rules with Violations: 0, Total Violations: 0
+Engine Runtime=1.48516 User=0.0922061
+Error storage stats...
+  User=0.00 Sys=0.00 Mem=0.000 GB
+
+Generating mac16.LAYOUT_ERRORS...
+  Generation Time=0:00:00  User=0.00 Sys=0.00 Mem=0.001 GB
+
+Overall engine Time=0:00:04 Highest command Mem=0.043 GB
+
+-------------
+
+IC Validator Machine Memory Report
+localhost : Average = 0.385 GB, Peak = 0.385 GB
+
+Overall Disk Usage Disk=0.068 GB
+Group File Disk Usage Peak=0.002 GB
+
+Overall Manager Mem=0.358 GB
+
+
+Time Ended: 2026-08-25 07:46:47
+
+IC Validator is done.
