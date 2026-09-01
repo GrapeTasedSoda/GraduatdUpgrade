@@ -1,0 +1,751 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 20
+        -report_by design
+Design : mac16
+Version: V-2023.12
+Date   : Tue Sep  1 09:52:59 2026
+****************************************
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_s41_reg[15] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_39107_31/ECK (FREEICGX0P8H9R)             0.29      0.63 f
+  u_mac16_top/u_mac/u_mul/r_s41_reg[15]/R (SDFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_s41_reg[15]/CK (SDFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.09      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.36
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_c40_reg[9] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_39107_31/ECK (FREEICGX0P8H9R)             0.29      0.63 f
+  u_mac16_top/u_mac/u_mul/r_c40_reg[9]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_c40_reg[9]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.09      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.36
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_s41_reg[21] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_39107_31/ECK (FREEICGX0P8H9R)             0.29      0.63 f
+  u_mac16_top/u_mac/u_mul/r_s41_reg[21]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_s41_reg[21]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.09      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.36
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_c40_reg[8] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_39107_31/ECK (FREEICGX0P8H9R)             0.29      0.63 f
+  u_mac16_top/u_mac/u_mul/r_c40_reg[8]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_c40_reg[8]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.09      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.36
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_c41_reg[23] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_39107_31/ECK (FREEICGX0P8H9R)             0.29      0.63 f
+  u_mac16_top/u_mac/u_mul/r_c41_reg[23]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_c41_reg[23]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.09      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.36
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_c41_reg[19] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_34608_28/ECK (FREEICGX0P8H9R)             0.29      0.62 f
+  u_mac16_top/u_mac/u_mul/r_c41_reg[19]/R (SDFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_c41_reg[19]/CK (SDFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.09      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.37
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_c41_reg[16] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_34608_28/ECK (FREEICGX0P8H9R)             0.29      0.62 f
+  u_mac16_top/u_mac/u_mul/r_c41_reg[16]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_c41_reg[16]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.09      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.37
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_c40_reg[12] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_34608_28/ECK (FREEICGX0P8H9R)             0.29      0.62 f
+  u_mac16_top/u_mac/u_mul/r_c40_reg[12]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_c40_reg[12]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.09      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.37
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_c40_reg[18] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_34608_28/ECK (FREEICGX0P8H9R)             0.29      0.62 f
+  u_mac16_top/u_mac/u_mul/r_c40_reg[18]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_c40_reg[18]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.08      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.37
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_c40_reg[17] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_34608_28/ECK (FREEICGX0P8H9R)             0.29      0.62 f
+  u_mac16_top/u_mac/u_mul/r_c40_reg[17]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_c40_reg[17]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.08      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.37
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_c40_reg[16] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_34608_28/ECK (FREEICGX0P8H9R)             0.29      0.62 f
+  u_mac16_top/u_mac/u_mul/r_c40_reg[16]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_c40_reg[16]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.08      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.37
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_s40_reg[9] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_39107_31/ECK (FREEICGX0P8H9R)             0.29      0.63 f
+  u_mac16_top/u_mac/u_mul/r_s40_reg[9]/R (DFFRPQX1H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_s40_reg[9]/CK (DFFRPQX1H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.08      1.00
+  data required time                                         1.00
+  ------------------------------------------------------------------------
+  data required time                                         1.00
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.37
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_c40_reg[14] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_34608_28/ECK (FREEICGX0P8H9R)             0.29      0.62 f
+  u_mac16_top/u_mac/u_mul/r_c40_reg[14]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_c40_reg[14]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.08      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.37
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_c40_reg[20] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_34608_28/ECK (FREEICGX0P8H9R)             0.29      0.62 f
+  u_mac16_top/u_mac/u_mul/r_c40_reg[20]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_c40_reg[20]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.08      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.37
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_c40_reg[15] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_34608_28/ECK (FREEICGX0P8H9R)             0.29      0.62 f
+  u_mac16_top/u_mac/u_mul/r_c40_reg[15]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_c40_reg[15]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.08      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.37
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_s40_reg[13] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_34608_28/ECK (FREEICGX0P8H9R)             0.29      0.62 f
+  u_mac16_top/u_mac/u_mul/r_s40_reg[13]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_s40_reg[13]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.08      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.37
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_c40_reg[6] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_34608_28/ECK (FREEICGX0P8H9R)             0.29      0.62 f
+  u_mac16_top/u_mac/u_mul/r_c40_reg[6]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_c40_reg[6]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.09      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.37
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_c40_reg[7] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_34608_28/ECK (FREEICGX0P8H9R)             0.29      0.62 f
+  u_mac16_top/u_mac/u_mul/r_c40_reg[7]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_c40_reg[7]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.08      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.37
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_c40_reg[11] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_34608_28/ECK (FREEICGX0P8H9R)             0.29      0.62 f
+  u_mac16_top/u_mac/u_mul/r_c40_reg[11]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_c40_reg[11]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.08      0.99
+  data required time                                         0.99
+  ------------------------------------------------------------------------
+  data required time                                         0.99
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.37
+
+
+
+  Startpoint: u_mac16_top/mode_reg_reg (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_s31_reg[20] (recovery check against rising-edge clock clocked by core_clk)
+  Mode: default
+  Corner: ff_rcbest_1p32_m40
+  Scenario: scen_rcb
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock core_clk (rise edge)                       0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)      0.00      0.00 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)       0.10      0.10 f
+  U1445/Y (XOR2X0P5H9R)                            0.04      0.14 f
+  U1500/Y (NOR2X1P4H9R)                            0.07      0.21 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                   0.13      0.34 f
+  HFSBUF_39107_31/ECK (FREEICGX0P8H9R)             0.29      0.63 f
+  u_mac16_top/u_mac/u_mul/r_s31_reg[20]/R (DFFRPQX0P5H9R)
+                                                   0.00      0.63 f
+  data arrival time                                          0.63
+
+  clock core_clk (rise edge)                       1.00      1.00
+  clock network delay (propagated)                 0.08      1.08
+  u_mac16_top/u_mac/u_mul/r_s31_reg[20]/CK (DFFRPQX0P5H9R)
+                                                   0.00      1.08 r
+  library setup time                              -0.09      1.00
+  data required time                                         1.00
+  ------------------------------------------------------------------------
+  data required time                                         1.00
+  data arrival time                                         -0.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.37
+
+
+1

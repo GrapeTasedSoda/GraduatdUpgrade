@@ -19,6 +19,7 @@ run_details/
 # FC 布局布线：NDM/CLIBs 可由 fc_apr.tcl 自动重建，不入库
 out/apr/ndm/
 out/apr/CLIBs/
+CLIBs/
 *.ems
 fc_command.log
 icc2_command.log

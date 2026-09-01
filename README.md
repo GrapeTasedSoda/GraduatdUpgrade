@@ -117,6 +117,13 @@ flowchart LR
   2. 综合网表中未使用的 DFF Q 引脚悬空——原理图生成改为保留悬空节点（不接 VSS）。
 - 详细说明见 [out/lvs/chip/README.md](out/lvs/chip/README.md)。
 
+### 三 PVT corner SPEF 与多角时序
+
+- **3 个 corner 的 SPEF 已生成**：[out/apr](out/apr)（`mac16_apr.spef.ics55_{typ,rcworst,rcbest}*.spef`），
+  由 PDK RCE ETF 转 ITF → StarRC 生成 TLU+ → FC 多角提取。
+- 1GHz 时序：TYP **MET(+0.06)**、FF/RCbest **MET(+0.36)**、**SS/RCworst/1.08V/125°C 违例(-0.76ns)**。
+- 流程与结果详见 [out/apr/3corner_spef_README.md](out/apr/3corner_spef_README.md)。
+
 ## 六、流程复现
 
 ```bash

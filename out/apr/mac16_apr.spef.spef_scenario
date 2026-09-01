@@ -1,3 +1,10 @@
 /home/user/MAC16_work/out/apr/mac16_apr.spef.ics55_typ.tlup_25.spef for scenarios: 
 	 scenario: default, corner type: late/early
+	 scenario: scen_typ, corner type: late/early
+
+/home/user/MAC16_work/out/apr/mac16_apr.spef.ics55_rcworst.tlup_125.spef for scenarios: 
+	 scenario: scen_rcw, corner type: late/early
+
+/home/user/MAC16_work/out/apr/mac16_apr.spef.ics55_rcbest.tlup_-40.spef for scenarios: 
+	 scenario: scen_rcb, corner type: late/early
 

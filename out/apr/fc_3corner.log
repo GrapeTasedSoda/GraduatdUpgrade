@@ -1,0 +1,225 @@
+
+
+
+                              Fusion Compiler (TM)
+
+                  Version V-2023.12 for linux64 - Nov 23, 2023
+  This release has significant feature enhancements. Please review the Release
+                       Notes associated with this release.
+
+                    Copyright (c) 1988 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+# MAC16 三 PVT corner SPEF 提取脚本 - Fusion Compiler V-2023.12
+# 在已保存的 P&R 设计上建立 3 个 corner(TYP/SS-RCworst/FF-RCbest),
+# 各自绑定 TLU+ 与工艺库, 提取寄生并写出 3 个 SPEF。
+# 运行: cd script && fc_shell -64 -batch -f fc_3corner_spef.tcl
+set PROJ_ROOT [file normalize [file dirname [info script]]/..]
+/home/user/MAC16_work
+set PDK_ROOT  "$PROJ_ROOT/lib/PDK/Common/ics55_LLSC_H9CR_0917"
+/home/user/MAC16_work/lib/PDK/Common/ics55_LLSC_H9CR_0917
+set OUTDIR    "$PROJ_ROOT/out/apr"
+/home/user/MAC16_work/out/apr
+set NDM_LIB   "$OUTDIR/ndm/mac16_ndm"
+/home/user/MAC16_work/out/apr/ndm/mac16_ndm
+# 3 个 corner 的 TLU+ (由 PDK RCE ETF 转 ITF 后用 grdgenxo 生成)
+set TLU_TYP "$OUTDIR/tech/ics55_typ.tlup"
+/home/user/MAC16_work/out/apr/tech/ics55_typ.tlup
+set TLU_RCW "$OUTDIR/tech/ics55_rcworst.tlup"
+/home/user/MAC16_work/out/apr/tech/ics55_rcworst.tlup
+set TLU_RCB "$OUTDIR/tech/ics55_rcbest.tlup"
+/home/user/MAC16_work/out/apr/tech/ics55_rcbest.tlup
+# 3 个 corner 的时序库
+set LIB_TYP "$PDK_ROOT/liberty/db/ics55_LLSC_H9CR_typ_tt_1p2_25_nldm.db"
+/home/user/MAC16_work/lib/PDK/Common/ics55_LLSC_H9CR_0917/liberty/db/ics55_LLSC_H9CR_typ_tt_1p2_25_nldm.db
+set LIB_RCW "$PDK_ROOT/liberty/db/ics55_LLSC_H9CR_ss_rcworst_1p08_125_nldm.db"
+/home/user/MAC16_work/lib/PDK/Common/ics55_LLSC_H9CR_0917/liberty/db/ics55_LLSC_H9CR_ss_rcworst_1p08_125_nldm.db
+set LIB_RCB "$PDK_ROOT/liberty/db/ics55_LLSC_H9CR_ff_rcbest_1p32_m40_nldm.db"
+/home/user/MAC16_work/lib/PDK/Common/ics55_LLSC_H9CR_0917/liberty/db/ics55_LLSC_H9CR_ff_rcbest_1p32_m40_nldm.db
+set_app_var link_library [list $LIB_TYP $LIB_RCW $LIB_RCB]
+/home/user/MAC16_work/lib/PDK/Common/ics55_LLSC_H9CR_0917/liberty/db/ics55_LLSC_H9CR_typ_tt_1p2_25_nldm.db /home/user/MAC16_work/lib/PDK/Common/ics55_LLSC_H9CR_0917/liberty/db/ics55_LLSC_H9CR_ss_rcworst_1p08_125_nldm.db /home/user/MAC16_work/lib/PDK/Common/ics55_LLSC_H9CR_0917/liberty/db/ics55_LLSC_H9CR_ff_rcbest_1p32_m40_nldm.db
+open_lib $NDM_LIB
+Information: Loading library file '/home/user/MAC16_work/out/apr/ndm/mac16_ndm' (FILE-007)
+Information: Loading library file '/home/user/MAC16_work/script/CLIBs/ics55_LLSC_H9CR.ndm' (FILE-007)
+Information: Loading library file '/home/user/MAC16_work/script/CLIBs/ics55_LLSC_H9CR_physical_only.ndm' (FILE-007)
+Information: Auto created reference libraries are up-to-date, no need to rebuild. (LIB-084)
+{mac16_ndm}
+open_block mac16.design
+Information: User units loaded from library 'ics55_LLSC_H9CR_typ_tt_1p2_25' (LNK-040)
+Opening block 'mac16_ndm:mac16.design' in edit mode
+{mac16_ndm:mac16.design}
+# 幂等: 清掉已有同名 corner / scenario
+set existing [get_corners {typ_tt_1p2_25 ss_rcworst_1p08_125 ff_rcbest_1p32_m40}]
+Using libraries: mac16_ndm ics55_LLSC_H9CR_typ_tt_1p2_25 ics55_LLSC_H9CR_physical_only
+Visiting block mac16_ndm:mac16.design
+Design 'mac16' was successfully linked.
+{typ_tt_1p2_25 ss_rcworst_1p08_125 ff_rcbest_1p32_m40}
+if {[sizeof_collection $existing] > 0} { remove_corners $existing }
+3
+set exsc [get_scenarios {scen_typ scen_rcw scen_rcb}]
+Warning: No scenario objects matched 'scen_typ' (SEL-004)
+Warning: No scenario objects matched 'scen_rcw' (SEL-004)
+Warning: No scenario objects matched 'scen_rcb' (SEL-004)
+if {[sizeof_collection $exsc] > 0} { remove_scenarios $exsc }
+# corner 1: TYP 1.2V 25C (参考)
+create_corner typ_tt_1p2_25
+1
+set_operating_conditions -library ics55_LLSC_H9CR_typ_tt_1p2_25 ETSCA_N55_H9BR_tt_mos_TYP_1.2_25
+1
+read_parasitic_tech -tlup $TLU_TYP
+NEX(WARNING): parasitic_tech file: /home/user/MAC16_work/out/apr/tech/ics55_typ.tlup already read in, mandatory 1-to-1 map between tluplus file and paraTech
+1
+set_parasitic_parameters -early_spec ics55_typ.tlup -early_temperature 25 \
+                         -late_spec ics55_typ.tlup -late_temperature 25
+1
+# corner 2: SS 1.08V 125C / RCworst (setup 最差)
+create_corner ss_rcworst_1p08_125
+1
+set_operating_conditions -library ics55_LLSC_H9CR_ss_rcworst_1p08_125 ETSCA_N55_H9BR_ss_mos_RCworst_1.08_125
+1
+read_parasitic_tech -tlup $TLU_RCW
+NEX(WARNING): parasitic_tech file: /home/user/MAC16_work/out/apr/tech/ics55_rcworst.tlup already read in, mandatory 1-to-1 map between tluplus file and paraTech
+1
+set_parasitic_parameters -early_spec ics55_rcworst.tlup -early_temperature 125 \
+                         -late_spec ics55_rcworst.tlup -late_temperature 125
+1
+# corner 3: FF 1.32V -40C / RCbest (hold 最差)
+create_corner ff_rcbest_1p32_m40
+1
+set_operating_conditions -library ics55_LLSC_H9CR_ff_rcbest_1p32_m40 ETSCA_N55_H9BR_ff_mos_RCbest_1.32_-40
+1
+read_parasitic_tech -tlup $TLU_RCB
+NEX(WARNING): parasitic_tech file: /home/user/MAC16_work/out/apr/tech/ics55_rcbest.tlup already read in, mandatory 1-to-1 map between tluplus file and paraTech
+1
+set_parasitic_parameters -early_spec ics55_rcbest.tlup -early_temperature -40 \
+                         -late_spec ics55_rcbest.tlup -late_temperature -40
+1
+# scenario: 每个 corner 一个, 激活 setup/hold 分析
+create_scenario -mode default -corner typ_tt_1p2_25 -name scen_typ
+Created scenario scen_typ for mode default and corner typ_tt_1p2_25
+All analysis types are activated.
+{scen_typ}
+create_scenario -mode default -corner ss_rcworst_1p08_125 -name scen_rcw
+Created scenario scen_rcw for mode default and corner ss_rcworst_1p08_125
+All analysis types are activated.
+{scen_rcw}
+create_scenario -mode default -corner ff_rcbest_1p32_m40 -name scen_rcb
+Created scenario scen_rcb for mode default and corner ff_rcbest_1p32_m40
+All analysis types are activated.
+{scen_rcb}
+set_scenario_status {scen_typ scen_rcw scen_rcb} -active true -setup true -hold true
+Scenario scen_typ (mode default corner typ_tt_1p2_25) is active for setup/hold/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
+Scenario scen_rcw (mode default corner ss_rcworst_1p08_125) is active for setup/hold/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
+Scenario scen_rcb (mode default corner ff_rcbest_1p32_m40) is active for setup/hold/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
+1
+# 提取并写出所有 corner 的 SPEF
+update_timing -full
+Information: Starting 'update_timing' (FLW-8000)
+Information: Time: 2026-09-01 09:52:57 / Session:  00:00:07 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 1801 MB (FLW-8100)
+Information: Timer using 1 threads
+Warning: Technology layer 'RDL' setting 'routing-direction' is not valid (NEX-001)
+Information: Corner ff_rcbest_1p32_m40: no PVT mismatches. (PVT-032)
+Information: Corner ss_rcworst_1p08_125: no PVT mismatches. (PVT-032)
+Information: Corner typ_tt_1p2_25: no PVT mismatches. (PVT-032)
+Information: Corner default: no PVT mismatches. (PVT-032)
+Information: The stitching and editing of coupling caps is turned OFF for design 'mac16_ndm:mac16.design'. (TIM-125)
+Information: Design mac16 has 2599 nets, 0 global routed, 2595 detail routed. (NEX-024)
+Warning: Technology layer 'RDL' setting 'routing-direction' is not valid (NEX-001)
+Warning: Missing layer mapping for VIA. Please check layer mapping file. (NEX-045)
+Information: The RC mode used is DR for design 'mac16'. (NEX-022)
+---extraction options---
+Corner: default
+ late_cap_scale                : 1
+ late_res_scale                : 1
+ early_cap_scale               : 1
+ early_res_scale               : 1
+Corner: typ_tt_1p2_25
+ late_cap_scale                : 1
+ late_res_scale                : 1
+ early_cap_scale               : 1
+ early_res_scale               : 1
+Corner: ss_rcworst_1p08_125
+ late_cap_scale                : 1
+ late_res_scale                : 1
+ early_cap_scale               : 1
+ early_res_scale               : 1
+Corner: ff_rcbest_1p32_m40
+ late_cap_scale                : 1
+ late_res_scale                : 1
+ early_cap_scale               : 1
+ early_res_scale               : 1
+Global options:
+ reference_direction       : use_from_tluplus
+ real_metalfill_extraction : none
+ virtual_shield_extraction : true
+---app options---
+ host.max_cores                   : 1
+ extract.connect_open           : true
+ extract.enable_coupling_cap    : false
+Extracting design: mac16 
+Information: coupling capacitance is lumped to ground. (NEX-030)
+Information: 2595 nets are successfully extracted. (NEX-028)
+Information: Design Average RC for design mac16  (NEX-011)
+Information: r = 1.505810 ohm/um, via_r = 0.000000 ohm/cut, c = 0.134752 ff/um, cc = 0.000000 ff/um (X dir) (NEX-017)
+Information: r = 1.359559 ohm/um, via_r = 0.000000 ohm/cut, c = 0.150287 ff/um, cc = 0.000000 ff/um (Y dir) (NEX-017)
+Warning: Advanced receiver model has not been enabled for detailed routed design. (TIM-204)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 2597, routed nets = 2595, across physical hierarchy nets = 0, parasitics cached nets = 2597, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+LLE:                                       disabled
+ML Acceleration:                           off
+************************************************************
+Information: Ending   'update_timing' (FLW-8001)
+Information: Time: 2026-09-01 09:52:58 / Session:  00:00:08 / Command:  00:00:01 / CPU:  00:00:01 / Memory: 1801 MB (FLW-8100)
+1
+write_parasitics -format spef -output $OUTDIR/mac16_apr.spef
+Information: Design mac16 has 2599 nets, 0 global routed, 2595 detail routed. (NEX-024)
+Warning: Technology layer 'RDL' setting 'routing-direction' is not valid (NEX-001)
+NEX: extract design mac16
+Information: batch extract takes 0.00 seconds, elapse 0.00 seconds (NEX-015)
+Information: The stitching and editing of coupling caps is turned OFF for design 'mac16_ndm:mac16.design'. (TIM-125)
+Warning: Technology layer 'RDL' setting 'routing-direction' is not valid (NEX-001)
+NEX: write corner ID 0 parasitics to /home/user/MAC16_work/out/apr/mac16_apr.spef.ics55_typ.tlup_25.spef 
+spefName /home/user/MAC16_work/out/apr/mac16_apr.spef.ics55_typ.tlup_25.spef, corner name default 
+NEX: write corner ID 1 parasitics to /home/user/MAC16_work/out/apr/mac16_apr.spef.ics55_rcworst.tlup_125.spef 
+spefName /home/user/MAC16_work/out/apr/mac16_apr.spef.ics55_rcworst.tlup_125.spef, corner name ss_rcworst_1p08_125 
+NEX: write corner ID 2 parasitics to /home/user/MAC16_work/out/apr/mac16_apr.spef.ics55_rcbest.tlup_-40.spef 
+spefName /home/user/MAC16_work/out/apr/mac16_apr.spef.ics55_rcbest.tlup_-40.spef, corner name ff_rcbest_1p32_m40 
+NEX: write_parasitics command finished
+# 每个 corner 的时序快照
+foreach c {typ_tt_1p2_25 ss_rcworst_1p08_125 ff_rcbest_1p32_m40} {
+    report_timing -delay_type max -max_paths 20 -corners $c > $OUTDIR/timing_setup_${c}.rpt
+    report_timing -delay_type min -max_paths 20 -corners $c > $OUTDIR/timing_hold_${c}.rpt
+}
+save_lib
+Saving library 'mac16_ndm'
+1
+puts "==== 3-corner SPEF 提取完成 ===="
+==== 3-corner SPEF 提取完成 ====
+exit
+Maximum memory usage for this session: 1801.12 MB
+Maximum memory usage for this session including child processes: 1801.12 MB
+CPU usage for this session:      6 seconds (  0.00 hours)
+Elapsed time for this session:      8 seconds (  0.00 hours)
+Thank you for using Fusion Compiler.
