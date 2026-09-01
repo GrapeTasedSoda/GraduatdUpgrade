@@ -1,0 +1,2217 @@
+****************************************
+Report : constraint
+	-all_violators
+	-path slack_only
+Design : mac16
+Version: V-2023.12-SP5-1
+Date   : Tue Sep  1 10:08:17 2026
+****************************************
+
+
+   max_delay/setup ('clock_gating_default' group)
+
+   Endpoint                                                  Slack
+   -----------------------------------------------------------------
+   u_mac16_top/clk_gate_opA_fifo_reg[0]/main_gate/A         -0.112  (VIOLATED)
+   u_mac16_top/clk_gate_opB_reg_reg/main_gate/A             -0.109  (VIOLATED)
+   u_mac16_top/clk_gate_opA_fifo_reg[3]/main_gate/A         -0.108  (VIOLATED)
+   u_mac16_top/u_out/clk_gate_bits_left_reg/main_gate/A     -0.104  (VIOLATED)
+   u_mac16_top/clk_gate_result_fifo_reg[3]/main_gate/A      -0.103  (VIOLATED)
+   u_mac16_top/clk_gate_opA_fifo_reg[2]/main_gate/A         -0.100  (VIOLATED)
+   u_mac16_top/clk_gate_mac_result_shadow_reg/main_gate/A   -0.100  (VIOLATED)
+   u_mac16_top/clk_gate_result_fifo_reg[0]/main_gate/A      -0.099  (VIOLATED)
+   u_mac16_top/clk_gate_result_fifo_reg[1]/main_gate/A      -0.099  (VIOLATED)
+   u_mac16_top/clk_gate_op_fifo_rd_ptr_reg/main_gate/A      -0.096  (VIOLATED)
+   u_mac16_top/clk_gate_result_fifo_reg[2]/main_gate/A      -0.093  (VIOLATED)
+   u_mac16_top/clk_gate_opA_fifo_reg[1]/main_gate/A         -0.092  (VIOLATED)
+   u_mac16_top/clk_gate_fifo_count_reg/main_gate/A          -0.059  (VIOLATED)
+   u_mac16_top/clk_gate_op_fifo_count_reg/main_gate/A       -0.058  (VIOLATED)
+
+   max_delay/setup ('core_clk' group)
+
+   Endpoint                                                  Slack
+   -----------------------------------------------------------------
+   u_mac16_top/u_mac/accum_reg_reg[21]/D                    -0.887  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[21]/D                      -0.887  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[19]/D                    -0.862  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[19]/D                      -0.862  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[22]/D                    -0.857  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[22]/D                      -0.857  (VIOLATED)
+   u_mac16_top/u_mac/carry_reg/D                            -0.830  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[18]/D                    -0.829  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[18]/D                      -0.829  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[23]/D                    -0.824  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[23]/D                      -0.824  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[13]/D                    -0.822  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[13]/D                      -0.822  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[12]/D                  -0.812  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[15]/D                    -0.806  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[15]/D                      -0.806  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[11]/D                    -0.806  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[11]/D                      -0.806  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[2]/D                   -0.805  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[17]/D                    -0.805  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[17]/D                      -0.805  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[7]/D                   -0.799  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[14]/D                  -0.797  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[20]/D                    -0.795  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[20]/D                      -0.795  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[14]/D                    -0.790  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[14]/D                      -0.790  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[6]/D                   -0.790  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[12]/D                    -0.782  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[12]/D                      -0.782  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[17]/D                  -0.777  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[21]/D                  -0.776  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[8]/D                   -0.768  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[1]/D                   -0.767  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[3]/D                   -0.762  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[23]/D                  -0.761  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[16]/D                  -0.760  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[10]/D                  -0.759  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[20]/D                  -0.757  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[0]/D                   -0.755  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[11]/D                  -0.752  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[19]/D                  -0.750  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[15]/D                  -0.750  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[10]/D                    -0.745  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[10]/D                      -0.745  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[5]/D                   -0.745  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[9]/D                   -0.741  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[9]/D                     -0.740  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[9]/D                       -0.740  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[22]/D                  -0.739  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[4]/D                   -0.738  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[18]/D                  -0.733  (VIOLATED)
+   u_mac16_top/opB_reg_reg[15]/D                            -0.723  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[13]/D                  -0.721  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[21]/D                  -0.718  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[16]/D                    -0.713  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[16]/D                      -0.713  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[4]/D                   -0.681  (VIOLATED)
+   u_mac16_top/opB_reg_reg[13]/D                            -0.677  (VIOLATED)
+   u_mac16_top/opB_reg_reg[14]/D                            -0.661  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[20]/D                  -0.656  (VIOLATED)
+   u_mac16_top/opB_reg_reg[1]/D                             -0.653  (VIOLATED)
+   u_mac16_top/opB_reg_reg[12]/D                            -0.650  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[17]/D                  -0.637  (VIOLATED)
+   u_mac16_top/opB_reg_reg[5]/D                             -0.636  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[15]/D                  -0.635  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[11]/D                  -0.635  (VIOLATED)
+   u_mac16_top/opB_reg_reg[7]/D                             -0.634  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[18]/D                  -0.632  (VIOLATED)
+   u_mac16_top/opB_reg_reg[10]/D                            -0.622  (VIOLATED)
+   u_mac16_top/opB_reg_reg[11]/D                            -0.621  (VIOLATED)
+   u_mac16_top/opB_reg_reg[4]/D                             -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[13]/D                  -0.616  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[13]/D                  -0.616  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[7]/D                   -0.611  (VIOLATED)
+   u_mac16_top/opB_reg_reg[9]/D                             -0.609  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[10]/D                  -0.609  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[15]/D                  -0.609  (VIOLATED)
+   u_mac16_top/opA_reg_reg[0]/D                             -0.608  (VIOLATED)
+   u_mac16_top/opB_reg_reg[3]/D                             -0.607  (VIOLATED)
+   u_mac16_top/opB_reg_reg[0]/D                             -0.603  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[16]/D                  -0.603  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[12]/D                  -0.602  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[11]/D                  -0.601  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[13]/D                  -0.600  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[12]/D                  -0.598  (VIOLATED)
+   u_mac16_top/opB_reg_reg[8]/D                             -0.597  (VIOLATED)
+   u_mac16_top/opB_reg_reg[6]/D                             -0.596  (VIOLATED)
+   u_mac16_top/opA_reg_reg[4]/D                             -0.595  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[14]/D                  -0.594  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[8]/D                     -0.593  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[8]/D                       -0.593  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[14]/D                  -0.592  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[15]/D                  -0.587  (VIOLATED)
+   u_mac16_top/opB_reg_reg[2]/D                             -0.582  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[21]/D                  -0.582  (VIOLATED)
+   u_mac16_top/opA_reg_reg[2]/D                             -0.581  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[9]/D                   -0.578  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[22]/D                  -0.578  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[5]/D                     -0.577  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[5]/D                       -0.577  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[7]/D                   -0.574  (VIOLATED)
+   u_mac16_top/opA_reg_reg[7]/D                             -0.573  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[20]/D                  -0.571  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[5]/D                   -0.571  (VIOLATED)
+   u_mac16_top/opA_reg_reg[15]/D                            -0.571  (VIOLATED)
+   u_mac16_top/opA_reg_reg[11]/D                            -0.570  (VIOLATED)
+   u_mac16_top/opA_reg_reg[1]/D                             -0.566  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[16]/D                  -0.566  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[6]/D                   -0.566  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[16]/D                  -0.565  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[19]/D                  -0.564  (VIOLATED)
+   u_mac16_top/opA_reg_reg[6]/D                             -0.563  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[11]/D                  -0.561  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[16]/D                  -0.560  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[8]/D                   -0.559  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[19]/D                  -0.558  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[5]/D                   -0.557  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[10]/D                  -0.556  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[21]/D                  -0.555  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[17]/D                  -0.554  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[18]/D                  -0.551  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[22]/D                  -0.550  (VIOLATED)
+   u_mac16_top/opA_reg_reg[14]/D                            -0.549  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[6]/D                   -0.549  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[20]/D                  -0.549  (VIOLATED)
+   u_mac16_top/opA_reg_reg[3]/D                             -0.544  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[14]/D                  -0.543  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[3]/D                   -0.543  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[15]/D                  -0.540  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[17]/D                  -0.540  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[8]/D                   -0.540  (VIOLATED)
+   u_mac16_top/opA_reg_reg[5]/D                             -0.538  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[12]/D                  -0.537  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[22]/D                  -0.536  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[7]/D                     -0.532  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[7]/D                       -0.532  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[22]/D                  -0.531  (VIOLATED)
+   u_mac16_top/opA_reg_reg[13]/D                            -0.529  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[18]/D                  -0.527  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[19]/D                  -0.526  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[8]/D                   -0.526  (VIOLATED)
+   u_mac16_top/opA_reg_reg[8]/D                             -0.523  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[14]/D                  -0.522  (VIOLATED)
+   u_mac16_top/opA_reg_reg[12]/D                            -0.518  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[6]/D                     -0.518  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[6]/D                       -0.518  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[23]/D                  -0.517  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[9]/D                   -0.510  (VIOLATED)
+   u_mac16_top/opA_reg_reg[9]/D                             -0.509  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[23]/D                  -0.504  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[14]/D                  -0.502  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[11]/D                  -0.502  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[21]/D                  -0.500  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[23]/D            -0.499  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[17]/D                  -0.497  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[17]/D                  -0.497  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[19]/D                  -0.496  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[20]/D                  -0.495  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[12]/D                  -0.491  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[12]/D                  -0.487  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[18]/D                  -0.487  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[22]/D                  -0.487  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[16]/D                  -0.484  (VIOLATED)
+   u_mac16_top/opA_reg_reg[10]/D                            -0.484  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[15]/D                  -0.483  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[22]/D            -0.483  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[17]/D                  -0.479  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[2]/D                   -0.478  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[16]/D            -0.478  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[13]/D                  -0.476  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[13]/D                  -0.475  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[6]/D                   -0.474  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[18]/D                  -0.473  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[13]/D            -0.472  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[15]/D                  -0.472  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[21]/D            -0.470  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[14]/D            -0.470  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[10]/D                  -0.469  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[7]/D                   -0.469  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[20]/D            -0.468  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[21]/D                  -0.465  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[19]/D                  -0.464  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[18]/D            -0.462  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[16]/D                  -0.461  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[15]/D                  -0.460  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[4]/D                   -0.454  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[20]/D                  -0.454  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[17]/D            -0.452  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[21]/D                  -0.452  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[19]/D            -0.451  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[8]/D                   -0.446  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[16]/D                  -0.445  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[18]/D                  -0.445  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[22]/D                  -0.444  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[11]/D                  -0.444  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[18]/D                  -0.443  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[11]/D            -0.443  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[16]/D                  -0.442  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[17]/D                  -0.441  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[15]/D            -0.440  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[12]/D                  -0.440  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[10]/D                  -0.439  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[9]/D                   -0.438  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[9]/D                   -0.437  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[19]/D                  -0.435  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[13]/D                  -0.433  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[3]/D                   -0.426  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[19]/D                  -0.425  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[7]/D                   -0.424  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[4]/D                     -0.422  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[4]/D                       -0.422  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[14]/D                  -0.415  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[23]/D                  -0.406  (VIOLATED)
+   u_mac16_top/u_out/clk_gate_bits_left_reg/latch/D         -0.394  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[12]/D            -0.391  (VIOLATED)
+   u_mac16_top/clk_gate_mac_result_shadow_reg/latch/D       -0.382  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[10]/D                  -0.381  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[20]/D                  -0.372  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[17]/D                  -0.369  (VIOLATED)
+   u_mac16_top/clk_gate_result_fifo_reg[2]/latch/D          -0.363  (VIOLATED)
+   u_mac16_top/u_inB/cnt_reg[2]/D                           -0.361  (VIOLATED)
+   u_mac16_top/clk_gate_fifo_count_reg/latch/D              -0.360  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[18]/D                  -0.356  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[23]/D                  -0.349  (VIOLATED)
+   u_mac16_top/clk_gate_result_fifo_reg[0]/latch/D          -0.348  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[23]/D                  -0.348  (VIOLATED)
+   u_mac16_top/clk_gate_result_fifo_reg[1]/latch/D          -0.346  (VIOLATED)
+   u_mac16_top/clk_gate_op_fifo_count_reg/latch/D           -0.342  (VIOLATED)
+   u_mac16_top/clk_gate_result_fifo_reg[3]/latch/D          -0.340  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[1]/D                   -0.325  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[10]/D            -0.307  (VIOLATED)
+   u_mac16_top/u_out/serial_out_reg/D                       -0.302  (VIOLATED)
+   u_mac16_top/op_fifo_rd_ptr_reg[1]/D                      -0.297  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[5]/D                   -0.290  (VIOLATED)
+   u_mac16_top/u_inA/cnt_reg[2]/D                           -0.279  (VIOLATED)
+   u_mac16_top/p2s_issue_hold_reg/D                         -0.273  (VIOLATED)
+   u_mac16_top/p2s_load_reg/D                               -0.273  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[3]/D                     -0.266  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[3]/D                       -0.266  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[9]/D             -0.264  (VIOLATED)
+   u_mac16_top/u_inB/cnt_reg[0]/D                           -0.262  (VIOLATED)
+   u_mac16_top/u_out/busy_reg/D                             -0.257  (VIOLATED)
+   u_mac16_top/u_out/out_ready_reg/D                        -0.256  (VIOLATED)
+   u_mac16_top/u_inB/cnt_reg[1]/D                           -0.247  (VIOLATED)
+   u_mac16_top/u_inA/cnt_reg[0]/D                           -0.242  (VIOLATED)
+   u_mac16_top/u_inA/cnt_reg[1]/D                           -0.242  (VIOLATED)
+   u_mac16_top/op_fifo_wr_ptr_reg[1]/D                      -0.240  (VIOLATED)
+   u_mac16_top/op_fifo_wr_ptr_reg[0]/D                      -0.236  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[14]/D                  -0.217  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[8]/D             -0.204  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[23]/D                  -0.198  (VIOLATED)
+   u_mac16_top/u_out/bits_left_reg[1]/D                     -0.187  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[14]/D                    -0.168  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[12]/D                    -0.164  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[11]/D                    -0.163  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[13]/D                    -0.162  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[3]/D                     -0.161  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[8]/D                     -0.161  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[3]/D                     -0.160  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[5]/D                     -0.160  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[11]/D                    -0.160  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[5]/D                     -0.160  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[9]/D                     -0.160  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[7]/D                     -0.159  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[10]/D                    -0.159  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[6]/D                     -0.157  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[4]/D                     -0.157  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[13]/D                    -0.157  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[7]/D                     -0.157  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[14]/D                    -0.156  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[8]/D                     -0.156  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[12]/D                    -0.156  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[2]/D                     -0.156  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[1]/D                     -0.155  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[0]/D                     -0.155  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[4]/D                     -0.154  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[0]/D                     -0.152  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[6]/D                     -0.152  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[10]/D                    -0.152  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[2]/D                     -0.151  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[1]/D                     -0.151  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[9]/D                     -0.151  (VIOLATED)
+   u_mac16_top/clk_gate_opA_fifo_reg[1]/latch/D             -0.148  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[20]/D                  -0.140  (VIOLATED)
+   u_mac16_top/clk_gate_opA_fifo_reg[0]/latch/D             -0.132  (VIOLATED)
+   u_mac16_top/clk_gate_opA_fifo_reg[2]/latch/D             -0.128  (VIOLATED)
+   u_mac16_top/clk_gate_opA_fifo_reg[3]/latch/D             -0.115  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[2]/D                     -0.112  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[2]/D                       -0.112  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[1]/D                     -0.106  (VIOLATED)
+   u_mac16_top/u_out/bits_left_reg[5]/D                     -0.094  (VIOLATED)
+   u_mac16_top/u_out/bits_left_reg[3]/D                     -0.092  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[0]/D                   -0.087  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[0]/D                     -0.081  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[0]/D                       -0.081  (VIOLATED)
+   u_mac16_top/fifo_wr_ptr_reg[1]/D                         -0.050  (VIOLATED)
+   u_mac16_top/calc_start_reg/D                             -0.046  (VIOLATED)
+   u_mac16_top/fifo_wr_ptr_reg[0]/D                         -0.036  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[1]/D                     -0.011  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[1]/D                       -0.011  (VIOLATED)
+
+
+
+   recovery
+
+   Endpoint                                                  Slack
+   -----------------------------------------------------------------
+   u_mac16_top/u_mac/u_mul/r_s30_reg[15]/R                  -1.025  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[14]/R                  -1.025  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[1]/R                   -1.025  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[5]/R                   -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[16]/R                  -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[4]/R                   -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[0]/R                   -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[0]/R                   -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[9]/R                   -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[12]/R                  -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[12]/R                  -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[7]/R                   -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[21]/R                  -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[8]/R                   -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[3]/R                   -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[23]/R                  -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[5]/R                   -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[8]/R                   -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[7]/R                   -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[21]/R                  -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[20]/R                  -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[20]/R                  -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[6]/R                   -1.024  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[18]/R                  -1.023  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[10]/R                  -1.023  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[10]/R                    -1.021  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[8]/R                     -1.021  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[16]/R                    -1.021  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[19]/R                    -1.021  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[18]/R                    -1.021  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[16]/R                    -1.021  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[0]/R                     -1.021  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[1]/R                     -1.021  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[12]/R                    -1.021  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[15]/R                    -1.021  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[5]/R                     -1.021  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[2]/R                     -1.021  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[5]/R                   -1.020  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[4]/R                   -1.020  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[13]/R                    -1.020  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[23]/R                    -1.020  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[14]/R                    -1.020  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[15]/R                    -1.020  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[13]/R                    -1.020  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[11]/R                    -1.020  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[9]/R                     -1.020  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[3]/R                     -1.020  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[14]/R                    -1.020  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[15]/R                  -1.019  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[15]/R                  -1.007  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[17]/R                  -1.007  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[16]/R                  -1.007  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[16]/R                  -1.007  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[17]/R                  -1.007  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[12]/R                  -1.007  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[16]/R                  -1.007  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[18]/R                  -1.007  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[14]/R                  -1.007  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[20]/R                  -1.007  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[11]/R                  -1.007  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[8]/R                   -1.007  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[14]/R                  -1.007  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[10]/R                  -1.007  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[15]/R                  -1.006  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[13]/R                  -1.006  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[11]/R                  -1.006  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[14]/R                  -1.006  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[15]/R                  -1.006  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[16]/R                  -1.006  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[7]/R                   -1.006  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[17]/R                  -1.006  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[11]/R                  -1.006  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[6]/R                   -1.006  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[13]/R                  -1.006  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[9]/R                   -1.006  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[4]/R                   -1.006  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[19]/R                  -1.003  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[22]/R                  -0.907  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[18]/R                  -0.906  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[17]/R                  -0.906  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[20]/R                  -0.906  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[20]/R                  -0.906  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[17]/R                  -0.906  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[18]/R                  -0.906  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[22]/R                  -0.906  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[21]/R                  -0.905  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[18]/R                  -0.905  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[20]/R                  -0.905  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[19]/R                  -0.905  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[21]/R                  -0.905  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[19]/R                  -0.905  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[6]/R                   -0.905  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[7]/R                   -0.905  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[22]/R                  -0.905  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[23]/R                  -0.905  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[21]/R                  -0.905  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[23]/R                  -0.905  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[18]/R                  -0.905  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[17]/R                  -0.905  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[10]/R                  -0.905  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[23]/R                  -0.904  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[20]/R                  -0.904  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[22]/R                  -0.904  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[13]/R                  -0.904  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[21]/R                  -0.904  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[19]/R                  -0.902  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[10]/R                  -0.889  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[11]/R                  -0.889  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[14]/R                  -0.778  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[15]/R                  -0.778  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[16]/R                  -0.778  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[21]/R                  -0.778  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[20]/R                  -0.778  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[16]/R                  -0.778  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[17]/R                  -0.777  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[19]/R                  -0.777  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[9]/R                   -0.777  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[21]/R                  -0.777  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[8]/R                   -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[5]/R                   -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[21]/R                  -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[21]/R                  -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[15]/R                  -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[18]/R                  -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[22]/R                  -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[16]/R                  -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[17]/R                  -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[19]/R                  -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[11]/R                  -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[13]/R                  -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[10]/R                  -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[14]/R                  -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[19]/R                  -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[11]/R                  -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[6]/R                   -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[7]/R                   -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[10]/R                  -0.776  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[9]/R                   -0.774  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[18]/R                  -0.768  (VIOLATED)
+   u_mac16_top/opB_reg_reg[0]/R                             -0.768  (VIOLATED)
+   u_mac16_top/opB_reg_reg[3]/R                             -0.768  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][10]/R                        -0.768  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][11]/R                        -0.768  (VIOLATED)
+   u_mac16_top/opA_reg_reg[1]/R                             -0.768  (VIOLATED)
+   u_mac16_top/opB_reg_reg[7]/R                             -0.768  (VIOLATED)
+   u_mac16_top/opB_reg_reg[8]/R                             -0.768  (VIOLATED)
+   u_mac16_top/opA_reg_reg[3]/R                             -0.768  (VIOLATED)
+   u_mac16_top/op_fifo_rd_ptr_reg[0]/R                      -0.768  (VIOLATED)
+   u_mac16_top/opA_reg_reg[0]/R                             -0.768  (VIOLATED)
+   u_mac16_top/opB_reg_reg[6]/R                             -0.768  (VIOLATED)
+   u_mac16_top/opA_reg_reg[14]/R                            -0.768  (VIOLATED)
+   u_mac16_top/opA_reg_reg[6]/R                             -0.768  (VIOLATED)
+   u_mac16_top/opB_reg_reg[10]/R                            -0.768  (VIOLATED)
+   u_mac16_top/opB_reg_reg[4]/R                             -0.768  (VIOLATED)
+   u_mac16_top/opA_reg_reg[2]/R                             -0.768  (VIOLATED)
+   u_mac16_top/opA_reg_reg[4]/R                             -0.768  (VIOLATED)
+   u_mac16_top/opA_reg_reg[11]/R                            -0.768  (VIOLATED)
+   u_mac16_top/opB_reg_reg[12]/R                            -0.768  (VIOLATED)
+   u_mac16_top/opB_reg_reg[5]/R                             -0.768  (VIOLATED)
+   u_mac16_top/opB_reg_reg[2]/R                             -0.768  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][6]/R                      -0.715  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[6]/R                       -0.715  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[0]/R                       -0.715  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[11]/R                    -0.714  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][6]/R                      -0.714  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[8]/R                     -0.714  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][0]/R                      -0.714  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[9]/R                     -0.714  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[4]/R                       -0.714  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[10]/R                    -0.714  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[5]/R                     -0.714  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[5]/R                       -0.714  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[4]/R                     -0.714  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[10]/R                      -0.714  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[6]/R                     -0.714  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[7]/R                       -0.713  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[8]/R                       -0.713  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[0]/R                     -0.713  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[7]/R                     -0.713  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[9]/R                       -0.713  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[2]/R                     -0.713  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[1]/R                     -0.713  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[3]/R                     -0.713  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][17]/R                     -0.712  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][14]/R                     -0.712  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][17]/R                     -0.712  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][17]/R                     -0.712  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][14]/R                     -0.712  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][16]/R                     -0.712  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[11]/R                  -0.712  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[15]/R                  -0.712  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[20]/R                    -0.712  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][17]/R                     -0.712  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][3]/R                      -0.712  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][2]/R                      -0.712  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][16]/R                     -0.712  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][19]/R                     -0.712  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[19]/R                  -0.712  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][23]/R                     -0.712  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][14]/R                     -0.712  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][20]/R                     -0.712  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][22]/R                     -0.711  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][16]/R                     -0.711  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][21]/R                     -0.711  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][15]/R                     -0.711  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][16]/R                     -0.711  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][15]/R                     -0.711  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[15]/R                  -0.711  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[17]/R                  -0.711  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[23]/R                  -0.711  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[14]/R                  -0.711  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[14]/R                    -0.711  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[15]/R                    -0.711  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[12]/R                  -0.689  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[4]/R                   -0.686  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[7]/R                   -0.686  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[8]/R                   -0.686  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[14]/R                  -0.686  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[7]/R                   -0.686  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[10]/R                  -0.686  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[20]/R                  -0.686  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[19]/R                  -0.686  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[21]/R                  -0.686  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[4]/R                   -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[17]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[16]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[23]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[20]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[22]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[5]/R                   -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[8]/R                   -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[14]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[15]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[18]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[14]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[20]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[2]/R                   -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[3]/R                   -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[17]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[0]/R                   -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[13]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[19]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[3]/R                   -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[13]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[16]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[18]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[1]/R                   -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[17]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[6]/R                   -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[9]/R                   -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[12]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[11]/R                  -0.685  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[19]/R                  -0.665  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[16]/R                  -0.665  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[13]/R                  -0.665  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[12]/R                  -0.665  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[13]/R                  -0.665  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[12]/R                  -0.665  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[22]/R                  -0.665  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[14]/R                  -0.665  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[23]/R                  -0.665  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[18]/R                  -0.665  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[10]/R                  -0.664  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[23]/R                  -0.664  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[15]/R                  -0.664  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[9]/R                   -0.664  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[18]/R                  -0.664  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[11]/R                  -0.664  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[17]/R                  -0.664  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[11]/R                  -0.664  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[10]/R                  -0.664  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[22]/R                  -0.664  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[12]/R                  -0.664  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[19]/R                  -0.664  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[23]/R                  -0.664  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[7]/R                   -0.664  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[20]/R                  -0.664  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[18]/R                  -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[16]/R                  -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[12]/R                  -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[10]/R                  -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[8]/R                   -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[19]/R                  -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[23]/R                  -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[23]/R                  -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[19]/R                  -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[22]/R                  -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[16]/R                  -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[11]/R                  -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[8]/R                   -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[10]/R                  -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[20]/R                  -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[15]/R                  -0.663  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[8]/R                   -0.662  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[6]/R                   -0.662  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[5]/R                   -0.662  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[6]/R                   -0.662  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[5]/R                   -0.662  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[14]/R                  -0.662  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[21]/R                  -0.662  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[9]/R                   -0.662  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][4]/R                         -0.662  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][7]/R                         -0.662  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][4]/R                         -0.662  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[13]/R                  -0.662  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[17]/R                  -0.662  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][4]/R                         -0.662  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[22]/R                  -0.662  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][10]/R                        -0.662  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][11]/R                        -0.662  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][10]/R                        -0.662  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][6]/R                         -0.662  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][5]/R                         -0.662  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][6]/R                         -0.661  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][4]/R                         -0.661  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][2]/R                         -0.661  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][1]/R                         -0.661  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][9]/R                      -0.661  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][6]/R                         -0.661  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][3]/R                         -0.661  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][3]/R                         -0.661  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][3]/R                         -0.661  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][6]/R                         -0.661  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][20]/R                     -0.661  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][20]/R                     -0.661  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][5]/R                         -0.661  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][2]/R                         -0.661  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][2]/R                         -0.661  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][3]/R                         -0.661  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][23]/R                     -0.661  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][2]/R                         -0.661  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][23]/R                     -0.661  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][22]/R                     -0.661  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][23]/R                     -0.661  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][20]/R                     -0.661  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][2]/R                      -0.661  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][5]/R                         -0.661  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][2]/R                      -0.661  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][8]/R                      -0.660  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][21]/R                     -0.660  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[5]/R                     -0.660  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[12]/R                    -0.660  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[9]/R                      -0.660  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[12]/R                     -0.660  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[2]/R                     -0.660  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[8]/R                      -0.660  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[3]/R                      -0.660  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[2]/R                      -0.660  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[1]/R                     -0.660  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[6]/R                      -0.660  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[6]/R                     -0.660  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[1]/R                      -0.660  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[7]/R                     -0.660  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[5]/R                      -0.660  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[11]/R                    -0.660  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[4]/R                     -0.660  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][21]/R                     -0.660  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[0]/R                     -0.660  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][21]/R                     -0.660  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[20]/R                  -0.660  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[22]/R                  -0.659  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[16]/R                  -0.659  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[21]/R                  -0.659  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][22]/R                     -0.659  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][22]/R                     -0.659  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][0]/R                         -0.659  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[21]/R                    -0.659  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[22]/R                    -0.659  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[20]/R                    -0.659  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[16]/R                    -0.658  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[17]/R                    -0.658  (VIOLATED)
+   u_mac16_top/opA_reg_reg[7]/R                             -0.658  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][10]/R                        -0.658  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][11]/R                        -0.658  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][11]/R                        -0.658  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][4]/R                         -0.657  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][7]/R                         -0.657  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][7]/R                         -0.657  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][7]/R                         -0.657  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][9]/R                         -0.657  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][15]/R                        -0.657  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][8]/R                         -0.657  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[13]/R                     -0.656  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[14]/R                     -0.656  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[7]/R                      -0.656  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][9]/R                         -0.656  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][15]/R                        -0.656  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][8]/R                         -0.656  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][8]/R                         -0.656  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[15]/R                     -0.656  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[4]/R                      -0.656  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][15]/R                        -0.656  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][15]/R                        -0.656  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[10]/R                     -0.656  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][8]/R                         -0.656  (VIOLATED)
+   u_mac16_top/op_fifo_rd_ptr_reg[1]/R                      -0.655  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][7]/R                         -0.638  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][13]/R                        -0.638  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][15]/R                        -0.638  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][14]/R                        -0.638  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][11]/R                        -0.638  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][7]/R                         -0.638  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][11]/R                        -0.638  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][15]/R                        -0.637  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][14]/R                        -0.637  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][3]/R                      -0.637  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][2]/R                      -0.637  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][7]/R                         -0.637  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[5]/R                   -0.637  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[1]/R                     -0.637  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][3]/R                      -0.637  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[6]/R                     -0.637  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[5]/R                     -0.637  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][3]/R                      -0.637  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[4]/R                   -0.637  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[3]/R                   -0.637  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][8]/R                      -0.637  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[4]/R                     -0.637  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[8]/R                   -0.637  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[10]/R                    -0.637  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[9]/R                     -0.637  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][5]/R                      -0.637  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][4]/R                         -0.637  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][8]/R                      -0.637  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[2]/R                   -0.637  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[9]/R                   -0.637  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][6]/R                         -0.637  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][4]/R                      -0.637  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][5]/R                         -0.637  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][5]/R                         -0.637  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][4]/R                         -0.637  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][5]/R                         -0.637  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][4]/R                         -0.637  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][8]/R                         -0.637  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][12]/R                        -0.637  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][9]/R                      -0.637  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[13]/R                    -0.637  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][8]/R                         -0.637  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][6]/R                         -0.637  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[11]/R                    -0.637  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[2]/R                     -0.637  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][8]/R                         -0.636  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][4]/R                      -0.636  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][5]/R                      -0.636  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][9]/R                      -0.636  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][12]/R                        -0.636  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][4]/R                      -0.636  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][3]/R                         -0.636  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[1]/R                   -0.636  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][5]/R                      -0.636  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][5]/R                      -0.636  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[0]/R                   -0.636  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][8]/R                      -0.635  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][4]/R                      -0.634  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[12]/R                  -0.620  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[13]/R                  -0.620  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[16]/R                  -0.620  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[10]/R                  -0.620  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[19]/R                  -0.620  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[11]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[9]/R                   -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[22]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[12]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[22]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[13]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[17]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[20]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[14]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[21]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[17]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[18]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[15]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[15]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[14]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[23]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[21]/R                  -0.619  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[18]/R                  -0.618  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][14]/R                        -0.617  (VIOLATED)
+   u_mac16_top/opB_reg_reg[11]/R                            -0.617  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][12]/R                        -0.617  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][12]/R                        -0.617  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][14]/R                        -0.617  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][13]/R                        -0.617  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][14]/R                        -0.617  (VIOLATED)
+   u_mac16_top/opB_reg_reg[14]/R                            -0.617  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][13]/R                        -0.617  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][12]/R                        -0.617  (VIOLATED)
+   u_mac16_top/opB_reg_reg[15]/R                            -0.617  (VIOLATED)
+   u_mac16_top/opB_reg_reg[13]/R                            -0.616  (VIOLATED)
+   u_mac16_top/opA_reg_reg[5]/R                             -0.616  (VIOLATED)
+   u_mac16_top/opA_reg_reg[9]/R                             -0.616  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][13]/R                        -0.616  (VIOLATED)
+   u_mac16_top/opA_reg_reg[13]/R                            -0.616  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][13]/R                        -0.616  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][14]/R                        -0.616  (VIOLATED)
+   u_mac16_top/opA_reg_reg[12]/R                            -0.616  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][12]/R                        -0.615  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][5]/R                         -0.615  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][9]/R                         -0.614  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][9]/R                         -0.614  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[3]/R                     -0.612  (VIOLATED)
+   u_mac16_top/u_inB/in_done_reg/R                          -0.612  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[14]/R                    -0.612  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[13]/R                    -0.612  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[11]/R                    -0.612  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[12]/R                    -0.612  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][0]/R                         -0.612  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][1]/R                         -0.612  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][3]/R                         -0.612  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][9]/R                         -0.612  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[0]/R                      -0.611  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][0]/R                         -0.611  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][0]/R                         -0.611  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][1]/R                         -0.611  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][0]/R                         -0.611  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][1]/R                         -0.611  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][0]/R                         -0.611  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][2]/R                         -0.611  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][2]/R                         -0.611  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][0]/R                         -0.611  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][2]/R                         -0.611  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][1]/R                         -0.611  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[3]/R                     -0.585  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][10]/R                     -0.585  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][11]/R                     -0.585  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[12]/R                    -0.585  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[7]/R                     -0.585  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[6]/R                   -0.585  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][1]/R                      -0.584  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][6]/R                      -0.584  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][10]/R                     -0.584  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[8]/R                     -0.584  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[11]/R                  -0.584  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][0]/R                      -0.584  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][11]/R                     -0.584  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[7]/R                   -0.584  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][1]/R                      -0.584  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[10]/R                  -0.584  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][0]/R                      -0.583  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][11]/R                     -0.583  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][1]/R                      -0.583  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][9]/R                      -0.583  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][12]/R                     -0.583  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[12]/R                  -0.583  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[13]/R                  -0.583  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][11]/R                     -0.583  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][1]/R                      -0.583  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][0]/R                      -0.583  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][10]/R                     -0.583  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][10]/R                     -0.583  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][6]/R                      -0.583  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][7]/R                      -0.582  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][12]/R                     -0.582  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][13]/R                     -0.580  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[1]/R                       -0.579  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][12]/R                     -0.579  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][12]/R                     -0.579  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[3]/R                       -0.579  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[12]/R                      -0.579  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[18]/R                    -0.578  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[19]/R                    -0.578  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[11]/R                      -0.578  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[2]/R                       -0.578  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[18]/R                  -0.578  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][7]/R                      -0.578  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][19]/R                     -0.578  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][18]/R                     -0.578  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][7]/R                      -0.578  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][13]/R                     -0.578  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][7]/R                      -0.578  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][13]/R                     -0.578  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[19]/R                      -0.578  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][13]/R                     -0.578  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][19]/R                     -0.578  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][19]/R                     -0.578  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[18]/R                      -0.578  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][18]/R                     -0.577  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][18]/R                     -0.577  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[17]/R                      -0.577  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][18]/R                     -0.577  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[12]/R                  -0.576  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[14]/R                  -0.576  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[13]/R                  -0.576  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][14]/R                        -0.572  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][11]/R                        -0.572  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][10]/R                        -0.572  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][14]/R                        -0.572  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][15]/R                        -0.572  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][5]/R                         -0.572  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][13]/R                        -0.572  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][11]/R                        -0.572  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][10]/R                        -0.572  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][1]/R                         -0.571  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][6]/R                         -0.571  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][6]/R                         -0.571  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][8]/R                         -0.571  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][7]/R                         -0.571  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][12]/R                        -0.571  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[9]/R                     -0.525  (VIOLATED)
+   u_mac16_top/op_fifo_count_reg[1]/R                       -0.525  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][2]/R                         -0.525  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][1]/R                         -0.525  (VIOLATED)
+   u_mac16_top/op_fifo_count_reg[0]/R                       -0.525  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[10]/R                    -0.525  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][3]/R                         -0.525  (VIOLATED)
+   u_mac16_top/op_fifo_count_reg[2]/R                       -0.525  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[0]/R                      -0.525  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[9]/R                      -0.525  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[11]/R                     -0.524  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[13]/R                     -0.524  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[14]/R                     -0.524  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[10]/R                     -0.524  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[12]/R                     -0.524  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][9]/R                         -0.524  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][3]/R                         -0.524  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][9]/R                         -0.524  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][13]/R                        -0.524  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][15]/R                        -0.524  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][12]/R                        -0.524  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][10]/R                        -0.523  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][13]/R                        -0.523  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][1]/R                         -0.523  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][0]/R                         -0.523  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][10]/R                        -0.522  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][9]/R                         -0.522  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[15]/R                  -0.522  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[15]/R                  -0.522  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[9]/R                   -0.522  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[7]/R                   -0.522  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[23]/R                  -0.522  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[23]/R                  -0.522  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[16]/R                  -0.521  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[20]/R                  -0.521  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/en_d2_reg/R                      -0.521  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[19]/R                  -0.521  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/en_d1_reg/R                      -0.521  (VIOLATED)
+   u_mac16_top/opA_reg_reg[8]/R                             -0.521  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[22]/R                    -0.521  (VIOLATED)
+   u_mac16_top/opA_reg_reg[15]/R                            -0.521  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[11]/R            -0.521  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[13]/R            -0.521  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[13]/R                    -0.521  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[10]/R                    -0.521  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[8]/R                     -0.521  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[9]/R             -0.521  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[16]/R                  -0.521  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[11]/R                     -0.521  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[9]/R                     -0.521  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[17]/R                  -0.521  (VIOLATED)
+   u_mac16_top/u_inA/shift_reg_reg[14]/R                    -0.521  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[18]/R                  -0.521  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[6]/R                      -0.479  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[5]/R                      -0.479  (VIOLATED)
+   u_mac16_top/u_inA/in_done_reg/R                          -0.479  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[8]/R                     -0.479  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[0]/R                     -0.479  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[1]/R                     -0.479  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[4]/R                      -0.479  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[1]/R                      -0.479  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[2]/R                      -0.479  (VIOLATED)
+   u_mac16_top/sched_cnt_reg[2]/R                           -0.479  (VIOLATED)
+   u_mac16_top/sched_cnt_reg[0]/R                           -0.479  (VIOLATED)
+   u_mac16_top/sched_cnt_reg[1]/R                           -0.479  (VIOLATED)
+   u_mac16_top/schedule_active_reg/R                        -0.479  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[3]/R                     -0.479  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[8]/R                      -0.479  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[3]/R                      -0.478  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[15]/R                     -0.478  (VIOLATED)
+   u_mac16_top/u_inB/data_out_reg[7]/R                      -0.478  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[2]/R                     -0.478  (VIOLATED)
+   u_mac16_top/fifo_count_reg[1]/R                          -0.478  (VIOLATED)
+   u_mac16_top/fifo_count_reg[0]/R                          -0.478  (VIOLATED)
+   u_mac16_top/fifo_count_reg[2]/R                          -0.478  (VIOLATED)
+   u_mac16_top/calc_start_reg/R                             -0.478  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[7]/R                     -0.478  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[6]/R                     -0.477  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[4]/R                     -0.477  (VIOLATED)
+   u_mac16_top/u_inB/shift_reg_reg[5]/R                     -0.476  (VIOLATED)
+   u_mac16_top/u_out/bits_left_reg[2]/R                     -0.476  (VIOLATED)
+   u_mac16_top/u_out/bits_left_reg[1]/R                     -0.476  (VIOLATED)
+   u_mac16_top/u_out/bits_left_reg[0]/R                     -0.476  (VIOLATED)
+   u_mac16_top/u_out/bits_left_reg[3]/R                     -0.476  (VIOLATED)
+   u_mac16_top/u_out/bits_left_reg[4]/R                     -0.476  (VIOLATED)
+   u_mac16_top/u_out/bits_left_reg[5]/R                     -0.476  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[18]/R                    -0.476  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[23]/R                    -0.476  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[19]/R                    -0.475  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[22]/R                    -0.369  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/en_d3_reg/R                      -0.369  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[8]/R             -0.369  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[14]/R            -0.369  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[16]/R            -0.369  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[17]/R            -0.369  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[19]/R            -0.369  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/valid_reg_reg/R                  -0.369  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[7]/RDN                   -0.254  (VIOLATED)
+   u_mac16_top/opB_reg_reg[1]/RDN                           -0.247  (VIOLATED)
+   u_mac16_top/opA_reg_reg[10]/RDN                          -0.247  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][14]/R                     -0.242  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[21]/R                      -0.242  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[16]/R                      -0.242  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[13]/R                      -0.242  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[17]/R                    -0.242  (VIOLATED)
+   u_mac16_top/u_mac/carry_reg/R                            -0.242  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[21]/R                    -0.242  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[22]/R                      -0.241  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[15]/R                      -0.241  (VIOLATED)
+   u_mac16_top/u_out/busy_reg/R                             -0.241  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][15]/R                     -0.241  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][15]/R                     -0.241  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[23]/R                      -0.241  (VIOLATED)
+   u_mac16_top/p2s_load_reg/R                               -0.241  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[23]/R                    -0.241  (VIOLATED)
+   u_mac16_top/p2s_issue_hold_reg/R                         -0.241  (VIOLATED)
+   u_mac16_top/u_out/out_ready_reg/R                        -0.241  (VIOLATED)
+   u_mac16_top/u_mac/cal_done_reg/R                         -0.241  (VIOLATED)
+   u_mac16_top/u_inA/cnt_reg[3]/R                           -0.240  (VIOLATED)
+   u_mac16_top/u_inA/cnt_reg[1]/R                           -0.240  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[12]/SN                 -0.147  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[14]/R                      -0.131  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[20]/R                      -0.131  (VIOLATED)
+   u_mac16_top/opB_reg_reg[9]/RDN                           -0.115  (VIOLATED)
+   u_mac16_top/u_mac/mode_d_reg/RDN                         -0.114  (VIOLATED)
+   u_mac16_top/fifo_rd_ptr_reg[1]/SN                        -0.112  (VIOLATED)
+   u_mac16_top/fifo_wr_ptr_reg[1]/SN                        -0.111  (VIOLATED)
+   u_mac16_top/op_fifo_wr_ptr_reg[1]/SN                     -0.111  (VIOLATED)
+   u_mac16_top/u_out/serial_out_reg/R                       -0.084  (VIOLATED)
+   u_mac16_top/u_inB/cnt_reg[1]/R                           -0.084  (VIOLATED)
+   u_mac16_top/u_inB/cnt_reg[0]/R                           -0.084  (VIOLATED)
+   u_mac16_top/u_inB/cnt_reg[2]/R                           -0.084  (VIOLATED)
+   u_mac16_top/u_inB/cnt_reg[3]/R                           -0.084  (VIOLATED)
+   u_mac16_top/u_inA/cnt_reg[0]/R                           -0.084  (VIOLATED)
+   u_mac16_top/u_inA/cnt_reg[2]/R                           -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[10]/R            -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[22]/R            -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[22]/R                  -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[20]/R            -0.084  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[21]/R                    -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[3]/R             -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[2]/R                   -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[9]/R                   -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[2]/R             -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[6]/R             -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[23]/R            -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[1]/R                   -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[4]/R             -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[12]/R            -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[21]/R            -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[3]/R                   -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[2]/R                   -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[15]/R            -0.084  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[5]/R             -0.083  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[7]/R             -0.083  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[0]/R             -0.083  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[18]/R            -0.082  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[17]/R                    -0.082  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[20]/R                    -0.082  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/product_reg_reg[1]/R             -0.082  (VIOLATED)
+
+
+
+   clock_gating_setup
+
+   Endpoint                                                  Slack
+   -----------------------------------------------------------------
+   u_mac16_top/clk_gate_opA_fifo_reg[0]/main_gate/A         -0.112  (VIOLATED)
+   u_mac16_top/clk_gate_opB_reg_reg/main_gate/A             -0.109  (VIOLATED)
+   u_mac16_top/clk_gate_opA_fifo_reg[3]/main_gate/A         -0.108  (VIOLATED)
+   u_mac16_top/u_out/clk_gate_bits_left_reg/main_gate/A     -0.104  (VIOLATED)
+   u_mac16_top/clk_gate_result_fifo_reg[3]/main_gate/A      -0.103  (VIOLATED)
+   u_mac16_top/clk_gate_opA_fifo_reg[2]/main_gate/A         -0.100  (VIOLATED)
+   u_mac16_top/clk_gate_mac_result_shadow_reg/main_gate/A   -0.100  (VIOLATED)
+   u_mac16_top/clk_gate_result_fifo_reg[0]/main_gate/A      -0.099  (VIOLATED)
+   u_mac16_top/clk_gate_result_fifo_reg[1]/main_gate/A      -0.099  (VIOLATED)
+   u_mac16_top/clk_gate_op_fifo_rd_ptr_reg/main_gate/A      -0.096  (VIOLATED)
+   u_mac16_top/clk_gate_result_fifo_reg[2]/main_gate/A      -0.093  (VIOLATED)
+   u_mac16_top/clk_gate_opA_fifo_reg[1]/main_gate/A         -0.092  (VIOLATED)
+   u_mac16_top/clk_gate_fifo_count_reg/main_gate/A          -0.059  (VIOLATED)
+   u_mac16_top/clk_gate_op_fifo_count_reg/main_gate/A       -0.058  (VIOLATED)
+
+
+
+   max_capacitance
+
+                             Required        Actual
+   Pin                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   HFSBUF_39107_31/ECK         0.040          0.062         -0.022  (VIOLATED)
+   HFSBUF_34608_28/ECK         0.040          0.061         -0.021  (VIOLATED)
+   HFSINV_7871_3/Y             0.049          0.069         -0.020  (VIOLATED)
+   HFSBUF_36427_29/ECK         0.033          0.052         -0.019  (VIOLATED)
+   HFSBUF_31684_30/ECK         0.055          0.073         -0.018  (VIOLATED)
+   HFSINV_2303_6/Y             0.068          0.085         -0.017  (VIOLATED)
+   HFSINV_18720_8/Y            0.035          0.050         -0.014  (VIOLATED)
+   HFSINV_54730_24/Y           0.049          0.063         -0.014  (VIOLATED)
+   HFSINV_47592_20/Y           0.049          0.063         -0.013  (VIOLATED)
+   HFSINV_45899_21/Y           0.068          0.078         -0.010  (VIOLATED)
+   HFSINV_4958_4/Y             0.049          0.058         -0.009  (VIOLATED)
+   HFSINV_3673_2/Y             0.049          0.058         -0.009  (VIOLATED)
+   HFSINV_10454_12/Y           0.049          0.057         -0.008  (VIOLATED)
+   HFSINV_56595_23/Y           0.049          0.057         -0.008  (VIOLATED)
+   HFSINV_23993_7/Y            0.049          0.057         -0.008  (VIOLATED)
+   HFSINV_12912_9/Y            0.049          0.055         -0.006  (VIOLATED)
+   U2131/Y                     0.047          0.053         -0.005  (VIOLATED)
+   ctmTdsLR_1_810/Y            0.033          0.038         -0.005  (VIOLATED)
+   HFSINV_6108_5/Y             0.049          0.053         -0.004  (VIOLATED)
+   U1502/Y                     0.021          0.025         -0.004  (VIOLATED)
+   HFSINV_21132_14/Y           0.049          0.053         -0.004  (VIOLATED)
+   HFSINV_16807_13/Y           0.049          0.052         -0.003  (VIOLATED)
+   HFSINV_51045_22/Y           0.068          0.070         -0.003  (VIOLATED)
+   HFSINV_52713_18/Y           0.068          0.069         -0.002  (VIOLATED)
+   U2140/Y                     0.033          0.034         -0.002  (VIOLATED)
+
+
+   max_transition
+
+                             Required        Actual
+   Pin                      Transition     Transition        Slack
+   -----------------------------------------------------------------
+   HFSBUF_36427_29/ECK         0.796          1.079         -0.283  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[5]/R
+                               0.796          1.079         -0.283  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[4]/R
+                               0.796          1.079         -0.283  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[23]/R
+                               0.796          1.079         -0.283  (VIOLATED)
+   HFSBUF_39107_31/ECK         0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[10]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[8]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[14]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[0]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[16]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[12]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[15]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[13]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[19]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[12]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[18]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[7]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[11]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[16]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[0]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[1]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[15]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[12]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[15]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[14]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[1]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[5]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[5]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[16]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[2]/R
+                               0.796          1.078         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[5]/R
+                               0.796          1.077         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[4]/R
+                               0.796          1.077         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[8]/R
+                               0.796          1.077         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[9]/R
+                               0.796          1.077         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[3]/R
+                               0.796          1.077         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[7]/R
+                               0.796          1.077         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[13]/R
+                               0.796          1.077         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[0]/R
+                               0.796          1.077         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[21]/R
+                               0.796          1.077         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[20]/R
+                               0.796          1.077         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[20]/R
+                               0.796          1.077         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[9]/R
+                               0.796          1.077         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[9]/R
+                               0.796          1.077         -0.282  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[21]/R
+                               0.796          1.077         -0.281  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[8]/R
+                               0.796          1.077         -0.281  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[3]/R
+                               0.796          1.077         -0.281  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[23]/R
+                               0.796          1.077         -0.281  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[14]/R
+                               0.796          1.077         -0.281  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[6]/R
+                               0.796          1.077         -0.281  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[18]/R
+                               0.796          1.077         -0.281  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[15]/R
+                               0.796          1.077         -0.281  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[10]/R
+                               0.796          1.077         -0.281  (VIOLATED)
+   HFSBUF_34608_28/ECK         0.796          1.059         -0.264  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[11]/R
+                               0.796          1.059         -0.263  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[17]/R
+                               0.796          1.058         -0.263  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[6]/R
+                               0.796          1.057         -0.262  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[13]/R
+                               0.796          1.057         -0.262  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[19]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[4]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[15]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[17]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[16]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[16]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[17]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[14]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[12]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[16]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[18]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[15]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[14]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[16]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[20]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[11]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[11]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[8]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[14]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[10]/R
+                               0.796          1.057         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[15]/R
+                               0.796          1.056         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[13]/R
+                               0.796          1.056         -0.261  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[7]/R
+                               0.796          1.056         -0.260  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[10]/R
+                               0.796          1.014         -0.219  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[14]/R
+                               0.796          1.014         -0.218  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[15]/R
+                               0.796          1.014         -0.218  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[16]/R
+                               0.796          1.014         -0.218  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[21]/R
+                               0.796          1.014         -0.218  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[20]/R
+                               0.796          1.014         -0.218  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[16]/R
+                               0.796          1.013         -0.218  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[17]/R
+                               0.796          1.013         -0.218  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[21]/R
+                               0.796          1.013         -0.218  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[21]/R
+                               0.796          1.013         -0.218  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[18]/R
+                               0.796          1.013         -0.218  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[22]/R
+                               0.796          1.013         -0.218  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[19]/R
+                               0.796          1.013         -0.218  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[16]/R
+                               0.796          1.013         -0.217  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[17]/R
+                               0.796          1.013         -0.217  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c23_reg[19]/R
+                               0.796          1.013         -0.217  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[9]/R
+                               0.796          1.013         -0.217  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[21]/R
+                               0.796          1.013         -0.217  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[10]/R
+                               0.796          1.012         -0.217  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[14]/R
+                               0.796          1.012         -0.217  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[19]/R
+                               0.796          1.012         -0.217  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[8]/R
+                               0.796          1.012         -0.217  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[5]/R
+                               0.796          1.012         -0.217  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[15]/R
+                               0.796          1.012         -0.217  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[11]/R
+                               0.796          1.012         -0.217  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[6]/R
+                               0.796          1.012         -0.217  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[13]/R
+                               0.796          1.012         -0.217  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[11]/R
+                               0.796          1.012         -0.216  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[7]/R
+                               0.796          1.012         -0.216  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[9]/R
+                               0.796          1.012         -0.216  (VIOLATED)
+   HFSINV_7871_3/Y             0.796          1.012         -0.216  (VIOLATED)
+   HFSINV_18720_8/Y            0.796          1.005         -0.210  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][10]/R
+                               0.796          1.005         -0.210  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][11]/R
+                               0.796          1.005         -0.209  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[18]/R
+                               0.796          1.005         -0.209  (VIOLATED)
+   u_mac16_top/opA_reg_reg[1]/R
+                               0.796          1.005         -0.209  (VIOLATED)
+   u_mac16_top/opB_reg_reg[0]/R
+                               0.796          1.005         -0.209  (VIOLATED)
+   u_mac16_top/opB_reg_reg[3]/R
+                               0.796          1.005         -0.209  (VIOLATED)
+   u_mac16_top/opB_reg_reg[7]/R
+                               0.796          1.005         -0.209  (VIOLATED)
+   u_mac16_top/opB_reg_reg[8]/R
+                               0.796          1.005         -0.209  (VIOLATED)
+   u_mac16_top/opA_reg_reg[3]/R
+                               0.796          1.005         -0.209  (VIOLATED)
+   u_mac16_top/op_fifo_rd_ptr_reg[0]/R
+                               0.796          1.005         -0.209  (VIOLATED)
+   u_mac16_top/opA_reg_reg[0]/R
+                               0.796          1.005         -0.209  (VIOLATED)
+   u_mac16_top/opB_reg_reg[6]/R
+                               0.796          1.005         -0.209  (VIOLATED)
+   u_mac16_top/opA_reg_reg[14]/R
+                               0.796          1.005         -0.209  (VIOLATED)
+   u_mac16_top/opA_reg_reg[6]/R
+                               0.796          1.005         -0.209  (VIOLATED)
+   u_mac16_top/opB_reg_reg[10]/R
+                               0.796          1.004         -0.209  (VIOLATED)
+   u_mac16_top/opB_reg_reg[4]/R
+                               0.796          1.004         -0.209  (VIOLATED)
+   u_mac16_top/opA_reg_reg[2]/R
+                               0.796          1.004         -0.209  (VIOLATED)
+   u_mac16_top/opA_reg_reg[4]/R
+                               0.796          1.004         -0.209  (VIOLATED)
+   u_mac16_top/opA_reg_reg[11]/R
+                               0.796          1.004         -0.209  (VIOLATED)
+   u_mac16_top/opB_reg_reg[12]/R
+                               0.796          1.004         -0.209  (VIOLATED)
+   u_mac16_top/opB_reg_reg[5]/R
+                               0.796          1.004         -0.209  (VIOLATED)
+   u_mac16_top/opB_reg_reg[2]/R
+                               0.796          1.004         -0.209  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[23]/R
+                               0.796          0.932         -0.136  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[20]/R
+                               0.796          0.932         -0.136  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[10]/R
+                               0.796          0.932         -0.136  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[22]/R
+                               0.796          0.931         -0.136  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[11]/R
+                               0.796          0.931         -0.136  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[20]/R
+                               0.796          0.931         -0.136  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[17]/R
+                               0.796          0.931         -0.136  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[13]/R
+                               0.796          0.931         -0.135  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[18]/R
+                               0.796          0.931         -0.135  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[21]/R
+                               0.796          0.931         -0.135  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[22]/R
+                               0.796          0.931         -0.135  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[18]/R
+                               0.796          0.930         -0.135  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[17]/R
+                               0.796          0.930         -0.135  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[20]/R
+                               0.796          0.930         -0.135  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[10]/R
+                               0.796          0.930         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[17]/R
+                               0.796          0.930         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[22]/R
+                               0.796          0.930         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[6]/R
+                               0.796          0.930         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[7]/R
+                               0.796          0.930         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[18]/R
+                               0.796          0.930         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[21]/R
+                               0.796          0.930         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[18]/R
+                               0.796          0.930         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[21]/R
+                               0.796          0.930         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[20]/R
+                               0.796          0.930         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[23]/R
+                               0.796          0.930         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[19]/R
+                               0.796          0.930         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c41_reg[21]/R
+                               0.796          0.930         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[19]/R
+                               0.796          0.930         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[22]/R
+                               0.796          0.929         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c40_reg[23]/R
+                               0.796          0.929         -0.134  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s30_reg[19]/R
+                               0.796          0.929         -0.133  (VIOLATED)
+   HFSBUF_31684_30/ECK         0.796          0.929         -0.133  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[11]/R
+                               0.796          0.927         -0.131  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[15]/R
+                               0.796          0.927         -0.131  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[15]/R
+                               0.796          0.926         -0.130  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[17]/R
+                               0.796          0.926         -0.130  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[23]/R
+                               0.796          0.926         -0.130  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[14]/R
+                               0.796          0.926         -0.130  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[14]/R
+                               0.796          0.926         -0.130  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[15]/R
+                               0.796          0.926         -0.130  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][6]/R
+                               0.796          0.925         -0.130  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[6]/R
+                               0.796          0.925         -0.130  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[0]/R
+                               0.796          0.925         -0.130  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[11]/R
+                               0.796          0.925         -0.130  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][6]/R
+                               0.796          0.925         -0.130  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[8]/R
+                               0.796          0.925         -0.130  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][0]/R
+                               0.796          0.925         -0.130  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[9]/R
+                               0.796          0.925         -0.130  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[8]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[4]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[10]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][17]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[5]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][14]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][17]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[5]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[0]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][17]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][14]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[4]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][16]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[10]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[6]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][15]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][17]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][3]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][2]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][16]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][19]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[9]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[19]/R
+                               0.796          0.925         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][23]/R
+                               0.796          0.924         -0.129  (VIOLATED)
+   u_mac16_top/u_mac/sum_out_reg[7]/R
+                               0.796          0.924         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][14]/R
+                               0.796          0.924         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][20]/R
+                               0.796          0.924         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][16]/R
+                               0.796          0.924         -0.129  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][15]/R
+                               0.796          0.924         -0.129  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[7]/R
+                               0.796          0.924         -0.128  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[2]/R
+                               0.796          0.924         -0.128  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][22]/R
+                               0.796          0.924         -0.128  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][16]/R
+                               0.796          0.924         -0.128  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[1]/R
+                               0.796          0.924         -0.128  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[3]/R
+                               0.796          0.924         -0.128  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][21]/R
+                               0.796          0.924         -0.128  (VIOLATED)
+   u_mac16_top/u_mac/accum_reg_reg[20]/R
+                               0.796          0.924         -0.128  (VIOLATED)
+   HFSINV_47592_20/Y           0.796          0.924         -0.128  (VIOLATED)
+   HFSINV_54730_24/Y           0.796          0.924         -0.128  (VIOLATED)
+   HFSINV_2303_6/Y             0.796          0.912         -0.116  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[15]/R
+                               0.796          0.912         -0.116  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[18]/R
+                               0.796          0.912         -0.116  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[2]/R
+                               0.796          0.911         -0.116  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[20]/R
+                               0.796          0.911         -0.116  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[19]/R
+                               0.796          0.911         -0.116  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[21]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[4]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[7]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[8]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[0]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[17]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[16]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[23]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[20]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[14]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[22]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[7]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[10]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[5]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[13]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[16]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[4]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[1]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[18]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[17]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[6]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[9]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[12]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[11]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[12]/R
+                               0.796          0.911         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[8]/R
+                               0.796          0.910         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[14]/R
+                               0.796          0.910         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[14]/R
+                               0.796          0.910         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[3]/R
+                               0.796          0.910         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[20]/R
+                               0.796          0.910         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[17]/R
+                               0.796          0.910         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[3]/R
+                               0.796          0.910         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[13]/R
+                               0.796          0.910         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s20_reg[19]/R
+                               0.796          0.910         -0.115  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[19]/R
+                               0.796          0.862         -0.066  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[16]/R
+                               0.796          0.862         -0.066  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[13]/R
+                               0.796          0.862         -0.066  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[12]/R
+                               0.796          0.862         -0.066  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[13]/R
+                               0.796          0.862         -0.066  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[12]/R
+                               0.796          0.862         -0.066  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[22]/R
+                               0.796          0.862         -0.066  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[14]/R
+                               0.796          0.862         -0.066  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s41_reg[23]/R
+                               0.796          0.862         -0.066  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[23]/R
+                               0.796          0.861         -0.066  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[15]/R
+                               0.796          0.861         -0.066  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[9]/R
+                               0.796          0.861         -0.066  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[18]/R
+                               0.796          0.861         -0.065  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[18]/R
+                               0.796          0.861         -0.065  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[11]/R
+                               0.796          0.861         -0.065  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[17]/R
+                               0.796          0.861         -0.065  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[10]/R
+                               0.796          0.861         -0.065  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[22]/R
+                               0.796          0.861         -0.065  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[10]/R
+                               0.796          0.861         -0.065  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[12]/R
+                               0.796          0.861         -0.065  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[19]/R
+                               0.796          0.861         -0.065  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[23]/R
+                               0.796          0.861         -0.065  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[7]/R
+                               0.796          0.861         -0.065  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c31_reg[11]/R
+                               0.796          0.861         -0.065  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c30_reg[20]/R
+                               0.796          0.860         -0.065  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s31_reg[8]/R
+                               0.796          0.860         -0.065  (VIOLATED)
+   HFSINV_4958_4/Y             0.796          0.860         -0.065  (VIOLATED)
+   HFSINV_3673_2/Y             0.796          0.860         -0.065  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[5]/R
+                               0.796          0.860         -0.064  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[6]/R
+                               0.796          0.860         -0.064  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[5]/R
+                               0.796          0.860         -0.064  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[14]/R
+                               0.796          0.860         -0.064  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[9]/R
+                               0.796          0.859         -0.064  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[18]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[16]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[12]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[10]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[19]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[23]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[23]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[22]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[19]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[22]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[16]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[11]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[8]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[10]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[20]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[15]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[8]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c20_reg[6]/R
+                               0.796          0.859         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c21_reg[13]/R
+                               0.796          0.858         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[17]/R
+                               0.796          0.858         -0.063  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s21_reg[21]/R
+                               0.796          0.858         -0.063  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[20]/R
+                               0.796          0.856         -0.061  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[22]/R
+                               0.796          0.856         -0.060  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][23]/R
+                               0.796          0.856         -0.060  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][23]/R
+                               0.796          0.856         -0.060  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][22]/R
+                               0.796          0.856         -0.060  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][23]/R
+                               0.796          0.856         -0.060  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][2]/R
+                               0.796          0.856         -0.060  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][2]/R
+                               0.796          0.855         -0.060  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[21]/R
+                               0.796          0.855         -0.060  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][5]/R
+                               0.796          0.855         -0.060  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][8]/R
+                               0.796          0.855         -0.060  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][9]/R
+                               0.796          0.855         -0.059  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][20]/R
+                               0.796          0.855         -0.059  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][20]/R
+                               0.796          0.855         -0.059  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][20]/R
+                               0.796          0.855         -0.059  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[20]/R
+                               0.796          0.855         -0.059  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][4]/R
+                               0.796          0.855         -0.059  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][7]/R
+                               0.796          0.855         -0.059  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][4]/R
+                               0.796          0.855         -0.059  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[0][4]/R
+                               0.796          0.855         -0.059  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][4]/R
+                               0.796          0.855         -0.059  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][1]/R
+                               0.796          0.855         -0.059  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][10]/R
+                               0.796          0.855         -0.059  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][11]/R
+                               0.796          0.855         -0.059  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][21]/R
+                               0.796          0.854         -0.059  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][10]/R
+                               0.796          0.854         -0.059  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][3]/R
+                               0.796          0.854         -0.059  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[22]/R
+                               0.796          0.854         -0.059  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][3]/R
+                               0.796          0.854         -0.059  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][3]/R
+                               0.796          0.854         -0.059  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[21]/R
+                               0.796          0.854         -0.059  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[16]/R
+                               0.796          0.854         -0.059  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][21]/R
+                               0.796          0.854         -0.058  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][6]/R
+                               0.796          0.854         -0.058  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][22]/R
+                               0.796          0.854         -0.058  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][22]/R
+                               0.796          0.854         -0.058  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][5]/R
+                               0.796          0.854         -0.058  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][21]/R
+                               0.796          0.854         -0.058  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][6]/R
+                               0.796          0.854         -0.058  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][2]/R
+                               0.796          0.854         -0.058  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][6]/R
+                               0.796          0.854         -0.058  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][3]/R
+                               0.796          0.854         -0.058  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][6]/R
+                               0.796          0.854         -0.058  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[16]/R
+                               0.796          0.854         -0.058  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[17]/R
+                               0.796          0.854         -0.058  (VIOLATED)
+   HFSINV_56595_23/Y           0.796          0.854         -0.058  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][5]/R
+                               0.796          0.854         -0.058  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][2]/R
+                               0.796          0.854         -0.058  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][2]/R
+                               0.796          0.853         -0.058  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][2]/R
+                               0.796          0.853         -0.058  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][0]/R
+                               0.796          0.853         -0.058  (VIOLATED)
+   HFSINV_10454_12/Y           0.796          0.853         -0.058  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[15]/R
+                               0.796          0.851         -0.055  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[10]/R
+                               0.796          0.851         -0.055  (VIOLATED)
+   u_mac16_top/opA_reg_reg[7]/R
+                               0.796          0.850         -0.054  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][10]/R
+                               0.796          0.850         -0.054  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][11]/R
+                               0.796          0.850         -0.054  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][11]/R
+                               0.796          0.850         -0.054  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[13]/R
+                               0.796          0.850         -0.054  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][4]/R
+                               0.796          0.850         -0.054  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[14]/R
+                               0.796          0.850         -0.054  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[7]/R
+                               0.796          0.850         -0.054  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][7]/R
+                               0.796          0.849         -0.054  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][7]/R
+                               0.796          0.849         -0.054  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][7]/R
+                               0.796          0.849         -0.054  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][9]/R
+                               0.796          0.849         -0.053  (VIOLATED)
+   u_mac16_top/u_inA/data_out_reg[4]/R
+                               0.796          0.849         -0.053  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][15]/R
+                               0.796          0.849         -0.053  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[0][8]/R
+                               0.796          0.849         -0.053  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][9]/R
+                               0.796          0.849         -0.053  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][15]/R
+                               0.796          0.849         -0.053  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][8]/R
+                               0.796          0.849         -0.053  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[3][8]/R
+                               0.796          0.849         -0.053  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[1][15]/R
+                               0.796          0.849         -0.053  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][15]/R
+                               0.796          0.849         -0.053  (VIOLATED)
+   u_mac16_top/opA_fifo_reg[2][8]/R
+                               0.796          0.849         -0.053  (VIOLATED)
+   u_mac16_top/op_fifo_rd_ptr_reg[1]/R
+                               0.796          0.848         -0.053  (VIOLATED)
+   HFSINV_23993_7/Y            0.796          0.848         -0.053  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[11]/R
+                               0.796          0.843         -0.047  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[2]/R
+                               0.796          0.843         -0.047  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[1]/R
+                               0.796          0.842         -0.047  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][8]/R
+                               0.796          0.842         -0.047  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[6]/R
+                               0.796          0.842         -0.047  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[5]/R
+                               0.796          0.842         -0.047  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[4]/R
+                               0.796          0.842         -0.046  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[10]/R
+                               0.796          0.842         -0.046  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[4]/R
+                               0.796          0.842         -0.046  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[3]/R
+                               0.796          0.842         -0.046  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][5]/R
+                               0.796          0.842         -0.046  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][4]/R
+                               0.796          0.842         -0.046  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][5]/R
+                               0.796          0.841         -0.046  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][4]/R
+                               0.796          0.841         -0.046  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][4]/R
+                               0.796          0.841         -0.046  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][9]/R
+                               0.796          0.841         -0.046  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[8]/R
+                               0.796          0.841         -0.046  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[5]/R
+                               0.796          0.841         -0.046  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[9]/R
+                               0.796          0.841         -0.046  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][3]/R
+                               0.796          0.841         -0.046  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][2]/R
+                               0.796          0.841         -0.046  (VIOLATED)
+   U1502/Y                     0.796          0.841         -0.045  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[9]/R
+                               0.796          0.841         -0.045  (VIOLATED)
+   u_mac16_top/result_fifo_reg[3][3]/R
+                               0.796          0.841         -0.045  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][3]/R
+                               0.796          0.841         -0.045  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[2]/R
+                               0.796          0.841         -0.045  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][8]/R
+                               0.796          0.841         -0.045  (VIOLATED)
+   u_mac16_top/result_fifo_reg[2][5]/R
+                               0.796          0.841         -0.045  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][8]/R
+                               0.796          0.841         -0.045  (VIOLATED)
+   u_mac16_top/result_fifo_reg[1][9]/R
+                               0.796          0.841         -0.045  (VIOLATED)
+   u_mac16_top/u_out/shift_reg_reg[13]/R
+                               0.796          0.841         -0.045  (VIOLATED)
+   u_mac16_top/u_mac/last_prod_reg[7]/RDN
+                               0.796          0.841         -0.045  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s40_reg[12]/SN
+                               0.796          0.841         -0.045  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][5]/R
+                               0.796          0.841         -0.045  (VIOLATED)
+   u_mac16_top/fifo_rd_ptr_reg[1]/SN
+                               0.796          0.841         -0.045  (VIOLATED)
+   u_mac16_top/fifo_wr_ptr_reg[1]/SN
+                               0.796          0.840         -0.045  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[1]/R
+                               0.796          0.840         -0.045  (VIOLATED)
+   u_mac16_top/op_fifo_wr_ptr_reg[1]/SN
+                               0.796          0.840         -0.045  (VIOLATED)
+   u_mac16_top/opB_reg_reg[1]/RDN
+                               0.796          0.840         -0.045  (VIOLATED)
+   u_mac16_top/mac_result_shadow_reg[0]/R
+                               0.796          0.840         -0.044  (VIOLATED)
+   u_mac16_top/opA_reg_reg[10]/RDN
+                               0.796          0.840         -0.044  (VIOLATED)
+   u_mac16_top/result_fifo_reg[0][4]/R
+                               0.796          0.840         -0.044  (VIOLATED)
+   HFSINV_45899_21/Y           0.796          0.840         -0.044  (VIOLATED)
+   ctmTdsLR_1_810/Y            0.796          0.833         -0.037  (VIOLATED)
+   U2651/A0                    0.796          0.832         -0.037  (VIOLATED)
+   U1643/A0                    0.796          0.832         -0.037  (VIOLATED)
+   U1642/A0                    0.796          0.832         -0.037  (VIOLATED)
+   U1644/A0                    0.796          0.832         -0.037  (VIOLATED)
+   U1867/A0                    0.796          0.832         -0.037  (VIOLATED)
+   U1306/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U1305/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U2655/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U1226/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U1291/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U1289/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U2475/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U1224/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U2280/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U1225/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U2303/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U2652/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U1299/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U2307/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U1295/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U1369/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U1627/A0                    0.796          0.832         -0.036  (VIOLATED)
+   U1223/A0                    0.796          0.831         -0.036  (VIOLATED)
+   U1640/A0                    0.796          0.831         -0.036  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][12]/R
+                               0.796          0.822         -0.026  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][3]/R
+                               0.796          0.822         -0.026  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][7]/R
+                               0.796          0.822         -0.026  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][13]/R
+                               0.796          0.822         -0.026  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][15]/R
+                               0.796          0.822         -0.026  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][14]/R
+                               0.796          0.822         -0.026  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][4]/R
+                               0.796          0.822         -0.026  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][11]/R
+                               0.796          0.821         -0.026  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][7]/R
+                               0.796          0.821         -0.026  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][11]/R
+                               0.796          0.821         -0.026  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][5]/R
+                               0.796          0.821         -0.025  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][4]/R
+                               0.796          0.821         -0.025  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][8]/R
+                               0.796          0.821         -0.025  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[3][12]/R
+                               0.796          0.821         -0.025  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][15]/R
+                               0.796          0.821         -0.025  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][14]/R
+                               0.796          0.821         -0.025  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][8]/R
+                               0.796          0.821         -0.025  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][7]/R
+                               0.796          0.821         -0.025  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][6]/R
+                               0.796          0.821         -0.025  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][6]/R
+                               0.796          0.820         -0.025  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[1][5]/R
+                               0.796          0.820         -0.025  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][5]/R
+                               0.796          0.820         -0.025  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][4]/R
+                               0.796          0.820         -0.025  (VIOLATED)
+   u_mac16_top/opB_fifo_reg[2][8]/R
+                               0.796          0.820         -0.025  (VIOLATED)
+   HFSINV_12912_9/Y            0.796          0.820         -0.025  (VIOLATED)
+   U2236/B0                    0.796          0.815         -0.020  (VIOLATED)
+   U1859/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U2625/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U2193/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U2209/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U2196/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U2329/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U2158/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U2254/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U2188/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U2151/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U2172/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U1854/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U2154/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U2166/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U2224/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U2245/B0                    0.796          0.815         -0.019  (VIOLATED)
+   U2230/B0                    0.796          0.814         -0.019  (VIOLATED)
+   U2242/B0                    0.796          0.814         -0.018  (VIOLATED)
+   U2169/B0                    0.796          0.814         -0.018  (VIOLATED)
+   U1846/B0                    0.796          0.814         -0.018  (VIOLATED)
+   U1851/B0                    0.796          0.814         -0.018  (VIOLATED)
+   U2598/B0                    0.796          0.814         -0.018  (VIOLATED)
+   U2249/B0                    0.796          0.814         -0.018  (VIOLATED)
+   U2227/B0                    0.796          0.814         -0.018  (VIOLATED)
+   U1839/B0                    0.796          0.814         -0.018  (VIOLATED)
+   U1842/B0                    0.796          0.813         -0.018  (VIOLATED)
+   U2202/B0                    0.796          0.813         -0.018  (VIOLATED)
+   U2213/B0                    0.796          0.813         -0.018  (VIOLATED)
+   U2161/B0                    0.796          0.813         -0.018  (VIOLATED)
+   U1861/B0                    0.796          0.813         -0.018  (VIOLATED)
+   U2216/B0                    0.796          0.813         -0.018  (VIOLATED)
+   U2131/Y                     0.796          0.813         -0.018  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[18]/R
+                               0.796          0.798         -0.002  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[17]/R
+                               0.796          0.797         -0.002  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[15]/R
+                               0.796          0.797         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[12]/R
+                               0.796          0.797         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[13]/R
+                               0.796          0.797         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[16]/R
+                               0.796          0.797         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[10]/R
+                               0.796          0.797         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s23_reg[19]/R
+                               0.796          0.797         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[11]/R
+                               0.796          0.796         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[9]/R
+                               0.796          0.796         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[22]/R
+                               0.796          0.796         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[14]/R
+                               0.796          0.796         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[12]/R
+                               0.796          0.796         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[22]/R
+                               0.796          0.796         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[23]/R
+                               0.796          0.796         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[13]/R
+                               0.796          0.796         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[17]/R
+                               0.796          0.796         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[20]/R
+                               0.796          0.796         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[14]/R
+                               0.796          0.796         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[21]/R
+                               0.796          0.796         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[21]/R
+                               0.796          0.796         -0.001  (VIOLATED)
+   u_mac16_top/u_mac/u_mul/r_c22_reg[18]/R
+                               0.796          0.796          0.000  (VIOLATED: increase significant digits)
+   u_mac16_top/u_mac/u_mul/r_s22_reg[15]/R
+                               0.796          0.796          0.000  (VIOLATED: increase significant digits)
+   HFSINV_6108_5/Y             0.796          0.796          0.000  (VIOLATED: increase significant digits)
+
+
+   max_fanout
+
+                             Required        Actual
+   Pin                        Fanout         Fanout          Slack
+   -----------------------------------------------------------------
+   HFSINV_2303_6/Y            16.000         39.000        -23.000  (VIOLATED)
+   HFSINV_66868_32/Y          16.000         37.000        -21.000  (VIOLATED)
+   HFSINV_59558_25/Y          16.000         36.000        -20.000  (VIOLATED)
+   HFSINV_45899_21/Y          16.000         34.000        -18.000  (VIOLATED)
+   U2131/Y                    16.000         32.000        -16.000  (VIOLATED)
+   HFSBUF_31684_30/ECK        16.000         31.000        -15.000  (VIOLATED)
+   HFSINV_51045_22/Y          16.000         31.000        -15.000  (VIOLATED)
+   HFSINV_7871_3/Y            16.000         30.000        -14.000  (VIOLATED)
+   HFSINV_52713_18/Y          16.000         30.000        -14.000  (VIOLATED)
+   HFSBUF_67202_26/ECK        16.000         29.000        -13.000  (VIOLATED)
+   U1809/Y                    16.000         29.000        -13.000  (VIOLATED)
+   HFSBUF_34608_28/ECK        16.000         27.000        -11.000  (VIOLATED)
+   HFSBUF_39107_31/ECK        16.000         27.000        -11.000  (VIOLATED)
+   HFSINV_15002_10/Y          16.000         27.000        -11.000  (VIOLATED)
+   HFSINV_54730_24/Y          16.000         27.000        -11.000  (VIOLATED)
+   u_mac16_top/u_mac/mode_d_reg/QN
+                              16.000         27.000        -11.000  (VIOLATED)
+   HFSINV_3673_2/Y            16.000         26.000        -10.000  (VIOLATED)
+   HFSINV_4958_4/Y            16.000         26.000        -10.000  (VIOLATED)
+   HFSINV_28332_1/Y           16.000         26.000        -10.000  (VIOLATED)
+   HFSINV_47592_20/Y          16.000         26.000        -10.000  (VIOLATED)
+   HFSINV_10454_12/Y          16.000         25.000         -9.000  (VIOLATED)
+   HFSINV_23993_7/Y           16.000         25.000         -9.000  (VIOLATED)
+   HFSINV_56595_23/Y          16.000         25.000         -9.000  (VIOLATED)
+   HFSINV_12912_9/Y           16.000         24.000         -8.000  (VIOLATED)
+   U1612/Y                    16.000         24.000         -8.000  (VIOLATED)
+   U1666/Y                    16.000         24.000         -8.000  (VIOLATED)
+   U1667/Y                    16.000         24.000         -8.000  (VIOLATED)
+   ctmTdsLR_1_810/Y           16.000         24.000         -8.000  (VIOLATED)
+   HFSBUF_36427_29/ECK        16.000         23.000         -7.000  (VIOLATED)
+   HFSINV_6108_5/Y            16.000         23.000         -7.000  (VIOLATED)
+   HFSINV_21132_14/Y          16.000         23.000         -7.000  (VIOLATED)
+   HFSINV_16807_13/Y          16.000         22.000         -6.000  (VIOLATED)
+   HFSINV_18720_8/Y           16.000         22.000         -6.000  (VIOLATED)
+   HFSINV_63164_16/Y          16.000         20.000         -4.000  (VIOLATED)
+   U2140/Y                    16.000         19.000         -3.000  (VIOLATED)
+   HFSBUF_42529_27/ECK        16.000         17.000         -1.000  (VIOLATED)
+
+
+1

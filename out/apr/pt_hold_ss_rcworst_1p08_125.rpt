@@ -1,0 +1,665 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type min
+	-slack_lesser_than 10.000
+	-max_paths 20
+	-sort_by slack
+Design : mac16
+Version: V-2023.12-SP5-1
+Date   : Tue Sep  1 10:08:17 2026
+****************************************
+
+
+  Startpoint: mode (input port clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/mode_d_reg
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.070      0.070 f
+  mode (in)                                              0.000 &    0.070 f
+  u_mac16_top/u_mac/mode_d_reg/D (DFFRX1H9R)             0.000 &    0.070 f
+  data arrival time                                                 0.070
+
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock reconvergence pessimism                          0.000      0.000
+  clock uncertainty                                      0.025      0.025
+  u_mac16_top/u_mac/mode_d_reg/CK (DFFRX1H9R)                       0.025 r
+  library hold time                                      0.034      0.059
+  data required time                                                0.059
+  ------------------------------------------------------------------------------
+  data required time                                                0.059
+  data arrival time                                                -0.070
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.011
+
+
+  Startpoint: mode (input port clocked by core_clk)
+  Endpoint: u_mac16_top/mode_reg_reg
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.070      0.070 f
+  mode (in)                                              0.000 &    0.070 f
+  u_mac16_top/mode_reg_reg/D (DFFRPQX0P5H9R)             0.000 &    0.070 f
+  data arrival time                                                 0.070
+
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock reconvergence pessimism                          0.000      0.000
+  clock uncertainty                                      0.025      0.025
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)                       0.025 r
+  library hold time                                      0.006      0.031
+  data required time                                                0.031
+  ------------------------------------------------------------------------------
+  data required time                                                0.031
+  data arrival time                                                -0.070
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.039
+
+
+  Startpoint: inB (input port clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/data_out_reg[0]
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.070      0.070 f
+  inB (in)                                               0.000 &    0.070 f
+  u_mac16_top/u_inB/data_out_reg[0]/D (DFFRPQX0P5H9R)    0.000 &    0.070 f
+  data arrival time                                                 0.070
+
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock reconvergence pessimism                          0.000      0.000
+  clock uncertainty                                      0.025      0.025
+  u_mac16_top/u_inB/data_out_reg[0]/CK (DFFRPQX0P5H9R)              0.025 r
+  library hold time                                      0.006      0.031
+  data required time                                                0.031
+  ------------------------------------------------------------------------------
+  data required time                                                0.031
+  data arrival time                                                -0.070
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.039
+
+
+  Startpoint: inA (input port clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/data_out_reg[0]
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.070      0.070 f
+  inA (in)                                               0.000 &    0.070 f
+  u_mac16_top/u_inA/data_out_reg[0]/D (DFFRPQX0P5H9R)    0.000 &    0.070 f
+  data arrival time                                                 0.070
+
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock reconvergence pessimism                          0.000      0.000
+  clock uncertainty                                      0.025      0.025
+  u_mac16_top/u_inA/data_out_reg[0]/CK (DFFRPQX0P5H9R)              0.025 r
+  library hold time                                      0.006      0.031
+  data required time                                                0.031
+  ------------------------------------------------------------------------------
+  data required time                                                0.031
+  data arrival time                                                -0.070
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.039
+
+
+  Startpoint: u_mac16_top/clk_gate_op_fifo_count_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_op_fifo_count_reg/main_gate
+               (rising clock gating-check end-point clocked by core_clk)
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  u_mac16_top/clk_gate_op_fifo_count_reg/latch/GN (LATLQX0P5H9R)
+                                                         0.000      0.500 f
+  u_mac16_top/clk_gate_op_fifo_count_reg/latch/Q (LATLQX0P5H9R)
+                                                         0.145 &    0.645 r
+  u_mac16_top/clk_gate_op_fifo_count_reg/main_gate/A (AND2X0P5H9R)
+                                                         0.000 &    0.645 r
+  data arrival time                                                 0.645
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                      0.025      0.525
+  u_mac16_top/clk_gate_op_fifo_count_reg/main_gate/B (AND2X0P5H9R)
+                                                                    0.525 f
+  clock gating hold time                                 0.000      0.525
+  data required time                                                0.525
+  ------------------------------------------------------------------------------
+  data required time                                                0.525
+  data arrival time                                                -0.645
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.120
+
+
+  Startpoint: u_mac16_top/clk_gate_fifo_count_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_fifo_count_reg/main_gate
+               (rising clock gating-check end-point clocked by core_clk)
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  u_mac16_top/clk_gate_fifo_count_reg/latch/GN (LATLQX0P5H9R)
+                                                         0.000      0.500 f
+  u_mac16_top/clk_gate_fifo_count_reg/latch/Q (LATLQX0P5H9R)
+                                                         0.146 &    0.646 r
+  u_mac16_top/clk_gate_fifo_count_reg/main_gate/A (AND2X0P5H9R)
+                                                         0.000 &    0.646 r
+  data arrival time                                                 0.646
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                      0.025      0.525
+  u_mac16_top/clk_gate_fifo_count_reg/main_gate/B (AND2X0P5H9R)     0.525 f
+  clock gating hold time                                 0.000      0.525
+  data required time                                                0.525
+  ------------------------------------------------------------------------------
+  data required time                                                0.525
+  data arrival time                                                -0.646
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.121
+
+
+  Startpoint: u_mac16_top/clk_gate_sched_cnt_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_sched_cnt_reg/main_gate
+               (rising clock gating-check end-point clocked by core_clk)
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  u_mac16_top/clk_gate_sched_cnt_reg/latch/GN (LATLQX0P5H9R)
+                                                         0.000      0.500 f
+  u_mac16_top/clk_gate_sched_cnt_reg/latch/Q (LATLQX0P5H9R)
+                                                         0.147 &    0.647 r
+  u_mac16_top/clk_gate_sched_cnt_reg/main_gate/A (AND2X0P5H9R)
+                                                         0.000 &    0.647 r
+  data arrival time                                                 0.647
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                      0.025      0.525
+  u_mac16_top/clk_gate_sched_cnt_reg/main_gate/B (AND2X0P5H9R)      0.525 f
+  clock gating hold time                                 0.000      0.525
+  data required time                                                0.525
+  ------------------------------------------------------------------------------
+  data required time                                                0.525
+  data arrival time                                                -0.647
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.122
+
+
+  Startpoint: inB (input port clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/shift_reg_reg[0]
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.070      0.070 f
+  inB (in)                                               0.000 &    0.070 f
+  U2647/Y (AND2X0P5H9R)                                  0.095 &    0.165 f
+  u_mac16_top/u_inB/shift_reg_reg[0]/D (DFFRPQX0P5H9R)
+                                                         0.000 &    0.165 f
+  data arrival time                                                 0.165
+
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock reconvergence pessimism                          0.000      0.000
+  clock uncertainty                                      0.025      0.025
+  u_mac16_top/u_inB/shift_reg_reg[0]/CK (DFFRPQX0P5H9R)             0.025 r
+  library hold time                                      0.011      0.036
+  data required time                                                0.036
+  ------------------------------------------------------------------------------
+  data required time                                                0.036
+  data arrival time                                                -0.165
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.129
+
+
+  Startpoint: inA (input port clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/shift_reg_reg[0]
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Path Group: core_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   0.070      0.070 f
+  inA (in)                                               0.000 &    0.070 f
+  U2588/Y (AND2X0P5H9R)                                  0.095 &    0.165 f
+  u_mac16_top/u_inA/shift_reg_reg[0]/D (DFFRPQX0P5H9R)
+                                                         0.000 &    0.165 f
+  data arrival time                                                 0.165
+
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock reconvergence pessimism                          0.000      0.000
+  clock uncertainty                                      0.025      0.025
+  u_mac16_top/u_inA/shift_reg_reg[0]/CK (DFFRPQX0P5H9R)             0.025 r
+  library hold time                                      0.011      0.036
+  data required time                                                0.036
+  ------------------------------------------------------------------------------
+  data required time                                                0.036
+  data arrival time                                                -0.165
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.129
+
+
+  Startpoint: u_mac16_top/u_inA/clk_gate_data_out_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/clk_gate_data_out_reg/main_gate
+               (rising clock gating-check end-point clocked by core_clk)
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  u_mac16_top/u_inA/clk_gate_data_out_reg/latch/GN (LATLQX0P5H9R)
+                                                         0.000      0.500 f
+  u_mac16_top/u_inA/clk_gate_data_out_reg/latch/Q (LATLQX0P5H9R)
+                                                         0.166 &    0.666 r
+  u_mac16_top/u_inA/clk_gate_data_out_reg/main_gate/A (AND2X1H9R)
+                                                         0.000 &    0.666 r
+  data arrival time                                                 0.666
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                      0.025      0.525
+  u_mac16_top/u_inA/clk_gate_data_out_reg/main_gate/B (AND2X1H9R)
+                                                                    0.525 f
+  clock gating hold time                                 0.000      0.525
+  data required time                                                0.525
+  ------------------------------------------------------------------------------
+  data required time                                                0.525
+  data arrival time                                                -0.666
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.141
+
+
+  Startpoint: u_mac16_top/u_inB/clk_gate_data_out_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/clk_gate_data_out_reg/main_gate
+               (rising clock gating-check end-point clocked by core_clk)
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  u_mac16_top/u_inB/clk_gate_data_out_reg/latch/GN (LATLQX0P5H9R)
+                                                         0.000      0.500 f
+  u_mac16_top/u_inB/clk_gate_data_out_reg/latch/Q (LATLQX0P5H9R)
+                                                         0.170 &    0.670 r
+  u_mac16_top/u_inB/clk_gate_data_out_reg/main_gate/A (AND2X1H9R)
+                                                         0.000 &    0.670 r
+  data arrival time                                                 0.670
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                      0.025      0.525
+  u_mac16_top/u_inB/clk_gate_data_out_reg/main_gate/B (AND2X1H9R)
+                                                                    0.525 f
+  clock gating hold time                                 0.000      0.525
+  data required time                                                0.525
+  ------------------------------------------------------------------------------
+  data required time                                                0.525
+  data arrival time                                                -0.670
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.145
+
+
+  Startpoint: u_mac16_top/clk_gate_opA_fifo_reg[1]/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_opA_fifo_reg[1]/main_gate
+               (rising clock gating-check end-point clocked by core_clk)
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  u_mac16_top/clk_gate_opA_fifo_reg[1]/latch/GN (LATLQX0P5H9R)
+                                                         0.000      0.500 f
+  u_mac16_top/clk_gate_opA_fifo_reg[1]/latch/Q (LATLQX0P5H9R)
+                                                         0.173 &    0.673 r
+  u_mac16_top/clk_gate_opA_fifo_reg[1]/main_gate/A (AND2X3H9R)
+                                                         0.000 &    0.673 r
+  data arrival time                                                 0.673
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                      0.025      0.525
+  u_mac16_top/clk_gate_opA_fifo_reg[1]/main_gate/B (AND2X3H9R)      0.525 f
+  clock gating hold time                                 0.000      0.525
+  data required time                                                0.525
+  ------------------------------------------------------------------------------
+  data required time                                                0.525
+  data arrival time                                                -0.673
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.148
+
+
+  Startpoint: u_mac16_top/u_mac/clk_gate_sum_out_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/clk_gate_sum_out_reg/main_gate
+               (rising clock gating-check end-point clocked by core_clk)
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  u_mac16_top/u_mac/clk_gate_sum_out_reg/latch/GN (LATLQX0P5H9R)
+                                                         0.000      0.500 f
+  u_mac16_top/u_mac/clk_gate_sum_out_reg/latch/Q (LATLQX0P5H9R)
+                                                         0.178 &    0.678 r
+  u_mac16_top/u_mac/clk_gate_sum_out_reg/main_gate/A (AND2X1P4H9R)
+                                                         0.000 &    0.678 r
+  data arrival time                                                 0.678
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                      0.025      0.525
+  u_mac16_top/u_mac/clk_gate_sum_out_reg/main_gate/B (AND2X1P4H9R)
+                                                                    0.525 f
+  clock gating hold time                                 0.000      0.525
+  data required time                                                0.525
+  ------------------------------------------------------------------------------
+  data required time                                                0.525
+  data arrival time                                                -0.678
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.153
+
+
+  Startpoint: u_mac16_top/clk_gate_result_fifo_reg[2]/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_result_fifo_reg[2]/main_gate
+               (rising clock gating-check end-point clocked by core_clk)
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  u_mac16_top/clk_gate_result_fifo_reg[2]/latch/GN (LATLQX0P5H9R)
+                                                         0.000      0.500 f
+  u_mac16_top/clk_gate_result_fifo_reg[2]/latch/Q (LATLQX0P5H9R)
+                                                         0.179 &    0.679 r
+  u_mac16_top/clk_gate_result_fifo_reg[2]/main_gate/A (AND2X2H9R)
+                                                         0.000 &    0.679 r
+  data arrival time                                                 0.679
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                      0.025      0.525
+  u_mac16_top/clk_gate_result_fifo_reg[2]/main_gate/B (AND2X2H9R)
+                                                                    0.525 f
+  clock gating hold time                                 0.000      0.525
+  data required time                                                0.525
+  ------------------------------------------------------------------------------
+  data required time                                                0.525
+  data arrival time                                                -0.679
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.154
+
+
+  Startpoint: u_mac16_top/u_mac/u_mul/clk_gate_r_s20_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/clk_gate_r_s20_reg/main_gate
+               (rising clock gating-check end-point clocked by core_clk)
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  u_mac16_top/u_mac/u_mul/clk_gate_r_s20_reg/latch/GN (LATLQX0P5H9R)
+                                                         0.000      0.500 f
+  u_mac16_top/u_mac/u_mul/clk_gate_r_s20_reg/latch/Q (LATLQX0P5H9R)
+                                                         0.181 &    0.681 r
+  u_mac16_top/u_mac/u_mul/clk_gate_r_s20_reg/main_gate/A (AND2X2H9R)
+                                                         0.000 &    0.681 r
+  data arrival time                                                 0.681
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                      0.025      0.525
+  u_mac16_top/u_mac/u_mul/clk_gate_r_s20_reg/main_gate/B (AND2X2H9R)
+                                                                    0.525 f
+  clock gating hold time                                 0.000      0.525
+  data required time                                                0.525
+  ------------------------------------------------------------------------------
+  data required time                                                0.525
+  data arrival time                                                -0.681
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.156
+
+
+  Startpoint: u_mac16_top/clk_gate_opA_fifo_reg[2]/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_opA_fifo_reg[2]/main_gate
+               (rising clock gating-check end-point clocked by core_clk)
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  u_mac16_top/clk_gate_opA_fifo_reg[2]/latch/GN (LATLQX0P5H9R)
+                                                         0.000      0.500 f
+  u_mac16_top/clk_gate_opA_fifo_reg[2]/latch/Q (LATLQX0P5H9R)
+                                                         0.183 &    0.683 r
+  u_mac16_top/clk_gate_opA_fifo_reg[2]/main_gate/A (AND2X3H9R)
+                                                         0.000 &    0.683 r
+  data arrival time                                                 0.683
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                      0.025      0.525
+  u_mac16_top/clk_gate_opA_fifo_reg[2]/main_gate/B (AND2X3H9R)      0.525 f
+  clock gating hold time                                 0.000      0.525
+  data required time                                                0.525
+  ------------------------------------------------------------------------------
+  data required time                                                0.525
+  data arrival time                                                -0.683
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.158
+
+
+  Startpoint: u_mac16_top/u_mac/clk_gate_last_prod_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/clk_gate_last_prod_reg/main_gate
+               (rising clock gating-check end-point clocked by core_clk)
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  u_mac16_top/u_mac/clk_gate_last_prod_reg/latch/GN (LATLQX0P5H9R)
+                                                         0.000      0.500 f
+  u_mac16_top/u_mac/clk_gate_last_prod_reg/latch/Q (LATLQX0P5H9R)
+                                                         0.183 &    0.683 r
+  u_mac16_top/u_mac/clk_gate_last_prod_reg/main_gate/A (AND2X1P4H9R)
+                                                         0.000 &    0.683 r
+  data arrival time                                                 0.683
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                      0.025      0.525
+  u_mac16_top/u_mac/clk_gate_last_prod_reg/main_gate/B (AND2X1P4H9R)
+                                                                    0.525 f
+  clock gating hold time                                 0.000      0.525
+  data required time                                                0.525
+  ------------------------------------------------------------------------------
+  data required time                                                0.525
+  data arrival time                                                -0.683
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.158
+
+
+  Startpoint: u_mac16_top/clk_gate_result_fifo_reg[1]/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_result_fifo_reg[1]/main_gate
+               (rising clock gating-check end-point clocked by core_clk)
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  u_mac16_top/clk_gate_result_fifo_reg[1]/latch/GN (LATLQX0P5H9R)
+                                                         0.000      0.500 f
+  u_mac16_top/clk_gate_result_fifo_reg[1]/latch/Q (LATLQX0P5H9R)
+                                                         0.184 &    0.684 r
+  u_mac16_top/clk_gate_result_fifo_reg[1]/main_gate/A (AND2X2H9R)
+                                                         0.000 &    0.684 r
+  data arrival time                                                 0.684
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                      0.025      0.525
+  u_mac16_top/clk_gate_result_fifo_reg[1]/main_gate/B (AND2X2H9R)
+                                                                    0.525 f
+  clock gating hold time                                 0.000      0.525
+  data required time                                                0.525
+  ------------------------------------------------------------------------------
+  data required time                                                0.525
+  data arrival time                                                -0.684
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.159
+
+
+  Startpoint: u_mac16_top/clk_gate_mac_result_shadow_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_mac_result_shadow_reg/main_gate
+               (rising clock gating-check end-point clocked by core_clk)
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  u_mac16_top/clk_gate_mac_result_shadow_reg/latch/GN (LATLQX0P5H9R)
+                                                         0.000      0.500 f
+  u_mac16_top/clk_gate_mac_result_shadow_reg/latch/Q (LATLQX0P5H9R)
+                                                         0.186 &    0.686 r
+  u_mac16_top/clk_gate_mac_result_shadow_reg/main_gate/A (AND2X2H9R)
+                                                         0.000 &    0.686 r
+  data arrival time                                                 0.686
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                      0.025      0.525
+  u_mac16_top/clk_gate_mac_result_shadow_reg/main_gate/B (AND2X2H9R)
+                                                                    0.525 f
+  clock gating hold time                                 0.000      0.525
+  data required time                                                0.525
+  ------------------------------------------------------------------------------
+  data required time                                                0.525
+  data arrival time                                                -0.686
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.161
+
+
+  Startpoint: u_mac16_top/clk_gate_result_fifo_reg[0]/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_result_fifo_reg[0]/main_gate
+               (rising clock gating-check end-point clocked by core_clk)
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  u_mac16_top/clk_gate_result_fifo_reg[0]/latch/GN (LATLQX0P5H9R)
+                                                         0.000      0.500 f
+  u_mac16_top/clk_gate_result_fifo_reg[0]/latch/Q (LATLQX0P5H9R)
+                                                         0.186 &    0.686 r
+  u_mac16_top/clk_gate_result_fifo_reg[0]/main_gate/A (AND2X1P4H9R)
+                                                         0.000 &    0.686 r
+  data arrival time                                                 0.686
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                      0.025      0.525
+  u_mac16_top/clk_gate_result_fifo_reg[0]/main_gate/B (AND2X1P4H9R)
+                                                                    0.525 f
+  clock gating hold time                                 0.000      0.525
+  data required time                                                0.525
+  ------------------------------------------------------------------------------
+  data required time                                                0.525
+  data arrival time                                                -0.686
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.161
+
+Warning: report_timing has satisfied the max_paths criteria. There are 1575 further endpoints which have paths of interest with slack less than   10.000 that were not considered when generating this report. (UITE-502)
+
+1

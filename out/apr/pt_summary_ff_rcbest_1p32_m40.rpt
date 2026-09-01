@@ -1,0 +1,61 @@
+****************************************
+Report : constraint
+	-all_violators
+	-path slack_only
+Design : mac16
+Version: V-2023.12-SP5-1
+Date   : Tue Sep  1 10:08:19 2026
+****************************************
+
+
+
+
+
+
+
+
+   max_fanout
+
+                             Required        Actual
+   Pin                        Fanout         Fanout          Slack
+   -----------------------------------------------------------------
+   HFSINV_2303_6/Y            16.000         39.000        -23.000  (VIOLATED)
+   HFSINV_66868_32/Y          16.000         37.000        -21.000  (VIOLATED)
+   HFSINV_59558_25/Y          16.000         36.000        -20.000  (VIOLATED)
+   HFSINV_45899_21/Y          16.000         34.000        -18.000  (VIOLATED)
+   U2131/Y                    16.000         32.000        -16.000  (VIOLATED)
+   HFSBUF_31684_30/ECK        16.000         31.000        -15.000  (VIOLATED)
+   HFSINV_51045_22/Y          16.000         31.000        -15.000  (VIOLATED)
+   HFSINV_7871_3/Y            16.000         30.000        -14.000  (VIOLATED)
+   HFSINV_52713_18/Y          16.000         30.000        -14.000  (VIOLATED)
+   HFSBUF_67202_26/ECK        16.000         29.000        -13.000  (VIOLATED)
+   U1809/Y                    16.000         29.000        -13.000  (VIOLATED)
+   HFSBUF_34608_28/ECK        16.000         27.000        -11.000  (VIOLATED)
+   HFSBUF_39107_31/ECK        16.000         27.000        -11.000  (VIOLATED)
+   HFSINV_15002_10/Y          16.000         27.000        -11.000  (VIOLATED)
+   HFSINV_54730_24/Y          16.000         27.000        -11.000  (VIOLATED)
+   u_mac16_top/u_mac/mode_d_reg/QN
+                              16.000         27.000        -11.000  (VIOLATED)
+   HFSINV_3673_2/Y            16.000         26.000        -10.000  (VIOLATED)
+   HFSINV_4958_4/Y            16.000         26.000        -10.000  (VIOLATED)
+   HFSINV_28332_1/Y           16.000         26.000        -10.000  (VIOLATED)
+   HFSINV_47592_20/Y          16.000         26.000        -10.000  (VIOLATED)
+   HFSINV_10454_12/Y          16.000         25.000         -9.000  (VIOLATED)
+   HFSINV_23993_7/Y           16.000         25.000         -9.000  (VIOLATED)
+   HFSINV_56595_23/Y          16.000         25.000         -9.000  (VIOLATED)
+   HFSINV_12912_9/Y           16.000         24.000         -8.000  (VIOLATED)
+   U1612/Y                    16.000         24.000         -8.000  (VIOLATED)
+   U1666/Y                    16.000         24.000         -8.000  (VIOLATED)
+   U1667/Y                    16.000         24.000         -8.000  (VIOLATED)
+   ctmTdsLR_1_810/Y           16.000         24.000         -8.000  (VIOLATED)
+   HFSBUF_36427_29/ECK        16.000         23.000         -7.000  (VIOLATED)
+   HFSINV_6108_5/Y            16.000         23.000         -7.000  (VIOLATED)
+   HFSINV_21132_14/Y          16.000         23.000         -7.000  (VIOLATED)
+   HFSINV_16807_13/Y          16.000         22.000         -6.000  (VIOLATED)
+   HFSINV_18720_8/Y           16.000         22.000         -6.000  (VIOLATED)
+   HFSINV_63164_16/Y          16.000         20.000         -4.000  (VIOLATED)
+   U2140/Y                    16.000         19.000         -3.000  (VIOLATED)
+   HFSBUF_42529_27/ECK        16.000         17.000         -1.000  (VIOLATED)
+
+
+1

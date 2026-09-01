@@ -124,6 +124,14 @@ flowchart LR
 - 1GHz 时序：TYP **MET(+0.06)**、FF/RCbest **MET(+0.36)**、**SS/RCworst/1.08V/125°C 违例(-0.76ns)**。
 - 流程与结果详见 [out/apr/3corner_spef_README.md](out/apr/3corner_spef_README.md)。
 
+### PrimeTime 静态时序分析（STA）
+
+- 用 PrimeTime（V-2023.12-SP5-1）对 3 个 corner 做了 1GHz 签核级 STA（`script/pt_3corner_sta.tcl`）。
+- 结果：**Hold 三角全通过**（typ +0.03 / ss +0.01 / ff +0.03ns）；
+  **Setup 只有 FF 角通过（+0.021ns），TYP -0.012ns、SS -0.887ns 不通过**；
+  另有异步复位 recovery 违例（typ -0.109 / ss -1.025ns）与 SS 角 max_transition/max_cap 违例。
+- 详细分类与根因见 [out/apr/pt_sta_README.md](out/apr/pt_sta_README.md)。
+
 ## 六、流程复现
 
 ```bash

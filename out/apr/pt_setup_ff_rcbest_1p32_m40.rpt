@@ -1,0 +1,910 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-slack_lesser_than 10.000
+	-max_paths 20
+	-sort_by slack
+Design : mac16
+Version: V-2023.12-SP5-1
+Date   : Tue Sep  1 10:08:19 2026
+****************************************
+
+
+  Startpoint: u_mac16_top/u_out/busy_reg
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_out/clk_gate_bits_left_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/u_out/busy_reg/CK (DFFRPQX0P5H9R)          0.000      0.000 r
+  u_mac16_top/u_out/busy_reg/Q (DFFRPQX0P5H9R)           0.115 &    0.115 r
+  U1809/Y (BUFX2H9R)                                     0.117 &    0.233 r
+  U1808/Y (INVX0P5H9R)                                   0.094 &    0.326 f
+  U1762/Y (NAND2X0P5H9R)                                 0.060 &    0.387 r
+  U2470/Y (NAND2X0P5H9R)                                 0.032 &    0.418 f
+  u_mac16_top/u_out/clk_gate_bits_left_reg/test_or/Y (OR2X0P5H9R)
+                                                         0.036 &    0.454 f
+  u_mac16_top/u_out/clk_gate_bits_left_reg/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.454 f
+  data arrival time                                                 0.454
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/u_out/clk_gate_bits_left_reg/latch/GN (LATLQX0P5H9R)
+                                                                    0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.454
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.021
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.045 
+  ------------------------------------------------------------------
+  max time borrow                                        0.455 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/u_mac/cal_done_reg
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_mac_result_shadow_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/u_mac/cal_done_reg/CK (DFFRPQX0P5H9R)      0.000      0.000 r
+  u_mac16_top/u_mac/cal_done_reg/Q (DFFRPQX0P5H9R)       0.147 &    0.147 r
+  U2103/Y (INVX0P5H9R)                                   0.054 &    0.201 f
+  U2237/Y (NOR2X0P5H9R)                                  0.045 &    0.246 r
+  U1810/Y (INVX0P5H9R)                                   0.042 &    0.289 f
+  U2511/Y (OAI31X0P5H9R)                                 0.107 &    0.396 r
+  u_mac16_top/clk_gate_mac_result_shadow_reg/test_or/Y (OR2X0P5H9R)
+                                                         0.040 &    0.436 r
+  u_mac16_top/clk_gate_mac_result_shadow_reg/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.436 r
+  data arrival time                                                 0.436
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/clk_gate_mac_result_shadow_reg/latch/GN (LATLQX0P5H9R)
+                                                                    0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.436
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.039
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.031 
+  ------------------------------------------------------------------
+  max time borrow                                        0.469 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/u_out/busy_reg
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_result_fifo_reg[2]/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/u_out/busy_reg/CK (DFFRPQX0P5H9R)          0.000      0.000 r
+  u_mac16_top/u_out/busy_reg/Q (DFFRPQX0P5H9R)           0.115 &    0.115 f
+  U1809/Y (BUFX2H9R)                                     0.094 &    0.208 f
+  ctmTdsLR_1_155/Y (OAI211X0P5H9R)                       0.143 &    0.351 r
+  U2463/Y (NOR3X1H9R)                                    0.036 &    0.387 f
+  u_mac16_top/clk_gate_result_fifo_reg[2]/test_or/Y (OR2X0P5H9R)
+                                                         0.040 &    0.427 f
+  u_mac16_top/clk_gate_result_fifo_reg[2]/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.427 f
+  data arrival time                                                 0.427
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/clk_gate_result_fifo_reg[2]/latch/GN (LATLQX0P5H9R)
+                                                                    0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.427
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.048
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.047 
+  ------------------------------------------------------------------
+  max time borrow                                        0.453 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/u_out/busy_reg
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_fifo_count_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/u_out/busy_reg/CK (DFFRPQX0P5H9R)          0.000      0.000 r
+  u_mac16_top/u_out/busy_reg/Q (DFFRPQX0P5H9R)           0.115 &    0.115 r
+  U1809/Y (BUFX2H9R)                                     0.117 &    0.233 r
+  ctmTdsLR_1_155/Y (OAI211X0P5H9R)                       0.105 &    0.338 f
+  U2458/Y (NAND2X0P7H9R)                                 0.051 &    0.388 r
+  u_mac16_top/clk_gate_fifo_count_reg/test_or/Y (OR2X0P5H9R)
+                                                         0.036 &    0.425 r
+  u_mac16_top/clk_gate_fifo_count_reg/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.425 r
+  data arrival time                                                 0.425
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/clk_gate_fifo_count_reg/latch/GN (LATLQX0P5H9R)       0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.425
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.050
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.031 
+  ------------------------------------------------------------------
+  max time borrow                                        0.469 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/u_out/busy_reg
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_result_fifo_reg[0]/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/u_out/busy_reg/CK (DFFRPQX0P5H9R)          0.000      0.000 r
+  u_mac16_top/u_out/busy_reg/Q (DFFRPQX0P5H9R)           0.115 &    0.115 f
+  U1809/Y (BUFX2H9R)                                     0.094 &    0.208 f
+  ctmTdsLR_1_155/Y (OAI211X0P5H9R)                       0.143 &    0.351 r
+  U2472/Y (NOR3X1H9R)                                    0.033 &    0.384 f
+  u_mac16_top/clk_gate_result_fifo_reg[0]/test_or/Y (OR2X0P5H9R)
+                                                         0.039 &    0.423 f
+  u_mac16_top/clk_gate_result_fifo_reg[0]/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.423 f
+  data arrival time                                                 0.423
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/clk_gate_result_fifo_reg[0]/latch/GN (LATLQX0P5H9R)
+                                                                    0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.423
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.052
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.046 
+  ------------------------------------------------------------------
+  max time borrow                                        0.454 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/u_out/busy_reg
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_result_fifo_reg[1]/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/u_out/busy_reg/CK (DFFRPQX0P5H9R)          0.000      0.000 r
+  u_mac16_top/u_out/busy_reg/Q (DFFRPQX0P5H9R)           0.115 &    0.115 f
+  U1809/Y (BUFX2H9R)                                     0.094 &    0.208 f
+  ctmTdsLR_1_155/Y (OAI211X0P5H9R)                       0.143 &    0.351 r
+  U2459/Y (NOR3X1H9R)                                    0.033 &    0.384 f
+  u_mac16_top/clk_gate_result_fifo_reg[1]/test_or/Y (OR2X0P5H9R)
+                                                         0.038 &    0.422 f
+  u_mac16_top/clk_gate_result_fifo_reg[1]/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.422 f
+  data arrival time                                                 0.422
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/clk_gate_result_fifo_reg[1]/latch/GN (LATLQX0P5H9R)
+                                                                    0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.422
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.053
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.046 
+  ------------------------------------------------------------------
+  max time borrow                                        0.454 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/u_out/busy_reg
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_result_fifo_reg[3]/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/u_out/busy_reg/CK (DFFRPQX0P5H9R)          0.000      0.000 r
+  u_mac16_top/u_out/busy_reg/Q (DFFRPQX0P5H9R)           0.115 &    0.115 f
+  U1809/Y (BUFX2H9R)                                     0.094 &    0.208 f
+  ctmTdsLR_1_155/Y (OAI211X0P5H9R)                       0.143 &    0.351 r
+  U2466/Y (NOR3X1H9R)                                    0.031 &    0.382 f
+  u_mac16_top/clk_gate_result_fifo_reg[3]/test_or/Y (OR2X0P5H9R)
+                                                         0.038 &    0.421 f
+  u_mac16_top/clk_gate_result_fifo_reg[3]/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.421 f
+  data arrival time                                                 0.421
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/clk_gate_result_fifo_reg[3]/latch/GN (LATLQX0P5H9R)
+                                                                    0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.421
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.054
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.046 
+  ------------------------------------------------------------------
+  max time borrow                                        0.454 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/op_fifo_count_reg[2]
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_op_fifo_count_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/op_fifo_count_reg[2]/CK (DFFRPQX0P5H9R)    0.000      0.000 r
+  u_mac16_top/op_fifo_count_reg[2]/Q (DFFRPQX0P5H9R)     0.114 &    0.114 r
+  U2100/Y (INVX0P5H9R)                                   0.041 &    0.156 f
+  U2101/Y (NAND3X0P5H9R)                                 0.108 &    0.264 r
+  U2102/Y (INVX0P5H9R)                                   0.058 &    0.322 f
+  ctmTdsLR_1_95/Y (MUXIT2X0P5H9R)                        0.037 &    0.360 r
+  u_mac16_top/clk_gate_op_fifo_count_reg/test_or/Y (OR2X0P5H9R)
+                                                         0.037 &    0.396 r
+  u_mac16_top/clk_gate_op_fifo_count_reg/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.396 r
+  data arrival time                                                 0.396
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/clk_gate_op_fifo_count_reg/latch/GN (LATLQX0P5H9R)    0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.396
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.079
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.032 
+  ------------------------------------------------------------------
+  max time borrow                                        0.468 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/op_fifo_count_reg[2]
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_opA_fifo_reg[1]/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/op_fifo_count_reg[2]/CK (DFFRPQX0P5H9R)    0.000      0.000 r
+  u_mac16_top/op_fifo_count_reg[2]/Q (DFFRPQX0P5H9R)     0.114 &    0.114 r
+  U2100/Y (INVX0P5H9R)                                   0.041 &    0.156 f
+  U2101/Y (NAND3X0P5H9R)                                 0.108 &    0.264 r
+  U2462/Y (NOR3X1H9R)                                    0.042 &    0.307 f
+  u_mac16_top/clk_gate_opA_fifo_reg[1]/test_or/Y (OR2X0P5H9R)
+                                                         0.040 &    0.347 f
+  u_mac16_top/clk_gate_opA_fifo_reg[1]/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.347 f
+  data arrival time                                                 0.347
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/clk_gate_opA_fifo_reg[1]/latch/GN (LATLQX0P5H9R)      0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.347
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.128
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.047 
+  ------------------------------------------------------------------
+  max time borrow                                        0.453 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/op_fifo_count_reg[2]
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_opA_fifo_reg[0]/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/op_fifo_count_reg[2]/CK (DFFRPQX0P5H9R)    0.000      0.000 r
+  u_mac16_top/op_fifo_count_reg[2]/Q (DFFRPQX0P5H9R)     0.114 &    0.114 r
+  U2100/Y (INVX0P5H9R)                                   0.041 &    0.156 f
+  U2101/Y (NAND3X0P5H9R)                                 0.108 &    0.264 r
+  U2465/Y (NOR3X1H9R)                                    0.039 &    0.303 f
+  u_mac16_top/clk_gate_opA_fifo_reg[0]/test_or/Y (OR2X0P5H9R)
+                                                         0.039 &    0.342 f
+  u_mac16_top/clk_gate_opA_fifo_reg[0]/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.342 f
+  data arrival time                                                 0.342
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/clk_gate_opA_fifo_reg[0]/latch/GN (LATLQX0P5H9R)      0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.342
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.133
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.046 
+  ------------------------------------------------------------------
+  max time borrow                                        0.454 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/op_fifo_count_reg[2]
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_opA_fifo_reg[2]/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/op_fifo_count_reg[2]/CK (DFFRPQX0P5H9R)    0.000      0.000 r
+  u_mac16_top/op_fifo_count_reg[2]/Q (DFFRPQX0P5H9R)     0.114 &    0.114 r
+  U2100/Y (INVX0P5H9R)                                   0.041 &    0.156 f
+  U2101/Y (NAND3X0P5H9R)                                 0.108 &    0.264 r
+  U2467/Y (NOR3X1H9R)                                    0.038 &    0.302 f
+  u_mac16_top/clk_gate_opA_fifo_reg[2]/test_or/Y (OR2X0P5H9R)
+                                                         0.038 &    0.340 f
+  u_mac16_top/clk_gate_opA_fifo_reg[2]/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.340 f
+  data arrival time                                                 0.340
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/clk_gate_opA_fifo_reg[2]/latch/GN (LATLQX0P5H9R)      0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.340
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.135
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.046 
+  ------------------------------------------------------------------
+  max time borrow                                        0.454 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/op_fifo_count_reg[2]
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_opA_fifo_reg[3]/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/op_fifo_count_reg[2]/CK (DFFRPQX0P5H9R)    0.000      0.000 r
+  u_mac16_top/op_fifo_count_reg[2]/Q (DFFRPQX0P5H9R)     0.114 &    0.114 r
+  U2100/Y (INVX0P5H9R)                                   0.041 &    0.156 f
+  U2101/Y (NAND3X0P5H9R)                                 0.108 &    0.264 r
+  U2464/Y (NOR3X1H9R)                                    0.034 &    0.298 f
+  u_mac16_top/clk_gate_opA_fifo_reg[3]/test_or/Y (OR2X0P5H9R)
+                                                         0.037 &    0.335 f
+  u_mac16_top/clk_gate_opA_fifo_reg[3]/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.335 f
+  data arrival time                                                 0.335
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/clk_gate_opA_fifo_reg[3]/latch/GN (LATLQX0P5H9R)      0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.335
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.140
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.045 
+  ------------------------------------------------------------------
+  max time borrow                                        0.455 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/op_fifo_count_reg[1]
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_opB_reg_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/op_fifo_count_reg[1]/CK (DFFRPQX0P5H9R)    0.000      0.000 r
+  u_mac16_top/op_fifo_count_reg[1]/Q (DFFRPQX0P5H9R)     0.122 &    0.122 f
+  U2431/Y (NOR2X0P5H9R)                                  0.067 &    0.189 r
+  U2432/Y (AOI2XB1X0P5H9R)                               0.069 &    0.258 f
+  u_mac16_top/clk_gate_opB_reg_reg/test_or/Y (OR2X0P5H9R)
+                                                         0.042 &    0.300 f
+  u_mac16_top/clk_gate_opB_reg_reg/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.300 f
+  data arrival time                                                 0.300
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/clk_gate_opB_reg_reg/latch/GN (LATLQX0P5H9R)          0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.300
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.175
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.046 
+  ------------------------------------------------------------------
+  max time borrow                                        0.454 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/op_fifo_count_reg[1]
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_op_fifo_rd_ptr_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/op_fifo_count_reg[1]/CK (DFFRPQX0P5H9R)    0.000      0.000 r
+  u_mac16_top/op_fifo_count_reg[1]/Q (DFFRPQX0P5H9R)     0.122 &    0.122 f
+  U2431/Y (NOR2X0P5H9R)                                  0.067 &    0.189 r
+  U2432/Y (AOI2XB1X0P5H9R)                               0.069 &    0.258 f
+  u_mac16_top/clk_gate_op_fifo_rd_ptr_reg/test_or/Y (OR2X0P5H9R)
+                                                         0.042 &    0.300 f
+  u_mac16_top/clk_gate_op_fifo_rd_ptr_reg/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.300 f
+  data arrival time                                                 0.300
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/clk_gate_op_fifo_rd_ptr_reg/latch/GN (LATLQX0P5H9R)
+                                                                    0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.300
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.175
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.046 
+  ------------------------------------------------------------------
+  max time borrow                                        0.454 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/u_inA/cnt_reg[0]
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inA/clk_gate_data_out_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/u_inA/cnt_reg[0]/CK (DFFRPQX0P5H9R)        0.000      0.000 r
+  u_mac16_top/u_inA/cnt_reg[0]/Q (DFFRPQX0P5H9R)         0.117 &    0.117 f
+  U1210/Y (NAND4X0P5H9R)                                 0.074 &    0.191 r
+  U2471/Y (NOR2X0P5H9R)                                  0.042 &    0.233 f
+  u_mac16_top/u_inA/clk_gate_data_out_reg/test_or/Y (OR2X0P5H9R)
+                                                         0.039 &    0.272 f
+  u_mac16_top/u_inA/clk_gate_data_out_reg/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.272 f
+  data arrival time                                                 0.272
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/u_inA/clk_gate_data_out_reg/latch/GN (LATLQX0P5H9R)
+                                                                    0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.272
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.203
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.046 
+  ------------------------------------------------------------------
+  max time borrow                                        0.454 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/schedule_active_reg
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/clk_gate_sched_cnt_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/schedule_active_reg/CK (DFFRPQX0P5H9R)     0.000      0.000 r
+  u_mac16_top/schedule_active_reg/Q (DFFRPQX0P5H9R)      0.149 &    0.149 r
+  U1831/Y (INVX0P5H9R)                                   0.044 &    0.193 f
+  U2597/Y (NAND3X0P5H9R)                                 0.040 &    0.233 r
+  u_mac16_top/clk_gate_sched_cnt_reg/test_or/Y (OR2X0P5H9R)
+                                                         0.034 &    0.268 r
+  u_mac16_top/clk_gate_sched_cnt_reg/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.268 r
+  data arrival time                                                 0.268
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/clk_gate_sched_cnt_reg/latch/GN (LATLQX0P5H9R)        0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.268
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.207
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.031 
+  ------------------------------------------------------------------
+  max time borrow                                        0.469 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/u_inB/cnt_reg[0]
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_inB/clk_gate_data_out_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/u_inB/cnt_reg[0]/CK (DFFRPQX0P5H9R)        0.000      0.000 r
+  u_mac16_top/u_inB/cnt_reg[0]/Q (DFFRPQX0P5H9R)         0.120 &    0.120 f
+  U1209/Y (NAND4X0P5H9R)                                 0.063 &    0.183 r
+  U2468/Y (NOR2X0P5H9R)                                  0.042 &    0.225 f
+  u_mac16_top/u_inB/clk_gate_data_out_reg/test_or/Y (OR2X0P5H9R)
+                                                         0.038 &    0.263 f
+  u_mac16_top/u_inB/clk_gate_data_out_reg/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.263 f
+  data arrival time                                                 0.263
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/u_inB/clk_gate_data_out_reg/latch/GN (LATLQX0P5H9R)
+                                                                    0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.263
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.212
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.046 
+  ------------------------------------------------------------------
+  max time borrow                                        0.454 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/u_mac/mode_d_reg
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/clk_gate_accum_reg_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/u_mac/mode_d_reg/CK (DFFRX1H9R)            0.000      0.000 r
+  u_mac16_top/u_mac/mode_d_reg/Q (DFFRX1H9R)             0.164 &    0.164 f
+  U2148/Y (AND2X0P5H9R)                                  0.057 &    0.221 f
+  u_mac16_top/u_mac/clk_gate_accum_reg_reg/test_or/Y (OR2X0P5H9R)
+                                                         0.031 &    0.252 f
+  u_mac16_top/u_mac/clk_gate_accum_reg_reg/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.252 f
+  data arrival time                                                 0.252
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/u_mac/clk_gate_accum_reg_reg/latch/GN (LATLQX0P5H9R)
+                                                                    0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.252
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.223
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.045 
+  ------------------------------------------------------------------
+  max time borrow                                        0.455 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/u_mac/mode_d_reg
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/clk_gate_last_prod_reg/latch
+               (negative level-sensitive latch clocked by core_clk)
+  Path Group: core_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/u_mac/mode_d_reg/CK (DFFRX1H9R)            0.000      0.000 r
+  u_mac16_top/u_mac/mode_d_reg/Q (DFFRX1H9R)             0.175 &    0.175 r
+  ctmTdsLR_1_121/Y (NOR2BX0P5H9R)                        0.033 &    0.207 f
+  u_mac16_top/u_mac/clk_gate_last_prod_reg/test_or/Y (OR2X0P5H9R)
+                                                         0.037 &    0.245 f
+  u_mac16_top/u_mac/clk_gate_last_prod_reg/latch/D (LATLQX0P5H9R)
+                                                         0.000 &    0.245 f
+  data arrival time                                                 0.245
+
+  clock core_clk (fall edge)                             0.500      0.500
+  clock network delay (ideal)                            0.000      0.500
+  clock reconvergence pessimism                          0.000      0.500
+  clock uncertainty                                     -0.025      0.475
+  u_mac16_top/u_mac/clk_gate_last_prod_reg/latch/GN (LATLQX0P5H9R)
+                                                                    0.475 f
+  time borrowed from endpoint                            0.000      0.475
+  data required time                                                0.475
+  ------------------------------------------------------------------------------
+  data required time                                                0.475
+  data arrival time                                                -0.245
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.230
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  core_clk nominal pulse width                           0.500 
+  library setup time                                    -0.046 
+  ------------------------------------------------------------------
+  max time borrow                                        0.454 
+  actual time borrow                                     0.000 
+  ------------------------------------------------------------------
+
+
+  Startpoint: u_mac16_top/mode_reg_reg
+               (rising edge-triggered flip-flop clocked by core_clk)
+  Endpoint: u_mac16_top/u_mac/u_mul/r_s41_reg[15]
+               (recovery check against rising-edge clock core_clk)
+  Path Group: **async_default**
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock core_clk (rise edge)                             0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  u_mac16_top/mode_reg_reg/CK (DFFRPQX0P5H9R)            0.000      0.000 r
+  u_mac16_top/mode_reg_reg/Q (DFFRPQX0P5H9R)             0.114 &    0.114 f
+  U1445/Y (XOR2X0P5H9R)                                  0.036 &    0.151 f
+  U1500/Y (NOR2X1P4H9R)                                  0.070 &    0.220 r
+  HFSINV_66868_32/Y (INVX1P7H9R)                         0.131 &    0.351 f
+  HFSBUF_39107_31/ECK (FREEICGX0P8H9R)                   0.292 &    0.643 f
+  u_mac16_top/u_mac/u_mul/r_s41_reg[15]/R (SDFFRPQX0P5H9R)
+                                                         0.000 &    0.643 f
+  data arrival time                                                 0.643
+
+  clock core_clk (rise edge)                             1.000      1.000
+  clock network delay (ideal)                            0.000      1.000
+  clock reconvergence pessimism                          0.000      1.000
+  clock uncertainty                                     -0.025      0.975
+  u_mac16_top/u_mac/u_mul/r_s41_reg[15]/CK (SDFFRPQX0P5H9R)         0.975 r
+  library recovery time                                 -0.094      0.881
+  data required time                                                0.881
+  ------------------------------------------------------------------------------
+  data required time                                                0.881
+  data arrival time                                                -0.643
+  ------------------------------------------------------------------------------
+  slack (MET)                                                       0.238
+
+Warning: report_timing has satisfied the max_paths criteria. There are 1575 further endpoints which have paths of interest with slack less than   10.000 that were not considered when generating this report. (UITE-502)
+
+1

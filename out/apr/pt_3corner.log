@@ -1,0 +1,174 @@
+Error: Library Compiler executable path is not set. (PT-063)
+
+                                 PrimeTime (R)
+
+              Version V-2023.12-SP5-1 for linux64 - Nov 04, 2024 
+
+                    Copyright (c) 1988 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+# =====================================================================
+# MAC16 三 PVT corner PrimeTime STA
+# 报告 1GHz 下各 corner 的 setup / hold slack
+# 运行: cd script && pt_shell -64 -f pt_3corner_sta.tcl
+# =====================================================================
+set PROJ_ROOT [file normalize [file dirname [info script]]/..]
+/home/user/MAC16_work
+set PDK_ROOT  "$PROJ_ROOT/lib/PDK/Common/ics55_LLSC_H9CR_0917"
+/home/user/MAC16_work/lib/PDK/Common/ics55_LLSC_H9CR_0917
+set OUTDIR    "$PROJ_ROOT/out/apr"
+/home/user/MAC16_work/out/apr
+set NETLIST   "$OUTDIR/mac16_apr.v"
+/home/user/MAC16_work/out/apr/mac16_apr.v
+set SDC       "$OUTDIR/mac16_fc.sdc"
+/home/user/MAC16_work/out/apr/mac16_fc.sdc
+set LIB_DIR "$PDK_ROOT/liberty/db"
+/home/user/MAC16_work/lib/PDK/Common/ics55_LLSC_H9CR_0917/liberty/db
+set corners [list     [list typ_tt_1p2_25 $LIB_DIR/ics55_LLSC_H9CR_typ_tt_1p2_25_nldm.db $OUTDIR/mac16_apr.spef.ics55_typ.tlup_25.spef ETSCA_N55_H9BR_tt_mos_TYP_1.2_25 ics55_LLSC_H9CR_typ_tt_1p2_25]     [list ss_rcworst_1p08_125 $LIB_DIR/ics55_LLSC_H9CR_ss_rcworst_1p08_125_nldm.db $OUTDIR/mac16_apr.spef.ics55_rcworst.tlup_125.spef ETSCA_N55_H9BR_ss_mos_RCworst_1.08_125 ics55_LLSC_H9CR_ss_rcworst_1p08_125]     [list ff_rcbest_1p32_m40 $LIB_DIR/ics55_LLSC_H9CR_ff_rcbest_1p32_m40_nldm.db $OUTDIR/mac16_apr.spef.ics55_rcbest.tlup_-40.spef ETSCA_N55_H9BR_ff_mos_RCbest_1.32_-40 ics55_LLSC_H9CR_ff_rcbest_1p32_m40] ]
+{typ_tt_1p2_25 /home/user/MAC16_work/lib/PDK/Common/ics55_LLSC_H9CR_0917/liberty/db/ics55_LLSC_H9CR_typ_tt_1p2_25_nldm.db /home/user/MAC16_work/out/apr/mac16_apr.spef.ics55_typ.tlup_25.spef ETSCA_N55_H9BR_tt_mos_TYP_1.2_25 ics55_LLSC_H9CR_typ_tt_1p2_25} {ss_rcworst_1p08_125 /home/user/MAC16_work/lib/PDK/Common/ics55_LLSC_H9CR_0917/liberty/db/ics55_LLSC_H9CR_ss_rcworst_1p08_125_nldm.db /home/user/MAC16_work/out/apr/mac16_apr.spef.ics55_rcworst.tlup_125.spef ETSCA_N55_H9BR_ss_mos_RCworst_1.08_125 ics55_LLSC_H9CR_ss_rcworst_1p08_125} {ff_rcbest_1p32_m40 /home/user/MAC16_work/lib/PDK/Common/ics55_LLSC_H9CR_0917/liberty/db/ics55_LLSC_H9CR_ff_rcbest_1p32_m40_nldm.db /home/user/MAC16_work/out/apr/mac16_apr.spef.ics55_rcbest.tlup_-40.spef ETSCA_N55_H9BR_ff_mos_RCbest_1.32_-40 ics55_LLSC_H9CR_ff_rcbest_1p32_m40}
+foreach corner $corners {
+    set name   [lindex $corner 0]
+    set lib    [lindex $corner 1]
+    set spef   [lindex $corner 2]
+    set opcond [lindex $corner 3]
+    set libname [lindex $corner 4]
+
+    puts "=========== Corner: $name ==========="
+    if {[llength [get_designs -quiet *]] > 0} { remove_design -all }
+
+    set_app_var target_library [list $lib]
+    set_app_var link_library [list * $lib]
+
+    read_verilog $NETLIST
+    current_design mac16
+    link_design
+
+    set_operating_conditions -library $libname $opcond
+
+    read_sdc $SDC
+    read_parasitics -format spef $spef
+
+    update_timing -full
+
+    # ---- setup (max) ----
+    redirect -file $OUTDIR/pt_setup_${name}.rpt {
+        report_timing -delay_type max -max_paths 20 -nworst 1 -slack_lesser_than 10             -sort_by slack -significant_digits 3
+    }
+    # ---- hold (min) ----
+    redirect -file $OUTDIR/pt_hold_${name}.rpt {
+        report_timing -delay_type min -max_paths 20 -nworst 1 -slack_lesser_than 10             -sort_by slack -significant_digits 3
+    }
+
+    redirect -file $OUTDIR/pt_summary_${name}.rpt {
+        report_constraints -significant_digits 3 -all_violators
+    }
+    puts "DONE_CORNER $name"
+}
+=========== Corner: typ_tt_1p2_25 ===========
+Information: current_design won't return any data before link (DES-071)
+Loading db file '/home/user/MAC16_work/lib/PDK/Common/ics55_LLSC_H9CR_0917/liberty/db/ics55_LLSC_H9CR_typ_tt_1p2_25_nldm.db'
+Loading verilog file '/home/user/MAC16_work/out/apr/mac16_apr.v'
+Linking design mac16...
+Information: Removing 30 unneeded designs..... (LNK-034)
+Information: 816 (85.99%) library cells are unused in library ics55_LLSC_H9CR_typ_tt_1p2_25..... (LNK-045)
+Information: total 816 library cells are unused (LNK-046)
+Design 'mac16' was successfully linked.
+Information: There are 2508 leaf cells, ports, hiers and 2800 nets in the design (LNK-047)
+
+Reading SDC version 2.1...
+Warning: SDC version in file (1.7) does not match the version you requested
+	from read_sdc (2.1).  Some constraints and options may not function. (SDC-2)
+Warning: SDC version in file (1.7) does not match the version you requested
+	from read_sdc (2.1).  Some constraints and options may not function. (SDC-2)
+1
+Information: Log for 'read_parasitics command' will be generated in 'parasitics_command.log'. (PARA-107)
+Information: read_parasitics command is executed in background
+Information: Building multi voltage information for entire design. (MV-022)
+Warning: Some timing arcs have been disabled for breaking timing loops or because of constant propagation. Use the 'report_disable_timing' command to get the list of these disabled timing arcs. (PTE-003)
+Information: Inferring 30 clock-gating checks. (PTE-017)
+DONE_CORNER typ_tt_1p2_25
+=========== Corner: ss_rcworst_1p08_125 ===========
+Removing design 'mac16'...
+Information: current_design won't return any data before link (DES-071)
+Loading verilog file '/home/user/MAC16_work/out/apr/mac16_apr.v'
+Loading db file '/home/user/MAC16_work/lib/PDK/Common/ics55_LLSC_H9CR_0917/liberty/db/ics55_LLSC_H9CR_ss_rcworst_1p08_125_nldm.db'
+Linking design mac16...
+Information: Removing 30 unneeded designs..... (LNK-034)
+Information: 949 (100.00%) library cells are unused in library ics55_LLSC_H9CR_typ_tt_1p2_25..... (LNK-045)
+Information: 816 (85.99%) library cells are unused in library ics55_LLSC_H9CR_ss_rcworst_1p08_125..... (LNK-045)
+Information: total 1765 library cells are unused (LNK-046)
+Design 'mac16' was successfully linked.
+Information: There are 2508 leaf cells, ports, hiers and 2800 nets in the design (LNK-047)
+
+Reading SDC version 2.1...
+Warning: SDC version in file (1.7) does not match the version you requested
+	from read_sdc (2.1).  Some constraints and options may not function. (SDC-2)
+1
+Information: Log for 'read_parasitics command' will be generated in 'parasitics_command.log'. (PARA-107)
+Information: read_parasitics command is executed in background
+Information: Building multi voltage information for entire design. (MV-022)
+Warning: Some timing arcs have been disabled for breaking timing loops or because of constant propagation. Use the 'report_disable_timing' command to get the list of these disabled timing arcs. (PTE-003)
+Information: Inferring 30 clock-gating checks. (PTE-017)
+DONE_CORNER ss_rcworst_1p08_125
+=========== Corner: ff_rcbest_1p32_m40 ===========
+Removing design 'mac16'...
+Information: current_design won't return any data before link (DES-071)
+Loading verilog file '/home/user/MAC16_work/out/apr/mac16_apr.v'
+Loading db file '/home/user/MAC16_work/lib/PDK/Common/ics55_LLSC_H9CR_0917/liberty/db/ics55_LLSC_H9CR_ff_rcbest_1p32_m40_nldm.db'
+Linking design mac16...
+Information: Removing 30 unneeded designs..... (LNK-034)
+Information: 949 (100.00%) library cells are unused in library ics55_LLSC_H9CR_typ_tt_1p2_25..... (LNK-045)
+Information: 949 (100.00%) library cells are unused in library ics55_LLSC_H9CR_ss_rcworst_1p08_125..... (LNK-045)
+Information: 816 (85.99%) library cells are unused in library ics55_LLSC_H9CR_ff_rcbest_1p32_m40..... (LNK-045)
+Information: total 2714 library cells are unused (LNK-046)
+Design 'mac16' was successfully linked.
+Information: There are 2508 leaf cells, ports, hiers and 2800 nets in the design (LNK-047)
+
+Reading SDC version 2.1...
+Warning: SDC version in file (1.7) does not match the version you requested
+	from read_sdc (2.1).  Some constraints and options may not function. (SDC-2)
+1
+Information: Log for 'read_parasitics command' will be generated in 'parasitics_command.log'. (PARA-107)
+Information: read_parasitics command is executed in background
+Information: Building multi voltage information for entire design. (MV-022)
+Warning: Some timing arcs have been disabled for breaking timing loops or because of constant propagation. Use the 'report_disable_timing' command to get the list of these disabled timing arcs. (PTE-003)
+Information: Inferring 30 clock-gating checks. (PTE-017)
+DONE_CORNER ff_rcbest_1p32_m40
+puts "==== PT 3-corner STA 完成 ===="
+==== PT 3-corner STA 完成 ====
+exit
+Information: Defining new variable 'libname'. (CMD-041)
+Information: Defining new variable 'LIB_DIR'. (CMD-041)
+Information: Defining new variable 'PROJ_ROOT'. (CMD-041)
+Information: Defining new variable 'lib'. (CMD-041)
+Information: Defining new variable 'OUTDIR'. (CMD-041)
+Information: Defining new variable 'corners'. (CMD-041)
+Information: Defining new variable 'NETLIST'. (CMD-041)
+Information: Defining new variable 'opcond'. (CMD-041)
+Information: Defining new variable 'corner'. (CMD-041)
+Information: Defining new variable 'name'. (CMD-041)
+Information: Defining new variable 'SDC'. (CMD-041)
+Information: Defining new variable 'PDK_ROOT'. (CMD-041)
+Information: Defining new variable 'spef'. (CMD-041)
+
+Timing updates: 3 (0 implicit, 3 explicit) (0 incremental, 3 full, 0 logical)
+Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
+Maximum memory usage for this session: 3246.32 MB
+CPU usage for this session: 9 seconds 
+Elapsed time for this session: 17 seconds
+Elapsed time spent in memory sampling: 0 seconds
+Diagnostics summary: 1 error, 13 warnings, 40 informationals
+
+Thank you for using pt_shell!
